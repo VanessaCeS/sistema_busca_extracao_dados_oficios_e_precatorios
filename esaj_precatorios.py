@@ -6,7 +6,6 @@ from requests.adapters import HTTPAdapter, Retry
 import re
 import functools
 
-
 def configure_session(session, retries=3, backoff=0.3, timeout=None, not_retry_on_methods=None, retry_on_status=None):
     retry_methods = ["GET", "POST", "PUT", "DELETE", "HEAD", "OPTIONS"]
 
@@ -58,7 +57,6 @@ def login_esaj(url_tribunal: str, username: str, password: str) -> Session:
         print(f"[bold red]Não foi possivel acessar o site do tribunal. {e}[/bold red]")
         
         raise Exception(f"{url_tribunal} - Não foi possivel acessar o site do tribunal {e}")
-    
     if page_login.status_code != 200:
         print(f"[bold red]{url_tribunal} - Não foi possivel acessar o site do tribunal. Status code: {page_login.status_code}[/bold red]")
         
@@ -85,7 +83,6 @@ def login_esaj(url_tribunal: str, username: str, password: str) -> Session:
 
     if url in logar.url:
         print(f"[bold red]{url_tribunal} - Login Falhou[/bold red]")
-
         raise Exception(f"{url_tribunal} - Login Falhou")
 
     return s
@@ -112,6 +109,8 @@ def get_docs_precatorio(codigo_prec, url, s, zip_file=False, pdf=False):
     oficios = []
     pdfs_oficios = []
     #? tipo 99024 = oficio
+    #? tipo 34 = oficio acre
+
     for doc in por_tipo['99024']:
         for children in doc['children']:
             params = children['data']['parametros']
