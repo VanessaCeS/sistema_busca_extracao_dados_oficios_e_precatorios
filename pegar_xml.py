@@ -79,7 +79,7 @@ def ler_documentos(dado):
                     arquivo.write(text)
           
           dados_pdf = extrair_dados_pdf(f"arquivos_txt/{processo_geral}_extrair.txt")
-          dados_complementares = {"processo_geral": processo_geral, "codigo_processo": codigo_processo, 'site': 'https://esaj.tjac.jus.br'}
+          dados_complementares = {"processo_geral": processo_geral, "codigo_processo": codigo_processo, 'site': 'https://esaj.tjac.jus.br', 'estado': 'São Paulo'}
           novos_dados = dado | dados_pdf | dados_complementares
 
           mandar_para_banco_de_dados(dado['processo'], novos_dados)
@@ -143,7 +143,7 @@ def pegar_documentos_pessoais(processo):
   with open(f"arquivos_pessoais.pdf", "wb") as arq:
     arquivo = arq.write(file_path)
   
-  arquivo_base_64 = converter_arquivo_base_64(arquivo)
+  arquivo_base_64 = converter_arquivo_base_64(processo)
   text_ocr(arquivo_base_64)
 
 def converter_arquivo_base_64(nome_arquivo):
