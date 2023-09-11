@@ -14,7 +14,6 @@ import xml.etree.ElementTree as ET
 from zeep import Client, Settings, Transport
 from concurrent.futures import ThreadPoolExecutor
 from rsa_archer.archer_instance import ArcherInstance
-from utils import calcular_valor_principal
 # load_dotenv('.env')
 
 def adjust_date_and_time_to_arteria(date_audiencia, formato="%d/%m/%Y %H:%M"):
@@ -1188,12 +1187,14 @@ def enviar_valores_oficio_arteria(arquivo_pdf, dado):
         foi_expedido = 'NÃO'
 
     if dado['origem'] == '':
-        processo = dado['processo'].split('/')[0]
+        processo = dado['processo']
     else: 
         processo = dado['origem']
 
-    # if dado['principal'] == '':
-    #     dado['principal'] = calcular_valor_principal(dado['juros'], dados['global'])
+    if dado['conhecimento'] != '':
+        processo_principal = dado['conhecimento']
+    else:
+        processo_principal = dado['origem']
 
     if dado['vara'] != '':
         vara = dado['vara']
@@ -1201,6 +1202,7 @@ def enviar_valores_oficio_arteria(arquivo_pdf, dado):
         vara = dado['vara_pdf']
     else:
         vara = ''
+
     if dado['credor'] != '':
         credor = dado['credor']
     elif dado['exequente']:
@@ -1215,10 +1217,17 @@ def enviar_valores_oficio_arteria(arquivo_pdf, dado):
     else: 
         devedor = ''
     
+    if dado['juros'] == '':
+        dado['juros'] = '0'
+    if dado['principal'] == '':
+        dado['principal'] = '0'
+
+    dado['cpf_cnpj'] = dado['cpf']
+    
     dados = {
     'Data da Expedição': dado['data_expedicao'],
-    'Código do Processo de Origem': processo,
-    'Número do Precatório': dado['processo_geral'],
+    'Código do Processo de Origem': processo_principal,
+    'Número do Precatório': processo,
     'Tipo de Precatório': dado['tipo_precatorio'],
     'Natureza': [dado['natureza']],
     'Status Precatório':['PRECATÓRIO'],
