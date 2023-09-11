@@ -8,6 +8,7 @@ from util import regex
 from datetime import datetime
 from dotenv import load_dotenv
 from esaj_sao_paulo_precatorios import get_docs_oficio_precatorios_tjsp
+from utils import apagar_arquivos_txt
 
 load_dotenv('.env')
 
@@ -54,9 +55,6 @@ def ler_xml(arquivo_xml):
           padrao = r'Orgão: (.*)'
           orgao = re.search(padrao, materia[k]).group(1)
           dado['Vara'] = orgao
-  # mandar para o banco de dados
-    # mandar_banco_dados(dado)
-  
   return dados
 
 def ler_documentos():
@@ -79,7 +77,7 @@ def ler_documentos():
               arquivo.write(text)
       extrair_dados_pdf(f"arquivos_txt/extrair.txt")
 
-  apagar_arquivos_txt()
+  apagar_arquivos_txt('./arquivos_txt_sao_paulo')
 
 def extrair_dados_pdf(arquivo_txt):
     with open(arquivo_txt, 'r', encoding='utf-8') as arquivo:
@@ -143,13 +141,6 @@ def encontrar_indice_linha(linhas, texto):
         return indice
     return None
 
-def apagar_arquivos_txt():
-    pasta = './arquivos_txt'
-    arquivos = os.listdir(pasta) 
-    for arquivo in arquivos:
-        caminho_arquivo = os.path.join(pasta, arquivo)
-        if os.path.isfile(caminho_arquivo):  
-            os.remove(caminho_arquivo)
 
 # ler_documentos()
 

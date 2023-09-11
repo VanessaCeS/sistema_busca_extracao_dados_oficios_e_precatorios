@@ -1245,5 +1245,5 @@ def enviar_valores_oficio_arteria(arquivo_pdf, dado):
     'Número do Precatório foi Expedido?': [foi_expedido],
     "Ofício Requisitório": [f"{id}"]
     }
-  
+    print('DADOS ARTERIA ---->> ', dados)
     cadastrar_arteria(dados, 'Precatórios')

@@ -1,27 +1,56 @@
-import traceback
 import PyPDF2
-from utils import encontrar_indice_linha, regex
+import xmltodict
+import traceback
+from funcoes_arteria import enviar_valores_oficio_arteria
+from esaj_alagoas_precatorios import get_docs_oficio_precatorios_tjal
+from utils import apagar_arquivos_txt, encontrar_indice_linha, extrair_processo_origem, limpar_dados, mandar_para_banco_de_dados, regex, tipo_precatorio, verificar_tribunal
+
+def ler_xml(arquivo_xml):     
+  with open(arquivo_xml, 'r', encoding='utf-8') as fd:
+    doc = xmltodict.parse(fd.read())
+  
+  dados = []
+  base_doc = doc['Pub_OL']['Publicacoes']
+  for i in range(len(doc['Pub_OL']['Publicacoes']))  :
+    processo_origem =  extrair_processo_origem(f"{base_doc[i]['Publicacao']})")
+    dados.append({"processo": f"{base_doc[i]['Processo']}", "tribunal": f"{base_doc[i]['Tribunal']}", "materia": f"{base_doc[i]['Materia']}", 'origem': processo_origem})
+  
+  for d in dados:
+        dados_limpos = limpar_dados(d)
+        tipo = tipo_precatorio(d)
+        dado = dados_limpos | tipo
+        if verificar_tribunal(d['processo']):
+          print('processo -->> ',d['processo'])
+          ler_documentos(dado)
+        else:
+          pass
+  apagar_arquivos_txt('./arquivos_txt_alagoas')
+  
 def ler_documentos(dado):
       try:
         # processo_geral = dado['processo']
-        # doc = get_docs_oficio_precatorios_tjac(dado['processo'],zip_file=False, pdf=True)
+        # doc = get_docs_oficio_precatorios_tjal(dado['processo'],zip_file=False, pdf=True)
         # if doc != {}:
         #   codigo_processo = next(iter(doc))
         #   file_path = doc[codigo_processo][0][1]
-          processo_geral = 'doc_109036052'
-          arquivo_pdf = f"arquivos_pdf_alagoas\doc_109036052.pdf"
+        #   processo_geral = 'doc_109036052'
+        #   arquivo_pdf = f"arquivos_pdf_alagoas\doc_109036052.pdf"
 
-          with open(arquivo_pdf, 'rb') as pdf_file:
+          with open('./arquivos_pdf_alagoas/doc_107672968.pdf', 'rb') as pdf_file:
             pdf_reader = PyPDF2.PdfReader(pdf_file)
             if len(pdf_reader.pages) > 0:
-              with open('doc_109036052.txt', 'w', encoding='utf-8') as txt_file:
+              with open('doc_107672968.txt', 'w', encoding='utf-8') as txt_file:
                   for page_num in range(len(pdf_reader.pages)):
                       page = pdf_reader.pages[page_num]
                       page_text = page.extract_text()
                       txt_file.write(page_text)
-          # extrair_dados_pdf('109036052.txt')
+          dados_pdf = extrair_dados_pdf('doc_107672968.txt')
+          dados = dados_pdf | {"processo_geral": 'processo_geral','codigo_processo': 'codigo_processo', 'site': 'https://esaj.tjal.jus.br'}
+          # mandar_para_banco_de_dados(dados)
+          print('DADOS ===>> ', dados)
+          # enviar_valores_oficio_arteria(arquivo_pdf, dados)
       except Exception as e:
-        print(f"Erro meno, processo -> {processo_geral}", e)
+        # print(f"Erro meno, processo -> {processo_geral}", e)
         print(traceback.print_exc())
         pass
 
@@ -57,5 +86,5 @@ def extrair_dados_pdf(arquivo_txt):
           dados = dados | {f'{nome}': ''}
 
     return dados
-extrair_dados_pdf('./arquivos_txt_alagoas/doc_107672968.txt')
-# ler_documentos('./arquivos_pdf_alagoas/doc_109036052.pdf')
+# extrair_dados_pdf('./arquivos_txt_alagoas/doc_107672968.txt')
+ler_documentos('./arquivos_pdf_alagoas/doc_109036052.pdf')

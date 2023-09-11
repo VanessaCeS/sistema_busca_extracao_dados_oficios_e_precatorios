@@ -569,3 +569,10 @@ def encontrar_indice_linha(linhas, texto):
     if texto in linha:
         return indice
   return None
+
+def apagar_arquivos_txt(pasta):
+    arquivos = os.listdir(pasta) 
+    for arquivo in arquivos:
+        caminho_arquivo = os.path.join(pasta, arquivo)
+        if os.path.isfile(caminho_arquivo):  
+            os.remove(caminho_arquivo)
