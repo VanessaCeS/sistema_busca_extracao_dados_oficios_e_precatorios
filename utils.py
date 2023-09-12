@@ -31,6 +31,15 @@ def buscar_xml():
   return arquivo
 
 def regex(string):
+    if 'Para conferir o original' in string:
+      padrao = r'\d{2}/\d{2}/\d{4}'
+      resultado = re.findall(padrao, string)
+      if resultado != None:
+        dia, mes, ano = resultado[0].strip().split('/')
+        data_padrao_arteria = f"{mes}/{dia}/{ano}"
+        return {'expedicao': data_padrao_arteria}
+      else:
+        return {'expedicao': ''}   
     if 'TRIBUNAL' in string.upper():
       padrao = r'(?:  DO ESTADO  DE|  DO ESTADO  DO)(.*)'
       estado = re.search(padrao, string, re.IGNORECASE)
@@ -82,6 +91,13 @@ def regex(string):
         return {'conhecimento': processo_principal.group(0).strip()}
       else:
         return {'conhecimento': ''} 
+    if 'Autos  da Ação' in string:
+      padrao = r'\d{7}-\d{2}.\d{4}.\d{1}.\d{2}.\d{4}'
+      processo_principal = re.search(padrao, string, re.MULTILINE)
+      if processo_principal != None:
+        return {'conhecimento': processo_principal.group(0).strip()}
+      else:
+        return {'conhecimento': ''} 
     if 'Credor' in string:
       padrao = r"(?:Credor\(s\)|Credor|Credor\(es\)):(.*)"
       credor = re.search(padrao, string)
@@ -107,7 +123,7 @@ def regex(string):
       padrao = r'(?:Devedor|Devedor:|Devedor\(s\)|Devedor\(es\)) (.*)'
       devedor = re.search(padrao, string)
       if devedor != None:
-        return {'devedor': devedor.group(1).strip()}
+        return {'devedor': devedor.group(1).strip().replace('  ', ' ')}
       else:
         return {'devedor': ''}
     elif 'Executado(s):' in string:
@@ -170,7 +186,6 @@ def regex(string):
     if 'SUBTOTAL 1' in string:
       padrao = r'(\d{1,3}(?:\.\d{3})*(?:,\d+)?)(?=\s|$)' 
       valor_principal = re.findall(padrao, string)
-      print(valor_principal)
       if valor_principal != None:
         return {'principal': valor_principal[1].replace('.', '').replace(',','.')}
       else:
@@ -203,15 +218,7 @@ def regex(string):
     if 'de 20' in string: 
       cidade_data = encontrar_data_expedicao_e_cidade_tjac(string) 
       return cidade_data
-    elif 'Para conferir o original' in string:
-      padrao = r'\d{4}/\d{2}/\d{4}'
-      resultado = re.search(padrao, string)
-      if resultado != None:
-        data_expedicao_tratada = converter_string_mes(resultado.group(0))
-        return {'data_expedicao': data_expedicao_tratada}
-      else:
-        return {'data_expedicao': ''}
-        
+    
 
 def encontrar_data_expedicao_e_cidade_tjac(string):
   partes = string.split(',')
@@ -308,7 +315,6 @@ def converter_string_mes(string):
     }
     for m in dict.keys(dict_meses):
       if m in nome_mes[1]:
-        print(dict_meses[m])
         mes_numero = string.replace(nome_mes[1], dict_meses[m]).replace('de', '-').replace('.', '').replace(' ', '').strip()
         dia, mes, ano = mes_numero.split('-')
         data_padrao_arteria = f"{mes}/{dia}/{ano}"
@@ -457,7 +463,6 @@ def text_ocr(arquivo_base_64_pdf):
     'pdf': f"{arquivo_base_64_pdf}"
   }
   response = requests.post(url, headers=headers, json=json_data).json()
-  print(response)
   txt = json.loads(response['pdf_text'])
   for i in range(len(txt)):
     with open(f'_ocr.txt', 'a', encoding='utf-8') as f:
@@ -471,39 +476,16 @@ def mandar_para_banco_de_dados(id_processo, dados):
     password=os.getenv('db_password_precatorio'),
     database='precatorias_tribunais'
     )
-    if dados['vara'] == '':
-        dados['vara'] = dados['vara_pdf']
-        del dados['vara_pdf']
-    else:
-        del dados['vara_pdf']
 
-    if dados['credor'] == '':
-        dados['credor'] = dados['exequente']
-        del dados['exequente']
-    else:
-      del dados['exequente']
-
-    if dados['devedor'] == '':
-        dados['devedor'] = dados['executado']
-        del dados['executado']
-    else:
-        del dados['executado']
-      
     dados['cpf_cnpj'] = dados['cpf']
     del dados['cpf'] 
 
-    if dados['conhecimento'] == '':
-            del dados['conhecimento']
-    else: 
-        dados['processo'] = dados['conhecimento']
-        del dados['conhecimento']
     dados['processo'] = dados['processo'].split('/')[0]
-
     dados['nascimento'] = converter_data(dados['nascimento'])
-    dados['data_expedicao'] = converter_data(dados['data_expedicao'])
+    dados['data_expedicao'] = converter_data(dados['expedicao'])
+    del dados['expedicao']
 
     cursor = conn.cursor()
-
     query_consultar_processo = 'SELECT * FROM dados_xml_pdf WHERE processo = %s'
     cursor.execute(query_consultar_processo, (id_processo,))
     id_processo = cursor.fetchone()

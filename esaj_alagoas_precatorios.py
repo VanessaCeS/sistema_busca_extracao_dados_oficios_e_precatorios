@@ -1,3 +1,4 @@
+import os
 from bs4 import BeautifulSoup
 import json
 import time
@@ -96,11 +97,9 @@ def get_docs_precatorio(codigo_prec, url, s, zip_file=False, pdf=False):
 
     s.get(f'{url}/show.do', params=query)
 
-    pasta_digital_req = s.get(f'{url}/abrirPastaDigital.do', params=query)
+    pasta_digital_req = s.get(f'https://www2.tjal.jus.br/cpopg/abrirPastaDigital.do?processo.codigo={codigo_prec}').text
 
-    pasta_digital = s.get(pasta_digital_req.text).text
-
-    json_pasta = json.loads(pasta_digital[pasta_digital.find('requestScope = ') + 15: pasta_digital.find('requestScope = ') + 15 + pasta_digital[pasta_digital.find('requestScope = ') + 15:].find(';')])
+    json_pasta = json.loads(pasta_digital_req[pasta_digital_req.find('requestScope = ') + 15: pasta_digital_req.find('requestScope = ') + 15 + pasta_digital_req[pasta_digital_req.find('requestScope = ') + 15:].find(';')])
 
     por_tipo = {}
     for doc in json_pasta:
@@ -111,15 +110,15 @@ def get_docs_precatorio(codigo_prec, url, s, zip_file=False, pdf=False):
 
     oficios = []
     pdfs_oficios = []
-    #? tipo 99024 = oficio
-    for doc in por_tipo['99024']:
+    #? tipo 342 = oficio requisitório de precatório
+    for doc in por_tipo['342']:
         for children in doc['children']:
             params = children['data']['parametros']
 
             pdfs_oficios.append(params)
 
             if pdf:
-                file_req = s.get(f'https://esaj.tjal.jus.br/pastadigital/getPDF.do?{params}')
+                file_req = s.get(f'https://www2.tjal.jus.br/pastadigital/getPDF.do?{params}')
 
                 file_name = file_req.headers['Content-Disposition'].split('filename=')[1].replace('"', '')
 
@@ -134,7 +133,7 @@ def get_docs_precatorio(codigo_prec, url, s, zip_file=False, pdf=False):
             'acessoPeloPetsg': ''
         }
 
-        zip_req = s.get('https://esaj.tjal.jus.br/pastadigital/salvarDocumentoPreparado.do', params=query_zip)
+        zip_req = s.get('https://www2.tjal.jus.br/pastadigital/salvarDocumentoPreparado.do', params=query_zip)
 
         query_localizador = {
             'localizador': zip_req.text,
@@ -143,7 +142,7 @@ def get_docs_precatorio(codigo_prec, url, s, zip_file=False, pdf=False):
         }
 
         for i in range(100):
-            localizar = s.get('https://esaj.tjal.jus.br/pastadigital/buscarDocumentoFinalizado.do', params=query_localizador).text
+            localizar = s.get('https://www2.tjal.jus.br/pastadigital/buscarDocumentoFinalizado.do', params=query_localizador).text
             if localizar:
                 break
             time.sleep(1)
@@ -189,7 +188,7 @@ def get_incidentes(cnj, url, s):
         }
         if inputs_cnj[2] != inputs_cnj[3]:
             query_consulta[inputs_cnj[3]] = "UNIFICADO"
-
+        
         consulta = s.get(f"{url}/search.do", params=query_consulta)
 
         soup = BeautifulSoup(consulta.content, "lxml")
@@ -236,11 +235,9 @@ def get_incidentes(cnj, url, s):
                 print(f"[red]Processo com cnj divergente {cnj} != {redirect_proc.text.strip()}[/red]")
                 return
 
-            incidentes = soup.find_all("a", class_="incidente")
-
-            incidentes = {x.text.strip().replace('\n', '').replace('\t', ''): x['href'] for x in incidentes}
-
-            return incidentes
+            incidentes = soup.find("a", class_="linkPasta")
+            href = incidentes.get('href')
+            return href
         else:
             print(f"[red]Processo {cnj} não encontrado[/red]")
             return
@@ -249,15 +246,15 @@ def get_incidentes(cnj, url, s):
 
 
 def get_docs_oficio_precatorios_tjal(cnj, zip_file=False, pdf=False):
-    session = login_esaj('https://esaj.tjal.jus.br', '69173753149', 'Costaesilva2023*')
+    login_esja = f'{os.getenv("login_esja")}'
+    senha_esja = f'{os.getenv("senha_esja")}'
 
-    incidentes = get_incidentes(cnj, 'https://esaj.tjal.jus.br/cpopg', session)
+    session = login_esaj('https://www2.tjal.jus.br', login_esja, senha_esja)
 
-    cods_incidentes = [v.split('codigo=')[1].split('&')[0] for k, v in incidentes.items() if 'prec' in k.lower()]
+    incidentes = get_incidentes(cnj, 'https://www2.tjal.jus.br/cpopg', session)
 
-    docs = {cod: get_docs_precatorio(cod, 'https://esaj.tjal.jus.br/cpopg', session, zip_file=zip_file, pdf=pdf) for cod in cods_incidentes}
-
+    cods_incidentes = [incidentes.split('codigo=')[1]]
+    
+    docs = {cod: get_docs_precatorio(cod, 'https://www2.tjal.jus.br/cpopg', session, zip_file=zip_file, pdf=pdf) for cod in cods_incidentes}
     return docs
 
-
-# get_docs_oficio_precatorios_tjal('0000912-71.2019.8.26.0053', zip_file=True, pdf=False)

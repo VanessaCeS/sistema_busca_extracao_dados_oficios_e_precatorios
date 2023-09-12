@@ -1186,58 +1186,25 @@ def enviar_valores_oficio_arteria(arquivo_pdf, dado):
     else:
         foi_expedido = 'NÃO'
 
-    if dado['origem'] == '':
-        processo = dado['processo']
-    else: 
-        processo = dado['origem']
-
-    if dado['conhecimento'] != '':
-        processo_principal = dado['conhecimento']
-    else:
-        processo_principal = dado['origem']
-
-    if dado['vara'] != '':
-        vara = dado['vara']
-    elif dado['vara_pdf'] != '':
-        vara = dado['vara_pdf']
-    else:
-        vara = ''
-
-    if dado['credor'] != '':
-        credor = dado['credor']
-    elif dado['exequente']:
-        credor = dado['exequente']
-    else: 
-        credor = ''
-    
-    if dado['devedor'] != '':
-        devedor = dado['devedor']
-    elif dado['executado']:
-        devedor = dado['executado']
-    else: 
-        devedor = ''
-    
     if dado['juros'] == '':
         dado['juros'] = '0'
     if dado['principal'] == '':
         dado['principal'] = '0'
-
-    dado['cpf_cnpj'] = dado['cpf']
     
     dados = {
     'Data da Expedição': dado['data_expedicao'],
-    'Código do Processo de Origem': processo_principal,
-    'Número do Precatório': processo,
+    'Código do Processo de Origem': dado['origem'],
+    'Número do Precatório': dado['processo'],
     'Tipo de Precatório': dado['tipo_precatorio'],
     'Natureza': [dado['natureza']],
     'Status Precatório':['PRECATÓRIO'],
-    'Nome do Requerente': credor,
-    'Requerido': devedor,
+    'Nome do Requerente': dado['credor'],
+    'Requerido': dado['devedor'],
     'CPF/CNPJ': dado['cpf_cnpj'],
     'Estado': [dado['estado']],
     'Cidade': dado['cidade'],
     'Tribunal': dado['tribunal'],
-    'Vara': vara,
+    'Vara': dado['vara'],
     'Valor Principal': dado['principal'],
     'Valor dos Juros': dado['juros'],
     'Valor Global': dado['global'],
@@ -1245,5 +1212,5 @@ def enviar_valores_oficio_arteria(arquivo_pdf, dado):
     'Número do Precatório foi Expedido?': [foi_expedido],
     "Ofício Requisitório": [f"{id}"]
     }
-    print('DADOS ARTERIA ---->> ', dados)
+
     cadastrar_arteria(dados, 'Precatórios')

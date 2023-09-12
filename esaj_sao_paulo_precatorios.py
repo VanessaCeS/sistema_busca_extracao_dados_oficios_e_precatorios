@@ -1,3 +1,4 @@
+import os
 from bs4 import BeautifulSoup
 import json
 import time
@@ -249,7 +250,9 @@ def get_incidentes(cnj, url, s):
 
 
 def get_docs_oficio_precatorios_tjsp(cnj, zip_file=False, pdf=False):
-    session = login_esaj('https://esaj.tjsp.jus.br', '69173753149', 'Costaesilva2023#')
+    login_esja = f'{os.getenv("login_esja")}'
+    senha_esja_sao_paulo = f'{os.getenv("senha_esja_sao_paulo")}'
+    session = login_esaj('https://esaj.tjsp.jus.br', login_esja, senha_esja_sao_paulo)
 
     incidentes = get_incidentes(cnj, 'https://esaj.tjsp.jus.br/cpopg', session)
 
@@ -259,5 +262,3 @@ def get_docs_oficio_precatorios_tjsp(cnj, zip_file=False, pdf=False):
 
     return docs
 
-
-# get_docs_oficio_precatorios_tjsp('0000912-71.2019.8.26.0053', zip_file=True, pdf=False)
