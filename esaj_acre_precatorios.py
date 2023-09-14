@@ -90,13 +90,11 @@ def login_esaj(url_tribunal: str, username: str, password: str) -> Session:
 
 def get_docs_precatorio(codigo_prec, url, s, zip_file=False, pdf=False):
     query = {'processo.codigo': codigo_prec}
-    aqui = s.get(f'{url}/show.do', params=query)
 
-    pasta_digital_req = s.get(f'{url}/verificarAcessoPastaDigital.do?cdProcesso=P000014ID0000').text
+    s.get(f'{url}/show.do', params=query)
+    pasta_digital_req = s.get(f'https://esaj.tjac.jus.br/pastadigital/abrirPastaProcessoDigital.do?cdProcesso={codigo_prec}').text
 
-    # pasta_digital = s.get(pasta_digital_req).text
-    pasta_digital = aqui.text
-    json_pasta = json.loads(pasta_digital[pasta_digital.find('requestScope = ') + 15: pasta_digital.find('requestScope = ') + 15 + pasta_digital[pasta_digital.find('requestScope = ') + 15:].find(';')])
+    json_pasta = json.loads(pasta_digital_req[pasta_digital_req.find('requestScope = ') + 15: pasta_digital_req.find('requestScope = ') + 15 + pasta_digital_req[pasta_digital_req.find('requestScope = ') + 15:].find(';')])
 
     por_tipo = {}
     for doc in json_pasta:
@@ -109,8 +107,7 @@ def get_docs_precatorio(codigo_prec, url, s, zip_file=False, pdf=False):
     pdfs_oficios = []
     #? tipo 99024 = oficio
     #? tipo 34 = oficio acre
-    print('DOOOC --->> ', doc)
-    for doc in [por_tipo['99024'], por_tipo['34'], por_tipo['478']]:
+    for doc in por_tipo['34']:
         for children in doc['children']:
             params = children['data']['parametros']
 
@@ -234,11 +231,9 @@ def get_incidentes(cnj, url, s):
                 print(f"[red]Processo com cnj divergente {cnj} != {redirect_proc.text.strip()}[/red]")
                 return
 
-            incidentes = soup.find_all("a", class_="incidente")
-
-            incidentes = {x.text.strip().replace('\n', '').replace('\t', ''): x['href'] for x in incidentes} or {'Precatório': f'/cpopg/show.do?processo.codigo={soup.find("input", {"name": "cdProcesso"}).get("value")}'}
-            
-            return incidentes
+            incidentes = soup.find("button", id="pbPeticionar")
+            href = incidentes.get('onclick')
+            return href
         else:
             print(f"[red]Processo {cnj} não encontrado[/red]")
             return
@@ -248,15 +243,10 @@ def get_incidentes(cnj, url, s):
 
 def get_docs_oficio_precatorios_tjac(cnj, zip_file=False, pdf=False):
     session = login_esaj('https://esaj.tjac.jus.br', '69173753149', 'Costaesilva2023*')
-
     incidentes = get_incidentes(cnj, 'https://esaj.tjac.jus.br/cposg5', session)
-    # print("INCIDENTES -->> ",incidentes)
-
-    for k,v in incidentes.items():
-        print(f"{k} -->> {v.split('codigo=')[0]}")
-        print(f"{k} -->> {v.split('codigo=')[1].split('&')[0]}")
-    cods_incidentes = [v.split('codigo=')[1].split('&')[0] for k, v in incidentes.items() ]
+    cods_incidentes = [incidentes.split('cdProcesso=')[1].split('&')[0]]
     docs = {cod: get_docs_precatorio(cod, 'https://esaj.tjac.jus.br/cposg5', session, zip_file=zip_file, pdf=pdf) for cod in cods_incidentes}
-
+    print(docs)
     return docs
 
+get_docs_oficio_precatorios_tjac('0100810-81.2020.8.01.0000', zip_file=False, pdf=True)

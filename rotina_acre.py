@@ -2,10 +2,9 @@ import re
 import PyPDF2
 import traceback
 import xmltodict
-from ocr import mandar_documento_para_ocr
 from rotina_sao_paulo import apagar_arquivos_txt
 from esaj_acre_precatorios import get_docs_oficio_precatorios_tjac
-from utils import buscar_cpf, buscar_xml, encontrar_indice_linha, extrair_processo_origem, limpar_dados, regex, natureza_tjac, tipo_precatorio, verificar_tribunal
+from utils import buscar_cpf, buscar_xml, encontrar_indice_linha, extrair_processo_origem, limpar_dados, mandar_documento_para_ocr, regex, natureza_tjac, tipo_precatorio, verificar_tribunal
 
 def ler_xml():
   arquivo_xml = buscar_xml()
