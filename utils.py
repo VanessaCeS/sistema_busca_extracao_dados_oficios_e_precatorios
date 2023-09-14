@@ -9,6 +9,9 @@ from datetime import datetime
 from dotenv import load_dotenv
 load_dotenv('.env')
 
+tipos_alimentar = ['Alimentar  - Benefícios  previdenciários  e indenizações,  por morte  ou invalidez', ' Alimentar  - Salários,  vencimentos,  proventos  e pensões', 'Salários, Vencimentos, Proventos, Pensões.', 'Benefícios  Previdenciários  e  Indenizações.','Salários,  Vencimentos,  Proventos,  Pensões']
+
+tipos_comum = ['Não-Alimentar','Desapropriações – Único Imóvel Residencial do Credor (Art. 78, § 3º, ADCT)','Outras  espécies  - Não alimentar', 'Não-Alimentar.  Danos  Morais']
 def buscar_xml():
   url_info_cons = "https://clippingbrasil.com.br/InfoWsScript/service_xml.php"
   headers = {
@@ -59,6 +62,8 @@ def regex(string):
             return {'vara': ''}
         if re.search(r'\bvara\b', linha, re.IGNORECASE):
             return {'vara_pdf': linha.strip()}
+    if 'Juizado' in string:
+      return {'vara': string.replace('\n','').strip()}
     if 'E-mail' in string:
       padrao = r'(?<=,\s)([^\d-]+)'
       cidade = re.search(padrao, string)
@@ -69,7 +74,10 @@ def regex(string):
           output_string = re.sub(r'\d+', '', string)
           padrao = r"(?:[^,]*,){2}\s*([^\d,-]+)"
           cidade = re.search(padrao, output_string)
-      return cidade.group(1).strip()
+          if cidade != None:
+            return {'cidade': cidade.group(1).strip()}
+          else: 
+            return {'cidade': ''}
     if 'Processo  nº:' in string :
       padrao = r'\d{7}-\d{2}.\d{4}.\d{1}.\d{2}.\d{4}/\d{2}'
       processo = re.search(padrao, string)
@@ -105,23 +113,23 @@ def regex(string):
         return {'credor': credor.group(1).strip()}
       else:
         return {'credor': ''}
-    elif 'Exequente(s):' in string:
+    if 'Exequente' in string:
       padrao = r'Exequente\(s\):\s+(.*?)\n'
       exequente = re.search(padrao, string)
       if exequente != None:
         return {'credor': exequente.group(1).strip()}
       else:
         return {'credor': ''}
-    elif 'Requerente' in string:
+    if 'Requerente' in string:
       padrao = r'Requerente:\s+(.*?)\n'
       requerente = re.search(padrao, string)
       if requerente!= None:
         return {'credor': requerente.group(1).strip()}
       else:
         return {'credor': ''}
-    if 'Devedor' in string:
+    if 'Devedor' in string or 'público  devedor:' in string:
       padrao = r'(?:Devedor|Devedor:|Devedor\(s\)|Devedor\(es\)) (.*)'
-      devedor = re.search(padrao, string)
+      devedor = re.search(padrao, string, re.IGNORECASE)
       if devedor != None:
         return {'devedor': devedor.group(1).strip().replace('  ', ' ')}
       else:
@@ -147,21 +155,24 @@ def regex(string):
         return{'natureza': natureza.group(1).strip()}
       else:
         return{'natureza': ''}
-    elif 'Natureza' in string:
+    if 'Natureza' in string:
       padrao = r'Natureza:\s+(.*?)\n'
       natureza = re.search(padrao, string)
       if natureza != None:
-        tipos_alimentar = ['Alimentar  - Benefícios  previdenciários  e indenizações,  por morte  ou invalidez', ' Alimentar  - Salários,  vencimentos,  proventos  e pensões']
-        natureza = natureza.group(1).strip()
-        if natureza in tipos_alimentar:
-          return {'natureza': 'ALIMENTAR'.upper()}
-        elif 'Outras  espécies  - Não alimentar'.upper() == natureza.upper():
-          return {'natureza': 'COMUM - NÃO TRIBUTARIO'.upper()}
-        else:
-          return {'natureza': ''}
+        natureza = tipo_de_natureza(natureza.group(1).strip())
+        return natureza
       else:
         return {'natureza': ''}
-    if 'Valor  global  da requisição' in string or "Valor  total da requisição" in string:
+    if '(x)' in string or '(x )' in string or '( x )' in string or '( x)' in string:
+      padrao = r'\( ?x ?\) (.+?)\.'
+      resultado = re.search(padrao, string)
+      if resultado != None:
+        natureza = resultado.group(1).strip()
+        tipo_natureza = tipo_de_natureza(natureza)
+        return tipo_natureza
+      else:
+        return {'natureza': ''}
+    if 'Valor  global  da requisição' in string or "Valor  total da requisição" in string or 'R$' in string:
       padrao = r'\b(?:0{1,3}|[1-9](?:\d{0,2}(?:\.\d{3})*(?:,\d{1,2})?|,\d{1,2})?)\b|\b(?:0{1,3}|[1-9](?:\d{0,2}(?:,\d{3})*(?:\.\d{1,2})?|\.\d{1,2})?)\b' 
       valor_global = re.search(padrao, string)
       if valor_global != None:
@@ -175,7 +186,7 @@ def regex(string):
         return {'juros': valor_juros.group(0).strip().replace('.','').replace(',','.')}
       else:
         return {'juros': ''}
-    if 'Principal/Indenização' in string or "Valor  originário" in string:
+    if 'Principal/Indenização' in string or "Valor  originário" in string or 'Valor  Bruto' in string:
       padrao = r'\b(?:0{1,3}|[1-9](?:\d{0,2}(?:\.\d{3})*(?:,\d{1,2})?|,\d{1,2})?)\b|\b(?:0{1,3}|[1-9](?:\d{0,2}(?:,\d{3})*(?:\.\d{1,2})?|\.\d{1,2})?)\b'  
       valor_principal = re.search(padrao, string)
       if valor_principal != None:
@@ -197,16 +208,17 @@ def regex(string):
         return {'cpf': cpf_cnpj_rne.group(0).strip()}
       else:
         return {'cpf': ''}
-    if 'Data  do nascimento:' in string or 'Data  de nascimento':
+    if 'Data  do nascimento'.upper() in string.upper() or 'Data  de nascimento'.upper() in string.upper() or 'Beneficiário:' in string:
       padrao = r'\b(?:\d{1,2}\/\d{1,2}\/\d{4}|\d{4}\/\d{1,2}\/\d{1,2}|\d{1,2}\-\d{1,2}\-\d{4}|\d{4}\-\d{1,2}\-\d{1,2})\b'
       nascimento = re.search(padrao, string)
       if nascimento != None:
-        dia, mes, ano = nascimento.group(0).strip().split('/')
+        nascimento  = nascimento.group(0).replace('-','/').strip()
+        dia, mes, ano = nascimento.split('/')
         data_padrao_arteria = f"{mes}/{dia}/{ano}"
         return {'nascimento': data_padrao_arteria}
       else:
         return {'nascimento': ''}
-    elif 'DATA DE NASCIMENTO' in string:
+    if 'DATA DE NASCIMENTO' in string:
       padrao = r'\b(?:\d{1,2}\/\d{1,2}\/\d{4}|\d{4}\/\d{1,2}\/\d{1,2}|\d{1,2}\-\d{1,2}\-\d{4}|\d{4}\-\d{1,2}\-\d{1,2})\b'
       nascimento = re.search(padrao, string, re.IGNORECASE)
       if nascimento != None:
@@ -240,6 +252,22 @@ def encontrar_data_expedicao_e_cidade_tjac(string):
     return dados
   else:
           return {'cidade': '', 'data_expedicao': ''}
+
+def principal_e_juros_poupanca(string):
+  valores = string.split('poupança')
+  principal = valores[0].split('R$')
+  principal = principal[1].replace('.', '').replace(',','.').strip()
+  juros  = valores[1].split('R$')
+  juros = juros[1].replace('.', '').replace(',','.').strip()
+  return principal, juros
+
+def tipo_de_natureza(natureza):
+  if natureza in tipos_alimentar:
+    return {'natureza': 'ALIMENTAR'.upper()}
+  elif  natureza in tipos_comum:
+    return {'natureza': 'COMUM - NÃO TRIBUTARIO'.upper()}
+  else:
+    return {'natureza': ''}
   
 def identificar_estados(estado):
   estados_brasileiros = {
@@ -347,13 +375,25 @@ def verificar_tipo_natureza(natureza):
       tipo = 'COMUM - NÃO TRIBUTARIO'
   return tipo
 
+def extrair_processo_origem_amazonas(processo_origem, processo_xml):
+  padrao = r'\d{7}-\d{2}.\d{4}.\d{1}.\d{2}.\d{4}'
+  resultado = re.findall(padrao, processo_origem)
+  if len(resultado) > 1:
+    if processo_xml in resultado:
+      resultado.remove(processo_xml)
+      return resultado[0]
+  elif len(resultado) == 1:
+    return ''
+  else:
+    return ''
+
 def extrair_processo_origem(processo):
   padrao = r'\d{7}-\d{2}.\d{4}.\d{1}.\d{2}.\d{4}/\d{2,4}'
   resultado = re.search(padrao, processo)
   if resultado != None:
     return resultado.group(0).strip()
   else:
-    return None
+    return ''
 
 def tipo_precatorio(dado):
   try:

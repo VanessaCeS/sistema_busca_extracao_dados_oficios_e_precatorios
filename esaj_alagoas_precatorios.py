@@ -258,3 +258,4 @@ def get_docs_oficio_precatorios_tjal(cnj, zip_file=False, pdf=False):
     docs = {cod: get_docs_precatorio(cod, 'https://www2.tjal.jus.br/cpopg', session, zip_file=zip_file, pdf=pdf) for cod in cods_incidentes}
     return docs
 
+get_docs_oficio_precatorios_tjal('0500331-85.2023.8.02.0001', zip_file=False, pdf=True)
