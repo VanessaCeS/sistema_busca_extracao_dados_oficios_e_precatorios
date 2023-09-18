@@ -1191,10 +1191,21 @@ def enviar_valores_oficio_arteria(arquivo_pdf, dado):
     if dado['principal'] == '':
         dado['principal'] = '0'
     
+    if dado['estado'] == 'AMAZONAS':
+        processo = dado['processo']
+        precatorio = dado['origem']
+    else:
+        processo = dado['origem']
+        precatorio = dado['processo']
+    if dado.get('expedicao'):
+        dado['data_expedicao'] = dado['expedicao']
+        del dado['expedicao']
+
+
     dados = {
     'Data da Expedição': dado['data_expedicao'],
-    'Código do Processo de Origem': dado['origem'],
-    'Número do Precatório': dado['processo'],
+    'Código do Processo de Origem': processo,
+    'Número do Precatório': precatorio,
     'Tipo de Precatório': dado['tipo_precatorio'],
     'Natureza': [dado['natureza']],
     'Status Precatório':['PRECATÓRIO'],
@@ -1213,4 +1224,5 @@ def enviar_valores_oficio_arteria(arquivo_pdf, dado):
     "Ofício Requisitório": [f"{id}"]
     }
 
-    cadastrar_arteria(dados, 'Precatórios')
+    id_arteria = cadastrar_arteria(dados, 'Precatórios')
+    return id_arteria

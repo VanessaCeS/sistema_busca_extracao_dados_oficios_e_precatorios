@@ -57,7 +57,7 @@ def ler_documentos(dado_xml):
           mandar_para_banco_de_dados(dados['processo'], dados)
           enviar_valores_oficio_arteria(arquivo_pdf, dados)
       except Exception as e:
-        print(f"Erro meno, processo -> {processo_geral}", e)
+        print(f"Erro! Processo -> {processo_geral}", e)
         print(traceback.print_exc())
         pass
 
@@ -87,10 +87,10 @@ def extrair_dados_pdf(arquivo_txt):
       nome = i.split('_')[1]
       if indices[i] != None:
         valores = linhas[indices[i]]
-        aqui = regex(valores)
-        if aqui == None:
-          aqui = {f'{nome}': ''}
-        dados = dados | aqui
+        valores_regex = regex(valores)
+        if valores_regex == None:
+          valores_regex = {f'{nome}': ''}
+        dados = dados | valores_regex
       else:
           dados = dados | {f'{nome}': ''}
     dados = dados | processo_origem | cidade 

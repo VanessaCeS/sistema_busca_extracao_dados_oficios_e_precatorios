@@ -37,7 +37,7 @@ def regex(string):
     if 'Para conferir o original' in string:
       padrao = r'\d{2}/\d{2}/\d{4}'
       resultado = re.findall(padrao, string)
-      if resultado != None:
+      if resultado != []:
         dia, mes, ano = resultado[0].strip().split('/')
         data_padrao_arteria = f"{mes}/{dia}/{ano}"
         return {'expedicao': data_padrao_arteria}
@@ -230,7 +230,24 @@ def regex(string):
     if 'de 20' in string: 
       cidade_data = encontrar_data_expedicao_e_cidade_tjac(string) 
       return cidade_data
-    
+    if 'Advogad' in string: 
+      padrao = r'(?:Advogado\(a\)|Advogado|Advogada|Advogado\(s\)|Advogados\(as\)): (.*)'
+      padrao_2  = r'(.+ Advogad[oa][s]?[as]?)'
+      advogado_e_oab_2 = re.search(padrao_2, string)
+      advogado_e_oab = re.search(padrao, string)
+      if advogado_e_oab != None:
+        advogado = advogado_e_oab.group(1).strip()
+        aqui = advogado.split(',')
+        adv = aqui[0]
+        oab = aqui[1].replace('.', '').split(' ')
+        oab = next((i for i in oab if i.isnumeric()), None)
+        return {'advogado': advogado, 'oab': oab}
+      elif advogado_e_oab_2 != None:
+        adv = advogado_e_oab_2.group(1)
+        oab = string.split(adv)[1]
+        return {'advogado': adv, 'oab': oab}
+      else:
+        return {'advogado': '', 'oab': ''}
 
 def encontrar_data_expedicao_e_cidade_tjac(string):
   partes = string.split(',')
@@ -265,7 +282,7 @@ def tipo_de_natureza(natureza):
   if natureza in tipos_alimentar:
     return {'natureza': 'ALIMENTAR'.upper()}
   elif  natureza in tipos_comum:
-    return {'natureza': 'COMUM - NÃO TRIBUTARIO'.upper()}
+    return {'natureza': 'COMUM - NÃO TRIBUTÁRIO'.upper()}
   else:
     return {'natureza': ''}
   
@@ -372,7 +389,7 @@ def verificar_tipo_natureza(natureza):
     if i in natureza:
       tipo = 'ALIMENTAR'
     else:
-      tipo = 'COMUM - NÃO TRIBUTARIO'
+      tipo = 'COMUM - NÃO TRIBUTÁRIO'
   return tipo
 
 def extrair_processo_origem_amazonas(processo_origem, processo_xml):
@@ -503,40 +520,39 @@ def text_ocr(arquivo_base_64_pdf):
     'pdf': f"{arquivo_base_64_pdf}"
   }
   response = requests.post(url, headers=headers, json=json_data).json()
-  txt = json.loads(response['pdf_text'])
+  txt = response['full_text']
   for i in range(len(txt)):
-    with open(f'_ocr.txt', 'a', encoding='utf-8') as f:
+    with open(f'texto_ocr.txt', 'a', encoding='utf-8') as f:
       arquivo_txt = f.write(txt[i])
   return arquivo_txt
 
-def mandar_para_banco_de_dados(id_processo, dados):
+def mandar_para_banco_de_dados(id_rastreamento, dados):
     conn = mysql.connector.connect(
     host=os.getenv('db_server_precatorio'),
     user=os.getenv('db_username_precatorio'),
     password=os.getenv('db_password_precatorio'),
     database='precatorias_tribunais'
     )
-
-    dados['cpf_cnpj'] = dados['cpf']
-    del dados['cpf'] 
-
+    
     dados['processo'] = dados['processo'].split('/')[0]
-    dados['nascimento'] = converter_data(dados['nascimento'])
-    dados['data_expedicao'] = converter_data(dados['expedicao'])
-    del dados['expedicao']
+    if dados['nascimento'] != '':
+      dados['nascimento'] = converter_data(dados['nascimento'])
+
+    dados['data_expedicao'] = converter_data(dados['data_expedicao'])
 
     cursor = conn.cursor()
-    query_consultar_processo = 'SELECT * FROM dados_xml_pdf WHERE processo = %s'
-    cursor.execute(query_consultar_processo, (id_processo,))
-    id_processo = cursor.fetchone()
-    if id_processo is not None:
+    query_consultar_processo = 'SELECT * FROM dados_xml_pdf WHERE id_rastreamento = %s'
+    cursor.execute(query_consultar_processo, (id_rastreamento,))
+    id_rastreamento = cursor.fetchone()
+    if id_rastreamento is not None:
       try:
                 dados_processados = processar_dado(dados)
                 colunas_e_valores = ', '.join([f"{coluna} = %s" for coluna in dados_processados.keys()])
-                query = f"UPDATE dados_xml_pdf SET {colunas_e_valores} WHERE processo = %s"
-                valores = tuple(list(dados_processados.values()) + [dados_processados['processo']])
+                query = f"UPDATE dados_xml_pdf SET {colunas_e_valores} WHERE id_rastreamento = %s"
+                valores = tuple(list(dados_processados.values()) + [dados_processados['id_rastreamento']])
                 cursor.execute(query, valores)
                 conn.commit()
+                cursor.close()
                 conn.close()
       except Exception as e:
                 print("E ==>> ", e)
@@ -572,7 +588,7 @@ def tipo_natureza(natureza):
   if 'Alimentar - ' in natureza:
     return 'ALIMENTAR'
   elif 'Outras  espécies  - Não alimentar' in natureza:
-    return 'COMUM - NÃO TRIBUTARIO'
+    return 'COMUM - NÃO TRIBUTÁRIO'
   else:
     natureza
 
@@ -590,7 +606,7 @@ def encontrar_indice_linha(linhas, texto):
   for indice, linha in enumerate(linhas):
     if texto in linha:
         return indice
-  return None
+  return -2
 
 def apagar_arquivos_txt(pasta):
     arquivos = os.listdir(pasta) 
