@@ -398,7 +398,14 @@ def extrair_processo_origem_amazonas(processo_origem, processo_xml):
   if len(resultado) > 1:
     if processo_xml in resultado:
       resultado.remove(processo_xml)
-      return resultado[0]
+      if processo_xml == resultado[0]:
+        resultado.remove(processo_xml)
+        if len(resultado) > 0:
+          return resultado[0]
+        else:
+          return ''
+      else:
+        return resultado[0]
   elif len(resultado) == 1:
     return ''
   else:
