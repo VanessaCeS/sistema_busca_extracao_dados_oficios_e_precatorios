@@ -116,5 +116,3 @@ def encontrar_indice_linha(linhas, texto):
       if texto in linha:
         return indice
     return None
-
-ler_xml('./arquivos_xml/relatorio_04_09.xml')
