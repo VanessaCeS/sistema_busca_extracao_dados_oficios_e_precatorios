@@ -14,7 +14,7 @@ import xml.etree.ElementTree as ET
 from zeep import Client, Settings, Transport
 from concurrent.futures import ThreadPoolExecutor
 from rsa_archer.archer_instance import ArcherInstance
-from utils import selecionar_seccional
+from utils import converter_data, selecionar_seccional
 # load_dotenv('.env')
 
 def adjust_date_and_time_to_arteria(date_audiencia, formato="%d/%m/%Y %H:%M"):
@@ -1183,7 +1183,7 @@ def enviar_valores_oficio_arteria(arquivo_pdf, dado):
     arquivo_base_64 = transformar_arquivo_para_base64(arquivo_pdf)
     id = archer_instance.post_attachment(nome_arquivo, arquivo_base_64)
     
-    dado = limpar_dados_banco_dados(dado)
+    dado = limpar_dados_arteria(dado)
     if dado['origem'] != '':
         foi_expedido = 'SIM'
     else:
@@ -1217,23 +1217,21 @@ def enviar_valores_oficio_arteria(arquivo_pdf, dado):
     id_arteria = cadastrar_arteria(dados, 'Precatórios')
     return id_arteria
 
-def limpar_dados_banco_dados(dado):
+def limpar_dados_arteria(dado):
+    dado['juros'] = dado.get('juros', '0')
+    dado['principal'] = dado.get('principal', '0')
+    dado['cpf_cnpj'] = dado.get('cpf', '')
+    del dado['cpf']
+
     if dado['seccional'] != '':
         dado['seccional'] = selecionar_seccional(dado['seccional'])
 
-    if dado['juros'] == '':
-        dado['juros'] = '0'
+    if 'vara_pdf' in dado:
+        if dado['vara_pdf'] != '':
+            dado['vara'] = dado['vara_pdf']
+        del dado['vara_pdf']
         
-    if dado['principal'] == '':
-        dado['principal'] = '0'
-
-    if dado['vara'] == '':
-        dado['vara'] = dado['vara_pdf']
-        del dado['vara_pdf']
-    else:
-        del dado['vara_pdf']
-
-    if 'executado' in dict.keys(dado) or 'exequente' in dict.keys(dado):
+    if 'executado' in dado or 'exequente' in dado:
         if dado['executado'] != '':
             dado['devedor'] = dado['executado']
             del dado['executado']
@@ -1244,8 +1242,8 @@ def limpar_dados_banco_dados(dado):
             del dado['exequente']
         else:
             del dado['exequente']
-    
-    if dado.get('cpf'):
-        dado['cpf_cnpj'] = dado['cpf']
-        del dado['cpf']
+
+    if 'expedicao' in dado:
+        dado['data_expedicao'] = dado['expedicao']
+        del dado['expedicao']
     return dado

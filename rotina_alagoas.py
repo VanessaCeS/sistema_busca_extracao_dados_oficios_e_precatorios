@@ -53,10 +53,10 @@ def ler_documentos(dado_xml):
             with open(f"arquivos_txt_alagoas/{processo_geral}_extrair.txt", "w", encoding='utf-8') as arquivo:
                     arquivo.write(text)
           dados_pdf = extrair_dados_pdf(f'arquivos_txt_alagoas/{processo_geral}_extrair.txt')
-          dados = dado_xml | dados_pdf | {"processo_geral": processo_geral,'codigo_processo': codigo_processo, 'site': 'https://www2.tjal.jus.br/esaj/', 'tipo_precatorio': 'ESTADUAL', 'estado': 'ALAGOAS'}
-
-          mandar_para_banco_de_dados(dados['processo'], dados)
-          enviar_valores_oficio_arteria(arquivo_pdf, dados)
+          dados = dado_xml | dados_pdf | {"processo_geral": processo_geral,'codigo_processo': codigo_processo, 'site': 'https://www2.tjal.jus.br/esaj/', 'tipo_precatorio': 'ESTADUAL', 'estado': 'ALAGOAS', 'seccional': 'AL'}
+          id_arteria = enviar_valores_oficio_arteria(arquivo_pdf, dados)
+          dados = dados | {'id_rastreamento': id_arteria}
+          mandar_para_banco_de_dados(codigo_processo, dados)
       except Exception as e:
         print(f"Erro no processo -> {processo_geral}", f'Erro: {e}')
         print(traceback.print_exc())
@@ -75,13 +75,14 @@ def extrair_dados_pdf(arquivo_txt):
     indice_credor = encontrar_indice_linha(linhas, "Nome  do Credor:")
     indice_devedor = encontrar_indice_linha(linhas, "Ente Devedor:")
     indice_cpf = encontrar_indice_linha(linhas, "CPF")
+    indice_advogado  = encontrar_indice_linha(linhas, "Nome:")
+    indice_oab  = encontrar_indice_linha(linhas, "OAB:")
     indice_nascimento = encontrar_indice_linha(linhas, "Data  de nascimento:")
     indice_expedicao = encontrar_indice_linha(linhas, "liberado nos autos")
     indice_cidade = encontrar_indice_linha(linhas, "datado") - 1
-
     processo_origem = pegar_processo_origem(linhas,{'indice_processo': indice_processo})
     cidade = pegar_cidade(linhas,{'indice_cidade': indice_cidade})
-    indices = {'indice_precatorio': indice_precatorio,'indice_vara': indice_vara,'indice_valor': indice_valor, 'indice_valor_total': indice_valor_total, 'indice_credor': indice_credor,'indice_devedor': indice_devedor, 'indice_expedicao': indice_expedicao,'indice_natureza': indice_natureza,'indice_juros': indice_juros, 'indice_cpf': indice_cpf, 'indice_nascimento': indice_nascimento}
+    indices = {'indice_precatorio': indice_precatorio,'indice_vara': indice_vara,'indice_valor': indice_valor, 'indice_valor_total': indice_valor_total, 'indice_credor': indice_credor,'indice_devedor': indice_devedor, 'indice_expedicao': indice_expedicao,'indice_natureza': indice_natureza,'indice_juros': indice_juros, 'indice_cpf': indice_cpf, 'indice_nascimento': indice_nascimento, 'indice_advogado': indice_advogado, 'indice_oab': indice_oab}
     dados = {}
 
     for i in dict.keys(indices):
@@ -94,7 +95,9 @@ def extrair_dados_pdf(arquivo_txt):
         dados = dados | aqui
       else:
           dados = dados | {f'{nome}': ''}
-    dados = dados | processo_origem | cidade 
+    
+    dados = dados | processo_origem | cidade
+
     return dados
 
 def pegar_processo_origem(texto, indice):
@@ -112,3 +115,4 @@ def pegar_cidade(texto, indice):
         return {'cidade': cidade}
       else:
           return {'cidade': ''}
+ler_xml('arquivos_xml/relatorio_06_09.xml')

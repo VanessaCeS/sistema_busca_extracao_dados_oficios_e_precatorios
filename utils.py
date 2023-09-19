@@ -42,6 +42,23 @@ def regex(string):
         return {'advogado': advogado.strip(), 'oab': oab, 'seccional': seccional}
       else:
         return {'advogado': '', 'oab': '', 'seccional': ''}
+    if 'Nome:' in string or 'Nome(s):' in string or 'Nomes:' in string:
+      padrao = r'(?:Nome\(s\)|Nome:|Nome)(.*)'
+      resultado = re.search(padrao, string)
+      if resultado != None:
+        advogado = resultado.group(1)
+        return {'advogado': advogado.strip()}
+      else:
+        return {'advogado': ''}
+    if 'OAB:' in string:
+      padrao = r'OAB:(.*)'
+      resultado = re.search(padrao, string)
+      if resultado != None:
+        resultado = resultado.group(0).strip()
+        oab = resultado.split(':')[1].replace('/','').replace('CPF','').strip()
+        return {'oab': oab.strip()}
+      else:
+        return {'oab': ''}
     if 'Para conferir o original' in string:
       padrao = r'\d{2}/\d{2}/\d{4}'
       resultado = re.findall(padrao, string)
