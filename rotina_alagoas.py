@@ -15,6 +15,7 @@ def ler_xml(arquivo_xml):
   for i in range(len(doc['Pub_OL']['Publicacoes']))  :
     processo_origem =  extrair_processo_origem(f"{base_doc[i]['Publicacao']})")
     dados.append({"processo": f"{base_doc[i]['Processo']}", "tribunal": f"{base_doc[i]['Tribunal']}", "materia": f"{base_doc[i]['Materia']}", 'origem': processo_origem})
+    
   for d in dados:
         dados_limpos = limpar_dados(d)
         tipo = tipo_precatorio(d)
@@ -57,7 +58,7 @@ def ler_documentos(dado_xml):
           mandar_para_banco_de_dados(dados['processo'], dados)
           enviar_valores_oficio_arteria(arquivo_pdf, dados)
       except Exception as e:
-        print(f"Erro meno, processo -> {processo_geral}", e)
+        print(f"Erro no processo -> {processo_geral}", f'Erro: {e}')
         print(traceback.print_exc())
         pass
 
