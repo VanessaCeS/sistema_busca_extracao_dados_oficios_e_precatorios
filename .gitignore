@@ -8,28 +8,16 @@ documento2/*
 documento/*
 wqwqwq.py
 documento_old/*
-<<<<<<< HEAD
-*.txt
-=======
 .env
 
->>>>>>> PRINCIPAL
 *.pyc
 *lixo/
 *.docx
 *.xlsx
 *.rpt
-<<<<<<< HEAD
-rotina_acre.py
-=======
->>>>>>> PRINCIPAL
 rsa_archer/__pycache__/archer_instance.cpython-310.pyc
 rsa_archer/__pycache__/record.cpython-310.pyc
 rsa_archer/__pycache__/archer_instance.cpython-310.pyc
 rsa_archer/__pycache__/__init__.cpython-310.pyc
 *.bat
-<<<<<<< HEAD
 *.pickle
-=======
-*.pickle
->>>>>>> PRINCIPAL

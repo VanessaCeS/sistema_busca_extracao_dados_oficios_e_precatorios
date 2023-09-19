@@ -31,6 +31,17 @@ def buscar_xml():
   return arquivo
 
 def regex(string):
+    if 'Advogad' in string:
+      padrao = r'Advogados\(s\):(.*)'
+      resultado = re.search(padrao, string)
+      if resultado != None:
+        resultado = resultado.group(1).split('OAB')
+        oab = resultado[1].split('/')[0].replace(':','').strip()
+        seccional = resultado[1].split('/')[1].strip()
+        advogado = resultado[0]
+        return {'advogado': advogado.strip(), 'oab': oab, 'seccional': seccional}
+      else:
+        return {'advogado': '', 'oab': '', 'seccional': ''}
     if 'Para conferir o original' in string:
       padrao = r'\d{2}/\d{2}/\d{4}'
       resultado = re.findall(padrao, string)
@@ -469,7 +480,7 @@ def text_ocr(arquivo_base_64_pdf):
       arquivo_txt = f.write(txt[i])
   return arquivo_txt
 
-def mandar_para_banco_de_dados(id_processo, dados):
+def mandar_para_banco_de_dados(codigo_processo, dados):
     conn = mysql.connector.connect(
     host=os.getenv('db_server_precatorio'),
     user=os.getenv('db_username_precatorio'),
@@ -477,24 +488,17 @@ def mandar_para_banco_de_dados(id_processo, dados):
     database='precatorias_tribunais'
     )
 
-    dados['cpf_cnpj'] = dados['cpf']
-    del dados['cpf'] 
-
-    dados['processo'] = dados['processo'].split('/')[0]
-    dados['nascimento'] = converter_data(dados['nascimento'])
-    dados['data_expedicao'] = converter_data(dados['expedicao'])
-    del dados['expedicao']
-
+    dados = dados_limpos_banco_de_dados(dados)
     cursor = conn.cursor()
-    query_consultar_processo = 'SELECT * FROM dados_xml_pdf WHERE processo = %s'
-    cursor.execute(query_consultar_processo, (id_processo,))
-    id_processo = cursor.fetchone()
-    if id_processo is not None:
+    query_consultar_codigo_processo = 'SELECT * FROM dados_xml_pdf WHERE codigo_processo = %s'
+    cursor.execute(query_consultar_codigo_processo, (codigo_processo,))
+    codigo_processo = cursor.fetchone()
+    if codigo_processo is not None:
       try:
                 dados_processados = processar_dado(dados)
                 colunas_e_valores = ', '.join([f"{coluna} = %s" for coluna in dados_processados.keys()])
-                query = f"UPDATE dados_xml_pdf SET {colunas_e_valores} WHERE processo = %s"
-                valores = tuple(list(dados_processados.values()) + [dados_processados['processo']])
+                query = f"UPDATE dados_xml_pdf SET {colunas_e_valores} WHERE codigo_processo = %s"
+                valores = tuple(list(dados_processados.values()) + [dados_processados['codigo_processo']])
                 cursor.execute(query, valores)
                 conn.commit()
                 conn.close()
@@ -515,7 +519,26 @@ def mandar_para_banco_de_dados(id_processo, dados):
       except Exception as e:
                 print("E ==>> ", e)
                 print("Exec ==>> ", traceback.print_exc())
+
+def dados_limpos_banco_de_dados(dados):
+  dados['processo'] = dados['processo'].split('/')[0]
+  dados['nascimento'] = converter_data(dados['nascimento'])
+
+  if 'data_expedicao' not in dict.keys(dados):  
+    dados['data_expedicao'] = converter_data(dados['expedicao'])
+    del dados['expedicao']
+  else:
+    dados['data_expedicao'] = converter_data(dados['data_expedicao'])
+
+  if 'conhecimento' in dict.keys(dados):  
+    if dados['conhecimento'] == '':
+      del dados['conhecimento']
+    else:
+      dados['processo'] = dados['conhecimento']
+      del dados['conhecimento']
   
+  return dados
+        
 def converter_data(data):
   data = data.replace('/','-')
   date_object = datetime.strptime(data, '%m-%d-%Y')
@@ -558,3 +581,41 @@ def apagar_arquivos_txt(pasta):
         caminho_arquivo = os.path.join(pasta, arquivo)
         if os.path.isfile(caminho_arquivo):  
             os.remove(caminho_arquivo)
+
+def selecionar_seccional(estado):
+  seccionais_oab = {
+    "AC": "Conselho Seccional - Acre",
+    "AL": "Conselho Seccional - Alagoas",
+    "AM": "Conselho Seccional - Amazonas",
+    "AP": "Conselho Seccional - Amapá",
+    "BA": "Conselho Seccional - Bahia",
+    "CE": "Conselho Seccional - Ceará",
+    "DF": "Conselho Seccional - Distrito Federal",
+    "ES": "Conselho Seccional - Espírito Santo",
+    "GO": "Conselho Seccional - Goiás",
+    "MA": "Conselho Seccional - Maranhão",
+    "MG": "Conselho Seccional - Minas Gerais",
+    "MS": "Conselho Seccional - Mato Grosso do Sul",
+    "MT": "Conselho Seccional - Mato Grosso",
+    "PA": "Conselho Seccional - Pará",
+    "PB": "Conselho Seccional - Paraíba",
+    "PE": "Conselho Seccional - Pernambuco",
+    "PI": "Conselho Seccional - Piauí",
+    "PR": "Conselho Seccional - Paraná",
+    "RJ": "Conselho Seccional - Rio de Janeiro",
+    "RN": "Conselho Seccional - Rio Grande do Norte",
+    "RO": "Conselho Seccional - Rondônia",
+    "RR": "Conselho Seccional - Roraima",
+    "RS": "Conselho Seccional - Rio Grande do Sul",
+    "SC": "Conselho Seccional - Santa Catarina",
+    "SE": "Conselho Seccional - Sergipe",
+    "SP": "Conselho Seccional - São Paulo",
+    "TO": "Conselho Seccional - Tocantins"
+}
+  
+  seccional = ''
+  for e in dict.keys(seccionais_oab):
+    if e == estado.strip().upper():
+      seccional = seccionais_oab[e]
+  return seccional
+    

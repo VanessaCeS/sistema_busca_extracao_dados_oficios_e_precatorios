@@ -45,17 +45,16 @@ def ler_documentos(dado_xml):
           doc = get_docs_oficio_precatorios_tjsp(processo_geral ,zip_file=False, pdf=True)
         if doc != {}:
           codigo_processo = next(iter(doc))
-          for i in range(len(doc)):
-            file_path = doc[codigo_processo][i][1]
-            arquivo_pdf = f"arquivos_pdf_sao_paulo/{processo_geral}_{i}_arquivo_precatorio.pdf"
+          file_path = doc[codigo_processo][0][1]
+          arquivo_pdf = f"arquivos_pdf_sao_paulo/{processo_geral}_arquivo_precatorio.pdf"
 
-            with open(arquivo_pdf, "wb") as arquivo:
+          with open(arquivo_pdf, "wb") as arquivo:
                   arquivo.write(file_path)
 
-            pdf_file = open(arquivo_pdf, 'rb')
-            pdf_reader = PyPDF2.PdfReader(pdf_file)
-            text = ''
-            for page_num in range(len(pdf_reader.pages)): 
+          pdf_file = open(arquivo_pdf, 'rb')
+          pdf_reader = PyPDF2.PdfReader(pdf_file)
+          text = ''
+          for page_num in range(len(pdf_reader.pages)): 
               page = pdf_reader.pages[page_num]
               text += page.extract_text()
           with open(f"arquivos_txt_sao_paulo/{processo_geral}_extrair.txt", "w", encoding='utf-8') as arquivo:
@@ -65,8 +64,8 @@ def ler_documentos(dado_xml):
           dados_complementares = {"processo_geral": processo_geral, "codigo_processo": codigo_processo, 'site': 'https://esaj.tjac.jus.br'}
           novos_dados = dado_xml | dados_pdf | dados_complementares
           id_arteria = enviar_valores_oficio_arteria(arquivo_pdf, novos_dados)
-          novos_dados | {'id_arteria': id_arteria}
-          mandar_para_banco_de_dados(dado_xml['processo'], novos_dados)
+          novos_dados = novos_dados | {'id_rastreamento': id_arteria}
+          mandar_para_banco_de_dados(codigo_processo, novos_dados)
     except Exception as e:
         print(f"Erro no processo -> {processo_geral}", f'Erro: {e}')
         print(traceback.print_exc())
@@ -84,6 +83,7 @@ def extrair_dados_pdf(arquivo_txt):
     indice_executado = encontrar_indice_linha(linhas, "Executado(s):")
     indice_exequente = encontrar_indice_linha(linhas, "Exequente(s):")
     indice_devedor = encontrar_indice_linha(linhas, "Devedor:")
+    indice_advogado = encontrar_indice_linha(linhas, "Advogad")
     indice_natureza = encontrar_indice_linha(linhas, "Natureza")
     indice_valor_global = encontrar_indice_linha(linhas, "Valor  global  da requisição:")
     indice_principal = encontrar_indice_linha(linhas, "Principal/Indenização:")
@@ -97,8 +97,8 @@ def extrair_dados_pdf(arquivo_txt):
     for i in dict.keys(indices):
       if indices[i] != None:
         valores = linhas[indices[i]]
-        aqui = regex(valores)
-        dados = dados | aqui
+        valores_regex = regex(valores)
+        dados = dados | valores_regex
       else:
         nome = i.split('_')[1]
         dados = dados | {f'{nome}': ''}
@@ -106,8 +106,9 @@ def extrair_dados_pdf(arquivo_txt):
     if dados['natureza'] == '':
       dados['natureza'] = 'ALIMENTAR'
 
+    advogado_e_oab = regex(linhas[indice_advogado])
     cidada_e_data_precatorio = encontrar_data_expedicao_e_cidade(arquivo_txt)
-    dados = dados | cidada_e_data_precatorio
+    dados = dados | cidada_e_data_precatorio | advogado_e_oab
     return dados
 
 def encontrar_indice_linha(linhas, texto):
