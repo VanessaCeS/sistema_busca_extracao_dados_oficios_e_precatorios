@@ -9,7 +9,7 @@ documento/*
 wqwqwq.py
 documento_old/*
 .env
-
+LOG_CAPMONSTER.txt
 *.pyc
 *lixo/
 *.docx
@@ -21,3 +21,5 @@ rsa_archer/__pycache__/archer_instance.cpython-310.pyc
 rsa_archer/__pycache__/__init__.cpython-310.pyc
 *.bat
 *.pickle
+pdf_oab/
+fotos_oab/
