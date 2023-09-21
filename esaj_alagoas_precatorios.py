@@ -205,7 +205,7 @@ def get_incidentes(cnj, url, s):
                 print(f"[bold red]Processo {cnj} em segredo de justiça[/bold red]")
                 return
 
-        redirect_proc = soup.find("span", id="numeroProcesso") or soup.find("div", class_="unj-entity-header__summary") or soup.find("span", text=re.compile(f"\({cnj}\)"))
+        redirect_proc = soup.find("span", id="numeroProcesso") or soup.find("div", class_="unj-entity-header__summary") or soup.find("span", string=re.compile(f"\({cnj}\)"))
 
         if redirect_proc is None:
             links_resultado = []
@@ -257,4 +257,3 @@ def get_docs_oficio_precatorios_tjal(cnj, zip_file=False, pdf=False):
     
     docs = {cod: get_docs_precatorio(cod, 'https://www2.tjal.jus.br/cpopg', session, zip_file=zip_file, pdf=pdf) for cod in cods_incidentes}
     return docs
-

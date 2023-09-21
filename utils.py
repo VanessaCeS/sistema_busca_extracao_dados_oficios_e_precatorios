@@ -491,12 +491,13 @@ def text_ocr(arquivo_base_64_pdf):
     'pdf': f"{arquivo_base_64_pdf}"
   }
   response = requests.post(url, headers=headers, json=json_data).json()
-  txt = json.loads(response['pdf_text'])
+  txt = response['full_text']
   for i in range(len(txt)):
-    with open(f'_ocr.txt', 'a', encoding='utf-8') as f:
+    with open(f'nono_ocr.txt', 'a', encoding='utf-8') as f:
       arquivo_txt = f.write(txt[i])
   return arquivo_txt
 
+mandar_documento_para_ocr('output.pdf')
 def mandar_para_banco_de_dados(codigo_processo, dados):
     conn = mysql.connector.connect(
     host=os.getenv('db_server_precatorio'),
