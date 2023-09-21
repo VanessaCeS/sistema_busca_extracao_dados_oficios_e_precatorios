@@ -406,9 +406,9 @@ def limpar_dados(dado):
 
     return dado
 
-def mandar_documento_para_ocr(arquivo):
+def mandar_documento_para_ocr(arquivo, processo):
   arquivo_base_64 = converter_arquivo_base_64(arquivo)
-  text_ocr(arquivo_base_64)
+  text_ocr(arquivo_base_64, processo)
 
 def converter_arquivo_base_64(nome_arquivo):
   with open(nome_arquivo, "rb") as arquivo:
@@ -416,7 +416,7 @@ def converter_arquivo_base_64(nome_arquivo):
             dados_base64 = base64.b64encode(dados)
             return dados_base64.decode("utf-8") 
   
-def text_ocr(arquivo_base_64_pdf):
+def text_ocr(arquivo_base_64_pdf, processo):
   url = 'http://192.168.88.205:9000/google_ocr'
   headers = {
       'Accept': 'application/json, text/javascript, */*; q=0.01',
@@ -426,10 +426,9 @@ def text_ocr(arquivo_base_64_pdf):
     'pdf': f"{arquivo_base_64_pdf}"
   }
   response = requests.post(url, headers=headers, json=json_data).json()
-  print(response)
-  txt = json.loads(response['pdf_text'])
+  txt = response['full_text']
   for i in range(len(txt)):
-    with open(f'_ocr.txt', 'a', encoding='utf-8') as f:
+    with open(f'{processo}_texto_ocr.txt', 'a', encoding='utf-8') as f:
       arquivo_txt = f.write(txt[i])
   return arquivo_txt
 

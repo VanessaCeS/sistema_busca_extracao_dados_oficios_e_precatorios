@@ -3,8 +3,9 @@ import PyPDF2
 import traceback
 import xmltodict
 from rotina_sao_paulo import apagar_arquivos_txt
+from funcoes_arteria import enviar_valores_oficio_arteria
 from esaj_acre_precatorios import get_docs_oficio_precatorios_tjac
-from utils import buscar_cpf, buscar_xml, encontrar_indice_linha, extrair_processo_origem, limpar_dados, mandar_documento_para_ocr, regex, natureza_tjac, tipo_precatorio, verificar_tribunal
+from utils import buscar_cpf, buscar_xml, encontrar_indice_linha, extrair_processo_origem, limpar_dados, mandar_documento_para_ocr, mandar_para_banco_de_dados, regex, natureza_tjac, tipo_precatorio, verificar_tribunal
 
 def ler_xml():
   arquivo_xml = buscar_xml()
@@ -14,8 +15,8 @@ def ler_xml():
     base_doc = doc['Pub_OL']['Publicacoes']
     for i in range(len(doc['Pub_OL']['Publicacoes']))  :
       processo_origem =  extrair_processo_origem(f"{base_doc[i]['Publicacao']})")
-      requerido= pegar_requerido_xml(f"{base_doc[i]['Publicacao']})")
-      dados.append({"processo": f"{base_doc[i]['Processo']}", "tribunal": f"{base_doc[i]['Tribunal']}", "materia": f"{base_doc[i]['Materia']}", 'origem': processo_origem, 'requerido': requerido})
+      requerente, requerido, valor = pegar_requerido_xml(f"{base_doc[i]['Publicacao']})")
+      dados.append({"processo": f"{base_doc[i]['Processo']}", "tribunal": f"{base_doc[i]['Tribunal']}", "materia": f"{base_doc[i]['Materia']}", 'origem': processo_origem, 'requerido': requerido, 'requerente': requerente, 'valor': valor})
 
     for d in dados:
           dados_limpos = limpar_dados(d)
@@ -28,7 +29,6 @@ def ler_xml():
     apagar_arquivos_txt()
 
 def ler_documentos(dado):
-      dados_vazios = []
       try:
         processo_geral = dado['processo']
         doc = get_docs_oficio_precatorios_tjac(dado['processo'],zip_file=False, pdf=True)
@@ -39,41 +39,39 @@ def ler_documentos(dado):
 
           with open(arquivo_pdf, "wb") as arq:
                 arquivo = arq.write(file_path)
-          arquivo_ocr = mandar_documento_para_ocr(arquivo, dado['processo'])
+
+          arquivo_cortado = cortar_pags_especifica(arquivo)
+          arquivo_ocr = mandar_documento_para_ocr(arquivo_cortado, processo_geral)
           dados = dividir_linhas_arquivo(arquivo_ocr)
-          for i in dict.keys(dados):
-              if dados[i] == '':
-                dados_vazios.append({i: dados[i]}) 
-          if len(dados_vazios) > 0:
-            pegar_pags_especifica(dados_vazios, arquivo)
+
+          id_arteria = enviar_valores_oficio_arteria(arquivo_pdf, dados)
+          dados = dados | {'id_rastreamento': id_arteria}
+          mandar_para_banco_de_dados(dado['codigo_processo'], dados)
       except Exception as e:
-        print(f"Erro meno, processo -> {processo_geral}", e)
+        print(f"Erro no processo -> ", processo_geral, 'Erro: ', e)
         print(traceback.print_exc())
         pass
 
 
 def dividir_linhas_arquivo(nome_arquivo):
     try:
-        aqui = []
+        valores_regex = []
         natureza = natureza_tjac(nome_arquivo)
         cpf = buscar_cpf(nome_arquivo)
         with open(nome_arquivo, 'r', encoding='utf-8') as arquivo:
             linhas = arquivo.readlines()
-
             indice_nascimento = encontrar_indice_linha(linhas, "DATA DE NASCIMENTO") + 4
             indice_data_expedicao = encontrar_indice_linha(linhas, "Endereço:") - 1
-
             indices = {'indice_data_expedicao': indice_data_expedicao, 'indice_nascimento': indice_nascimento}
             data = {}
-
             for i in dict.keys(indices):
               nome = i.split('_')[1]
               if indices[i] != None:
                 valores = linhas[indices[i]]
-                aqui = regex(valores)
-                if aqui == None:
-                  aqui = {f'{nome}': ''}
-                data = data | aqui
+                valores_regex = regex(valores)
+                if valores_regex == None:
+                  valores_regex = {f'{nome}': ''}
+                data = data | valores_regex
               else:
                 data = data | {f'{nome}': ''}
             dados_completos = data | natureza| cpf
@@ -84,13 +82,13 @@ def dividir_linhas_arquivo(nome_arquivo):
         return {}
     
 def pegar_requerido_xml(dados):
-  # if 'Requerente' in dados:
-  #   padrao = r'Requerente:(.*)'
-  #   resultado = re.search(padrao, dados, re.IGNORECASE)
-  #   if resultado != None:
-  #     requerente = resultado.group(1).strip()
-  #   else:
-  #       requerente = ''
+  if 'Requerente' in dados:
+    padrao = r'Requerente:(.*)'
+    resultado = re.search(padrao, dados, re.IGNORECASE)
+    if resultado != None:
+      requerente = resultado.group(1).strip()
+    else:
+        requerente = ''
   if 'Requerido' in dados:
     padrao = r'Requerido:(.*)'
     resultado = re.search(padrao, dados, re.IGNORECASE)
@@ -99,15 +97,15 @@ def pegar_requerido_xml(dados):
       print('requerido --->> ', requerido)
     else:
       requerido = ''
-  # if 'no valor' in dados:
-  #   padrao =  r'R\$ ([\d.,]+)'
-  #   resultado = re.search(padrao, dados, re.IGNORECASE)
-  #   if resultado != None:
-  #     valor = resultado.group(1).strip()
-  #     print('valor --->> ', valor)
-  #   else:
-  #     valor = ''
-  return  requerido
+  if 'no valor' in dados:
+    padrao =  r'R\$ ([\d.,]+)'
+    resultado = re.search(padrao, dados, re.IGNORECASE)
+    if resultado != None:
+      valor = resultado.group(1).strip()
+      print('valor --->> ', valor)
+    else:
+      valor = ''
+  return  requerente, requerido, valor
 
 def pegar_pags_especifica(dados, arquivo):
   pdf_file = open(arquivo, 'rb')
@@ -132,4 +130,19 @@ def pegar_pags_especifica(dados, arquivo):
                   novo_pdf = pdf_writer.write(novo_pdf_file)
   return novo_pdf
 
-dividir_linhas_arquivo('./arquivos_txt_acre/9059358_ocr_extract.txt')
+def cortar_pags_especifica(arquivo):
+  pdf_file = open(arquivo, 'rb')
+  pdf_reader = PyPDF2.PdfReader(pdf_file)
+  pdf_writer = PyPDF2.PdfWriter()
+  nome = arquivo.split('/')[1]
+  novo_pdf = ''
+  for pagina_num in range(len(pdf_reader.pages)):
+    page = pdf_reader.pages[pagina_num] 
+    page_text = page.extract_text()
+    if 'fls. 2' in page_text or 'fls. 3' in page_text or 'fls. 4' in page_text:
+      pdf_writer.add_page(page)
+      with open(f'arquivos_cortados/{nome}_cortado.pdf', 'ab') as novo_pdf_file:
+        novo_pdf = pdf_writer.write(novo_pdf_file)
+  return novo_pdf
+dividir_linhas_arquivo('aquiiiiiii.txt')
+# ler_documentos('arquivos_cortados/0100145-70.2017.8.01.0000.pdf_cortado.pdf')

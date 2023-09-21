@@ -249,4 +249,4 @@ def get_docs_oficio_precatorios_tjac(cnj, zip_file=False, pdf=False):
     print(docs)
     return docs
 
-get_docs_oficio_precatorios_tjac('0100810-81.2020.8.01.0000', zip_file=False, pdf=True)
+# get_docs_oficio_precatorios_tjac('0100810-81.2020.8.01.0000', zip_file=False, pdf=True)
