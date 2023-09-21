@@ -480,7 +480,6 @@ def text_ocr(arquivo_base_64_pdf):
       arquivo_txt = f.write(txt[i])
   return arquivo_txt
 
-mandar_documento_para_ocr('output.pdf')
 def mandar_para_banco_de_dados(codigo_processo, dados):
     conn = mysql.connector.connect(
     host=os.getenv('db_server_precatorio'),

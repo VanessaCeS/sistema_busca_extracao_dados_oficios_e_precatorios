@@ -27,7 +27,7 @@ def pegar_foto_oab(insc, uf, nome=''):
   foto = requests.get(pegar_foto).json()
   detalhes_foto = foto['Data']['DetailUrl']
 
-  with open(f'{insc}_foto_oab.jpg', 'wb') as imagem:
+  with open(f'fotos_oab/{insc}_foto_oab.jpg', 'wb') as imagem:
     resposta = requests.get(f'{url_cna}{detalhes_foto}')
     if not resposta.ok:
       print("Ocorreu um erro, status:" , resposta.status_code)
@@ -36,7 +36,8 @@ def pegar_foto_oab(insc, uf, nome=''):
         if not dado:
             break
         imagem.write(dado)
-      transformar_foto_em_pdf(f'fotos_oab/{insc}_foto_oab.jpg',insc)
+    pdf = transformar_foto_em_pdf(f'fotos_oab/{insc}_foto_oab.jpg', insc)
+    return pdf
 
 def transformar_foto_em_pdf(foto,insc):
   imagem = Image.open(foto)
@@ -45,4 +46,4 @@ def transformar_foto_em_pdf(foto,insc):
   c.setPageSize((imagem.width, imagem.height))
   c.drawImage(foto, 0, 0, width=imagem.width, height=imagem.height)
   c.save()
-  return f'{insc}_pdf_oab.pdf'
+  return f'pdf_oab/{insc}_pdf_oab.pdf'

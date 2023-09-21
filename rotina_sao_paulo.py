@@ -3,7 +3,8 @@ import PyPDF2
 import xmltodict
 import traceback
 from dotenv import load_dotenv
-from utils import apagar_arquivos_txt
+from cna_oab import pegar_foto_oab
+from utils import apagar_arquivos_txt, mandar_documento_para_ocr
 from funcoes_arteria import enviar_valores_oficio_arteria
 from esaj_sao_paulo_precatorios import get_docs_oficio_precatorios_tjsp
 from utils import encontrar_data_expedicao_e_cidade, extrair_processo_origem, limpar_dados, mandar_para_banco_de_dados, regex, tipo_precatorio,  verificar_tribunal
@@ -109,6 +110,7 @@ def extrair_dados_pdf(arquivo_txt):
     advogado_e_oab = regex(linhas[indice_advogado])
     cidada_e_data_precatorio = encontrar_data_expedicao_e_cidade(arquivo_txt)
     dados = dados | cidada_e_data_precatorio | advogado_e_oab
+    oab(dados)
     return dados
 
 def encontrar_indice_linha(linhas, texto):
@@ -116,3 +118,11 @@ def encontrar_indice_linha(linhas, texto):
       if texto in linha:
         return indice
     return None
+
+def oab(dado):
+  if dado['oab'] != '' and dado['seccional'] != '':
+    pdf = pegar_foto_oab(dado['oab'], dado['seccional'])
+    arquivo_txt = mandar_documento_para_ocr(pdf)
+
+
+
