@@ -14,6 +14,7 @@ import xml.etree.ElementTree as ET
 from zeep import Client, Settings, Transport
 from concurrent.futures import ThreadPoolExecutor
 from rsa_archer.archer_instance import ArcherInstance
+from utils import selecionar_seccional
 # load_dotenv('.env')
 
 def adjust_date_and_time_to_arteria(date_audiencia, formato="%d/%m/%Y %H:%M"):
@@ -1181,69 +1182,70 @@ def enviar_valores_oficio_arteria(arquivo_pdf, dado):
     nome_arquivo = arquivo_pdf.split('/')[1]
     arquivo_base_64 = transformar_arquivo_para_base64(arquivo_pdf)
     id = archer_instance.post_attachment(nome_arquivo, arquivo_base_64)
+    
+    dado = limpar_dados_banco_dados(dado)
     if dado['origem'] != '':
         foi_expedido = 'SIM'
     else:
         foi_expedido = 'NÃO'
 
-    if dado['origem'] == '':
-        processo = dado['processo']
-    else: 
-        processo = dado['origem']
-
-    if dado['conhecimento'] != '':
-        processo_principal = dado['conhecimento']
-    else:
-        processo_principal = dado['origem']
-
-    if dado['vara'] != '':
-        vara = dado['vara']
-    elif dado['vara_pdf'] != '':
-        vara = dado['vara_pdf']
-    else:
-        vara = ''
-
-    if dado['credor'] != '':
-        credor = dado['credor']
-    elif dado['exequente']:
-        credor = dado['exequente']
-    else: 
-        credor = ''
-    
-    if dado['devedor'] != '':
-        devedor = dado['devedor']
-    elif dado['executado']:
-        devedor = dado['executado']
-    else: 
-        devedor = ''
-    
-    if dado['juros'] == '':
-        dado['juros'] = '0'
-    if dado['principal'] == '':
-        dado['principal'] = '0'
-
-    dado['cpf_cnpj'] = dado['cpf']
-    
     dados = {
     'Data da Expedição': dado['data_expedicao'],
-    'Código do Processo de Origem': processo_principal,
-    'Número do Precatório': processo,
+    'Código do Processo de Origem': dado['origem'],
+    'Número do Precatório': dado['processo'],
     'Tipo de Precatório': dado['tipo_precatorio'],
     'Natureza': [dado['natureza']],
     'Status Precatório':['PRECATÓRIO'],
-    'Nome do Requerente': credor,
-    'Requerido': devedor,
+    'Nome do Requerente': dado['credor'],
+    'Requerido': dado['devedor'],
     'CPF/CNPJ': dado['cpf_cnpj'],
     'Estado': [dado['estado']],
     'Cidade': dado['cidade'],
     'Tribunal': dado['tribunal'],
-    'Vara': vara,
+    'Vara': dado['vara'],
     'Valor Principal': dado['principal'],
     'Valor dos Juros': dado['juros'],
     'Valor Global': dado['global'],
     'Data  de Nascimento do Requerente': dado['nascimento'],
     'Número do Precatório foi Expedido?': [foi_expedido],
-    "Ofício Requisitório": [f"{id}"]
+    "Ofício Requisitório": [f"{id}"],
+    "Nome Advogado": dado['advogado'],
+    "OAB": dado['oab'],
+    "Seccional": [dado['seccional']]
     }
-    print('DADOS ARTERIA ---->> ', dados)
-    cadastrar_arteria(dados, 'Precatórios')
+
+    id_arteria = cadastrar_arteria(dados, 'Precatórios')
+    return id_arteria
+
+def limpar_dados_banco_dados(dado):
+    if dado['seccional'] != '':
+        dado['seccional'] = selecionar_seccional(dado['seccional'])
+
+    if dado['juros'] == '':
+        dado['juros'] = '0'
+        
+    if dado['principal'] == '':
+        dado['principal'] = '0'
+
+    if dado['vara'] == '':
+        dado['vara'] = dado['vara_pdf']
+        del dado['vara_pdf']
+    else:
+        del dado['vara_pdf']
+
+    if 'executado' in dict.keys(dado) or 'exequente' in dict.keys(dado):
+        if dado['executado'] != '':
+            dado['devedor'] = dado['executado']
+            del dado['executado']
+        else:
+            del dado['executado']
+        if dado['exequente'] != '':
+            dado['credor'] = dado['exequente']
+            del dado['exequente']
+        else:
+            del dado['exequente']
+    
+    if dado.get('cpf'):
+        dado['cpf_cnpj'] = dado['cpf']
+        del dado['cpf']
+    return dado

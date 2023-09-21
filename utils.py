@@ -2,6 +2,7 @@ import os
 import re
 import json
 import base64
+import PyPDF2
 import requests
 import traceback
 import mysql.connector
@@ -31,6 +32,26 @@ def buscar_xml():
   return arquivo
 
 def regex(string):
+    if 'Advogad' in string:
+      padrao = r'Advogados\(s\):(.*)'
+      resultado = re.search(padrao, string)
+      if resultado != None:
+        resultado = resultado.group(1).split('OAB')
+        oab = resultado[1].split('/')[0].replace(':','').strip()
+        seccional = resultado[1].split('/')[1].strip()
+        advogado = resultado[0]
+        return {'advogado': advogado.strip(), 'oab': oab, 'seccional': seccional}
+      else:
+        return {'advogado': '', 'oab': '', 'seccional': ''}
+    if 'Para conferir o original' in string:
+      padrao = r'\d{2}/\d{2}/\d{4}'
+      resultado = re.findall(padrao, string)
+      if resultado != None:
+        dia, mes, ano = resultado[0].strip().split('/')
+        data_padrao_arteria = f"{mes}/{dia}/{ano}"
+        return {'expedicao': data_padrao_arteria}
+      else:
+        return {'expedicao': ''}   
     if 'TRIBUNAL' in string.upper():
       padrao = r'(?:  DO ESTADO  DE|  DO ESTADO  DO)(.*)'
       estado = re.search(padrao, string, re.IGNORECASE)
@@ -38,10 +59,18 @@ def regex(string):
         return {'estado': estado.group(1).replace('  ', ' ').strip()}
       else:
         return {'estado': ''}
-    if 'Vara' in string or 'VARA' in string:
+    if 'VARA' in string.upper():
       for linha in string.split('\n'):
+        if 'Origem/Foro  Comarca/  Vara:' in linha:
+          padrao = r':(.*)'
+          resultado = re.search(padrao, linha)
+          if resultado != None:
+            vara = resultado.group(1).split('/')[0]
+            return {'vara': vara.strip()}
+          else:
+            return {'vara': ''}
         if re.search(r'\bvara\b', linha, re.IGNORECASE):
-            return {'vara_pdf': linha}
+            return {'vara_pdf': linha.strip()}
     if 'E-mail' in string:
       padrao = r'(?<=,\s)([^\d-]+)'
       cidade = re.search(padrao, string)
@@ -53,16 +82,30 @@ def regex(string):
           padrao = r"(?:[^,]*,){2}\s*([^\d,-]+)"
           cidade = re.search(padrao, output_string)
       return cidade.group(1).strip()
-    if 'Processo  nº:' in string:
+    if 'Processo  nº:' in string :
       padrao = r'\d{7}-\d{2}.\d{4}.\d{1}.\d{2}.\d{4}/\d{2}'
       processo = re.search(padrao, string)
       if processo != None:
         return {'processo': processo.group(0).strip()} 
       else:
         return {'processo': ''}
-    if 'Principal/Conhecimento' in string:
+    elif 'Número  do processo' in string :
+      padrao = r'\d{7}-\d{2}.\d{4}.\d{1}.\d{2}.\d{4}'
+      processo = re.search(padrao, string)
+      if processo != None:
+        return {'processo': processo.group(0).strip()} 
+      else:
+        return {'processo': ''}
+    if 'Principal/Conhecimento' in string :
       padrao = r'\d{7}-\d{2}.\d{4}.\d{1}.\d{2}.\d{4}'
       processo_principal = re.search(padrao, string)
+      if processo_principal != None:
+        return {'conhecimento': processo_principal.group(0).strip()}
+      else:
+        return {'conhecimento': ''} 
+    if 'Autos  da Ação' in string:
+      padrao = r'\d{7}-\d{2}.\d{4}.\d{1}.\d{2}.\d{4}'
+      processo_principal = re.search(padrao, string, re.MULTILINE)
       if processo_principal != None:
         return {'conhecimento': processo_principal.group(0).strip()}
       else:
@@ -71,7 +114,6 @@ def regex(string):
       padrao = r"(?:Credor\(s\)|Credor|Credor\(es\)):(.*)"
       credor = re.search(padrao, string)
       if credor != None:
-        print('credor ====>> ', credor.group(1).strip())
         return {'credor': credor.group(1).strip()}
       else:
         return {'credor': ''}
@@ -93,7 +135,7 @@ def regex(string):
       padrao = r'(?:Devedor|Devedor:|Devedor\(s\)|Devedor\(es\)) (.*)'
       devedor = re.search(padrao, string)
       if devedor != None:
-        return {'devedor': devedor.group(1).strip()}
+        return {'devedor': devedor.group(1).strip().replace('  ', ' ')}
       else:
         return {'devedor': ''}
     elif 'Executado(s):' in string:
@@ -110,7 +152,14 @@ def regex(string):
         return {'devedor': requerido.group(1).strip()}
       else:
         return {'devedor': ''}
-    if 'Natureza' in string:
+    if 'Natureza  do Crédito' in string:
+      padrao = r'Natureza  do Crédito:\s+(.*?)\n'
+      natureza = re.search(padrao, string)
+      if natureza != None:
+        return{'natureza': natureza.group(1).strip()}
+      else:
+        return{'natureza': ''}
+    elif 'Natureza' in string:
       padrao = r'Natureza:\s+(.*?)\n'
       natureza = re.search(padrao, string)
       if natureza != None:
@@ -124,43 +173,43 @@ def regex(string):
           return {'natureza': ''}
       else:
         return {'natureza': ''}
-    if 'Valor  global  da requisição' in string:
+    if 'Valor  global  da requisição' in string or "Valor  total da requisição" in string:
       padrao = r'\b(?:0{1,3}|[1-9](?:\d{0,2}(?:\.\d{3})*(?:,\d{1,2})?|,\d{1,2})?)\b|\b(?:0{1,3}|[1-9](?:\d{0,2}(?:,\d{3})*(?:\.\d{1,2})?|\.\d{1,2})?)\b' 
       valor_global = re.search(padrao, string)
       if valor_global != None:
         return {'global': valor_global.group(0).strip().replace('.','').replace(',','.')}
       else: 
         return {'global': ''}
-    if 'Juros  Moratórios' in string:
+    if 'JUROS  MORATÓRIOS' in string.upper():
       padrao = r'\b(?:0{1,3}|[1-9](?:\d{0,2}(?:\.\d{3})*(?:,\d{1,2})?|,\d{1,2})?)\b|\b(?:0{1,3}|[1-9](?:\d{0,2}(?:,\d{3})*(?:\.\d{1,2})?|\.\d{1,2})?)\b' 
       valor_juros = re.search(padrao, string)
       if valor_juros != None:
         return {'juros': valor_juros.group(0).strip().replace('.','').replace(',','.')}
       else:
         return {'juros': ''}
-    if 'Principal/Indenização' in string:
+    if 'Principal/Indenização' in string or "Valor  originário" in string:
       padrao = r'\b(?:0{1,3}|[1-9](?:\d{0,2}(?:\.\d{3})*(?:,\d{1,2})?|,\d{1,2})?)\b|\b(?:0{1,3}|[1-9](?:\d{0,2}(?:,\d{3})*(?:\.\d{1,2})?|\.\d{1,2})?)\b'  
       valor_principal = re.search(padrao, string)
       if valor_principal != None:
         return {'principal': valor_principal.group(0).strip().replace('.','').replace(',','.')}
       else:
         return {'principal': ''}
+    
     if 'SUBTOTAL 1' in string:
       padrao = r'(\d{1,3}(?:\.\d{3})*(?:,\d+)?)(?=\s|$)' 
       valor_principal = re.findall(padrao, string)
-      print(valor_principal)
       if valor_principal != None:
         return {'principal': valor_principal[1].replace('.', '').replace(',','.')}
       else:
         return {'principal': ''}
-    if 'CPF/CNPJ' in string:
+    if 'CPF/CNPJ' in string or 'CPF' in string:
       padrao = r'\b(?:\d{3}\.\d{3}\.\d{3}-\d{2}|\d{2}\.\d{3}\.\d{3}\/\d{4}-\d{2}|RNE-\d{10})\b|\b\d{11}\b'
       cpf_cnpj_rne = re.search(padrao, string)
       if cpf_cnpj_rne != None:
         return {'cpf': cpf_cnpj_rne.group(0).strip()}
       else:
         return {'cpf': ''}
-    if 'Data  do nascimento:' in string:
+    if 'Data  do nascimento:' in string or 'Data  de nascimento':
       padrao = r'\b(?:\d{1,2}\/\d{1,2}\/\d{4}|\d{4}\/\d{1,2}\/\d{1,2}|\d{1,2}\-\d{1,2}\-\d{4}|\d{4}\-\d{1,2}\-\d{1,2})\b'
       nascimento = re.search(padrao, string)
       if nascimento != None:
@@ -178,7 +227,7 @@ def regex(string):
         return {'nascimento': data_padrao_arteria}
       else:
         return {'nascimento': ''}
-    if 'de 20' in string:
+    if 'de 20' in string: 
       cidade_data = encontrar_data_expedicao_e_cidade_tjac(string) 
       return cidade_data
     
@@ -277,7 +326,6 @@ def converter_string_mes(string):
     }
     for m in dict.keys(dict_meses):
       if m in nome_mes[1]:
-        print(dict_meses[m])
         mes_numero = string.replace(nome_mes[1], dict_meses[m]).replace('de', '-').replace('.', '').replace(' ', '').strip()
         dia, mes, ano = mes_numero.split('-')
         data_padrao_arteria = f"{mes}/{dia}/{ano}"
@@ -406,9 +454,9 @@ def limpar_dados(dado):
 
     return dado
 
-def mandar_documento_para_ocr(arquivo, processo):
+def mandar_documento_para_ocr(arquivo):
   arquivo_base_64 = converter_arquivo_base_64(arquivo)
-  text_ocr(arquivo_base_64, processo)
+  text_ocr(arquivo_base_64)
 
 def converter_arquivo_base_64(nome_arquivo):
   with open(nome_arquivo, "rb") as arquivo:
@@ -432,55 +480,26 @@ def text_ocr(arquivo_base_64_pdf, processo):
       arquivo_txt = f.write(txt[i])
   return arquivo_txt
 
-def mandar_para_banco_de_dados(id_processo, dados):
+mandar_documento_para_ocr('output.pdf')
+def mandar_para_banco_de_dados(codigo_processo, dados):
     conn = mysql.connector.connect(
     host=os.getenv('db_server_precatorio'),
     user=os.getenv('db_username_precatorio'),
     password=os.getenv('db_password_precatorio'),
     database='precatorias_tribunais'
     )
-    if dados['vara'] == '':
-        dados['vara'] = dados['vara_pdf']
-        del dados['vara_pdf']
-    else:
-        del dados['vara_pdf']
 
-    if dados['credor'] == '':
-        dados['credor'] = dados['exequente']
-        del dados['exequente']
-    else:
-      del dados['exequente']
-
-    if dados['devedor'] == '':
-        dados['devedor'] = dados['executado']
-        del dados['executado']
-    else:
-        del dados['executado']
-      
-    dados['cpf_cnpj'] = dados['cpf']
-    del dados['cpf'] 
-
-    if dados['conhecimento'] == '':
-            del dados['conhecimento']
-    else: 
-        dados['processo'] = dados['conhecimento']
-        del dados['conhecimento']
-    dados['processo'] = dados['processo'].split('/')[0]
-
-    dados['nascimento'] = converter_data(dados['nascimento'])
-    dados['data_expedicao'] = converter_data(dados['data_expedicao'])
-
+    dados = dados_limpos_banco_de_dados(dados)
     cursor = conn.cursor()
-
-    query_consultar_processo = 'SELECT * FROM dados_xml_pdf WHERE processo = %s'
-    cursor.execute(query_consultar_processo, (id_processo,))
-    id_processo = cursor.fetchone()
-    if id_processo is not None:
+    query_consultar_codigo_processo = 'SELECT * FROM dados_xml_pdf WHERE codigo_processo = %s'
+    cursor.execute(query_consultar_codigo_processo, (codigo_processo,))
+    codigo_processo = cursor.fetchone()
+    if codigo_processo is not None:
       try:
                 dados_processados = processar_dado(dados)
                 colunas_e_valores = ', '.join([f"{coluna} = %s" for coluna in dados_processados.keys()])
-                query = f"UPDATE dados_xml_pdf SET {colunas_e_valores} WHERE processo = %s"
-                valores = tuple(list(dados_processados.values()) + [dados_processados['processo']])
+                query = f"UPDATE dados_xml_pdf SET {colunas_e_valores} WHERE codigo_processo = %s"
+                valores = tuple(list(dados_processados.values()) + [dados_processados['codigo_processo']])
                 cursor.execute(query, valores)
                 conn.commit()
                 conn.close()
@@ -501,7 +520,26 @@ def mandar_para_banco_de_dados(id_processo, dados):
       except Exception as e:
                 print("E ==>> ", e)
                 print("Exec ==>> ", traceback.print_exc())
+
+def dados_limpos_banco_de_dados(dados):
+  dados['processo'] = dados['processo'].split('/')[0]
+  dados['nascimento'] = converter_data(dados['nascimento'])
+
+  if 'data_expedicao' not in dict.keys(dados):  
+    dados['data_expedicao'] = converter_data(dados['expedicao'])
+    del dados['expedicao']
+  else:
+    dados['data_expedicao'] = converter_data(dados['data_expedicao'])
+
+  if 'conhecimento' in dict.keys(dados):  
+    if dados['conhecimento'] == '':
+      del dados['conhecimento']
+    else:
+      dados['processo'] = dados['conhecimento']
+      del dados['conhecimento']
   
+  return dados
+        
 def converter_data(data):
   data = data.replace('/','-')
   date_object = datetime.strptime(data, '%m-%d-%Y')
@@ -537,3 +575,86 @@ def encontrar_indice_linha(linhas, texto):
     if texto in linha:
         return indice
   return None
+
+def apagar_arquivos_txt(pasta):
+    arquivos = os.listdir(pasta) 
+    for arquivo in arquivos:
+        caminho_arquivo = os.path.join(pasta, arquivo)
+        if os.path.isfile(caminho_arquivo):  
+            os.remove(caminho_arquivo)
+
+def selecionar_seccional(estado):
+  seccionais_oab = {
+    "AC": "Conselho Seccional - Acre",
+    "AL": "Conselho Seccional - Alagoas",
+    "AM": "Conselho Seccional - Amazonas",
+    "AP": "Conselho Seccional - Amapá",
+    "BA": "Conselho Seccional - Bahia",
+    "CE": "Conselho Seccional - Ceará",
+    "DF": "Conselho Seccional - Distrito Federal",
+    "ES": "Conselho Seccional - Espírito Santo",
+    "GO": "Conselho Seccional - Goiás",
+    "MA": "Conselho Seccional - Maranhão",
+    "MG": "Conselho Seccional - Minas Gerais",
+    "MS": "Conselho Seccional - Mato Grosso do Sul",
+    "MT": "Conselho Seccional - Mato Grosso",
+    "PA": "Conselho Seccional - Pará",
+    "PB": "Conselho Seccional - Paraíba",
+    "PE": "Conselho Seccional - Pernambuco",
+    "PI": "Conselho Seccional - Piauí",
+    "PR": "Conselho Seccional - Paraná",
+    "RJ": "Conselho Seccional - Rio de Janeiro",
+    "RN": "Conselho Seccional - Rio Grande do Norte",
+    "RO": "Conselho Seccional - Rondônia",
+    "RR": "Conselho Seccional - Roraima",
+    "RS": "Conselho Seccional - Rio Grande do Sul",
+    "SC": "Conselho Seccional - Santa Catarina",
+    "SE": "Conselho Seccional - Sergipe",
+    "SP": "Conselho Seccional - São Paulo",
+    "TO": "Conselho Seccional - Tocantins"
+}
+  
+  seccional = ''
+  for e in dict.keys(seccionais_oab):
+    if e == estado.strip().upper():
+      seccional = seccionais_oab[e]
+  return seccional
+    
+
+def cortar_pags_especifica(arquivo):
+  pdf_file = open(arquivo, 'rb')
+  pdf_reader = PyPDF2.PdfReader(pdf_file)
+  pdf_writer = PyPDF2.PdfWriter()
+  nome = arquivo.split('/')[1]
+  novo_pdf = ''
+  for pagina_num in range(len(pdf_reader.pages)):
+    page = pdf_reader.pages[pagina_num] 
+    page_text = page.extract_text()
+    if 'fls. 2' in page_text or 'fls. 3' in page_text or 'fls. 4' in page_text:
+      pdf_writer.add_page(page)
+      with open(f'arquivos_cortados/{nome}_cortado.pdf', 'ab') as novo_pdf_file:
+        novo_pdf = pdf_writer.write(novo_pdf_file)
+  return novo_pdf
+
+def pegar_pags_especifica(dados, arquivo):
+  pdf_file = open(arquivo, 'rb')
+  pdf_reader = PyPDF2.PdfReader(pdf_file)
+  pdf_writer = PyPDF2.PdfWriter()
+  nome = arquivo.split('_merged')[0]
+  print(dados[0])
+  for i in range(len(dados)):
+    if 'cpf_cnpj' in dict.keys(dados[i]):
+      for pagina_num in range(len(pdf_reader.pages)):
+        if 'fls. 4' in page_text or 'fls. 5' in page_text:
+              pdf_writer.add_page(page)
+              with open(f'{nome}_cortado.pdf', 'ab') as novo_pdf_file:
+                novo_pdf = pdf_writer.write(novo_pdf_file)
+    if 'nascimento' in dict.keys(dados[i]):
+      for pagina_num in range(len(pdf_reader.pages)):
+          page = pdf_reader.pages[pagina_num] 
+          page_text = page.extract_text()
+          if 'fls. 5' in page_text:
+              pdf_writer.add_page(page)
+              with open(f'{nome}_cortado.pdf', 'ab') as novo_pdf_file:
+                  novo_pdf = pdf_writer.write(novo_pdf_file)
+  return novo_pdf

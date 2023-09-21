@@ -94,7 +94,6 @@ def pegar_requerido_xml(dados):
     resultado = re.search(padrao, dados, re.IGNORECASE)
     if resultado != None:
       requerido = resultado.group(1).strip()
-      print('requerido --->> ', requerido)
     else:
       requerido = ''
   if 'no valor' in dados:
@@ -102,47 +101,8 @@ def pegar_requerido_xml(dados):
     resultado = re.search(padrao, dados, re.IGNORECASE)
     if resultado != None:
       valor = resultado.group(1).strip()
-      print('valor --->> ', valor)
     else:
       valor = ''
   return  requerente, requerido, valor
 
-def pegar_pags_especifica(dados, arquivo):
-  pdf_file = open(arquivo, 'rb')
-  pdf_reader = PyPDF2.PdfReader(pdf_file)
-  pdf_writer = PyPDF2.PdfWriter()
-  nome = arquivo.split('_merged')[0]
-  print(dados[0])
-  for i in range(len(dados)):
-    if 'cpf_cnpj' in dict.keys(dados[i]):
-      for pagina_num in range(len(pdf_reader.pages)):
-        if 'fls. 4' in page_text or 'fls. 5' in page_text:
-              pdf_writer.add_page(page)
-              with open(f'{nome}_cortado.pdf', 'ab') as novo_pdf_file:
-                novo_pdf = pdf_writer.write(novo_pdf_file)
-    if 'nascimento' in dict.keys(dados[i]):
-      for pagina_num in range(len(pdf_reader.pages)):
-          page = pdf_reader.pages[pagina_num] 
-          page_text = page.extract_text()
-          if 'fls. 5' in page_text:
-              pdf_writer.add_page(page)
-              with open(f'{nome}_cortado.pdf', 'ab') as novo_pdf_file:
-                  novo_pdf = pdf_writer.write(novo_pdf_file)
-  return novo_pdf
-
-def cortar_pags_especifica(arquivo):
-  pdf_file = open(arquivo, 'rb')
-  pdf_reader = PyPDF2.PdfReader(pdf_file)
-  pdf_writer = PyPDF2.PdfWriter()
-  nome = arquivo.split('/')[1]
-  novo_pdf = ''
-  for pagina_num in range(len(pdf_reader.pages)):
-    page = pdf_reader.pages[pagina_num] 
-    page_text = page.extract_text()
-    if 'fls. 2' in page_text or 'fls. 3' in page_text or 'fls. 4' in page_text:
-      pdf_writer.add_page(page)
-      with open(f'arquivos_cortados/{nome}_cortado.pdf', 'ab') as novo_pdf_file:
-        novo_pdf = pdf_writer.write(novo_pdf_file)
-  return novo_pdf
-dividir_linhas_arquivo('aquiiiiiii.txt')
 # ler_documentos('arquivos_cortados/0100145-70.2017.8.01.0000.pdf_cortado.pdf')
