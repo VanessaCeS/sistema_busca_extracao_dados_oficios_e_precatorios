@@ -4,6 +4,7 @@ from PIL import Image
 from capmon_utils import recaptcha
 from reportlab.pdfgen import canvas
 from reportlab.lib.pagesizes import letter
+from utils import mandar_documento_para_ocr, encontrar_indice_linha, regex
 
 def pegar_foto_oab(insc, uf, nome=''):
   site_key = os.environ.get('site_key')
@@ -36,13 +37,23 @@ def pegar_foto_oab(insc, uf, nome=''):
         if not dado:
             break
         imagem.write(dado)
-      transformar_foto_em_pdf(f'fotos_oab/{insc}_foto_oab.jpg',insc)
+      transformar_foto_em_pdf(f'fotos_oab/{insc}_foto_oab.jpg',insc, uf)
 
-def transformar_foto_em_pdf(foto,insc):
+def transformar_foto_em_pdf(foto,insc,uf):
   imagem = Image.open(foto)
 
-  c = canvas.Canvas(f'pdf_oab/{insc}_pdf_oab.pdf', pagesize=letter)
+  c = canvas.Canvas(f'pdf_oab/{insc}_{uf}_pdf_oab.pdf', pagesize=letter)
   c.setPageSize((imagem.width, imagem.height))
   c.drawImage(foto, 0, 0, width=imagem.width, height=imagem.height)
   c.save()
-  return f'{insc}_pdf_oab.pdf'
+  arquivo_ocr = mandar_documento_para_ocr(f'pdf_oab/{insc}_{uf}_pdf_oab.pdf', '1', insc)
+  transformar_pdf_em_txt(arquivo_ocr)
+
+def transformar_pdf_em_txt(arquivo_ocr):
+  with open(arquivo_ocr, 'r', encoding='utf-8') as f:
+    linhas = f.readlines()
+  indice_telefone = encontrar_indice_linha(linhas, 'Telefone ')
+  telefone = regex(linhas[indice_telefone])
+  return telefone
+
+

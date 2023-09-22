@@ -246,7 +246,4 @@ def get_docs_oficio_precatorios_tjac(cnj, zip_file=False, pdf=False):
     incidentes = get_incidentes(cnj, 'https://esaj.tjac.jus.br/cposg5', session)
     cods_incidentes = [incidentes.split('cdProcesso=')[1].split('&')[0]]
     docs = {cod: get_docs_precatorio(cod, 'https://esaj.tjac.jus.br/cposg5', session, zip_file=zip_file, pdf=pdf) for cod in cods_incidentes}
-    print(docs)
     return docs
-
-# get_docs_oficio_precatorios_tjac('0100810-81.2020.8.01.0000', zip_file=False, pdf=True)

@@ -1,11 +1,12 @@
 import re
-import PyPDF2
 import traceback
 import xmltodict
+from pathlib import Path
+from cna_oab import pegar_foto_oab
 from rotina_sao_paulo import apagar_arquivos_txt
 from funcoes_arteria import enviar_valores_oficio_arteria
 from esaj_acre_precatorios import get_docs_oficio_precatorios_tjac
-from utils import buscar_cpf, buscar_xml, encontrar_indice_linha, extrair_processo_origem, limpar_dados, mandar_documento_para_ocr, mandar_para_banco_de_dados, regex, natureza_tjac, tipo_precatorio, verificar_tribunal
+from utils import  buscar_xml, converter_string_mes, extrair_processo_origem, identificar_estados, limpar_dados, mandar_documento_para_ocr, mandar_para_banco_de_dados, tipo_de_natureza, tipo_precatorio, verificar_tribunal
 
 def ler_xml():
   arquivo_xml = buscar_xml()
@@ -39,47 +40,71 @@ def ler_documentos(dado):
 
           with open(arquivo_pdf, "wb") as arq:
                 arquivo = arq.write(file_path)
-
-          arquivo_cortado = cortar_pags_especifica(arquivo)
-          arquivo_ocr = mandar_documento_para_ocr(arquivo_cortado, processo_geral)
-          dados = dividir_linhas_arquivo(arquivo_ocr)
-
+                
+          dados_ocr = mandar_documento_para_ocr(arquivo, '2')
+          dados = tratar_dados_ocr(dados_ocr)
           id_arteria = enviar_valores_oficio_arteria(arquivo_pdf, dados)
           dados = dados | {'id_rastreamento': id_arteria}
-          mandar_para_banco_de_dados(dado['codigo_processo'], dados)
+          mandar_para_banco_de_dados('codigo_processo', dados)
       except Exception as e:
         print(f"Erro no processo -> ", processo_geral, 'Erro: ', e)
         print(traceback.print_exc())
         pass
 
+def tratar_dados_ocr(dados):
+  advogado = dados['advogado'][0]['nome'][0] 
+  data_expedicao = dados['data-expedicao'][0] 
+  cidade = dados['local'][0]['cidade'][0] 
+  estado = pegar_estado(dados['local'])
+  natureza = pegar_natureza(dados['natureza-do-credito'])
+  origem = dados['processo-origem'][0]
+  credor = dados['requerente'][0]['nome'][0]
+  devedor = dados['requerido'][0]['nome'][0]
+  valor = dados['valor'][0].replace('.','').replace(',','.')
+  vara = dados['vara'][0]
+  documento = pegar_documento(dados['requerente'])
+  data = converter_string_mes(data_expedicao)
+  natureza = tipo_de_natureza(natureza)
+  estado = identificar_estados(estado)
+  oab, seccional = pegar_aob_e_seccional(dados['advogado'][0])
 
-def dividir_linhas_arquivo(nome_arquivo):
-    try:
-        valores_regex = []
-        natureza = natureza_tjac(nome_arquivo)
-        cpf = buscar_cpf(nome_arquivo)
-        with open(nome_arquivo, 'r', encoding='utf-8') as arquivo:
-            linhas = arquivo.readlines()
-            indice_nascimento = encontrar_indice_linha(linhas, "DATA DE NASCIMENTO") + 4
-            indice_data_expedicao = encontrar_indice_linha(linhas, "Endereço:") - 1
-            indices = {'indice_data_expedicao': indice_data_expedicao, 'indice_nascimento': indice_nascimento}
-            data = {}
-            for i in dict.keys(indices):
-              nome = i.split('_')[1]
-              if indices[i] != None:
-                valores = linhas[indices[i]]
-                valores_regex = regex(valores)
-                if valores_regex == None:
-                  valores_regex = {f'{nome}': ''}
-                data = data | valores_regex
-              else:
-                data = data | {f'{nome}': ''}
-            dados_completos = data | natureza| cpf
+  if oab != '':
+    telefone = pegar_foto_oab(oab,seccional,advogado)
+  else:
+    telefone = ''
+  
+  dado = {'advogado': advogado, 'data_expedicao': data, 'cidade': cidade, 'origem': origem, 'devedor': devedor, 'credor': credor, 'valor': valor, 'vara': vara, 'documento': documento, 'oab': oab, 'seccional': seccional} | natureza | estado | telefone
+  
+  return dado
 
-        return dados_completos
-    except FileNotFoundError:
-        print(f"O arquivo '{nome_arquivo}' não foi encontrado.")
-        return {}
+def pegar_estado(local):
+  estado = ''
+  for l in local:
+    if 'estado' in dict.keys(l):
+      estado = l['estado'][0]
+      return estado
+
+def pegar_natureza(natureza):
+  descricao = ''
+  for n in natureza:
+    if 'descricao' in dict.keys(n):
+      descricao = n['descricao'][0]
+      return descricao
+    
+def pegar_documento(documento):
+  for d in documento:
+    if 'documento' in dict.keys(d):
+      cpf_cnpj = d['documento'][0]
+    else:
+      cpf_cnpj = ''
+  return cpf_cnpj
+
+def pegar_aob_e_seccional(dados):
+  for d in dados:
+    if 'oab' in dict.keys(d):
+      oab = dados['advogado'][0]['oab'][0].split(' ')[1].strip()
+      seccional = dados['advogado'][0]['oab'][0].split('/')[1].strip()
+      return oab, seccional    
     
 def pegar_requerido_xml(dados):
   if 'Requerente' in dados:
@@ -96,13 +121,13 @@ def pegar_requerido_xml(dados):
       requerido = resultado.group(1).strip()
     else:
       requerido = ''
-  if 'no valor' in dados:
-    padrao =  r'R\$ ([\d.,]+)'
-    resultado = re.search(padrao, dados, re.IGNORECASE)
-    if resultado != None:
-      valor = resultado.group(1).strip()
-    else:
-      valor = ''
-  return  requerente, requerido, valor
+  return  requerente, requerido
 
-# ler_documentos('arquivos_cortados/0100145-70.2017.8.01.0000.pdf_cortado.pdf')
+
+
+pasta = 'minha_pasta'
+
+path = Path(pasta)
+
+if not path.is_dir():
+    path.mkdir(parents=True)
