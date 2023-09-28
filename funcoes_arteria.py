@@ -87,6 +87,7 @@ def cadastrar_arteria(dados_precadastro, app, id_arteria=None, archer_instance=N
     else:
         return archer_instance.create_content_record(dados_precadastro)
 
+
 def teste333(dados, app, archer_instance=None):
     if not archer_instance:
         archer_instance = instancia_arteria(app)
