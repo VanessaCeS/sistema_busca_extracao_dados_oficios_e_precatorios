@@ -4,15 +4,17 @@ import xmltodict
 import traceback
 from dotenv import load_dotenv
 from cna_oab import pegar_foto_oab
-from utils import apagar_arquivos_txt
+from rotina_processos_infocons import buscar_xml
+from utils import apagar_arquivos_txt, data_corrente_formatada
 from funcoes_arteria import enviar_valores_oficio_arteria
 from esaj_sao_paulo_precatorios import get_docs_oficio_precatorios_tjsp
 from banco_de_dados import atualizar_ou_inserir_pessoa, atualizar_ou_inserir_pessoa_precatorio, mandar_precatorios_para_banco_de_dados
 from utils import encontrar_data_expedicao_e_cidade, extrair_processo_origem, limpar_dados, regex, tipo_precatorio,  verificar_tribunal
 load_dotenv('.env')
 
-def ler_xml(arquivo_xml):     
-  with open(arquivo_xml, 'r', encoding='utf-8') as fd: 
+def ler_xml():     
+  buscar_xml()
+  with open(f'arquivos_xml/relatorio_{data_corrente_formatada()}', 'r', encoding='utf-8') as fd: 
     doc = xmltodict.parse(fd.read())
   
   dados = []
@@ -21,8 +23,6 @@ def ler_xml(arquivo_xml):
     processo_origem =  extrair_processo_origem(f"{base_doc[i]['Publicacao']})")
     dados.append({"processo": f"{base_doc[i]['Processo']}", "tribunal": f"{base_doc[i]['Tribunal']}", "materia": f"{base_doc[i]['Materia']}", 'processo_origem': processo_origem})
   for d in dados:
-      # if d['processo'] == '0215695-62.2023.8.26.0500':
-      # if d['processo'] == '0000014-29.2017.8.26.0053':
         dados_limpos = limpar_dados(d)
         tipo = tipo_precatorio(d)
         dado = dados_limpos | tipo
@@ -30,7 +30,7 @@ def ler_xml(arquivo_xml):
           ler_documentos(dado)
         else:
           pass
-  apagar_arquivos_txt('./arquivos_txt_sao_paulo')
+  apagar_arquivos_txt(['./fotos_oab','./arquivos_pdf_sao_paulo', './arquivos_txt_sao_paulo'])
   return dados
 
 def verificar_tribunal(n_processo):
@@ -99,6 +99,7 @@ def extrair_dados_txt(arquivo_txt):
     dados = mandar_dados_regex(indices, linhas)
     if dados['natureza'] == '':
       dados['natureza'] = 'ALIMENTAR'
+
     advogado, oab, seccional = regex(linhas[indice_advogado])
     documento_advogado = ''
     if indice_documento_advogado != None:
@@ -145,19 +146,18 @@ def extrair_informacoes_credores_e_mandar_para_banco_dados(arquivo_pdf,dados_txt
               dados['valor_principal_credor'] = valor_principal_credor['valor_principal']
               
       dados = dados | dados_txt
-      print('dados arteria -->> ', dados)
       id_arteria = enviar_valores_oficio_arteria(arquivo_pdf, dados)
       dados = dados | id_arteria
-      print('dados banco de dados -->> ', dados)
+
       mandar_precatorios_para_banco_de_dados(dados['codigo_processo'], dados)
       atualizar_ou_inserir_pessoa_precatorio(dados['documento'], dados['processo'])
     i = int(i) + 1
-  print('-----------------------------------FIM---------------------------------')
+
 def encontrar_indice_linha(linhas, texto):
     for indice, linha in enumerate(linhas):
       if texto in linha:
         return indice
     return None
 
-# extrair_dados_credores('arquivos_pdf_sao_paulo/0000459-51.2023.8.26.0404_arquivo_precatorio.pdf')
-ler_xml('./arquivos_xml/relatorio_27_09.xml')
+
+ler_xml()

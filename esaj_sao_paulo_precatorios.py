@@ -253,7 +253,7 @@ def get_incidentes(cnj, url, s):
 def get_docs_oficio_precatorios_tjsp(cnj, zip_file=False, pdf=False):
     login_esja = f'{os.getenv("login_esja")}'
     senha_esja_sao_paulo = f'{os.getenv("senha_esja_sao_paulo")}'
-    session = login_esaj('https://esaj.tjsp.jus.br', login_esja, 'Costaesilva2023#')
+    session = login_esaj('https://esaj.tjsp.jus.br', login_esja, senha_esja_sao_paulo)
 
     incidentes = get_incidentes(cnj, 'https://esaj.tjsp.jus.br/cpopg', session)
 

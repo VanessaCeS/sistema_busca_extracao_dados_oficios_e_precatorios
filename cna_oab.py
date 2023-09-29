@@ -57,7 +57,6 @@ def enviar_banco_de_dados(dados, processo):
     if type(dados['documento'])is dict:
       dados['documento'] = dados['documento']['documento']
 
-    print(dados['documento'])
     atualizar_ou_inserir_pessoa(dados['oab'], dados)
     atualizar_ou_inserir_pessoa_precatorio(dados['oab'], processo)
     dados['seccional'] = dados.pop('estado')

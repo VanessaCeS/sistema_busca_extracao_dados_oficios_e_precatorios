@@ -13,19 +13,20 @@ def pesquisar_pessoa_por_documento_ou_oab(conn, valor_pesquisa):
     cursor.close()
     return pessoa
 
-def atualizar_ou_inserir_pessoa(aqui, dados):
+def atualizar_ou_inserir_pessoa(doc, dados):
     conn = mysql.connector.connect(
         host=os.getenv('db_server_precatorio'),
         user=os.getenv('db_username_precatorio'),
         password=os.getenv('db_password_precatorio'),
-        database='precatorias_tribunais')
+        database=os.getenv('db_database_precatorio'))
+    
     cursor = conn.cursor()
 
     try:
         documento = dados.get('documento')
         oab = dados.get('oab')
 
-        pessoa = pesquisar_pessoa_por_documento_ou_oab(conn, aqui)
+        pessoa = pesquisar_pessoa_por_documento_ou_oab(conn, doc)
 
         if pessoa is not None:
             dados_processados = processar_dado(dados)
@@ -52,7 +53,7 @@ def mandar_precatorios_para_banco_de_dados(codigo_processo, dados):
     host=os.getenv('db_server_precatorio'),
     user=os.getenv('db_username_precatorio'),
     password=os.getenv('db_password_precatorio'),
-    database='precatorias_tribunais'
+    database=os.getenv('db_database_precatorio')
     )
 
     dados = dados_limpos_banco_de_dados(dados)
@@ -88,43 +89,6 @@ def mandar_precatorios_para_banco_de_dados(codigo_processo, dados):
       except Exception as e:
                 print("E ==>> ", e)
                 print("Exec ==>> ", traceback.print_exc())
-
-# def mandar_pessoa_banco_de_dados(documento, dados):
-#   conn = mysql.connector.connect(host=os.getenv('db_server_precatorio'),
-#     user=os.getenv('db_username_precatorio'),
-#     password=os.getenv('db_password_precatorio'),
-#     database='precatorias_tribunais')
-#   cursor = conn.cursor()
-#   query_consultar_pessoa = 'SELECT * FROM pessoas WHERE documento = %s'
-#   cursor.execute(query_consultar_pessoa, (documento,))
-#   documento = cursor.fetchone()
-
-#   if documento is not None:
-#       try:
-#                 dados_processados = processar_dado(dados)
-#                 colunas_e_valores = ', '.join([f"{coluna} = %s" for coluna in dados_processados.keys()])
-#                 query = f"UPDATE pessoas SET {colunas_e_valores} WHERE documento = %s"
-#                 valores = tuple(list(dados_processados.values()) + [dados_processados['documento']])
-#                 cursor.execute(query, valores)
-#                 conn.commit()
-#                 conn.close()
-#       except Exception as e:
-#                 print("E ==>> ", e)
-#                 print("Exec ==>> ", traceback.print_exc())
-#   else:
-#       try:
-#         dado_processado = {key: (value if value != '' else None) for key, value in dados.items()}
-#         colunas = ', '.join(dado_processado.keys())
-#         valores = ', '.join(['%s'] * len(dado_processado))
-#         query = f"INSERT INTO pessoas ({colunas}) VALUES ({valores})"
-#         valores_insercao = tuple(dado_processado.values())
-#         cursor.execute(query, valores_insercao)
-#         conn.commit()
-#         cursor.close()
-#         conn.close()
-#       except Exception as e:
-#                 print("E ==>> ", e)
-#                 print("Exec ==>> ", traceback.print_exc())
 
 def atualizar_ou_inserir_pessoa_precatorio(documento, processo):
     conn = mysql.connector.connect(

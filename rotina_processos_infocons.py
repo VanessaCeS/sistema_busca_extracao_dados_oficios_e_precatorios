@@ -1,11 +1,7 @@
-import base64
 import os
-import traceback
 import util
-from bs4 import BeautifulSoup
-
 import requests
-import xmltodict
+from bs4 import BeautifulSoup
 from datetime import datetime
 from dotenv import load_dotenv
 
@@ -34,6 +30,8 @@ def buscar_xml():
     response = requests.post(url=url_info_cons, headers=headers, files=data)
 
     soup = BeautifulSoup(response.content, 'xml')
+    with open(f'arquivos_xml/relatorio_{data_corrente_formatada().replace("/", "_")}.xml', 'w', encoding='utf-8') as f:
+        f.write(response.text)
     publicacoes_tags = soup.find_all('Publicacoes')
     publicacoes_dict = {}
     for i, publicacao_tag in enumerate(publicacoes_tags, start=1):
@@ -68,7 +66,6 @@ def buscar_xml():
 def insert_or_update_processo(conn, dados_processo):
     cursor = conn.cursor()
 
-    # SQL para inserir ou atualizar o registro na tabela 'processos'
     sql = """
     INSERT INTO processos (nome, processo, materia, tribunal)
     VALUES (%(nome)s, %(processo)s, %(materia)s, %(tribunal)s)
@@ -79,13 +76,10 @@ def insert_or_update_processo(conn, dados_processo):
     tribunal = VALUES(tribunal);
     """
 
-    # Executar a consulta
     cursor.execute(sql, dados_processo)
 
-    # Recuperar o ID do processo inserido ou atualizado
     processo_id = cursor.lastrowid
 
-    # Fazer commit das alterações
     conn.commit()
 
     return processo_id
@@ -94,20 +88,13 @@ def insert_or_update_processo(conn, dados_processo):
 def insert_publicacao(conn, processo_id, dados_publicacao):
     cursor = conn.cursor()
 
-    # Adicionar o ID do processo aos dados da publicação
     dados_publicacao["id_processo"] = processo_id
 
-    # SQL para inserir a publicação
     sql = """
     INSERT INTO publicacoes (id_processo, seq_recorte, publicacao, data_publicacao)
     VALUES (%(id_processo)s, %(seq_recorte)s, %(publicacao)s, %(data_publicacao)s);
     """
 
-    # Executar a consulta
     cursor.execute(sql, dados_publicacao)
 
-    # Fazer commit das alterações
     conn.commit()
-
-
-buscar_xml()

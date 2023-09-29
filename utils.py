@@ -459,8 +459,8 @@ def mandar_documento_para_ocr(arquivo, op,insc=''):
   if op == '2':
     pass
   if op == '3':
-    aqui = ler_imagem_ocr(arquivo_base_64)
-    return aqui
+    resultado = ler_imagem_ocr(arquivo_base_64)
+    return resultado
 
 def converter_arquivo_base_64(nome_arquivo):
   with open(nome_arquivo, "rb") as arquivo:
@@ -532,7 +532,7 @@ def tipo_natureza(natureza):
   if 'Alimentar - ' in natureza:
     return 'ALIMENTAR'
   elif 'Outras  espécies  - Não alimentar' in natureza:
-    return 'COMUM - NÃO TRIBUTARIO'
+    return 'COMUM - NÃO TRIBUTÁRIO'
   else:
     natureza
 
@@ -552,7 +552,8 @@ def encontrar_indice_linha(linhas, texto):
         return indice
   return None
 
-def apagar_arquivos_txt(pasta):
+def apagar_arquivos_txt(pastas):
+  for pasta in pastas:
     arquivos = os.listdir(pasta) 
     for arquivo in arquivos:
         caminho_arquivo = os.path.join(pasta, arquivo)
@@ -596,4 +597,8 @@ def selecionar_seccional(estado):
       seccional = seccionais_oab[e]
   return seccional
     
+def data_corrente_formatada():
+    data_atual = datetime.now()
+    data_formatada = data_atual.strftime("%d_%m_%Y")
+    return data_formatada
 
