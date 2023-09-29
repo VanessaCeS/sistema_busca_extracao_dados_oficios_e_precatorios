@@ -1,17 +1,19 @@
 import os
+import re
 import requests
-from PIL import Image
+import urllib.request
+from banco_de_dados import atualizar_ou_inserir_pessoa, atualizar_ou_inserir_pessoa_precatorio
 from capmon_utils import recaptcha
-from reportlab.pdfgen import canvas
-from reportlab.lib.pagesizes import letter
+from utils import mandar_documento_para_ocr
 
-def pegar_foto_oab(insc, uf, nome=''):
+
+def pegar_foto_oab(insc, uf, documento_advogado, nome, processo):
   site_key = os.environ.get('site_key')
   url_cna = os.environ.get('url_cna')
   captcha = recaptcha(site_key, url_cna)
   form_data  = {
     'IsMobile': 'false',
-    'NomeAdvo': f'{nome}',
+    'NomeAdvo': '',
     'Insc': f'{insc}',
     'Uf': f'{uf}',
     'TipoInsc': '1',
@@ -21,28 +23,42 @@ def pegar_foto_oab(insc, uf, nome=''):
   pesquisar_cna = f'{url_cna}/Home/Search'
   resp_foto = requests.post(pesquisar_cna, data=form_data).json()
 
-  url_foto = resp_foto['Data'][0]['DetailUrl']
-  pegar_foto = f'{url_cna}{url_foto}'
+  if resp_foto['Data'] != [] :
+    url_foto = resp_foto['Data'][0]['DetailUrl']
+    pegar_foto = f'{url_cna}{url_foto}'
+    data_nome = resp_foto['Data'][0]['Nome'].capitalize()
+    foto = requests.get(pegar_foto).json()
+    detalhes_foto = foto['Data']['DetailUrl']
+    caminho_foto = f'fotos_oab/{insc}_foto_oab.jpg'
+    urllib.request.urlretrieve(f'{url_cna}{detalhes_foto}', caminho_foto)
+    texto_ocr = mandar_documento_para_ocr(caminho_foto, '3')
+    dados = dados_advogado(texto_ocr, data_nome, uf, insc, documento_advogado)
+    enviar_banco_de_dados(dados, processo)
+    
+  else:
+    dados = {'telefone': '', 'advogado': nome.strip(), 'seccional': uf, 'oab': insc, 'documento_advogado': documento_advogado}
+    enviar_banco_de_dados(dados, processo)
 
-  foto = requests.get(pegar_foto).json()
-  detalhes_foto = foto['Data']['DetailUrl']
+  return dados
 
-  with open(f'{insc}_foto_oab.jpg', 'wb') as imagem:
-    resposta = requests.get(f'{url_cna}{detalhes_foto}')
-    if not resposta.ok:
-      print("Ocorreu um erro, status:" , resposta.status_code)
-    else:
-      for dado in resposta.iter_content(1024):
-        if not dado:
-            break
-        imagem.write(dado)
-      transformar_foto_em_pdf(f'fotos_oab/{insc}_foto_oab.jpg',insc)
+def dados_advogado(txt, nome, uf, insc, documento_advogado):
+  padrao = r'\(?\d{2}\)?\s?\d{4,5}-\d{4}'
+  resultado = re.search(padrao, txt, re.MULTILINE)
+  if resultado != None:
+    return {'telefone': resultado.group(0), 'advogado': nome, 'seccional': uf, 'oab': insc, 'documento_advogado': documento_advogado}
+  else:
+    return {'telefone': '', 'advogado': nome, 'seccional': uf, 'oab': insc, 'documento_advogado': documento_advogado}
 
-def transformar_foto_em_pdf(foto,insc):
-  imagem = Image.open(foto)
+def enviar_banco_de_dados(dados, processo):
+    dados['documento'] = dados.pop('documento_advogado')
+    dados['nome'] = dados.pop('advogado')
+    dados['estado'] = dados.pop('seccional')
 
-  c = canvas.Canvas(f'pdf_oab/{insc}_pdf_oab.pdf', pagesize=letter)
-  c.setPageSize((imagem.width, imagem.height))
-  c.drawImage(foto, 0, 0, width=imagem.width, height=imagem.height)
-  c.save()
-  return f'{insc}_pdf_oab.pdf'
+    if type(dados['documento'])is dict:
+      dados['documento'] = dados['documento']['documento']
+
+    atualizar_ou_inserir_pessoa(dados['oab'], dados)
+    atualizar_ou_inserir_pessoa_precatorio(dados['oab'], processo)
+    dados['seccional'] = dados.pop('estado')
+    dados['advogado'] = dados.pop('nome')
+    del dados['documento']
