@@ -21,7 +21,10 @@ rsa_archer/__pycache__/archer_instance.cpython-310.pyc
 rsa_archer/__pycache__/__init__.cpython-310.pyc
 *.bat
 *.pickle
+<<<<<<< HEAD
 pdf_oab/
 fotos_oab/
 arquivos_xml
 arquivos_*
+=======
+>>>>>>> PRINCIPAL

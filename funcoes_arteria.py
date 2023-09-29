@@ -87,6 +87,7 @@ def cadastrar_arteria(dados_precadastro, app, id_arteria=None, archer_instance=N
     else:
         return archer_instance.create_content_record(dados_precadastro)
 
+
 def teste333(dados, app, archer_instance=None):
     if not archer_instance:
         archer_instance = instancia_arteria(app)
@@ -1183,69 +1184,86 @@ def enviar_valores_oficio_arteria(arquivo_pdf, dado):
     arquivo_base_64 = transformar_arquivo_para_base64(arquivo_pdf)
     id = archer_instance.post_attachment(nome_arquivo, arquivo_base_64)
     
-    dado = limpar_dados_banco_dados(dado)
-    if dado['origem'] != '':
+    dado = limpar_dados_arteria(dado)
+    if dado['processo_origem'] != '':
         foi_expedido = 'SIM'
     else:
         foi_expedido = 'NÃO'
 
+    if 'valor_principal_credor' in dado:
+        valor_principal = dado['valor_principal_credor']
+    else:
+        valor_principal = dado['valor_principal']
+
     dados = {
     'Data da Expedição': dado['data_expedicao'],
-    'Código do Processo de Origem': dado['origem'],
+    'Código do Processo de Origem': dado['processo_origem'],
     'Número do Precatório': dado['processo'],
-    'Tipo de Precatório': dado['tipo_precatorio'],
+    'Tipo de Precatório': dado['tipo'],
     'Natureza': [dado['natureza']],
     'Status Precatório':['PRECATÓRIO'],
     'Nome do Requerente': dado['credor'],
     'Requerido': dado['devedor'],
-    'CPF/CNPJ': dado['cpf_cnpj'],
+    'CPF/CNPJ': dado['documento'],
     'Estado': [dado['estado']],
     'Cidade': dado['cidade'],
     'Tribunal': dado['tribunal'],
     'Vara': dado['vara'],
-    'Valor Principal': dado['principal'],
-    'Valor dos Juros': dado['juros'],
-    'Valor Global': dado['global'],
-    'Data  de Nascimento do Requerente': dado['nascimento'],
+    'Valor Principal': valor_principal,
+    'Valor dos Juros': dado['valor_juros'],
+    'Valor Global': dado['valor_global'],
+    'Data  de Nascimento do Requerente': dado['data_nascimento'],
     'Número do Precatório foi Expedido?': [foi_expedido],
     "Ofício Requisitório": [f"{id}"],
     "Nome Advogado": dado['advogado'],
     "OAB": dado['oab'],
-    "Seccional": [dado['seccional']]
+    "Seccional": [dado['seccional']],
+    'Telefone': dado['telefone'],
     }
 
     id_arteria = cadastrar_arteria(dados, 'Precatórios')
-    return id_arteria
+    return {'id_sistema_arteria': id_arteria}
 
-def limpar_dados_banco_dados(dado):
+def limpar_dados_arteria(dado):
+    if 'conhecimento' in dado:  
+        if dado['conhecimento'] == '':
+            dado['processo_origem'] = dado['processo'].split('/')[0]
+            del dado['conhecimento']
+        else:
+            dado['processo_origem'] = dado.pop('conhecimento')
+            
     if dado['seccional'] != '':
         dado['seccional'] = selecionar_seccional(dado['seccional'])
 
-    if dado['juros'] == '':
-        dado['juros'] = '0'
-        
-    if dado['principal'] == '':
-        dado['principal'] = '0'
+    if 'nome' in dado:
+        dado['credor'] = dado.pop('nome')
 
-    if dado['vara'] == '':
-        dado['vara'] = dado['vara_pdf']
-        del dado['vara_pdf']
-    else:
-        del dado['vara_pdf']
-
-    if 'executado' in dict.keys(dado) or 'exequente' in dict.keys(dado):
-        if dado['executado'] != '':
-            dado['devedor'] = dado['executado']
-            del dado['executado']
-        else:
-            del dado['executado']
-        if dado['exequente'] != '':
-            dado['credor'] = dado['exequente']
-            del dado['exequente']
-        else:
-            del dado['exequente']
+    if dado['valor_juros'] == '':
+        dado['valor_juros'] = '0'
     
-    if dado.get('cpf'):
-        dado['cpf_cnpj'] = dado['cpf']
-        del dado['cpf']
+    if dado['valor_principal'] == '':
+        dado['valor_principal'] = '0'
+
+    if 'vara' in dado:
+        if dado['vara'] == '':
+            dado['vara'] = dado.pop('vara_pdf')
+        else:
+            del dado['vara_pdf']
+
+    if 'JUIZADO' in dado['vara'].upper():
+        dado[ 'juizado'] = True
+    else:
+        dado[ 'juizado'] = False
+
+    if 'executado' in dado:
+        if dado['executado'] != '':
+            dado['devedor'] = dado.pop('executado')
+        else:
+            del dado['executado']
+
+    if 'exequente' in dado:
+        if dado['exequente'] != '':
+            dado['credor'] = dado.pop('exequente')
+        else:
+            del dado['exequente']
     return dado
