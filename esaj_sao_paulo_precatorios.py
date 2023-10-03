@@ -99,14 +99,13 @@ def get_docs_precatorio(codigo_prec, url, s, zip_file=False, pdf=False):
     pasta_digital = s.get(pasta_digital_req.text).text
 
     json_pasta = json.loads(pasta_digital[pasta_digital.find('requestScope = ') + 15: pasta_digital.find('requestScope = ') + 15 + pasta_digital[pasta_digital.find('requestScope = ') + 15:].find(';')])
-
+    
     por_tipo = {}
     for doc in json_pasta:
         if doc['data']['cdTipoDocDigital'] not in por_tipo:
             por_tipo[doc['data']['cdTipoDocDigital']] = []
-
         por_tipo[doc['data']['cdTipoDocDigital']].append(doc)
-
+       
     oficios = []
     pdfs_oficios = []
     #? tipo 99024 = oficio
@@ -115,7 +114,9 @@ def get_docs_precatorio(codigo_prec, url, s, zip_file=False, pdf=False):
     for doc in por_tipo['99024']:
         for children in doc['children']:
             params = children['data']['parametros']
-
+            
+            id_documento = params.split('idDocumento')[1].split('&')[0].replace('=','')
+            
             pdfs_oficios.append(params)
 
             if pdf:
@@ -123,9 +124,10 @@ def get_docs_precatorio(codigo_prec, url, s, zip_file=False, pdf=False):
 
                 file_name = file_req.headers['Content-Disposition'].split('filename=')[1].replace('"', '')
 
-                oficios.append([file_name, file_req.content])
+                oficios.append([id_documento ,file_name, file_req.content])
 
     if zip_file:
+        
         query_zip = {
             'itensPdfSelecionados': pdfs_oficios,
             'cdProcesso': codigo_prec,
@@ -157,7 +159,7 @@ def get_docs_precatorio(codigo_prec, url, s, zip_file=False, pdf=False):
 
         zip_file = [zip_name, zip_file_req.content]
 
-    return {'zip': zip_file, 'pdfs': oficios} if zip_file and pdf else oficios if pdf else zip_file if zip_file else None
+    return {'id_documentos': id_documento, 'zip': zip_file, 'pdfs': oficios} if zip_file and pdf else oficios if pdf else zip_file if zip_file else None
 
 
 def get_incidentes(cnj, url, s):
@@ -251,13 +253,12 @@ def get_incidentes(cnj, url, s):
 def get_docs_oficio_precatorios_tjsp(cnj, zip_file=False, pdf=False):
     login_esja = f'{os.getenv("login_esja")}'
     senha_esja_sao_paulo = f'{os.getenv("senha_esja_sao_paulo")}'
-    session = login_esaj('https://esaj.tjsp.jus.br', login_esja, 'Costaesilva2023#')
+    session = login_esaj('https://esaj.tjsp.jus.br', login_esja, senha_esja_sao_paulo)
 
     incidentes = get_incidentes(cnj, 'https://esaj.tjsp.jus.br/cpopg', session)
 
     cods_incidentes = [v.split('codigo=')[1].split('&')[0] for k, v in incidentes.items() if 'prec' in k.lower()]
 
     docs = {cod: get_docs_precatorio(cod, 'https://esaj.tjsp.jus.br/cpopg', session, zip_file=zip_file, pdf=pdf) for cod in cods_incidentes}
-
     return docs
 
