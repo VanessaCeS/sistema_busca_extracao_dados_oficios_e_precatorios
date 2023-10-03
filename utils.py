@@ -4,6 +4,7 @@ import base64
 import requests
 from datetime import datetime
 from dotenv import load_dotenv
+
 load_dotenv('.env')
 
 def regex(string):
@@ -536,7 +537,6 @@ def ler_imagem_ocr(arquivo_base_64_pdf):
   txt = response['img_text']
   return txt
 
-mandar_documento_para_ocr('arquivos_pdf_alagoas/0704953-73.2016.8.02.0001_arquivo_precatorio.pdf', '1', '0704953-73.2016.8.02.0001')
 def dados_limpos_banco_de_dados(dados):
   dados['data_nascimento'] = converter_data(dados['data_nascimento'])
   dados['data_expedicao'] = converter_data(dados['data_expedicao'])
@@ -653,3 +653,4 @@ def mandar_dados_regex(indices, linhas):
         if len(nome) > 1:
           dados = dados | {f'{nome}': ''}
   return dados
+
