@@ -1,27 +1,18 @@
 import re
 import PyPDF2
-import xmltodict
 import traceback
 from dotenv import load_dotenv
-from cna_oab import pegar_foto_oab
-from rotina_processos_infocons import buscar_xml
-from utils import apagar_arquivos_txt, data_corrente_formatada, mandar_dados_regex
+from cna_oab import login_cna
+from utils import apagar_arquivos_txt, mandar_dados_regex
 from funcoes_arteria import enviar_valores_oficio_arteria
 from esaj_sao_paulo_precatorios import get_docs_oficio_precatorios_tjsp
-from banco_de_dados import atualizar_ou_inserir_pessoa, atualizar_ou_inserir_pessoa_precatorio, atualizar_ou_inserir_precatorios_no_banco_de_dados, mandar_precatorios_para_banco_de_dados
-from utils import encontrar_data_expedicao_e_cidade, extrair_processo_origem, limpar_dados, regex, tipo_precatorio,  verificar_tribunal
+from utils import encontrar_data_expedicao_e_cidade, limpar_dados, regex, tipo_precatorio,  verificar_tribunal
+from banco_de_dados import atualizar_ou_inserir_pessoa_no_banco_de_dados, atualizar_ou_inserir_pessoa_precatorio, atualizar_ou_inserir_precatorios_no_banco_de_dados, consultar_processos
+
 load_dotenv('.env')
 
 def ler_xml():     
-  buscar_xml()
-  with open(f'arquivos_xml/relatorio_{data_corrente_formatada()}', 'r', encoding='utf-8') as fd: 
-    doc = xmltodict.parse(fd.read())
-  
-  dados = []
-  base_doc = doc['Pub_OL']['Publicacoes']
-  for i in range(len(doc['Pub_OL']['Publicacoes']))  :
-    processo_origem =  extrair_processo_origem(f"{base_doc[i]['Publicacao']})")
-    dados.append({"processo": f"{base_doc[i]['Processo']}", "tribunal": f"{base_doc[i]['Tribunal']}", "materia": f"{base_doc[i]['Materia']}", 'processo_origem': processo_origem})
+  dados = consultar_processos('.8.26.')
   for d in dados:
         dados_limpos = limpar_dados(d)
         tipo = tipo_precatorio(d)
@@ -30,7 +21,7 @@ def ler_xml():
           ler_documentos(dado)
         else:
           pass
-  apagar_arquivos_txt(['./fotos_oab','./arquivos_pdf_sao_paulo', './arquivos_txt_sao_paulo'])
+  apagar_arquivos_txt(['./fotos_oab','./arquivos_pdf_sao_paulo', './arquivos_txt_sao_paulo', './fotos_oab', './arquivos_texto_ocr'])
   return dados
 
 def verificar_tribunal(n_processo):
@@ -67,7 +58,6 @@ def ler_documentos(dado_xml):
                     arquivo.write(text)
           
           dados_txt = extrair_dados_txt(f"arquivos_txt_sao_paulo/{processo_geral}_extrair.txt")
-          
           dados_complementares = {"processo_geral": processo_geral, "codigo_processo": codigo_processo, 'site': 'https://esaj.tjac.jus.br', 'id_documento': id_documento}
           novos_dados = dado_xml | dados_txt | dados_complementares
           extrair_informacoes_credores_e_mandar_para_banco_dados(arquivo_pdf, novos_dados)
@@ -106,9 +96,15 @@ def extrair_dados_txt(arquivo_txt):
       documento_advogado = regex(linhas[indice_documento_advogado + 3])
       
     cidada_e_data_precatorio = encontrar_data_expedicao_e_cidade(arquivo_txt)
-    telefone_seccional_e_nome_advogado = pegar_foto_oab(oab, seccional, documento_advogado, advogado,dados['processo'])
+    telefone_seccional_e_nome_advogado = login_cna(oab, seccional, documento_advogado, advogado,dados['processo'])
     dados = dados | cidada_e_data_precatorio | telefone_seccional_e_nome_advogado
     return dados
+
+def encontrar_indice_linha(linhas, texto):
+    for indice, linha in enumerate(linhas):
+      if texto in linha:
+        return indice
+    return None
 
 def extrair_informacoes_credores_e_mandar_para_banco_dados(arquivo_pdf,dados_txt ):
   i = 0 
@@ -126,7 +122,7 @@ def extrair_informacoes_credores_e_mandar_para_banco_dados(arquivo_pdf,dados_txt
       indice_valor_principal = encontrar_indice_linha(linhas, 'Valor  total  da condenação')
       indices = {'indice_nome': indice_nome, 'indice_documento': indice_documento, 'indice_data_nascimento': indice_data_nascimento}
       dados = mandar_dados_regex(indices, linhas)
-      atualizar_ou_inserir_pessoa(dados['documento'], dados)
+      atualizar_ou_inserir_pessoa_no_banco_de_dados(dados['documento'], dados)
       
       if int(dados_txt['qtd_credores']) > 1:
               valor_principal_credor = regex(linhas[indice_valor_principal])
@@ -139,12 +135,3 @@ def extrair_informacoes_credores_e_mandar_para_banco_dados(arquivo_pdf,dados_txt
       atualizar_ou_inserir_precatorios_no_banco_de_dados(dados['codigo_processo'], dados)
       atualizar_ou_inserir_pessoa_precatorio(dados['documento'], dados['processo'])
     i = int(i) + 1
-
-def encontrar_indice_linha(linhas, texto):
-    for indice, linha in enumerate(linhas):
-      if texto in linha:
-        return indice
-    return None
-
-
-ler_xml()

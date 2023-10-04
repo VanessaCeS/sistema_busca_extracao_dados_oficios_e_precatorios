@@ -46,7 +46,6 @@ def login(insc, uf, documento_advogado, nome, processo):
   return resp
 
 def baixar_foto_carteirinha_oab(resp_foto, url_cna, documento_advogado, processo, nome, uf,insc):
-  if resp_foto['Success'] == True and resp_foto['ResultMessage'] == '':
     if resp_foto['Data'] != [] :
       url_foto = resp_foto['Data'][0]['DetailUrl']
       pegar_foto = f'{url_cna}{url_foto}'
@@ -64,8 +63,7 @@ def baixar_foto_carteirinha_oab(resp_foto, url_cna, documento_advogado, processo
       dados = {'telefone': '', 'advogado': nome.strip(), 'seccional': uf, 'oab': insc, 'documento_advogado': documento_advogado}
       enviar_banco_de_dados(dados, processo)
     return dados
-  else: 
-    return {'telefone': '', 'advogado': '', 'seccional': '', 'oab': '', 'documento_advogado': ''}
+  
 
 def dados_advogado(txt, nome, uf, insc, documento_advogado):
   padrao = r'\(?\d{2}\)?\s?\d{4,5}-\d{4}'
@@ -80,7 +78,7 @@ def enviar_banco_de_dados(dados, processo):
     dados['nome'] = dados.pop('advogado')
     dados['estado'] = dados.pop('seccional')
 
-    if type(dados['documento'])is dict:
+    if type(dados['documento']) is dict:
       dados['documento'] = dados['documento']['documento']
 
     atualizar_ou_inserir_pessoa_no_banco_de_dados(dados['oab'], dados)

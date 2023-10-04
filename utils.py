@@ -81,11 +81,11 @@ def regex(string):
         return {'estado': estado.group(1).replace('  ', ' ').strip()}
       else:
         return {'estado': ''}
-    if 'VARA' in string.upper():
+    if 'VARA' in string.upper() or ' VARA' in string.upper():
       for linha in string.split('\n'):
-        if 'Origem/Foro  Comarca/  Vara:' in linha:
-          padrao = r':(.*)'
-          resultado = re.search(padrao, linha)
+        if 'Origem/Foro  Comarca/  Vara:' in linha or 'Origem/Foro Comarca/ Vara:' in linha:
+          padrao = r'VARA:(.*)'
+          resultado = re.search(padrao, linha, re.IGNORECASE)
           if resultado != None:
             vara = resultado.group(1).split('/')[0]
             return {'vara': vara.strip()}
@@ -119,7 +119,7 @@ def regex(string):
         return {'processo': processo.group(0).strip()} 
       else:
         return {'processo': ''}
-    elif 'Número  do processo' in string :
+    elif 'Número  do processo' in string or 'Número do processo' in string:
       padrao = r'\d{7}-\d{2}.\d{4}.\d{1}.\d{2}.\d{4}'
       processo = re.search(padrao, string)
       if processo != None:
@@ -189,11 +189,11 @@ def regex(string):
         return {'nome': credor.group(1).strip()}
       else:
         return {'nome': ''}
-    if 'Natureza  do Crédito' in string or 'Natureza do Crédito:' in string:
-      padrao = r'(?:Natureza  do Crédito:|Natureza do Crédito:)\s+(.*?)\n'
+    if 'Natureza  do Crédito' in string or 'Natureza do Crédito:' in string or 'do Crédito:' in string:
+      padrao = r'(?:Natureza  do Crédito:|Natureza do Crédito:|do Crédito:)\s+(.*?)\n'
       natureza = re.search(padrao, string)
       if natureza != None:
-        return{'natureza': natureza.group(1).strip()}
+        return{'natureza': natureza.group(1).strip().upper()}
       else:
         return{'natureza': ''}
     elif 'Natureza' in string:
@@ -210,21 +210,21 @@ def regex(string):
           return {'natureza': ''}
       else:
         return {'natureza': ''}
-    if 'Valor  global  da requisição' in string or "Valor  total da requisição" in string or 'Valor(R$):' in string:
+    if 'Valor  global  da requisição' in string or "Valor  total da requisição" in string or 'Valor(R$):' in string or "Valor total da requisição" in string:
       padrao = r'\b(?:0{1,3}|[1-9](?:\d{0,2}(?:\.\d{3})*(?:,\d{1,2})?|,\d{1,2})?)\b|\b(?:0{1,3}|[1-9](?:\d{0,2}(?:,\d{3})*(?:\.\d{1,2})?|\.\d{1,2})?)\b' 
       valor_global = re.search(padrao, string)
       if valor_global != None:
         return {'valor_global': valor_global.group(0).strip().replace('.','').replace(',','.')}
       else: 
         return {'valor_global': ''}
-    if 'JUROS  MORATÓRIOS' in string.upper():
+    if 'JUROS  MORATÓRIOS' in string.upper() or 'moratórios' in string:
       padrao = r'\b(?:0{1,3}|[1-9](?:\d{0,2}(?:\.\d{3})*(?:,\d{1,2})?|,\d{1,2})?)\b|\b(?:0{1,3}|[1-9](?:\d{0,2}(?:,\d{3})*(?:\.\d{1,2})?|\.\d{1,2})?)\b' 
       valor_juros = re.search(padrao, string)
       if valor_juros != None:
         return {'valor_juros': valor_juros.group(0).strip().replace('.','').replace(',','.')}
       else:
         return {'valor_juros': ''}
-    if 'Principal/Indenização' in string or "Valor  originário" in string:
+    if 'Principal/Indenização' in string or "Valor  originário" in string or 'originário:' in string:
       padrao = r'\b(?:0{1,3}|[1-9](?:\d{0,2}(?:\.\d{3})*(?:,\d{1,2})?|,\d{1,2})?)\b|\b(?:0{1,3}|[1-9](?:\d{0,2}(?:,\d{3})*(?:\.\d{1,2})?|\.\d{1,2})?)\b'  
       valor_principal = re.search(padrao, string)
       if valor_principal != None:
@@ -556,10 +556,11 @@ def dados_limpos_banco_de_dados(dados):
   return dados
         
 def converter_data(data):
-  data = data.replace('/','-')
-  date_object = datetime.strptime(data, '%m-%d-%Y')
-  data_padrao_bd = date_object.strftime('%Y-%m-%d')
-  return data_padrao_bd
+  if data != '':
+    data = data.replace('/','-')
+    date_object = datetime.strptime(data, '%m-%d-%Y')
+    data_padrao_bd = date_object.strftime('%Y-%m-%d')
+    return data_padrao_bd
 
 def processar_dado(dado):
     dado_processado = {}

@@ -1194,7 +1194,7 @@ def enviar_valores_oficio_arteria(arquivo_pdf, dado):
         valor_principal = dado['valor_principal_credor']
     else:
         valor_principal = dado['valor_principal']
-
+    print('DADOS --->> ', dado)
     dados = {
     'Data da Expedição': dado['data_expedicao'],
     'Código do Processo de Origem': dado['processo_origem'],
