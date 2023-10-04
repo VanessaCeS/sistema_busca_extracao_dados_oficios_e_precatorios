@@ -145,7 +145,6 @@ def consultar_processos(valor_tribunal):
       processo = registro[2]
       materia = registro[3]
       tribunal = registro[4]
-      print('id ---->> ', id_processo)
       consulta_publicacao = "SELECT publicacao FROM publicacoes WHERE id_processo LIKE '%{}%'".format(id_processo)
       cursor.execute(consulta_publicacao)
       publicacoes = cursor.fetchall()
