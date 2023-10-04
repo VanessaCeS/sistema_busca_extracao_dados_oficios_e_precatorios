@@ -59,9 +59,21 @@ def buscar_xml():
             if campo == 'SeqRecorte':
                 dados_publicacao['seq_recorte'] = conteudo
         processo_id = insert_or_update_processo(util.connector_precatorio_banco(), dados_processo)
+        if processo_id == 0:
+            processo_id = select_id(util.connector_precatorio_banco(), dados_processo['processo'])
         insert_publicacao(util.connector_precatorio_banco(), processo_id, dados_publicacao)
     print('fim')
 
+
+def select_id(conn, processo):
+    cursor = conn.cursor()
+    sql = f"SELECT id_processo FROM processos WHERE processo = '{processo}'"
+    cursor.execute(sql)
+
+    # Recupere os resultados da consulta
+    results = cursor.fetchall()
+
+    return results[0][0]
 
 def insert_or_update_processo(conn, dados_processo):
     cursor = conn.cursor()
