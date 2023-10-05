@@ -130,6 +130,7 @@ def extrair_informacoes_credores_e_mandar_para_banco_dados(arquivo_pdf,dados_txt
               
       dados = dados | dados_txt
       id_arteria = enviar_valores_oficio_arteria(arquivo_pdf, dados)
+      dados['id_sistema_arteria'] = id_arteria
       dados = dados | id_arteria
 
       atualizar_ou_inserir_precatorios_no_banco_de_dados(dados['codigo_processo'], dados)

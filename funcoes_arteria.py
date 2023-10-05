@@ -1194,11 +1194,7 @@ def enviar_valores_oficio_arteria(arquivo_pdf, dado):
         valor_principal = dado['valor_principal_credor']
     else:
         valor_principal = dado['valor_principal']
-<<<<<<< HEAD
-    print('DADOS --->> ', dado)
-=======
-
->>>>>>> PRINCIPAL
+        
     dados = {
     'Data da Expedição': dado['data_expedicao'],
     'Código do Processo de Origem': dado['processo_origem'],
@@ -1226,7 +1222,7 @@ def enviar_valores_oficio_arteria(arquivo_pdf, dado):
     }
 
     id_arteria = cadastrar_arteria(dados, 'Precatórios')
-    return {'id_sistema_arteria': id_arteria}
+    return  id_arteria
 
 def limpar_dados_arteria(dado):
     if 'conhecimento' in dado:  
@@ -1248,11 +1244,7 @@ def limpar_dados_arteria(dado):
     if dado['valor_principal'] == '':
         dado['valor_principal'] = '0'
 
-<<<<<<< HEAD
     if 'vara_pdf' in dado:
-=======
-    if 'vara' in dado:
->>>>>>> PRINCIPAL
         if dado['vara'] == '':
             dado['vara'] = dado.pop('vara_pdf')
         else:
@@ -1274,9 +1266,8 @@ def limpar_dados_arteria(dado):
             dado['credor'] = dado.pop('exequente')
         else:
             del dado['exequente']
-<<<<<<< HEAD
+
     if 'qtd_credores' not in dado:
         dado['qtd_credores'] = '1' 
-=======
->>>>>>> PRINCIPAL
+        
     return dado
