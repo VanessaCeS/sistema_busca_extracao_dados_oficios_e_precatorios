@@ -1222,7 +1222,7 @@ def enviar_valores_oficio_arteria(arquivo_pdf, dado):
     }
 
     id_arteria = cadastrar_arteria(dados, 'Precatórios')
-    return {'id_sistema_arteria': id_arteria}
+    return id_arteria
 
 def limpar_dados_arteria(dado):
     if 'conhecimento' in dado:  

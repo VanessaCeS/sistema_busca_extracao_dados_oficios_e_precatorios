@@ -6,9 +6,9 @@ from datetime import datetime
 from dotenv import load_dotenv
 load_dotenv('.env')
 
-tipos_alimentar = ['Alimentar  - Benefícios  previdenciários  e indenizações,  por morte  ou invalidez', ' Alimentar  - Salários,  vencimentos,  proventos  e pensões', 'Salários, Vencimentos, Proventos, Pensões.', 'Benefícios  Previdenciários  e  Indenizações.','Salários,  Vencimentos,  Proventos,  Pensões','Benefícios Previdenciários e Indenizações', 'Indenizações por morte ou invalidez fundadas em responsabilidade civil, em virtude de sentença transitada em julgado', 'Salários, vencimentos, proventos, pensões e suas complementações']
+tipos_alimentar = ['Alimentar  - Benefícios  previdenciários  e indenizações,  por morte  ou invalidez', ' Alimentar  - Salários,  vencimentos,  proventos  e pensões', 'Salários, Vencimentos, Proventos, Pensões.', 'Benefícios  Previdenciários  e  Indenizações.','Salários,  Vencimentos,  Proventos,  Pensões','Benefícios Previdenciários e Indenizações', 'Indenizações por morte ou invalidez fundadas em responsabilidade civil, em virtude de sentença transitada em julgado', 'Salários, vencimentos, proventos, pensões e suas complementações', 'ALIMENTAR - Honorários de Sucumbência']
 
-tipos_comum = ['Não-Alimentar','Desapropriações – Único Imóvel Residencial do Credor (Art. 78, § 3º, ADCT)','Outras  espécies  - Não alimentar', 'Não-Alimentar.  Danos  Morais','Desapropriações']
+tipos_comum = ['Não-Alimentar','Desapropriações – Único Imóvel Residencial do Credor (Art. 78, § 3º, ADCT)','Outras  espécies  - Não alimentar', 'Não-Alimentar.  Danos  Morais','Desapropriações', 'Comum']
 
 def buscar_xml():
   url_info_cons = "https://clippingbrasil.com.br/InfoWsScript/service_xml.php"
