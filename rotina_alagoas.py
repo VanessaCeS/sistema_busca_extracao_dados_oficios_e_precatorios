@@ -14,7 +14,8 @@ def ler_xml(arquivo_xml):
   base_doc = doc['Pub_OL']['Publicacoes']
   for i in range(len(doc['Pub_OL']['Publicacoes']))  :
     processo_origem =  extrair_processo_origem(f"{base_doc[i]['Publicacao']})")
-    dados.append({"processo": f"{base_doc[i]['Processo']}", "tribunal": f"{base_doc[i]['Tribunal']}", "materia": f"{base_doc[i]['Materia']}", 'origem': processo_origem})
+    dados.append({"processo": f"{base_doc[i]['Processo']}", "tribunal": f"{base_doc[i]['Tribunal']}", "materia": f"{base_doc[i]['Materia']}", 'processo_origem': processo_origem})
+    
   for d in dados:
         dados_limpos = limpar_dados(d)
         tipo = tipo_precatorio(d)
@@ -52,12 +53,12 @@ def ler_documentos(dado_xml):
             with open(f"arquivos_txt_alagoas/{processo_geral}_extrair.txt", "w", encoding='utf-8') as arquivo:
                     arquivo.write(text)
           dados_pdf = extrair_dados_pdf(f'arquivos_txt_alagoas/{processo_geral}_extrair.txt')
-          dados = dado_xml | dados_pdf | {"processo_geral": processo_geral,'codigo_processo': codigo_processo, 'site': 'https://www2.tjal.jus.br/esaj/', 'tipo_precatorio': 'ESTADUAL', 'estado': 'ALAGOAS'}
+          dados = dado_xml | dados_pdf | {"processo_geral": processo_geral,'codigo_processo': codigo_processo, 'site': 'https://www2.tjal.jus.br/esaj/', 'tipo': 'ESTADUAL', 'estado': 'ALAGOAS'}
 
           mandar_para_banco_de_dados(dados['processo'], dados)
           enviar_valores_oficio_arteria(arquivo_pdf, dados)
       except Exception as e:
-        print(f"Erro! Processo -> {processo_geral}", e)
+        print(f"Erro no processo -> {processo_geral}", f'Erro: {e}')
         print(traceback.print_exc())
         pass
 
@@ -100,9 +101,9 @@ def pegar_processo_origem(texto, indice):
   for i in dict.keys(indice):
       if indice[i] != None:
         origem = texto[indice[i]].replace('\n', '').replace(',', '').strip()
-        return {'origem': origem}
+        return {'processo_origem': origem}
       else:
-          return {'origem': ''}
+          return {'processo_origem': ''}
       
 def pegar_cidade(texto, indice):
     for i in dict.keys(indice):

@@ -7,7 +7,6 @@ from requests.adapters import HTTPAdapter, Retry
 import re
 import functools
 
-
 def configure_session(session, retries=3, backoff=0.3, timeout=None, not_retry_on_methods=None, retry_on_status=None):
     retry_methods = ["GET", "POST", "PUT", "DELETE", "HEAD", "OPTIONS"]
 
@@ -59,7 +58,6 @@ def login_esaj(url_tribunal: str, username: str, password: str) -> Session:
         print(f"[bold red]Não foi possivel acessar o site do tribunal. {e}[/bold red]")
         
         raise Exception(f"{url_tribunal} - Não foi possivel acessar o site do tribunal {e}")
-    
     if page_login.status_code != 200:
         print(f"[bold red]{url_tribunal} - Não foi possivel acessar o site do tribunal. Status code: {page_login.status_code}[/bold red]")
         
@@ -86,7 +84,6 @@ def login_esaj(url_tribunal: str, username: str, password: str) -> Session:
 
     if url in logar.url:
         print(f"[bold red]{url_tribunal} - Login Falhou[/bold red]")
-
         raise Exception(f"{url_tribunal} - Login Falhou")
 
     return s
@@ -102,21 +99,24 @@ def get_docs_precatorio(codigo_prec, url, s, zip_file=False, pdf=False):
     pasta_digital = s.get(pasta_digital_req.text).text
 
     json_pasta = json.loads(pasta_digital[pasta_digital.find('requestScope = ') + 15: pasta_digital.find('requestScope = ') + 15 + pasta_digital[pasta_digital.find('requestScope = ') + 15:].find(';')])
-
+    
     por_tipo = {}
     for doc in json_pasta:
         if doc['data']['cdTipoDocDigital'] not in por_tipo:
             por_tipo[doc['data']['cdTipoDocDigital']] = []
-
         por_tipo[doc['data']['cdTipoDocDigital']].append(doc)
-
+       
     oficios = []
     pdfs_oficios = []
     #? tipo 99024 = oficio
+    #? tipo 34 = oficio acre
+
     for doc in por_tipo['99024']:
         for children in doc['children']:
             params = children['data']['parametros']
-
+            
+            id_documento = params.split('idDocumento')[1].split('&')[0].replace('=','')
+            
             pdfs_oficios.append(params)
 
             if pdf:
@@ -124,9 +124,10 @@ def get_docs_precatorio(codigo_prec, url, s, zip_file=False, pdf=False):
 
                 file_name = file_req.headers['Content-Disposition'].split('filename=')[1].replace('"', '')
 
-                oficios.append([file_name, file_req.content])
+                oficios.append([id_documento ,file_name, file_req.content])
 
     if zip_file:
+        
         query_zip = {
             'itensPdfSelecionados': pdfs_oficios,
             'cdProcesso': codigo_prec,
@@ -158,7 +159,7 @@ def get_docs_precatorio(codigo_prec, url, s, zip_file=False, pdf=False):
 
         zip_file = [zip_name, zip_file_req.content]
 
-    return {'zip': zip_file, 'pdfs': oficios} if zip_file and pdf else oficios if pdf else zip_file if zip_file else None
+    return {'id_documentos': id_documento, 'zip': zip_file, 'pdfs': oficios} if zip_file and pdf else oficios if pdf else zip_file if zip_file else None
 
 
 def get_incidentes(cnj, url, s):
@@ -259,6 +260,5 @@ def get_docs_oficio_precatorios_tjsp(cnj, zip_file=False, pdf=False):
     cods_incidentes = [v.split('codigo=')[1].split('&')[0] for k, v in incidentes.items() if 'prec' in k.lower()]
 
     docs = {cod: get_docs_precatorio(cod, 'https://esaj.tjsp.jus.br/cpopg', session, zip_file=zip_file, pdf=pdf) for cod in cods_incidentes}
-
     return docs
 
