@@ -3,11 +3,13 @@ import re
 import PyPDF2
 import xmltodict
 import traceback
+from banco_de_dados import consultar_processos
 from funcoes_arteria import enviar_valores_oficio_arteria
 from esaj_amazonas_precatorios import get_docs_oficio_precatorios_tjam
-from utils import apagar_arquivos_txt, encontrar_indice_linha, extrair_processo_origem, extrair_processo_origem_amazonas, limpar_dados, mandar_para_banco_de_dados, regex, tipo_precatorio, verificar_tribunal
+from utils import apagar_arquivos_txt, encontrar_indice_linha, extrair_processo_origem, extrair_processo_origem_amazonas, limpar_dados, mandar_dados_regex, pegar_cpf_e_credor,  regex, tipo_precatorio, verificar_tribunal
 
 def ler_xml(arquivo_xml):     
+  dados = consultar_processos('.8.12.')
   with open(arquivo_xml, 'r', encoding='utf-8') as fd:
     doc = xmltodict.parse(fd.read())
   dados = []
@@ -26,7 +28,7 @@ def ler_xml(arquivo_xml):
           ler_documentos(dado)
         else:
           pass
-  apagar_arquivos_txt('./arquivos_txt_mato_grosso_sul')
+  apagar_arquivos_txt(['./arquivos_txt_mato_grosso_sul', './arquivos_pdf_mato_grosso_do_sul','./fotos_oab', './arquivos_texto_ocr', './pdf_oab'])
 
 def verificar_tribunal(n_processo):
         padrao = r'\d{7}-\d{2}.\d{4}.4.03.\d{4}'
@@ -50,9 +52,6 @@ def ler_documentos(dado_xml):
                 dados_pdf = extrair_dados_pdf(f"arquivos_txt_amazonas/{processo_geral}_{i + 1}_extrair.txt")
                 if dados_pdf['devedor'] != '' and dados_pdf['credor'] != '' and dados_pdf['global'] != '':
                   dados = dado_xml | dados_pdf | {"processo_geral": processo_geral,'codigo_processo': codigo_processo, 'site': 'https://consultasaj.tjam.jus.br/', 'tipo_precatorio': 'MUNICIPAL', 'estado': 'AMAZONAS'}
-                  # id_arteria = enviar_valores_oficio_arteria(arquivo_pdf, dados)
-                  # dados = dados | {'id_rastreamento': id_arteria}
-                  # mandar_para_banco_de_dados(dados['id_rastreamento'], dados)
       except Exception as e:
         print(f"Erro! Processo -> {processo_geral}", e)
         print(traceback.print_exc())
@@ -113,17 +112,7 @@ def extrair_dados_pdf(arquivo_txt):
               'indice_nasceu': indice_nasceu,
               'indice_principal': indice_principal}
     
-    dados = {}
-    for i in dict.keys(indices):
-      nome = i.split('_')[1]
-      if indices[i] >= 1:
-        valores = linhas[indices[i]]
-        valores_regex = regex(valores)
-        if valores_regex == None: 
-          valores_regex = {f'{nome}': ''}
-        dados = dados | valores_regex
-      else:
-          dados = dados | {f'{nome}': ''}
+    dados = mandar_dados_regex(indices, linhas)
 
     if dados['global'] == '':
       valor = linhas[indice_global + 2]
@@ -165,23 +154,7 @@ def principal_e_juros_linha(linhas):
         break
   return {'principal': principal, 'juros': juros}
 
-def pegar_cpf_e_credor(indice, texto):
-  string = texto[indice]
-  padrao_cpf = r'\b(?:\d{3}\.\d{3}\.\d{3}-\d{2}|\d{2}\.\d{3}\.\d{3}\/\d{4}-\d{2}|RNE-\d{10})\b|\b\d{11}\b'
-  cpf_cnpj_rne = re.search(padrao_cpf, string)
-  if cpf_cnpj_rne != None:
-      cpf = cpf_cnpj_rne.group(0).strip()
-  else:
-      cpf =  ''
-  padrao_credor = r'[a-zA-ZÀ-ÖØ-öø-ÿ]+'
-  resultado_credor = re.findall(padrao_credor, string)
-  if resultado_credor != None:
-      credor = ' '.join(resultado_credor)
-  else:
-      credor = ''
-  return {'cpf': cpf,'credor': credor}
 
-    
 def pegar_processo_origem(texto, indice):
   for i in dict.keys(indice):
       if indice[i] != None:
@@ -190,13 +163,5 @@ def pegar_processo_origem(texto, indice):
       else:
           return {'origem': ''}
       
-def pegar_cidade(texto, indice):
-    for i in dict.keys(indice):
-      if indice[i] != None:
-        cidade = texto[indice[i]].replace('\n', '').replace(',', '').replace('.', '').strip()
-        return {'cidade': cidade}
-      else:
-          return {'cidade': ''}
-
 ler_xml('arquivos_xml/relatorio_12_09.xml')
 # extrair_dados_pdf('arquivos_txt_amazonas/0231203-59.2010.8.04.0001_2_extrair.txt')

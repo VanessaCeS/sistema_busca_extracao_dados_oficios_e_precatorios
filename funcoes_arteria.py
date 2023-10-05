@@ -14,7 +14,7 @@ import xml.etree.ElementTree as ET
 from zeep import Client, Settings, Transport
 from concurrent.futures import ThreadPoolExecutor
 from rsa_archer.archer_instance import ArcherInstance
-from utils import selecionar_seccional
+from utils import converter_data, selecionar_seccional
 # load_dotenv('.env')
 
 def adjust_date_and_time_to_arteria(date_audiencia, formato="%d/%m/%Y %H:%M"):
@@ -1194,7 +1194,7 @@ def enviar_valores_oficio_arteria(arquivo_pdf, dado):
         valor_principal = dado['valor_principal_credor']
     else:
         valor_principal = dado['valor_principal']
-
+        
     dados = {
     'Data da Expedição': dado['data_expedicao'],
     'Código do Processo de Origem': dado['processo_origem'],
@@ -1222,7 +1222,7 @@ def enviar_valores_oficio_arteria(arquivo_pdf, dado):
     }
 
     id_arteria = cadastrar_arteria(dados, 'Precatórios')
-    return {'id_sistema_arteria': id_arteria}
+    return  id_arteria
 
 def limpar_dados_arteria(dado):
     if 'conhecimento' in dado:  
@@ -1244,7 +1244,7 @@ def limpar_dados_arteria(dado):
     if dado['valor_principal'] == '':
         dado['valor_principal'] = '0'
 
-    if 'vara' in dado:
+    if 'vara_pdf' in dado:
         if dado['vara'] == '':
             dado['vara'] = dado.pop('vara_pdf')
         else:
@@ -1266,4 +1266,8 @@ def limpar_dados_arteria(dado):
             dado['credor'] = dado.pop('exequente')
         else:
             del dado['exequente']
+
+    if 'qtd_credores' not in dado:
+        dado['qtd_credores'] = '1' 
+        
     return dado
