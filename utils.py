@@ -4,38 +4,68 @@ import base64
 import requests
 from datetime import datetime
 from dotenv import load_dotenv
+
 load_dotenv('.env')
 
 def regex(string):
-    if 'Advogad' in string:
+    if 'Advogad' in string :
       padrao = r'Advogados\(s\):(.*)'
       resultado = re.search(padrao, string)
       if resultado != None:
         resultado = resultado.group(1).split('OAB')
         oab = resultado[1].split('/')[0].replace(':','').strip()
         seccional = resultado[1].split('/')[1].strip()
-        advogado = resultado[0]
-        return advogado, oab, seccional
+        return  oab, seccional
       else:
-        return '', '', ''
-    if 'OAB' in string:
+        return '', ''
+    if 'OAB' in string and 'CPF' not in string:
       padrao = r'OAB:(.*)'
       resultado = re.search(padrao, string)
       if resultado != None:
         oab = resultado.group(1).split('/')[0].strip()
         seccional = resultado.group(1).split('/')[1].strip()
-        return {'advogado':advogado, 'oab': oab, 'seccional': seccional}
+        return {'oab': oab, 'seccional': seccional}
       else:
         return {'advogado': '', 'oab': '', 'seccional': ''}
-      
-    if 'Quantidade  de credores' in string:
-      padrao = r'Quantidade  de credores:(.*)'
-      qdt_credores = re.search(padrao, string)
-      if qdt_credores != None:
-        return {'qtd_credores': qdt_credores.group(1)}
+    if 'OAB' in string and 'CPF' in string:
+      padrao_cpf = r'CPF:(.*)'
+      padrao_oab = r'OAB:(.*)'
+      resultado_oab = re.search(padrao_oab, string) 
+      resultado_documento = re.search(padrao_cpf, string)
+      if resultado_documento != None:
+        documento_advogado = resultado_documento.group(1).strip()
       else:
-        return {'qtd_credores': '1'}
-    if 'Para conferir o original' in string:
+        documento_advogado =  ''
+      if resultado_oab != None:
+        oab = resultado_oab.group(1).strip().split(' ')[0]
+      else:
+        oab = ''
+      return {'documento_advogado': documento_advogado, 'oab': oab}
+    if 'Nome:' in string or 'Nome(s):' in string or 'Nomes:' in string:
+      padrao = r'(?:Nome\(s\)|Nome:|Nome)(.*)'
+      resultado = re.search(padrao, string)
+      if resultado != None:
+        advogado = resultado.group(1)
+        return {'advogado': advogado.strip()}
+      else:
+        return {'advogado': ''}
+    if 'OAB:' in string:
+      padrao = r'OAB:(.*)'
+      resultado = re.search(padrao, string)
+      if resultado != None:
+        resultado = resultado.group(0).strip()
+        oab = resultado.split(':')[1].replace('/','').replace('CPF','').strip()
+        return {'oab': oab.strip()}
+      else:
+        return {'oab': ''}
+    if 'Quantidade  de credores' in string:
+        padrao = r'Quantidade  de credores:(.*)'
+        qdt_credores = re.search(padrao, string)
+        if qdt_credores != None:
+          return {'qtd_credores': qdt_credores.group(1)}
+        else:
+          return {'qtd_credores': '1'}
+    if 'Para conferir o original' in string or 'liberado nos autos em' in string:
       padrao = r'\d{2}/\d{2}/\d{4}'
       resultado = re.findall(padrao, string)
       if resultado != None:
@@ -51,11 +81,11 @@ def regex(string):
         return {'estado': estado.group(1).replace('  ', ' ').strip()}
       else:
         return {'estado': ''}
-    if 'VARA' in string.upper():
+    if 'VARA' in string.upper() or ' VARA' in string.upper():
       for linha in string.split('\n'):
-        if 'Origem/Foro  Comarca/  Vara:' in linha:
-          padrao = r':(.*)'
-          resultado = re.search(padrao, linha)
+        if 'Origem/Foro  Comarca/  Vara:' in linha or 'Origem/Foro Comarca/ Vara:' in linha:
+          padrao = r'VARA:(.*)'
+          resultado = re.search(padrao, linha, re.IGNORECASE)
           if resultado != None:
             vara = resultado.group(1).split('/')[0]
             return {'vara': vara.strip()}
@@ -63,6 +93,14 @@ def regex(string):
             return {'vara': ''}
         if re.search(r'\bvara\b', linha, re.IGNORECASE):
             return {'vara_pdf': linha.strip()}
+    if 'Origem:' in string:
+      padrao = r'Origem:(.*)'
+      resultado = re.search(padrao, string)
+      if resultado != None:
+        vara = resultado.group(0).strip()
+        return {'vara': vara}
+      else:
+        return {'oab': ''}
     if 'E-mail' in string:
       padrao = r'(?<=,\s)([^\d-]+)'
       cidade = re.search(padrao, string)
@@ -81,7 +119,7 @@ def regex(string):
         return {'processo': processo.group(0).strip()} 
       else:
         return {'processo': ''}
-    elif 'Número  do processo' in string :
+    elif 'Número  do processo' in string or 'Número do processo' in string:
       padrao = r'\d{7}-\d{2}.\d{4}.\d{1}.\d{2}.\d{4}'
       processo = re.search(padrao, string)
       if processo != None:
@@ -123,14 +161,7 @@ def regex(string):
         return {'credor': requerente.group(1).strip()}
       else:
         return {'credor': ''}
-    if 'Nome' in string:
-      padrao = r'Nome:\s+(.+)'
-      credor = re.search(padrao, string)
-      if credor!= None:
-        return {'nome': credor.group(1).strip()}
-      else:
-        return {'nome': ''}
-    if 'Devedor' in string:
+    if 'Devedor' in string or 'Nome Devedor' in string:
       padrao = r'(?:Devedor|Devedor:|Devedor\(s\)|Devedor\(es\)) (.*)'
       devedor = re.search(padrao, string)
       if devedor != None:
@@ -151,11 +182,18 @@ def regex(string):
         return {'devedor': requerido.group(1).strip()}
       else:
         return {'devedor': ''}
-    if 'Natureza  do Crédito' in string:
-      padrao = r'Natureza  do Crédito:\s+(.*?)\n'
+    if 'Nome' in string:
+      padrao = r'Nome:\s+(.+)'
+      credor = re.search(padrao, string)
+      if credor!= None:
+        return {'nome': credor.group(1).strip()}
+      else:
+        return {'nome': ''}
+    if 'Natureza  do Crédito' in string or 'Natureza do Crédito:' in string or 'do Crédito:' in string:
+      padrao = r'(?:Natureza  do Crédito:|Natureza do Crédito:|do Crédito:)\s+(.*?)\n'
       natureza = re.search(padrao, string)
       if natureza != None:
-        return{'natureza': natureza.group(1).strip()}
+        return{'natureza': natureza.group(1).strip().upper()}
       else:
         return{'natureza': ''}
     elif 'Natureza' in string:
@@ -172,21 +210,21 @@ def regex(string):
           return {'natureza': ''}
       else:
         return {'natureza': ''}
-    if 'Valor  global  da requisição' in string or "Valor  total da requisição" in string:
+    if 'Valor  global  da requisição' in string or "Valor  total da requisição" in string or 'Valor(R$):' in string or "Valor total da requisição" in string:
       padrao = r'\b(?:0{1,3}|[1-9](?:\d{0,2}(?:\.\d{3})*(?:,\d{1,2})?|,\d{1,2})?)\b|\b(?:0{1,3}|[1-9](?:\d{0,2}(?:,\d{3})*(?:\.\d{1,2})?|\.\d{1,2})?)\b' 
       valor_global = re.search(padrao, string)
       if valor_global != None:
         return {'valor_global': valor_global.group(0).strip().replace('.','').replace(',','.')}
       else: 
         return {'valor_global': ''}
-    if 'JUROS  MORATÓRIOS' in string.upper():
+    if 'JUROS  MORATÓRIOS' in string.upper() or 'moratórios' in string:
       padrao = r'\b(?:0{1,3}|[1-9](?:\d{0,2}(?:\.\d{3})*(?:,\d{1,2})?|,\d{1,2})?)\b|\b(?:0{1,3}|[1-9](?:\d{0,2}(?:,\d{3})*(?:\.\d{1,2})?|\.\d{1,2})?)\b' 
       valor_juros = re.search(padrao, string)
       if valor_juros != None:
         return {'valor_juros': valor_juros.group(0).strip().replace('.','').replace(',','.')}
       else:
         return {'valor_juros': ''}
-    if 'Principal/Indenização' in string or "Valor  originário" in string:
+    if 'Principal/Indenização' in string or "Valor  originário" in string or 'originário:' in string:
       padrao = r'\b(?:0{1,3}|[1-9](?:\d{0,2}(?:\.\d{3})*(?:,\d{1,2})?|,\d{1,2})?)\b|\b(?:0{1,3}|[1-9](?:\d{0,2}(?:,\d{3})*(?:\.\d{1,2})?|\.\d{1,2})?)\b'  
       valor_principal = re.search(padrao, string)
       if valor_principal != None:
@@ -215,7 +253,7 @@ def regex(string):
         return {'documento': documento.group(0).strip()}
       else:
         return {'documento': ''}
-    if 'Data  do nascimento:' in string or 'Data  de nascimento' or 'DATA DE NASCIMENTO' in string:
+    if 'Data  do nascimento:' in string or 'Data  de nascimento' or 'DATA DE NASCIMENTO' in string or 'Data de Nascimento:' in string:
       padrao = r'\b(?:\d{1,2}\/\d{1,2}\/\d{4}|\d{4}\/\d{1,2}\/\d{1,2}|\d{1,2}\-\d{1,2}\-\d{4}|\d{4}\-\d{1,2}\-\d{1,2})\b'
       nascimento = re.search(padrao, string)
       if nascimento != None:
@@ -455,7 +493,8 @@ def limpar_dados(dado):
 def mandar_documento_para_ocr(arquivo, op,insc=''):
   arquivo_base_64 = converter_arquivo_base_64(arquivo)
   if op == '1':
-    text_ocr(arquivo_base_64, insc)
+    arquivo_txt = text_ocr(arquivo_base_64, insc)
+    return arquivo_txt
   if op == '2':
     pass
   if op == '3':
@@ -479,9 +518,10 @@ def text_ocr(arquivo_base_64_pdf, insc):
   }
   response = requests.post(url, headers=headers, json=json_data).json()
   txt = response['full_text']
+  arquivo_txt = f'arquivos_texto_ocr/{insc}_texto_ocr.txt'
   for i in range(len(txt)):
-    with open(f'textos_ocr/{insc}_texto_ocr.txt', 'a', encoding='utf-8') as f:
-      arquivo_txt = f.write(txt[i])
+    with open(f'arquivos_texto_ocr/{insc}_texto_ocr.txt', 'a', encoding='utf-8') as f:
+      f.write(txt[i])
   return arquivo_txt
 
 def ler_imagem_ocr(arquivo_base_64_pdf):
@@ -497,7 +537,6 @@ def ler_imagem_ocr(arquivo_base_64_pdf):
   txt = response['img_text']
   return txt
 
-
 def dados_limpos_banco_de_dados(dados):
   dados['data_nascimento'] = converter_data(dados['data_nascimento'])
   dados['data_expedicao'] = converter_data(dados['data_expedicao'])
@@ -509,7 +548,7 @@ def dados_limpos_banco_de_dados(dados):
     else:
       dados['processo_origem'] = dados.pop('conhecimento')
 
-  chaves_a_excluir = ['credor', 'nascimento', 'oab','seccional' ,'advogado','data_nascimento','devedor','documento','processo_geral','site','seccional','telefone']
+  chaves_a_excluir = ['credor', 'nascimento', 'oab','seccional' ,'advogado','data_nascimento','devedor','documento','processo_geral','site','seccional','telefone', 'documento_advogado']
 
   for chave in chaves_a_excluir:
     dados.pop(chave, '')
@@ -517,10 +556,11 @@ def dados_limpos_banco_de_dados(dados):
   return dados
         
 def converter_data(data):
-  data = data.replace('/','-')
-  date_object = datetime.strptime(data, '%m-%d-%Y')
-  data_padrao_bd = date_object.strftime('%Y-%m-%d')
-  return data_padrao_bd
+  if data != '':
+    data = data.replace('/','-')
+    date_object = datetime.strptime(data, '%m-%d-%Y')
+    data_padrao_bd = date_object.strftime('%Y-%m-%d')
+    return data_padrao_bd
 
 def processar_dado(dado):
     dado_processado = {}
@@ -601,4 +641,17 @@ def data_corrente_formatada():
     data_atual = datetime.now()
     data_formatada = data_atual.strftime("%d_%m_%Y")
     return data_formatada
+
+def mandar_dados_regex(indices, linhas):
+  dados = {}
+  for i in dict.keys(indices):
+      nome = i.split('_', 1)[1]
+      if indices[i] != None:
+        valores = linhas[indices[i]]
+        valores_regex = regex(valores)
+        dados = dados | valores_regex
+      else:
+        if len(nome) > 1:
+          dados = dados | {f'{nome}': ''}
+  return dados
 
