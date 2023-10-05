@@ -2,11 +2,14 @@ import re
 import PyPDF2
 import xmltodict
 import traceback
-from funcoes_arteria import enviar_valores_oficio_arteria
+from banco_de_dados import consultar_processos
+from rotina_alagoas_pdf_simples import extrair_dados_pdf
+from rotina_alagoas_pdf_img import extrair_dados_texto_ocr
+from utils import apagar_arquivos_txt, extrair_processo_origem, limpar_dados, tipo_precatorio
 from esaj_alagoas_precatorios import get_docs_oficio_precatorios_tjal
-from utils import apagar_arquivos_txt, encontrar_indice_linha, extrair_processo_origem, limpar_dados, mandar_para_banco_de_dados, regex, tipo_precatorio, verificar_tribunal
 
-def ler_xml(arquivo_xml):     
+def ler_xml(arquivo_xml):   
+  dados = consultar_processos('.8.02.')
   with open(arquivo_xml, 'r', encoding='utf-8') as fd:
     doc = xmltodict.parse(fd.read())
   
@@ -14,7 +17,9 @@ def ler_xml(arquivo_xml):
   base_doc = doc['Pub_OL']['Publicacoes']
   for i in range(len(doc['Pub_OL']['Publicacoes']))  :
     processo_origem =  extrair_processo_origem(f"{base_doc[i]['Publicacao']})")
-    dados.append({"processo": f"{base_doc[i]['Processo']}", "tribunal": f"{base_doc[i]['Tribunal']}", "materia": f"{base_doc[i]['Materia']}", 'origem': processo_origem})
+    dados.append({"processo": f"{base_doc[i]['Processo']}", "tribunal": f"{base_doc[i]['Tribunal']}", "materia": f"{base_doc[i]['Materia']}", 'processo_origem': processo_origem})
+    
+
   for d in dados:
         dados_limpos = limpar_dados(d)
         tipo = tipo_precatorio(d)
@@ -23,16 +28,43 @@ def ler_xml(arquivo_xml):
           ler_documentos(dado)
         else:
           pass
-  apagar_arquivos_txt('./arquivos_txt_alagoas')
+
+  apagar_arquivos_txt(['arquivos_pdf_alagoas', 'arquivos_txt_alagoas', 'arquivos_texto_ocr', 'fotos_oab'])
 
 def verificar_tribunal(n_processo):
         padrao = r'\d{7}-\d{2}.\d{4}.8.02.\d{4}'
         processo = re.search(padrao, n_processo)
         if processo != None:
           return True
-        
+
 def ler_documentos(dado_xml):
       try:
+<<<<<<< HEAD
+          processo_geral = dado_xml['processo']
+          doc = get_docs_oficio_precatorios_tjal(dado_xml['processo'],zip_file=False, pdf=True)
+          if doc != {}:
+            codigo_processo = next(iter(doc))
+            id_documento = doc[codigo_processo][0][0]
+            dados_gerais = {'processo_geral': processo_geral, 'site': 'https://www2.tjal.jus.br/esaj/', 'tipo': 'ESTADUAL', 'estado': 'ALAGOAS','codigo_processo': codigo_processo, 'id_documento': id_documento}
+            dado_xml = dado_xml | dados_gerais
+            arquivo_pdf = f"arquivos_pdf_alagoas/{processo_geral}_arquivo_precatorio.pdf"
+            merge = PyPDF2.PdfMerger()
+            for chave, valor in doc.items():
+              for i in range(len(valor)):
+                file_path = valor[i][2]
+                with open(f"arquivos_pdf_alagoas/{processo_geral}_{i+1}_arquivo_precatorio.pdf", "wb") as arquivo:
+                        arquivo.write(file_path)
+                merge.append(f"arquivos_pdf_alagoas/{processo_geral}_{i+1}_arquivo_precatorio.pdf")
+            merge.write(arquivo_pdf)
+            
+            pdf_file = open(arquivo_pdf, 'rb')
+            pdf_reader = PyPDF2.PdfReader(pdf_file)
+            number_pages = len(pdf_reader.pages)
+            if number_pages > 1:
+                extrair_dados_pdf(arquivo_pdf, dado_xml)
+            else:
+                extrair_dados_texto_ocr(arquivo_pdf, dado_xml, )
+=======
         processo_geral = dado_xml['processo']
         doc = get_docs_oficio_precatorios_tjal(dado_xml['processo'],zip_file=False, pdf=True)
         if doc != {}:
@@ -52,14 +84,21 @@ def ler_documentos(dado_xml):
             with open(f"arquivos_txt_alagoas/{processo_geral}_extrair.txt", "w", encoding='utf-8') as arquivo:
                     arquivo.write(text)
           dados_pdf = extrair_dados_pdf(f'arquivos_txt_alagoas/{processo_geral}_extrair.txt')
-          dados = dado_xml | dados_pdf | {"processo_geral": processo_geral,'codigo_processo': codigo_processo, 'site': 'https://www2.tjal.jus.br/esaj/', 'tipo_precatorio': 'ESTADUAL', 'estado': 'ALAGOAS'}
+          dados = dado_xml | dados_pdf | {"processo_geral": processo_geral,'codigo_processo': codigo_processo, 'site': 'https://www2.tjal.jus.br/esaj/', 'tipo': 'ESTADUAL', 'estado': 'ALAGOAS'}
 
           mandar_para_banco_de_dados(dados['processo'], dados)
           enviar_valores_oficio_arteria(arquivo_pdf, dados)
+>>>>>>> PRINCIPAL
       except Exception as e:
+<<<<<<< HEAD
         print(f"Erro! Processo -> {processo_geral}", e)
+=======
+        print("Erro no processo -> ", f'Erro: {e}')
+>>>>>>> PRINCIPAL
         print(traceback.print_exc())
         pass
+<<<<<<< HEAD
+=======
 
 def extrair_dados_pdf(arquivo_txt):
     with open(arquivo_txt, 'r', encoding='utf-8') as arquivo:
@@ -100,9 +139,9 @@ def pegar_processo_origem(texto, indice):
   for i in dict.keys(indice):
       if indice[i] != None:
         origem = texto[indice[i]].replace('\n', '').replace(',', '').strip()
-        return {'origem': origem}
+        return {'processo_origem': origem}
       else:
-          return {'origem': ''}
+          return {'processo_origem': ''}
       
 def pegar_cidade(texto, indice):
     for i in dict.keys(indice):
@@ -111,3 +150,4 @@ def pegar_cidade(texto, indice):
         return {'cidade': cidade}
       else:
           return {'cidade': ''}
+>>>>>>> PRINCIPAL

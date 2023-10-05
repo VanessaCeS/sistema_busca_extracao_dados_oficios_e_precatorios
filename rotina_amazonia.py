@@ -1,67 +1,49 @@
 import os
-import re
 import PyPDF2
-import xmltodict
 import traceback
+from cna_oab import login_cna
 from funcoes_arteria import enviar_valores_oficio_arteria
+from banco_de_dados import atualizar_ou_inserir_pessoa_no_banco_de_dados, atualizar_ou_inserir_pessoa_precatorio, atualizar_ou_inserir_precatorios_no_banco_de_dados, consultar_processos
 from esaj_amazonas_precatorios import get_docs_oficio_precatorios_tjam
-from utils import apagar_arquivos_txt, encontrar_indice_linha, extrair_processo_origem, extrair_processo_origem_amazonas, limpar_dados, mandar_para_banco_de_dados, regex, tipo_precatorio, verificar_tribunal
+from utils import apagar_arquivos_txt, encontrar_indice_linha, limpar_dados, mandar_dados_regex, mandar_documento_para_ocr, regex, tipo_precatorio, verificar_tribunal
 
-def ler_xml(arquivo_xml):     
-  with open(arquivo_xml, 'r', encoding='utf-8') as fd:
-    doc = xmltodict.parse(fd.read())
-  dados = []
-  base_doc = doc['Pub_OL']['Publicacoes']
-  for i in range(len(doc['Pub_OL']['Publicacoes'])):
-    processo_origem =  extrair_processo_origem(f"{base_doc[i]['Publicacao']})")
-    if verificar_tribunal(f"{base_doc[i]['Processo']}"):
-      processo_origem = extrair_processo_origem_amazonas(f"{base_doc[i]['Publicacao']})", f"{base_doc[i]['Processo']}")
-    dados.append({"processo": f"{base_doc[i]['Processo']}", "tribunal": f"{base_doc[i]['Tribunal']}", "materia": f"{base_doc[i]['Materia']}", 'origem': processo_origem})
-
+def ler_xml(arquivo_xml):   
+  dados = consultar_processos('.8.04.')
+  
   for d in dados:
-      # if d['origem'] == '0621448-28.2019.8.04.0001':
         dados_limpos = limpar_dados(d)
         tipo = tipo_precatorio(d)
         dado = dados_limpos | tipo
-        if verificar_tribunal(d['processo']) and d['origem'] != '':
+        if verificar_tribunal(d['processo']) and d['processo_origem'] != '':
           ler_documentos(dado)
         else:
           pass
-  apagar_arquivos_txt('./arquivos_txt_amazonas')
+  apagar_arquivos_txt(['./arquivos_txt_amazonas', './arquivos_pdf_amazonas', './fotos_oab', './arquivos_texto_ocr'])
 
-def verificar_tribunal(n_processo):
-        padrao = r'\d{7}-\d{2}.\d{4}.8.04.\d{4}'
-        processo = re.search(padrao, n_processo)
-        if processo != None:
-          return True
-        
 def ler_documentos(dado_xml):
       try:
-        processo_geral = dado_xml['origem']
-        doc = get_docs_oficio_precatorios_tjam(dado_xml['origem'],zip_file=False, pdf=True)
+        processo_geral = dado_xml['processo_origem']
+        doc = get_docs_oficio_precatorios_tjam(dado_xml['processo_origem'],zip_file=False, pdf=True)
         if doc != {}:
           codigo_processo = next(iter(doc))
           arquivo_pdf = f"arquivos_pdf_amazonas/{processo_geral}_arquivo_precatorio.pdf"
+          dados_complementares = {"processo_geral": processo_geral,'codigo_processo':codigo_processo,'site':'https://consultasaj.tjam.jus.br/', 
+            'tipo_precatorio':  'MUNICIPAL', 'estado': 'AMAZONAS'} | dado_xml
           for i in range(len(doc[codigo_processo])):
               arquivo_pdf = f"arquivos_pdf_amazonas/{processo_geral}_{i + 1}_arquivo_precatorio.pdf"
               file_path = doc[codigo_processo][i][1]
-              pdf_precatorio = verificar_pdf(processo_geral, file_path, arquivo_pdf, i+1)
+              pdf_precatorio = verificar_pdf(file_path, arquivo_pdf)
               if pdf_precatorio:
-                dados_pdf = extrair_dados_pdf(f"arquivos_txt_amazonas/{processo_geral}_{i + 1}_extrair.txt")
-                if dados_pdf['devedor'] != '' and dados_pdf['credor'] != '' and dados_pdf['global'] != '':
-                  dados = dado_xml | dados_pdf | {"processo_geral": processo_geral,'codigo_processo': codigo_processo, 'site': 'https://consultasaj.tjam.jus.br/', 'tipo_precatorio': 'MUNICIPAL', 'estado': 'AMAZONAS'}
-                  # id_arteria = enviar_valores_oficio_arteria(arquivo_pdf, dados)
-                  # dados = dados | {'id_rastreamento': id_arteria}
-                  # mandar_para_banco_de_dados(dados['id_rastreamento'], dados)
+                  extrair_dados_pdf(arquivo_pdf, dados_complementares,f"arquivos_txt_amazonas/{processo_geral}_{i + 1}_extrair.txt")
       except Exception as e:
         print(f"Erro! Processo -> {processo_geral}", e)
         print(traceback.print_exc())
         pass
 
-def verificar_pdf(processo_geral, doc_codigo_processo, arquivo_pdf, cod):
+def verificar_pdf(doc_codigo_processo, arquivo_pdf):
   encontrado = False
-  with open(arquivo_pdf, "wb") as arquivo:
-    arquivo.write(doc_codigo_processo)
+  # with open(arquivo_pdf, "wb") as arquivo:
+  #   arquivo.write(doc_codigo_processo)
   pdf_file = open(arquivo_pdf, 'rb')
   pdf_reader = PyPDF2.PdfReader(pdf_file)
   for page_num in range(len(pdf_reader.pages)): 
@@ -71,7 +53,9 @@ def verificar_pdf(processo_geral, doc_codigo_processo, arquivo_pdf, cod):
         encontrado = True
         break
   if encontrado:
-    with open(f"arquivos_txt_amazonas/{processo_geral}_{cod}_extrair.txt", "w", encoding='utf-8') as arquivo:
+    nome = arquivo_pdf.split('/')[1].split('_arquivo')[0]
+    arquivo_txt = mandar_documento_para_ocr(arquivo_pdf, '1', nome)
+    with open(arquivo_txt, "w", encoding='utf-8') as arquivo:
       text = ''
       for page_num in range(len(pdf_reader.pages)): 
         page = pdf_reader.pages[page_num]
@@ -81,64 +65,56 @@ def verificar_pdf(processo_geral, doc_codigo_processo, arquivo_pdf, cod):
   else:
     pdf_file.close()
     os.remove(arquivo_pdf)
-
     return False
-
-def extrair_dados_pdf(arquivo_txt):
+# verificar_pdf('', 'arquivos_pdf_amazonas/0231203-59.2010.8.04.0001_2_arquivo_precatorio.pdf')
+def extrair_dados_pdf(arquivo_pdf, dados_xml, arquivo_txt):
     with open(arquivo_txt, 'r', encoding='utf-8') as arquivo:
         linhas = arquivo.readlines()
+    dados_advogado = cortar_advogado(arquivo_txt)
+    if dados_advogado == []:
+      return  {'advogado': '', 'oab': '', 'telefone': '', 'documento_advogado': ''}
+    else:
+      pass
 
-    indice_vara = encontrar_indice_linha(linhas, "Vara  ")
-    indice_advogado = encontrar_indice_linha(linhas, 'Advogad')
-    indice_honorarios = encontrar_indice_linha(linhas, 'Valor de Honorários')
-    indice_juizado = encontrar_indice_linha(linhas, " Juizado")
-    indice_cidade = encontrar_indice_linha(linhas, 'E-mail')
-    indice_principal = encontrar_indice_linha(linhas, "Valor  Bruto:")
-    indice_global = encontrar_indice_linha(linhas, "R$")
-    indice_natureza = encontrar_indice_linha(linhas, "ALIMENTAR COMUM") + 1
-    indice_devedor = encontrar_indice_linha(linhas, "público  devedor")
-    indice_cpf_credor = encontrar_indice_linha(linhas, "CPF") + 1
-    indice_nascimento = encontrar_indice_linha(linhas, "Data  de Nascimento")
-    indice_nasceu = encontrar_indice_linha(linhas, "Beneficiário:")
-    indice_expedicao = encontrar_indice_linha(linhas, "liberado nos autos")
+    indice_vara = encontrar_indice_linha(linhas, "Vara")
+    indice_juizado = encontrar_indice_linha(linhas, "Juizado")
+    indice_valor_global = encontrar_indice_linha(linhas, "de R$")
+    indice_data_expedicao = encontrar_indice_linha(linhas, "liberado nos autos")
+    indice_beneficiario = encontrar_indice_linha(linhas, "Beneficiário")
+    indice_credor = encontrar_indice_linha(linhas, "Credor")
+    indice_devedor = encontrar_indice_linha(linhas, "devedor")
+    indice_nascimento = encontrar_indice_linha(linhas, "Nascimento")
+    indice_valor_juros = encontrar_indice_linha(linhas,"dos Juros") + 1
+    indice_valor_principal = encontrar_indice_linha(linhas,"Valor Corrigido") + 1
+    indice_cidade = encontrar_indice_linha(linhas, 'Fone:')
+    indice_documento = encontrar_indice_linha(linhas, "CPF") + 1
+    
+    juros = linhas[indice_valor_juros]
+    if '(R$)' in juros or 'R$' in juros:
+      indice_valor_juros = encontrar_indice_linha(linhas,"dos Juros") + 2
+    if indice_vara == None:
+      indice_vara = indice_juizado
+    if indice_beneficiario != None:
+      indice_credor = indice_beneficiario
 
     indices = {'indice_vara': indice_vara,
-              'indice_juizado': indice_juizado,
               'indice_cidade':indice_cidade,
-              'indice_global': indice_global,
+              'indice_valor_global': indice_valor_global,
               'indice_devedor': indice_devedor,
-              'indice_natureza':indice_natureza, 
-              'indice_expedicao': indice_expedicao, 
+              'indice_credor': indice_credor,
+              'indice_data_expedicao': indice_data_expedicao, 
               'indice_nascimento': indice_nascimento,
-              'indice_nasceu': indice_nasceu,
-              'indice_principal': indice_principal}
+              'indice_valor_principal': indice_valor_principal,
+              'indice_valor_juros': indice_valor_juros,
+              'indice_documento': indice_documento}
     
-    dados = {}
-    for i in dict.keys(indices):
-      nome = i.split('_')[1]
-      if indices[i] >= 1:
-        valores = linhas[indices[i]]
-        valores_regex = regex(valores)
-        if valores_regex == None: 
-          valores_regex = {f'{nome}': ''}
-        dados = dados | valores_regex
-      else:
-          dados = dados | {f'{nome}': ''}
+    dados = mandar_dados_regex(indices, linhas)
+    valor_natureza = cortar_natureza(arquivo_txt)
+    for nat in valor_natureza:
+      natureza = regex(nat)
 
-    if dados['global'] == '':
-      valor = linhas[indice_global + 2]
-      dados['global'] = valor.strip().replace('.','').replace(',','.') 
-    
-    cpf_credor = pegar_cpf_e_credor(indice_cpf_credor, linhas)
-    principal_e_juros = principal_e_juros_linha(linhas)
-    dados_limpos = remover_e_reatribuir_dados(dados)
-    if indice_advogado > 1:
-      advogado_e_oab = regex(linhas[indice_advogado])
-    else:
-      return {'advogado': '', 'oab': ''}
-    dados = dados_limpos | dados | cpf_credor | principal_e_juros | advogado_e_oab 
-    dados['cpf_cnpj'] = dados.pop('cpf')
-    return dados
+    dados = dados | dados_xml |  natureza | dados_advogado
+    enviar_dados(arquivo_pdf, dados)
     
 def remover_e_reatribuir_dados(dados):
     chaves_a_verificar = [('juizado', 'vara'), ('vara_pdf', 'vara'), ('nasceu', 'nascimento')]
@@ -151,44 +127,53 @@ def remover_e_reatribuir_dados(dados):
 
     return dados
 
-def principal_e_juros_linha(linhas):
-  principal = ''
-  juros = ''
-  for linha in linhas:
-    if 'R$' in linha:
-      padrao = r'R\$ (\d{1,3}(?:\.\d{3})*(?:,\d{2}))\s*(?:%0\.(\d) )?(.*?)\s*R\$ (\d{1,3}(?:\.\d{3})*(?:,\d{2}))'
-      result = re.search(padrao, linha)
-      if result != None:  
-        principal_e_juros = linha.split('R$')
-        principal = principal_e_juros[1].strip().split(' ')[0].replace('.','').replace(',','.')
-        juros = principal_e_juros[2].strip().split(' ')[0].replace('.','').replace(',','.')
-        break
-  return {'principal': principal, 'juros': juros}
+def cortar_advogado(nome_arquivo):
+        with open(nome_arquivo, 'r', encoding='utf-8') as arquivo:
+            linhas = arquivo.readlines()
+            encontrou_inicio = False
+            texto_cortado = []
+            for linha in linhas:
+                if "honorários contractuais" in linha or 'Procurador  do beneficiário OAB' in linha or 'Honorários  Contratuais:' in linha:
+                    encontrou_inicio = True
+                    texto_cortado.append(linha)
+                if encontrou_inicio:
+                    texto_cortado.append(linha)
+                if '•Natureza  da obrigação  (assunto)  a que se refere  o pagamento:' in linha:
+                    encontrou_inicio = False
+                    break
+            aqui = ' '.join(texto_cortado)
+            print(aqui)
+            return ' '.join(texto_cortado)
 
-def pegar_cpf_e_credor(indice, texto):
-  string = texto[indice]
-  padrao_cpf = r'\b(?:\d{3}\.\d{3}\.\d{3}-\d{2}|\d{2}\.\d{3}\.\d{3}\/\d{4}-\d{2}|RNE-\d{10})\b|\b\d{11}\b'
-  cpf_cnpj_rne = re.search(padrao_cpf, string)
-  if cpf_cnpj_rne != None:
-      cpf = cpf_cnpj_rne.group(0).strip()
-  else:
-      cpf =  ''
-  padrao_credor = r'[a-zA-ZÀ-ÖØ-öø-ÿ]+'
-  resultado_credor = re.findall(padrao_credor, string)
-  if resultado_credor != None:
-      credor = ' '.join(resultado_credor)
-  else:
-      credor = ''
-  return {'cpf': cpf,'credor': credor}
+cortar_advogado('arquivos_texto_ocr/0231203-59.2010.8.04.0001_2_texto_ocr.txt')
 
-    
+def cortar_natureza(nome_arquivo):
+        with open(nome_arquivo, 'r', encoding='utf-8') as arquivo:
+            linhas = arquivo.readlines()
+            encontrou_inicio = False
+            texto_cortado = []
+            for linha in linhas:
+                if "ALIMENTAR" in linha:
+                    encontrou_inicio = True
+                    texto_cortado.append(linha)
+                if encontrou_inicio:
+                    texto_cortado.append(linha)
+                if "Residencial  do Credor  (Art. 78, § 3º, ADCT)" in linha or 'Residencial  do Credor  (Art.  78, § 3º, ADCT)' in linha:
+                    encontrou_inicio = False
+                    break
+            aqui = '\n'.join(texto_cortado)
+            with open('cortado.txt', 'w') as f:
+              f.write(aqui)
+
+            return '\n'.join(texto_cortado)
+        
 def pegar_processo_origem(texto, indice):
   for i in dict.keys(indice):
       if indice[i] != None:
         origem = texto[indice[i]].replace('\n', '').replace(',', '').strip()
-        return {'origem': origem}
+        return {'processo_origem': origem}
       else:
-          return {'origem': ''}
+          return {'processo_origem': ''}
       
 def pegar_cidade(texto, indice):
     for i in dict.keys(indice):
@@ -198,5 +183,10 @@ def pegar_cidade(texto, indice):
       else:
           return {'cidade': ''}
 
-ler_xml('arquivos_xml/relatorio_23_08.xml')
-# extrair_dados_pdf('arquivos_txt_amazonas/0231203-59.2010.8.04.0001_2_extrair.txt')
+def enviar_dados(arquivo_pdf, dados):
+  atualizar_ou_inserir_pessoa_no_banco_de_dados(dados['documento'], dados)
+  id_sistema_arteria = enviar_valores_oficio_arteria(arquivo_pdf, dados)
+  dados['id_sistema_arteria'] = id_sistema_arteria
+  atualizar_ou_inserir_precatorios_no_banco_de_dados(dados['codigo_processo'], dados)
+  atualizar_ou_inserir_pessoa_precatorio(dados['documento'], dados['processo'])
+
