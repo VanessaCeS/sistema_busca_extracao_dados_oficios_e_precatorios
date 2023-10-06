@@ -11,7 +11,7 @@ from banco_de_dados import atualizar_ou_inserir_pessoa_no_banco_de_dados, atuali
 
 load_dotenv('.env')
 
-def ler_xml():     
+def buscar_dados_tribunal_sao_paulo():     
   dados = consultar_processos('.8.26.')
   for d in dados:
         dados_limpos = limpar_dados(d)
