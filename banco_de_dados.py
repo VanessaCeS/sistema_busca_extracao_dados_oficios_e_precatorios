@@ -6,12 +6,43 @@ from dotenv import load_dotenv
 from utils import dados_limpos_banco_de_dados, extrair_processo_origem, extrair_processo_origem_amazonas, processar_dado
 load_dotenv('.env')
 
-conn = mysql.connector.connect(
-        host=os.getenv('db_server_precatorio'),
-        user=os.getenv('db_username_precatorio'),
-        password=os.getenv('db_password_precatorio'),
-        database=os.getenv('db_database_precatorio'))
+def consultar_processos(valor_tribunal):
+  conn = mysql.connector.connect(
+    host=os.getenv('db_server_precatorio'),
+    user=os.getenv('db_username_precatorio'),
+    password=os.getenv('db_password_precatorio'),
+    database='precatorias_tribunais'
+    )
+  dados = []
+  cursor = conn.cursor()
+  consulta_sql = "SELECT * FROM processos WHERE processo LIKE '%{}%'".format(valor_tribunal)
+  cursor.execute(consulta_sql)
+  resultados = cursor.fetchall()
+  
+  for registro in resultados:
+      id_processo = registro[0]
+      processo = registro[2]
+      materia = registro[3]
+      tribunal = registro[4]
+      consulta_publicacao = "SELECT publicacao FROM publicacoes WHERE id_processo LIKE '%{}%'".format(id_processo)
+      cursor.execute(consulta_publicacao)
+      publicacoes = cursor.fetchall()
+      
+      for publicacao in publicacoes:
+            processo_origem = extrair_processo_origem(publicacao[0])
+            if verificar_tribunal(processo, valor_tribunal):
+                processo_origem = extrair_processo_origem_amazonas(publicacao[0], processo)
+      dados.append({"processo": processo, "tribunal": tribunal, "materia": materia, 'processo_origem': processo_origem})
+  cursor.close()
+  conn.close()
+  return dados
 
+def verificar_tribunal(n_processo, n_tribunal):
+        padrao = fr'\d{{7}}-\d{{2}}*?{re.escape(n_tribunal)}.*?\d{{4}}'
+        processo = re.search(padrao, n_processo)
+        if processo != None:
+          return True
+        
 def pesquisar_pessoa_por_documento_ou_oab(conn, valor_pesquisa):
     cursor = conn.cursor(dictionary=True)
     query = 'SELECT * FROM pessoas WHERE documento = %s OR oab = %s'
@@ -21,7 +52,14 @@ def pesquisar_pessoa_por_documento_ou_oab(conn, valor_pesquisa):
     return pessoa
 
 def atualizar_ou_inserir_pessoa_no_banco_de_dados(doc, dados):
+    conn = mysql.connector.connect(
+        host=os.getenv('db_server_precatorio'),
+        user=os.getenv('db_username_precatorio'),
+        password=os.getenv('db_password_precatorio'),
+        database=os.getenv('db_database_precatorio'))
+    
     cursor = conn.cursor()
+
     try:
         documento = dados.get('documento')
         oab = dados.get('oab')
@@ -49,6 +87,13 @@ def atualizar_ou_inserir_pessoa_no_banco_de_dados(doc, dados):
         cursor.close()
 
 def atualizar_ou_inserir_precatorios_no_banco_de_dados(codigo_processo, dados):
+    conn = mysql.connector.connect(
+    host=os.getenv('db_server_precatorio'),
+    user=os.getenv('db_username_precatorio'),
+    password=os.getenv('db_password_precatorio'),
+    database=os.getenv('db_database_precatorio')
+    )
+
     dados = dados_limpos_banco_de_dados(dados)
     cursor = conn.cursor(buffered=True)
     query_consultar_codigo_processo = 'SELECT * FROM precatorios WHERE codigo_processo = %s'
@@ -84,6 +129,13 @@ def atualizar_ou_inserir_precatorios_no_banco_de_dados(codigo_processo, dados):
                 print("Exec ==>> ", traceback.print_exc())
 
 def atualizar_ou_inserir_pessoa_precatorio(documento, processo):
+    conn = mysql.connector.connect(
+    host=os.getenv('db_server_precatorio'),
+    user=os.getenv('db_username_precatorio'),
+    password=os.getenv('db_password_precatorio'),
+    database='precatorias_tribunais'
+    )
+
     cursor = conn.cursor()
     query_consultar_pessoa = 'SELECT * FROM pessoas WHERE documento = %s'
     cursor.execute(query_consultar_pessoa, (documento,))
@@ -133,34 +185,4 @@ def atualizar_ou_inserir_pessoa_precatorio(documento, processo):
             except Exception as e:
                         print("E ==>> ", e)
                         print("Exec ==>> ", traceback.print_exc())
-
-def consultar_processos(valor_tribunal):
-  dados = []
-  cursor = conn.cursor()
-  consulta_sql = "SELECT * FROM processos WHERE processo LIKE '%{}%'".format(valor_tribunal)
-  cursor.execute(consulta_sql)
-  resultados = cursor.fetchall()
-  
-  for registro in resultados:
-      id_processo = registro[0]
-      processo = registro[2]
-      materia = registro[3]
-      tribunal = registro[4]
-      consulta_publicacao = "SELECT publicacao FROM publicacoes WHERE id_processo LIKE '%{}%'".format(id_processo)
-      cursor.execute(consulta_publicacao)
-      publicacoes = cursor.fetchall()
-      
-      for publicacao in publicacoes:
-            processo_origem = extrair_processo_origem(publicacao[0])
-            if verificar_tribunal(processo):
-                processo_origem = extrair_processo_origem_amazonas(publicacao[0], processo)
-      dados.append({"processo": processo, "tribunal": tribunal, "materia": materia, 'processo_origem': processo_origem})
-  cursor.close()
-  conn.close()
-  return dados
-
-def verificar_tribunal(n_processo):
-        padrao = r'(?:\d{7}-\d{2}.\d{4}.8.04.\d{4})'
-        processo = re.search(padrao, n_processo)
-        if processo != None:
-          return True
+                        

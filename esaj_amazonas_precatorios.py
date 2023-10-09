@@ -114,6 +114,7 @@ def get_docs_precatorio(codigo_prec, url, s, zip_file=False, pdf=False):
     for doc in por_tipo['31']:
         for children in doc['children']:
             params = children['data']['parametros']
+            id_documento = params.split('idDocumento')[1].split('&')[0].replace('=','')
 
             pdfs_oficios.append(params)
 
@@ -122,7 +123,7 @@ def get_docs_precatorio(codigo_prec, url, s, zip_file=False, pdf=False):
 
                 file_name = file_req.headers['Content-Disposition'].split('filename=')[1].replace('"', '')
 
-                oficios.append([file_name, file_req.content])
+                oficios.append([id_documento, file_name, file_req.content])
 
     if zip_file:
         query_zip = {
@@ -156,7 +157,7 @@ def get_docs_precatorio(codigo_prec, url, s, zip_file=False, pdf=False):
 
         zip_file = [zip_name, zip_file_req.content]
 
-    return {'zip': zip_file, 'pdfs': oficios} if zip_file and pdf else oficios if pdf else zip_file if zip_file else None
+    return {'id_documentos': id_documento, 'zip': zip_file, 'pdfs': oficios} if zip_file and pdf else oficios if pdf else zip_file if zip_file else None
 
 
 def get_incidentes(cnj, url, s):

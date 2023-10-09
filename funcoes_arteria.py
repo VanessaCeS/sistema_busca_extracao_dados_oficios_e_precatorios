@@ -34,12 +34,12 @@ def instancia_arteria(application="", user=None, password=None):
     if 'archer_instance' not in globals():
         load_dotenv()
 
-        AMBIENTE = 'NIP'
+        AMBIENTE = 'NIP_Dev'
         user = user if user else ''
         password = password if password else ''
         global archer_instance
         archer_instance = ArcherInstance('https://att.costaesilvaadv.com.br',
-                                            'NIP',
+                                            'NIP_Dev',
                                             user,
                                             password
                                             )
@@ -1194,7 +1194,7 @@ def enviar_valores_oficio_arteria(arquivo_pdf, dado):
         valor_principal = dado['valor_principal_credor']
     else:
         valor_principal = dado['valor_principal']
-        
+
     dados = {
     'Data da Expedição': dado['data_expedicao'],
     'Código do Processo de Origem': dado['processo_origem'],
