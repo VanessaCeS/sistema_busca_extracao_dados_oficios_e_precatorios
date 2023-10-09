@@ -1,26 +1,16 @@
 import re
 import traceback
-import xmltodict
-from pathlib import Path
-from banco_de_dados import atualizar_ou_inserir_pessoa, atualizar_ou_inserir_pessoa_precatorio, mandar_precatorios_para_banco_de_dados
 from cna_oab import login_cna
-from rotina_sao_paulo import apagar_arquivos_txt
+from rotina_sao_paulo import apagar_arquivos
 from funcoes_arteria import enviar_valores_oficio_arteria
 from esaj_acre_precatorios import get_docs_oficio_precatorios_tjac
-from utils import  buscar_xml, converter_string_mes, data_corrente_formatada, extrair_processo_origem, identificar_estados, limpar_dados, mandar_documento_para_ocr,  tipo_de_natureza, tipo_precatorio, verificar_tribunal
+from banco_de_dados import atualizar_ou_inserir_pessoa_no_banco_de_dados, atualizar_ou_inserir_pessoa_precatorio, consultar_processos, atualizar_ou_inserir_precatorios_no_banco_de_dados
+from utils import  converter_string_mes, identificar_estados, limpar_dados, mandar_documento_para_ocr,  tipo_de_natureza, tipo_precatorio, verificar_tribunal
 
 def ler_xml():
-  buscar_xml()
-  with open(f'arquivos_xml/relatorio_{data_corrente_formatada()}', 'r', encoding='utf-8') as fd:
-    dados = []
-    doc = xmltodict.parse(fd.read())
-    base_doc = doc['Pub_OL']['Publicacoes']
-    for i in range(len(doc['Pub_OL']['Publicacoes']))  :
-      processo_origem =  extrair_processo_origem(f"{base_doc[i]['Publicacao']})")
-      requerente, requerido, valor = pegar_requerido_xml(f"{base_doc[i]['Publicacao']})")
-      dados.append({"processo": f"{base_doc[i]['Processo']}", "tribunal": f"{base_doc[i]['Tribunal']}", "materia": f"{base_doc[i]['Materia']}", 'origem': processo_origem, 'requerido': requerido, 'requerente': requerente, 'valor': valor})
+  dados = consultar_processos('.8.01.')
 
-    for d in dados:
+  for d in dados:
           dados_limpos = limpar_dados(d)
           tipo = tipo_precatorio(d)
           dado = dados_limpos | tipo
@@ -28,29 +18,26 @@ def ler_xml():
             ler_documentos(dado)
           else:
             pass
-    apagar_arquivos_txt()
+  apagar_arquivos(['./arquivos_txt_acre', './arquivos_pdf_acre', './fotos_oab', './arquivos_texto_ocr'])
 
-def ler_documentos(processo, arquivo):
-      try:
-        # processo_geral = dado['processo']
-        # doc = get_docs_oficio_precatorios_tjac(dado['processo'],zip_file=False, pdf=True)
-        # if doc != {}:
-        #   codigo_processo = next(iter(doc))
-        #   file_path = doc[codigo_processo][0][1]
-        #   id_documento = doc[codigo_processo][0][0]
-        #   arquivo_pdf = f"arquivos_pdf_acre/{processo_geral}_arquivo_precatorio.pdf"
+def ler_documentos(dado_xml):
+      try:      
+        processo_geral = dado_xml['processo_origem']
+        doc = get_docs_oficio_precatorios_tjac(dado_xml['processo_origem'],zip_file=False, pdf=True)
+        if doc != {}:
+          codigo_processo = next(iter(doc))
+          arquivo_pdf = f"arquivos_pdf_acre/{processo_geral}_arquivo_precatorio.pdf"
+          file_path = doc[codigo_processo][0][1]
+          with open(arquivo_pdf, "wb") as arquivo:
+                  arquivo.write(file_path)
 
-        #   with open(arquivo_pdf, "wb") as arq:
-        #         arquivo = arq.write(file_path)
-                
-          dados_ocr = mandar_documento_para_ocr(arquivo, '2')
-
-          dados_complementares = {"processo_geral": 'processo_geral', "codigo_processo": 'codigo_processo', 'site': 'https://esaj.tjac.jus.br', 'id_documento': 'id_documento', 'valor_juros': '', 'valor_principal': ''}
+          dados_ocr = mandar_documento_para_ocr(arquivo_pdf, '2')
+          dados_complementares = {"processo_geral": 'processo_geral', "codigo_processo": codigo_processo, 'site': 'https://esaj.tjac.jus.br', 'id_documento': '', 'valor_juros': '', 'valor_principal': ''}
           dados_ocr = dados_ocr | dados_complementares
-          tratar_dados_ocr(arquivo ,processo, dados_ocr)
+          tratar_dados_ocr(arquivo_pdf ,processo_geral, dados_ocr)
           
       except Exception as e:
-        print(f"Erro no processo -> ", "dado['processo']", 'Erro: ', e)
+        print(f"Erro no processo -> ", processo_geral, 'Erro: ', e)
         print(traceback.print_exc())
         pass
 
@@ -71,7 +58,7 @@ def tratar_dados_ocr(arquivo_pdf,processo, dados):
   estado = identificar_estados(estado)
   oab, seccional = pegar_aob_e_seccional(dados['advogado'][0])
   documento_advogado = ''
-  atualizar_ou_inserir_pessoa(documento, {'nome': credor, 'documento': documento, 'data_nascimento': ''})
+  atualizar_ou_inserir_pessoa_no_banco_de_dados(documento, {'nome': credor, 'documento': documento, 'data_nascimento': ''})
   
   dados_advogado = {}
   if advogado != '':
@@ -81,7 +68,7 @@ def tratar_dados_ocr(arquivo_pdf,processo, dados):
   id_sistema_arteria = enviar_valores_oficio_arteria(arquivo_pdf, dado)
   dado = dado | id_sistema_arteria
 
-  mandar_precatorios_para_banco_de_dados(dados['codigo_processo'], dado)
+  atualizar_ou_inserir_precatorios_no_banco_de_dados(dados['codigo_processo'], dado)
   atualizar_ou_inserir_pessoa_precatorio(dado['documento'], processo)
 
   return dado
@@ -133,5 +120,3 @@ def pegar_requerido_xml(dados):
     else:
       requerido = ''
   return  requerente, requerido
-
-ler_documentos('0004533-83.2009.8.01.0001','arquivos_cortados/0100115-98.2018.8.01.0000.pdf_cortado.pdf')

@@ -4,22 +4,26 @@ import requests
 import urllib.request
 from capmon_utils import recaptcha
 from utils import mandar_documento_para_ocr
-from banco_de_dados import atualizar_ou_inserir_pessoa, atualizar_ou_inserir_pessoa_precatorio
+from banco_de_dados import atualizar_ou_inserir_pessoa_no_banco_de_dados, atualizar_ou_inserir_pessoa_precatorio
 
 def login_cna(insc, uf, documento_advogado, nome, processo):
-  boy = nome.split(' e ')
-  if len(boy) > 1:
-    if ' ' in boy[1].strip():
-      for name in boy:
-        if ',' in name:
-          n = name.split(',')
-          for i in n:
-            login(insc, uf, documento_advogado, i, processo)
-    else:
-      login(insc, uf, documento_advogado, nome , processo)
+  if ' e ' in nome:
+    novo_nome = nome.split(' e ')
+    if len(novo_nome) > 1:
+      if ' ' in novo_nome[1].strip():
+        for name in novo_nome:
+          if ',' in name:
+            n = name.split(',')
+            for i in n:
+              dados_advogado = login(insc, uf, documento_advogado, i, processo)
+              return dados_advogado
+      else:
+        dados_advogado = login(insc, uf, documento_advogado, nome , processo)
+        return dados_advogado
   else:
-    login(insc, uf, documento_advogado, nome, processo)
-
+    dados_advogado = login(insc, uf, documento_advogado, nome, processo)
+    return dados_advogado
+  
 def login(insc, uf, documento_advogado, nome, processo):      
   site_key = os.environ.get('site_key')
   url_cna = os.environ.get('url_cna')
@@ -38,10 +42,10 @@ def login(insc, uf, documento_advogado, nome, processo):
 
   pesquisar_cna = f'{url_cna}/Home/Search'
   resp_foto = requests.post(pesquisar_cna, data=form_data).json()
-  baixar_foto_carteirinha_oab(resp_foto, url_cna, documento_advogado, processo, nome, uf,insc)
+  resp = baixar_foto_carteirinha_oab(resp_foto, url_cna, documento_advogado, processo, nome, uf,insc)
+  return resp
 
 def baixar_foto_carteirinha_oab(resp_foto, url_cna, documento_advogado, processo, nome, uf,insc):
-  if resp_foto['Success'] == True:
     if resp_foto['Data'] != [] :
       url_foto = resp_foto['Data'][0]['DetailUrl']
       pegar_foto = f'{url_cna}{url_foto}'
@@ -59,6 +63,7 @@ def baixar_foto_carteirinha_oab(resp_foto, url_cna, documento_advogado, processo
       dados = {'telefone': '', 'advogado': nome.strip(), 'seccional': uf, 'oab': insc, 'documento_advogado': documento_advogado}
       enviar_banco_de_dados(dados, processo)
     return dados
+  
 
 def dados_advogado(txt, nome, uf, insc, documento_advogado):
   padrao = r'\(?\d{2}\)?\s?\d{4,5}-\d{4}'
@@ -73,12 +78,11 @@ def enviar_banco_de_dados(dados, processo):
     dados['nome'] = dados.pop('advogado')
     dados['estado'] = dados.pop('seccional')
 
-    if type(dados['documento'])is dict:
+    if type(dados['documento']) is dict:
       dados['documento'] = dados['documento']['documento']
 
-    atualizar_ou_inserir_pessoa(dados['oab'], dados)
+    atualizar_ou_inserir_pessoa_no_banco_de_dados(dados['oab'], dados)
     atualizar_ou_inserir_pessoa_precatorio(dados['oab'], processo)
     dados['seccional'] = dados.pop('estado')
     dados['advogado'] = dados.pop('nome')
     del dados['documento']
-login_cna('','AC','','Francisco Silvano Rodrigues Santiago','123456')

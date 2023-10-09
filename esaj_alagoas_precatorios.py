@@ -114,7 +114,9 @@ def get_docs_precatorio(codigo_prec, url, s, zip_file=False, pdf=False):
     for doc in por_tipo['342']:
         for children in doc['children']:
             params = children['data']['parametros']
-
+            
+            id_documento = params.split('idDocumento')[1].split('&')[0].replace('=','')
+            
             pdfs_oficios.append(params)
 
             if pdf:
@@ -122,7 +124,7 @@ def get_docs_precatorio(codigo_prec, url, s, zip_file=False, pdf=False):
 
                 file_name = file_req.headers['Content-Disposition'].split('filename=')[1].replace('"', '')
 
-                oficios.append([file_name, file_req.content])
+                oficios.append([id_documento,file_name, file_req.content])
 
     if zip_file:
         query_zip = {
@@ -156,7 +158,7 @@ def get_docs_precatorio(codigo_prec, url, s, zip_file=False, pdf=False):
 
         zip_file = [zip_name, zip_file_req.content]
 
-    return {'zip': zip_file, 'pdfs': oficios} if zip_file and pdf else oficios if pdf else zip_file if zip_file else None
+    return {'id_documentos': id_documento, 'zip': zip_file, 'pdfs': oficios} if zip_file and pdf else oficios if pdf else zip_file if zip_file else None
 
 
 def get_incidentes(cnj, url, s):
@@ -205,7 +207,7 @@ def get_incidentes(cnj, url, s):
                 print(f"[bold red]Processo {cnj} em segredo de justiça[/bold red]")
                 return
 
-        redirect_proc = soup.find("span", id="numeroProcesso") or soup.find("div", class_="unj-entity-header__summary") or soup.find("span", text=re.compile(f"\({cnj}\)"))
+        redirect_proc = soup.find("span", id="numeroProcesso") or soup.find("div", class_="unj-entity-header__summary") or soup.find("span", string=re.compile(f"\({cnj}\)"))
 
         if redirect_proc is None:
             links_resultado = []
@@ -257,4 +259,3 @@ def get_docs_oficio_precatorios_tjal(cnj, zip_file=False, pdf=False):
     
     docs = {cod: get_docs_precatorio(cod, 'https://www2.tjal.jus.br/cpopg', session, zip_file=zip_file, pdf=pdf) for cod in cods_incidentes}
     return docs
-
