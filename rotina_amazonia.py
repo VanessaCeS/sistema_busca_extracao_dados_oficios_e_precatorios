@@ -8,7 +8,7 @@ from esaj_amazonas_precatorios import get_docs_oficio_precatorios_tjam
 from utils import apagar_arquivos_txt, encontrar_indice_linha, limpar_dados, mandar_dados_regex, mandar_documento_para_ocr, regex, tipo_precatorio
 from banco_de_dados import atualizar_ou_inserir_pessoa_no_banco_de_dados, atualizar_ou_inserir_pessoa_precatorio, atualizar_ou_inserir_precatorios_no_banco_de_dados, consultar_processos
 
-def ler_xml():   
+def buscar_dados_tribunal_acre():   
   dados = consultar_processos('.8.04.')
 
   for d in dados:
