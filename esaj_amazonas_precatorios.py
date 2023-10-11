@@ -248,7 +248,7 @@ def get_incidentes(cnj, url, s):
 
 def get_docs_oficio_precatorios_tjam(cnj, zip_file=False, pdf=False):
     login_esja = f'{os.getenv("login_esja")}'
-    senha_esja = f'{os.getenv("senha_esja_am")}'
+    senha_esja = f'{os.getenv("senha_esja_tipo_3")}'
 
     session = login_esaj('https://consultasaj.tjam.jus.br/', login_esja, senha_esja)
 

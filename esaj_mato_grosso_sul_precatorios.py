@@ -92,13 +92,11 @@ def login_esaj(url_tribunal: str, username: str, password: str) -> Session:
     return s
 
 
-def get_docs_precatorio(codigo_prec, url, s, zip_file=False, pdf=False):
+def get_docs_precatorio(cookies, codigo_prec, url, s, zip_file=False, pdf=False):
     query = {'processo.codigo': codigo_prec}
 
-    aqui = s.get(f'{url}/show.do', params=query)
-
-    pasta_digital_req = s.get(f'https://esaj.tjms.jus.br/pastadigital/abrirPastaProcessoDigital.do?cdProcesso={codigo_prec}')
-
+    link_pasta_digital_req = s.get(f'https://esaj.tjms.jus.br/cpopg5/abrirPastaDigital.do?processo.codigo={codigo_prec}&_={cookies}').text
+    pasta_digital_req = s.get(link_pasta_digital_req).text
     json_pasta = json.loads(pasta_digital_req[pasta_digital_req.find('requestScope = ') + 15: pasta_digital_req.find('requestScope = ') + 15 + pasta_digital_req[pasta_digital_req.find('requestScope = ') + 15:].find(';')])
 
     por_tipo = {}
@@ -111,18 +109,18 @@ def get_docs_precatorio(codigo_prec, url, s, zip_file=False, pdf=False):
     oficios = []
     pdfs_oficios = []
     #? tipo 8436 = oficio
-    for doc in por_tipo['8436']:
+    for doc in por_tipo['147']:
         for children in doc['children']:
             params = children['data']['parametros']
-
+            id_documento = params.split('idDocumento')[1].split('&')[0].replace('=','')
             pdfs_oficios.append(params)
 
             if pdf:
-                file_req = s.get(f'https://consultasaj.tjam.jus.br/pastadigital/getPDF.do?{params}')
+                file_req = s.get(f'https://esaj.tjms.jus.br/pastadigital/getPDF.do?{params}')
 
-                file_name = file_req.headers['Content-Disposition'].split('filename=')[1].replace('"', '')
-
-                oficios.append([file_name, file_req.content])
+                file_name = file_req.headers.get('Content-Disposition').split('filename=')[1].replace('"', '')
+                # file_name = f"{id_documento}_pdf"
+                oficios.append([id_documento,file_name, file_req.content])
 
     if zip_file:
         query_zip = {
@@ -133,7 +131,7 @@ def get_docs_precatorio(codigo_prec, url, s, zip_file=False, pdf=False):
             'acessoPeloPetsg': ''
         }
 
-        zip_req = s.get('https://consultasaj.tjam.jus.br/pastadigital/salvarDocumentoPreparado.do', params=query_zip)
+        zip_req = s.get('https://esaj.tjms.jus.br/pastadigital/salvarDocumentoPreparado.do', params=query_zip)
 
         query_localizador = {
             'localizador': zip_req.text,
@@ -142,7 +140,7 @@ def get_docs_precatorio(codigo_prec, url, s, zip_file=False, pdf=False):
         }
 
         for i in range(100):
-            localizar = s.get('https://consultasaj.tjam.jus.br/pastadigital/buscarDocumentoFinalizado.do', params=query_localizador).text
+            localizar = s.get('https://esaj.tjms.jus.br/pastadigital/buscarDocumentoFinalizado.do', params=query_localizador).text
             if localizar:
                 break
             time.sleep(1)
@@ -156,7 +154,7 @@ def get_docs_precatorio(codigo_prec, url, s, zip_file=False, pdf=False):
 
         zip_file = [zip_name, zip_file_req.content]
 
-    return {'zip': zip_file, 'pdfs': oficios} if zip_file and pdf else oficios if pdf else zip_file if zip_file else None
+    return {'id_documentos': id_documento,'zip': zip_file, 'pdfs': oficios} if zip_file and pdf else oficios if pdf else zip_file if zip_file else None
 
 
 def get_incidentes(cnj, url, s):
@@ -237,7 +235,8 @@ def get_incidentes(cnj, url, s):
 
             incidentes = soup.find("a", class_="linkPasta")
             href = incidentes.get('href')
-            return href
+            cookie = consulta.cookies._now
+            return cookie, href
         else:
             print(f"[red]Processo {cnj} não encontrado[/red]")
             return
@@ -245,18 +244,15 @@ def get_incidentes(cnj, url, s):
         print(f"[red]Tribunal no modelo antigo")
 
 
-def get_docs_oficio_precatorios_tjam(cnj, zip_file=False, pdf=False):
-    # login_esja = f'{os.getenv("login_esja")}'
-    # senha_esja = f'{os.getenv("senha_esja_am")}'
+def get_docs_oficio_precatorios_tjms(cnj, zip_file=False, pdf=False):
+    login_esja = f'{os.getenv("login_esja")}'
+    senha_esja = f'{os.getenv("senha_esja_tipo_2")}'
 
-    session = login_esaj('https://esaj.tjms.jus.br/','69173753149' ,'Costaesilva2023#' )
+    session = login_esaj('https://esaj.tjms.jus.br/',login_esja , senha_esja )
 
-    incidentes = get_incidentes(cnj, 'https://esaj.tjms.jus.br/cpopg5', session)
+    cookies, incidentes = get_incidentes(cnj, 'https://esaj.tjms.jus.br/cpopg5', session)
 
     cods_incidentes = [incidentes.split('codigo=')[1]]
     
-    docs = {cod: get_docs_precatorio(cod, 'https://esaj.tjms.jus.br/cpopg5', session, zip_file=zip_file, pdf=pdf) for cod in cods_incidentes}
-    print(docs)
+    docs = {cod: get_docs_precatorio(cookies,cod, 'https://esaj.tjms.jus.br/cpopg5', session, zip_file=zip_file, pdf=pdf) for cod in cods_incidentes}
     return docs
-
-get_docs_oficio_precatorios_tjam('0821629-81.2023.8.12.0001', zip_file=False, pdf=True)

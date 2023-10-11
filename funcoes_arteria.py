@@ -1269,5 +1269,8 @@ def limpar_dados_arteria(dado):
 
     if 'qtd_credores' not in dado:
         dado['qtd_credores'] = '1' 
-        
+    
+    if 'data_nascimento' not in dado:
+        dado['data_nascimento'] = ''
+
     return dado
