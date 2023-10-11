@@ -1,0 +1,110 @@
+20/09/2023 18:51 TJMS - Precatório Eletrônico - Requisitórios Orçamentários
+https://sistemas.tjms.jus.br/sapre/restrito/pre-cadastro/precatoriosEnviados.xhtml 1/3ID: 134691
+Comarca: Campo Grande
+Juízo: 9ª Vara Cível de Competência Residual
+Magistrado: MAURICIO PETRAUSKI
+Requisição de pagamento: Valor Global
+Assunto: Auxílio-Doença Acidentário (7757)
+Natureza jurídica do crédito: Alimentar
+Natureza da obrigação: Benefícios previdenciários
+É de natureza tributária? Não
+Nome das partes
+Devedor:INSTITUT O NACIONAL  DO SEGURO SOCIAL  - INSS - ORÇ - POLO
+CAMPO GRANDE
+Procurador: Procurador do INSTITUT O NACIONAL  DO SEGURO SOCIAL  -
+INSS - ORÇ - POLO CAMPO GRANDE
+Nome do Requerente - CPF/CNPJ: Rodiney Barbosa de Souza - 637.396.581-34
+Nome/OAB/CPF ou CNPJ do advogado do
+requerente:Eclair Nantes V ieira - 8332/OAB-MS - CPF/CNPJ: 653.383.161-53
+Tipo de Beneficiário: Parte
+Dados do Processo
+Número do processo de conhecimento: 0814081-15.2017.8.12.0001
+Data do ajuizamento do processo de
+conhecimento:19/05/2017
+Data da sentença condenatória no processo de
+conhecimento:28/06/2019
+Data do acórdão que manteve ou reformou a
+sentença condenatória:16/04/2021
+Data do trânsito em julgado da sentença ou do
+acórdão no processo de conhecimento:19/07/2021
+Número do processo de execução: 0814081-15.2017.8.12.0001
+Houve embargos a execução? Sim
+Data do trânsito em julgado dos embargos à
+execução:26/10/2022
+Dados de Liquidação
+Valor global do precatório: R$ 91.956,66
+Valor principal total: R$ 85.469,27
+Valor juros total: R$ 6.487,39
+Data da citação no processo de conhecimento: 11/01/2018
+Data última atualização (cálculo): 28/02/2022
+Índice de correção monetária: INPC (IBGE)
+código 615F798.18:55. Para acessar os autos processuais, acesse o site https://esaj.tjms.jus.br/pastadigital/pg/abrirConferenciaDocumento.do, informe o processo 0814081-15.2017.8.12.0001 e oEste documento é copia do original assinado digitalmente por THAIS GARCIA GOMES TIAGO DE SOUZA. Liberado nos autos digitais por Thaís Garcia Gomes Tiago de Souza, em 20/09/2023 àsfls. 36720/09/2023 18:51 TJMS - Precatório Eletrônico - Requisitórios Orçamentários
+https://sistemas.tjms.jus.br/sapre/restrito/pre-cadastro/precatoriosEnviados.xhtml 2/3Juros moratórios Poupança
+Incide juros remuneratórios? Não
+Multa %: 0,00 %
+Informações complementares:
+Anexos:Nenhum arquivo adicionado.
+Páginas das peças essenciais
+Petição Inicial da Ação de Conhecimento: 1/10
+Certidão ou Carta de Citação: 337
+Reconhecimento da parcela incontroversa:
+Liquidação de pagamentos preferenciais
+realizado pelo Juiz da execução:
+Procuração: 11
+Sentença de Conhecimento: 138/146
+Acórdão: 198/203
+Trânsito em julgado da Sentença ou Acórdão: 242
+Petição Inicial do Cumprimento de Sentença: 290/292
+Memórias de Cálculos do Cumprimento
+Sentença:309/322
+Contrato de Honorários: 360/362
+Homologação do destaque de honorários
+contratuais:365/366
+Petição Inicial da Impugnação ou dos Embargos
+ao Cumprimento de Sentença:307/308
+Memórias de Cálculos dos Embargos (Se houve
+Embargos):
+Decisão da Impugnação ou Sentença dos
+Embargos à Execução::330/331
+Acórdão dos Embargos à Execução:
+Decurso do Prazo da Decisão da Impugnação ou
+Trânsito em Julgado da Sentença ou Acórdão dos
+Embargos à Execução:336
+Certidão do Decurso de Prazo para oposição dos
+Embargos à Execução:
+Decisão de Homologação de Cálculos e
+Expedição do precatório:330/331
+Memórias de cálculos homologadas (valor do
+precatório):309/322
+Outros documentos necessários ao crédito
+(holerites, duplicatas ou notas fiscais, penhora,
+Contrato de Cessão de Crédito e Homologação
+da Cessão, TAC ? Termo de Ajustamento de
+Conduta, etc):
+Documentos emitidos:
+código 615F798.18:55. Para acessar os autos processuais, acesse o site https://esaj.tjms.jus.br/pastadigital/pg/abrirConferenciaDocumento.do, informe o processo 0814081-15.2017.8.12.0001 e oEste documento é copia do original assinado digitalmente por THAIS GARCIA GOMES TIAGO DE SOUZA. Liberado nos autos digitais por Thaís Garcia Gomes Tiago de Souza, em 20/09/2023 àsfls. 36820/09/2023 18:51 TJMS - Precatório Eletrônico - Requisitórios Orçamentários
+https://sistemas.tjms.jus.br/sapre/restrito/pre-cadastro/precatoriosEnviados.xhtml 3/3Tipo de Documento Número do Documento/Ofício Opções
+Ofício requisitório encaminhamento para TJ 1489.09/2023
+Beneficiários
+Nome/Razão Social (CPF/CNPJ) Valores/Cessões
+RODINEY  BARBOSA  DE SOUZA
+637.396.581-34
+Data Nascimento: 02/03/1979
+É espólio: Não
+Incide Previdência Social: Sim
+Órgão Previdência Social:
+Valor da Previdência Social: 0,00
+É Rendimentos Recebidos Acumuladamente (RRA): Sim
+Meses RRA: 0
+É servidor público: NãoValores
+Juros: 6.487,39
+Principal: 85.469,27
+Honorários Contratuais
+Nome/Razão Social (CPF/CNPJ) Percentual
+ECLAIR SOCORRO NANTES VIEIRA
+653.383.161-5330,000000 %
+Decurso de prazo
+Data e Certidão do decurso de prazo para manifestação das partes quanto ao preenchimento do Ofício
+Precatório (art. 7º, § 6º - Resolução 303/2019 ? CNJ):Data: 08/12/2022
+Página(s): 348/349
+código 615F798.18:55. Para acessar os autos processuais, acesse o site https://esaj.tjms.jus.br/pastadigital/pg/abrirConferenciaDocumento.do, informe o processo 0814081-15.2017.8.12.0001 e oEste documento é copia do original assinado digitalmente por THAIS GARCIA GOMES TIAGO DE SOUZA. Liberado nos autos digitais por Thaís Garcia Gomes Tiago de Souza, em 20/09/2023 àsfls. 369
