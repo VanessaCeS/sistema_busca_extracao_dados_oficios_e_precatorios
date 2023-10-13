@@ -4,13 +4,21 @@ import base64
 import requests
 from datetime import datetime
 from dotenv import load_dotenv
-
 load_dotenv('.env')
 
 tipos_alimentar = os.getenv('tipos_alimentar')
 tipos_comum = os.getenv('tipos_comum')
 
 def regex(string):
+    if 'Para conferir o original' in string or 'liberado nos autos' in string or 'Liberado nos autos digitais' in string:
+      padrao = r'\d{2}/\d{2}/\d{4}'
+      resultado = re.findall(padrao, string)
+      if resultado != []:
+        dia, mes, ano = resultado[0].strip().split('/')
+        data_padrao_arteria = f"{mes}/{dia}/{ano}"
+        return {'data_expedicao': data_padrao_arteria}
+      else:
+        return {'data_expedicao': ''}   
     if 'Advogad' in string :
       padrao = r'Advogados\(s\):(.*)'
       resultado = re.search(padrao, string)
@@ -68,15 +76,6 @@ def regex(string):
           return {'qtd_credores': qdt_credores.group(1)}
         else:
           return {'qtd_credores': '1'}
-    if 'Para conferir o original' in string or 'liberado nos autos em' in string:
-      padrao = r'\d{2}/\d{2}/\d{4}'
-      resultado = re.findall(padrao, string)
-      if resultado != []:
-        dia, mes, ano = resultado[0].strip().split('/')
-        data_padrao_arteria = f"{mes}/{dia}/{ano}"
-        return {'data_expedicao': data_padrao_arteria}
-      else:
-        return {'data_expedicao': ''}   
     if 'TRIBUNAL' in string.upper():
       padrao = r'(?:  DO ESTADO  DE|  DO ESTADO  DO)(.*)'
       estado = re.search(padrao, string, re.IGNORECASE)
@@ -205,13 +204,14 @@ def regex(string):
         return {'nome': credor.group(1).strip()}
       else:
         return {'nome': ''}
-    if 'Natureza  do Crédito' in string or 'Natureza do Crédito:' in string or 'do Crédito:' in string or 'Natureza' in string:
-      padrao = r'(?:Natureza  do Crédito:|Natureza do Crédito:|do Crédito:|Natureza:)\s+(.*?)\n'
+    if 'Natureza  do Crédito' in string or 'Natureza do Crédito:' in string or 'do Crédito:' in string or 'Natureza' in string or 'natureza jurídica do crédito' in string.lower():
+      padrao = r'(?:Natureza  do Crédito:|Natureza do Crédito:|do Crédito:|Natureza:|do crédito:)\s+(.*?)\n'
       natureza = re.search(padrao, string)
       if natureza != None:
-        return{'natureza': natureza.group(1).strip().upper()}
+        natureza_arteria = tipo_de_natureza(natureza.group(1).strip())
+        return natureza_arteria
       else:
-        return{'natureza': ''}
+          return{'natureza': ''}
     if '(x)' in string or '(x )' in string or '( x )' in string or '( x)' in string or '(X) ' in string:
       padrao = r'\([Xx]\s*\)'
       resultado = re.search(padrao, string)
@@ -231,21 +231,14 @@ def regex(string):
         return tipo_natureza
       else:
         return {'natureza': ''}
-    if 'Valor  global  da requisição' in string or "Valor  total da requisição" in string or 'R$' in string or 'Valor(R$):' in string or 'global' in string:
-      padrao = r'\b(?:0{1,3}|[1-9](?:\d{0,2}(?:\.\d{3})*(?:,\d{1,2})?|,\d{1,2})?)\b|\b(?:0{1,3}|[1-9](?:\d{0,2}(?:,\d{3})*(?:\.\d{1,2})?|\.\d{1,2})?)\b' 
-      valor_global = re.search(padrao, string)
-      if valor_global != None:
-        return {'valor_global': valor_global.group(0).strip().replace('.','').replace(',','.')}
-      else: 
-        return {'valor_global': ''}
-    if 'JUROS  MORATÓRIOS' in string.upper() or 'moratórios' in string:
+    if 'JUROS  MORATÓRIOS' in string.upper() or 'moratórios' in string or 'VALOR JUROS' in string.upper():
       padrao = r'\b(?:0{1,3}|[1-9](?:\d{0,2}(?:\.\d{3})*(?:,\d{1,2})?|,\d{1,2})?)\b|\b(?:0{1,3}|[1-9](?:\d{0,2}(?:,\d{3})*(?:\.\d{1,2})?|\.\d{1,2})?)\b' 
       valor_juros = re.search(padrao, string)
       if valor_juros != None:
         return {'valor_juros': valor_juros.group(0).strip().replace('.','').replace(',','.')}
       else:
         return {'valor_juros': ''}
-    if 'Principal/Indenização' in string or "Valor  originário" in string or 'originário:' in string or 'Valor  Bruto' in string:
+    if 'Principal/Indenização' in string or "Valor  originário" in string or 'originário:' in string or 'Valor  Bruto' in string or "VALOR PRINCIPAL" in string.upper():
       padrao = r'\b(?:0{1,3}|[1-9](?:\d{0,2}(?:\.\d{3})*(?:,\d{1,2})?|,\d{1,2})?)\b|\b(?:0{1,3}|[1-9](?:\d{0,2}(?:,\d{3})*(?:\.\d{1,2})?|\.\d{1,2})?)\b'  
       valor_principal = re.search(padrao, string)
       if valor_principal != None:
@@ -267,6 +260,14 @@ def regex(string):
         return {'valor_principal': valor_principal[0].strip().replace('.','').replace(',','.')}
       else:
         return {'valor_principal': ''}
+    if 'Valor  global' in string or "VALOR TOTAL" in string.replace('  ', ' ').upper() or 'R$' in string or 'Valor(R$):' in string or 'global' in string :
+        if 'Valor Juros' not in string and 'Valor Principal' not in string:
+          padrao = r'\b(?:0{1,3}|[1-9](?:\d{0,2}(?:\.\d{3})*(?:,\d{1,2})?|,\d{1,2})?)\b|\b(?:0{1,3}|[1-9](?:\d{0,2}(?:,\d{3})*(?:\.\d{1,2})?|\.\d{1,2})?)\b' 
+          valor_global = re.search(padrao, string)
+          if valor_global != None:
+            return {'valor_global': valor_global.group(0).strip().replace('.','').replace(',','.')}
+          else: 
+            return {'valor_global': ''}
     if 'CPF/CNPJ' in string or 'CPF' in string:
       padrao = r'\b(?:\d{3}\.\d{3}\.\d{3}-\d{2}|\d{2}\.\d{3}\.\d{3}\/\d{4}-\d{2}|RNE-\d{10})\b|\b\d{11}\b'
       documento = re.search(padrao, string)
@@ -274,7 +275,7 @@ def regex(string):
         return {'documento': documento.group(0).strip()}
       else:
         return {'documento': ''}
-    if 'Data  do nascimento'.upper() in string.upper() or 'Data  de nascimento'.upper() in string.upper() or 'Beneficiário:' in string or 'Data  de Nascimento:' in string:
+    if 'Data  do nascimento'.upper() in string.upper() or 'Data  de nascimento'.upper() in string.upper() or 'Beneficiário:' in string or 'Data  de Nascimento:' in string or 'Data de Nascimento' in string or 'Data Nascimento' in string:
       padrao = r'\b(?:\d{1,2}\/\d{1,2}\/\d{4}|\d{4}\/\d{1,2}\/\d{1,2}|\d{1,2}\-\d{1,2}\-\d{4}|\d{4}\-\d{1,2}\-\d{1,2})\b'
       nascimento = re.search(padrao, string)
       if nascimento != None:
@@ -393,7 +394,7 @@ def identificar_estados(estado):
     }
   for e in dict.keys(estados_brasileiros):
     if e == estado.strip():
-      return {'estado': f'{estados_brasileiros[e]}'} 
+      return {'estado': f'{estados_brasileiros[e].upper()}'} 
     else:
       {'estado': ''}
 
@@ -473,7 +474,14 @@ def extrair_processo_origem_amazonas(processo_origem, processo_xml):
   if len(resultado) > 1:
     if processo_xml in resultado:
       resultado.remove(processo_xml)
-      return resultado[0]
+      if processo_xml == resultado[0]:
+        resultado.remove(processo_xml)
+        if len(resultado) > 0:
+          return resultado[0]
+        else:
+          return ''
+      else:
+        return resultado[0]
   elif len(resultado) == 1:
     return ''
   else:
@@ -575,7 +583,7 @@ def limpar_dados(dado):
 
     return dado
 
-def mandar_documento_para_ocr(arquivo, op,insc='',pasta="arquivo_texto_ocr"):
+def mandar_documento_para_ocr(arquivo, op,insc='',pasta="arquivos_texto_ocr"):
   arquivo_base_64 = converter_arquivo_base_64(arquivo)
   if op == '1':
     arquivo_txt = text_ocr(arquivo_base_64, insc, pasta)
@@ -771,3 +779,26 @@ def mandar_dados_regex(indices, linhas):
           dados = dados | {f'{nome}': ''}
   return dados
 
+def pegar_cpf_e_credor(indice, texto):
+  string = texto[indice]
+  padrao_cpf = r'\b(?:\d{3}\.\d{3}\.\d{3}-\d{2}|\d{2}\.\d{3}\.\d{3}\/\d{4}-\d{2}|RNE-\d{10})\b|\b\d{11}\b'
+  cpf_cnpj_rne = re.search(padrao_cpf, string)
+  if cpf_cnpj_rne != None:
+      cpf = cpf_cnpj_rne.group(0).strip()
+  else:
+      cpf =  ''
+  padrao_credor = r'[a-zA-ZÀ-ÖØ-öø-ÿ]+'
+  resultado_credor = re.findall(padrao_credor, string)
+  if resultado_credor != None:
+      credor = ' '.join(resultado_credor)
+  else:
+      credor = ''
+  return {'cpf': cpf,'credor': credor}
+
+def pegar_cidade(texto, indice):
+    for i in dict.keys(indice):
+      if indice[i] != None:
+        cidade = texto[indice[i]].replace('\n', '').replace(',', '').replace('.', '').strip()
+        return {'cidade': cidade}
+      else:
+          return {'cidade': ''}

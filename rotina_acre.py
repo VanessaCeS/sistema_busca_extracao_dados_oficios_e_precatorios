@@ -18,7 +18,7 @@ def ler_xml():
             ler_documentos(dado)
           else:
             pass
-  apagar_arquivos(['./arquivos_txt_acre', './arquivos_pdf_acre', './fotos_oab', './arquivos_texto_ocr'])
+  apagar_arquivos(['arquivos_txt_acre', 'arquivos_pdf_acre', 'fotos_oab', 'pdf_oab','arquivos_texto_ocr'])
 
 def ler_documentos(dado_xml):
       try:      
@@ -27,12 +27,13 @@ def ler_documentos(dado_xml):
         if doc != {}:
           codigo_processo = next(iter(doc))
           arquivo_pdf = f"arquivos_pdf_acre/{processo_geral}_arquivo_precatorio.pdf"
-          file_path = doc[codigo_processo][0][1]
+          id_documento = doc[codigo_processo][0][0]
+          file_path = doc[codigo_processo][0][2]
           with open(arquivo_pdf, "wb") as arquivo:
                   arquivo.write(file_path)
 
           dados_ocr = mandar_documento_para_ocr(arquivo_pdf, '2')
-          dados_complementares = {"processo_geral": 'processo_geral', "codigo_processo": codigo_processo, 'site': 'https://esaj.tjac.jus.br', 'id_documento': '', 'valor_juros': '', 'valor_principal': ''}
+          dados_complementares = {"processo_geral": 'processo_geral', "codigo_processo": codigo_processo, 'site': 'https://esaj.tjac.jus.br', 'id_documento': id_documento, 'valor_juros': '', 'valor_principal': ''}
           dados_ocr = dados_ocr | dados_complementares
           tratar_dados_ocr(arquivo_pdf ,processo_geral, dados_ocr)
           

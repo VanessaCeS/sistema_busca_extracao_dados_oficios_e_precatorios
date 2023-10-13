@@ -249,7 +249,7 @@ def get_incidentes(cnj, url, s):
 
 def get_docs_oficio_precatorios_tjal(cnj, zip_file=False, pdf=False):
     login_esja = f'{os.getenv("login_esja")}'
-    senha_esja = f'{os.getenv("senha_esja")}'
+    senha_esja = f'{os.getenv("senha_esja_tipo_1")}'
 
     session = login_esaj('https://www2.tjal.jus.br', login_esja, senha_esja)
 
@@ -258,4 +258,7 @@ def get_docs_oficio_precatorios_tjal(cnj, zip_file=False, pdf=False):
     cods_incidentes = [incidentes.split('codigo=')[1]]
     
     docs = {cod: get_docs_precatorio(cod, 'https://www2.tjal.jus.br/cpopg', session, zip_file=zip_file, pdf=pdf) for cod in cods_incidentes}
+    print(docs)
     return docs
+
+get_docs_oficio_precatorios_tjal('0500331-85.2023.8.02.0001',zip_file=False, pdf=True)

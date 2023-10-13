@@ -43,7 +43,7 @@ def ler_documentos(dado_xml):
               for i in range(len(valor)):
                 file_path = valor[i][2]
                 with open(f"arquivos_pdf_alagoas/{processo_geral}_{i+1}_arquivo_precatorio.pdf", "wb") as arquivo:
-                        arquivo.write(file_path)
+                      arquivo.write(file_path)
                 merge.append(f"arquivos_pdf_alagoas/{processo_geral}_{i+1}_arquivo_precatorio.pdf")
             merge.write(arquivo_pdf)
             
@@ -55,6 +55,6 @@ def ler_documentos(dado_xml):
             else:
                 extrair_dados_texto_ocr(arquivo_pdf, dado_xml, )
       except Exception as e:
-        print("Erro no processo -> ", f'Erro: {e}')
+        print("Erro no processo -> ", processo_geral, f'Erro: {e}')
         print(traceback.print_exc())
         pass
