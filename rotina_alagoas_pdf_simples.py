@@ -1,6 +1,7 @@
 import re
 import PyPDF2
 import traceback
+from logs import log
 from cna_oab import login_cna
 from funcoes_arteria import enviar_valores_oficio_arteria
 from utils import  encontrar_indice_linha, mandar_dados_regex
@@ -28,18 +29,18 @@ def ler_dados_txt(arquivo_pdf, dados_xml,arquivo_txt):
         linhas = arquivo.readlines()    
 
     indice_precatorio = encontrar_indice_linha(linhas, "do processo:")
-    indice_processo = encontrar_indice_linha(linhas, 'da Ação') + 1
-    indice_vara = encontrar_indice_linha(linhas, " Vara:")
+    indice_processo = encontrar_indice_linha(linhas, 'da ação') + 1
+    indice_vara = encontrar_indice_linha(linhas, " vara:")
     indice_valor_principal = encontrar_indice_linha(linhas, "originário:")
     indice_valor_global = encontrar_indice_linha(linhas, "da requisição:")
     indice_valor_juros = encontrar_indice_linha(linhas, "moratórios:")
-    indice_natureza = encontrar_indice_linha(linhas, "do Crédito:")
-    indice_credor = encontrar_indice_linha(linhas, "do Credor:")
-    indice_devedor = encontrar_indice_linha(linhas, "Ente Devedor:")
-    indice_documento = encontrar_indice_linha(linhas, "CPF")
+    indice_natureza = encontrar_indice_linha(linhas, "do crédito:")
+    indice_credor = encontrar_indice_linha(linhas, "do credor:")
+    indice_devedor = encontrar_indice_linha(linhas, "ente devedor:")
+    indice_documento = encontrar_indice_linha(linhas, "cpf")
     indice_data_nascimento = encontrar_indice_linha(linhas, " nascimento:")
     indice_data_expedicao = encontrar_indice_linha(linhas, "liberado nos autos")
-    indice_cidade = encontrar_indice_linha(linhas, "Fone:")
+    indice_cidade = encontrar_indice_linha(linhas, "fone:")
     
     indices = {'indice_precatorio': indice_precatorio,'indice_vara': indice_vara,'indice_valor_principal': indice_valor_principal, 'indice_valor_global': indice_valor_global, 'indice_credor': indice_credor,'indice_devedor': indice_devedor, 'indice_data_expedicao': indice_data_expedicao,'indice_natureza': indice_natureza,'indice_valor_juros': indice_valor_juros, 'indice_documento': indice_documento, 'indice_data_nascimento': indice_data_nascimento}
 
@@ -104,4 +105,4 @@ def enviar_dados_banco_de_dados_e_arteria_alagoas(arquivo_pdf, dados):
     dados['id_sistema_arteria'] = id_sistema_arteria
     atualizar_ou_inserir_precatorios_no_banco_de_dados(dados['codigo_processo'], dados)
     atualizar_ou_inserir_pessoa_precatorio(documento, dados['processo'])
-
+    log({'processo': dados['processo'], 'tipo': 'Sucesso', 'site': dados['site'], 'mensagem': 'Precatório registrado com sucesso', 'estado': dados['estado']})

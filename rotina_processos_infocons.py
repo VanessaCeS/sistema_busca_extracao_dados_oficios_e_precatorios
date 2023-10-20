@@ -4,8 +4,6 @@ import requests
 from bs4 import BeautifulSoup
 from datetime import datetime
 from dotenv import load_dotenv
-
-
 load_dotenv('.env')
 
 def data_corrente_formatada():
@@ -18,7 +16,7 @@ def buscar_xml():
     url_info_cons = "https://clippingbrasil.com.br/InfoWsScript/service_xml.php"
     headers = {
         'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 '
-                      '(KHTML, like Gecko) Chrome/80.0.3987.149 Safari/537.36'
+                    '(KHTML, like Gecko) Chrome/80.0.3987.149 Safari/537.36'
     }
     sigla = os.getenv('sigla')
     user = os.getenv('user')
@@ -30,6 +28,7 @@ def buscar_xml():
     response = requests.post(url=url_info_cons, headers=headers, files=data)
 
     soup = BeautifulSoup(response.content, 'xml')
+
     with open(f'arquivos_xml/relatorio_{data_corrente_formatada().replace("/", "_")}.xml', 'w', encoding='utf-8') as f:
         f.write(response.text)
     publicacoes_tags = soup.find_all('Publicacoes')
@@ -70,7 +69,6 @@ def select_id(conn, processo):
     sql = f"SELECT id_processo FROM processos WHERE processo = '{processo}'"
     cursor.execute(sql)
 
-    # Recupere os resultados da consulta
     results = cursor.fetchall()
 
     return results[0][0]

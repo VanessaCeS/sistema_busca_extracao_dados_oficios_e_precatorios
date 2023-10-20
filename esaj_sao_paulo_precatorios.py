@@ -1,4 +1,5 @@
 import os
+import traceback
 from bs4 import BeautifulSoup
 import json
 import time
@@ -6,6 +7,7 @@ from requests import Session
 from requests.adapters import HTTPAdapter, Retry
 import re
 import functools
+from logs import log
 
 def configure_session(session, retries=3, backoff=0.3, timeout=None, not_retry_on_methods=None, retry_on_status=None):
     retry_methods = ["GET", "POST", "PUT", "DELETE", "HEAD", "OPTIONS"]
@@ -58,6 +60,7 @@ def login_esaj(url_tribunal: str, username: str, password: str) -> Session:
         print(f"[bold red]Não foi possivel acessar o site do tribunal. {e}[/bold red]")
         
         raise Exception(f"{url_tribunal} - Não foi possivel acessar o site do tribunal {e}")
+    
     if page_login.status_code != 200:
         print(f"[bold red]{url_tribunal} - Não foi possivel acessar o site do tribunal. Status code: {page_login.status_code}[/bold red]")
         
@@ -84,6 +87,7 @@ def login_esaj(url_tribunal: str, username: str, password: str) -> Session:
 
     if url in logar.url:
         print(f"[bold red]{url_tribunal} - Login Falhou[/bold red]")
+
         raise Exception(f"{url_tribunal} - Login Falhou")
 
     return s
@@ -101,7 +105,7 @@ def get_docs_precatorio(codigo_prec, url, s, zip_file=False, pdf=False):
     json_pasta = json.loads(pasta_digital[pasta_digital.find('requestScope = ') + 15: pasta_digital.find('requestScope = ') + 15 + pasta_digital[pasta_digital.find('requestScope = ') + 15:].find(';')])
     
     por_tipo = {}
-    for doc in json_pasta:
+    for doc in json_pasta: 
         if doc['data']['cdTipoDocDigital'] not in por_tipo:
             por_tipo[doc['data']['cdTipoDocDigital']] = []
         por_tipo[doc['data']['cdTipoDocDigital']].append(doc)
@@ -109,8 +113,6 @@ def get_docs_precatorio(codigo_prec, url, s, zip_file=False, pdf=False):
     oficios = []
     pdfs_oficios = []
     #? tipo 99024 = oficio
-    #? tipo 34 = oficio acre
-
     for doc in por_tipo['99024']:
         for children in doc['children']:
             params = children['data']['parametros']
@@ -249,16 +251,18 @@ def get_incidentes(cnj, url, s):
     else:
         print(f"[red]Tribunal no modelo antigo")
 
-
 def get_docs_oficio_precatorios_tjsp(cnj, zip_file=False, pdf=False):
     login_esja = f'{os.getenv("login_esja")}'
     senha_esja_sao_paulo = f'{os.getenv("senha_esja_sao_paulo")}'
-    session = login_esaj('https://esaj.tjsp.jus.br', login_esja, senha_esja_sao_paulo)
+    session = login_esaj('https://esaj.tjsp.jus.br', '69173753149', 'Costaesilva2023#')
 
     incidentes = get_incidentes(cnj, 'https://esaj.tjsp.jus.br/cpopg', session)
-
-    cods_incidentes = [v.split('codigo=')[1].split('&')[0] for k, v in incidentes.items() if 'prec' in k.lower()]
-
-    docs = {cod: get_docs_precatorio(cod, 'https://esaj.tjsp.jus.br/cpopg', session, zip_file=zip_file, pdf=pdf) for cod in cods_incidentes}
-    return docs
-
+    try:
+        cods_incidentes = [v.split('codigo=')[1].split('&')[0] for k, v in incidentes.items() if 'prec' in k.lower()]
+        
+        docs = {cod: get_docs_precatorio(cod, 'https://esaj.tjsp.jus.br/cpopg', session, zip_file=zip_file, pdf=pdf) for cod in cods_incidentes}
+        return docs
+    except Exception as e:
+        print('Erro --> ', e)
+        print(traceback.print_exc())
+        log(cnj, 'Fracasso','https://esaj.tjsp.jus.br', str(e), 'São Paulo')

@@ -11,38 +11,47 @@ def consultar_processos(valor_tribunal):
     host=os.getenv('db_server_precatorio'),
     user=os.getenv('db_username_precatorio'),
     password=os.getenv('db_password_precatorio'),
-    database='precatorias_tribunais'
+    database=os.getenv('db_database_precatorio')
     )
   dados = []
+  processo_origem = ''
+
   cursor = conn.cursor()
   consulta_sql = "SELECT * FROM processos WHERE processo LIKE '%{}%'".format(valor_tribunal)
   cursor.execute(consulta_sql)
   resultados = cursor.fetchall()
   
   for registro in resultados:
+    if registro[4] != 'STFSITE':
       id_processo = registro[0]
       processo = registro[2]
       materia = registro[3]
       tribunal = registro[4]
-      consulta_publicacao = "SELECT publicacao FROM publicacoes WHERE id_processo LIKE '%{}%'".format(id_processo)
-      cursor.execute(consulta_publicacao)
-      publicacoes = cursor.fetchall()
-      
-      for publicacao in publicacoes:
-            processo_origem = extrair_processo_origem(publicacao[0])
-            if verificar_tribunal(processo, valor_tribunal):
-                processo_origem = extrair_processo_origem_amazonas(publicacao[0], processo)
-      dados.append({"processo": processo, "tribunal": tribunal, "materia": materia, 'processo_origem': processo_origem})
+      print('processo ---> ', processo)
+      if pesquisar_processo_em_precatorios(processo):
+        consulta_publicacao = "SELECT publicacao FROM publicacoes WHERE id_processo LIKE '%{}%'".format(id_processo)
+        cursor.execute(consulta_publicacao)
+        publicacoes = cursor.fetchall()
+        for publicacao in publicacoes:
+              processo_origem = extrair_processo_origem(publicacao[0].replace('\n', ''),processo)
+              if processo_origem == '':
+                  if verificar_tribunal(processo, valor_tribunal):
+                      processo_origem = extrair_processo_origem_amazonas(publicacao[0].replace('\n', ''), processo)
+              print("--->>> ", processo_origem)
+        if processo_origem == None:
+            processo_origem = ''
+        dados.append({"processo": processo, "tribunal": tribunal, "materia": materia, 'processo_origem': processo_origem})
+
   cursor.close()
   conn.close()
   return dados
 
 def verificar_tribunal(n_processo, n_tribunal):
-        padrao = fr'\d{{7}}-\d{{2}}*?{re.escape(n_tribunal)}.*?\d{{4}}'
+        padrao = fr'\d{{7}}-\d{{2}}.*?{re.escape(n_tribunal)}.*?\d{{4}}'
         processo = re.search(padrao, n_processo)
         if processo != None:
           return True
-        
+
 def pesquisar_pessoa_por_documento_ou_oab(conn, valor_pesquisa):
     cursor = conn.cursor(dictionary=True)
     query = 'SELECT * FROM pessoas WHERE documento = %s OR oab = %s'
@@ -50,6 +59,22 @@ def pesquisar_pessoa_por_documento_ou_oab(conn, valor_pesquisa):
     pessoa = cursor.fetchone()
     cursor.close()
     return pessoa
+
+def pesquisar_processo_em_precatorios(processo):
+  conn = mysql.connector.connect(
+        host=os.getenv('db_server_precatorio'),
+        user=os.getenv('db_username_precatorio'),
+        password=os.getenv('db_password_precatorio'),
+        database=os.getenv('db_database_precatorio'))
+    
+  cursor = conn.cursor()
+  query = 'SELECT id_precatorio FROM precatorios WHERE processo = %s'
+  cursor.execute(query, (processo,))
+  id_precatorio = cursor.fetchone()
+  if id_precatorio is None:
+      return True
+  else:
+      return False
 
 def atualizar_ou_inserir_pessoa_no_banco_de_dados(doc, dados):
     conn = mysql.connector.connect(
@@ -63,9 +88,9 @@ def atualizar_ou_inserir_pessoa_no_banco_de_dados(doc, dados):
     try:
         documento = dados.get('documento')
         oab = dados.get('oab')
-
         pessoa = pesquisar_pessoa_por_documento_ou_oab(conn, doc)
-
+        print('DADOS BD -->> ', dados)
+        
         if pessoa is not None:
             dados_processados = processar_dado(dados)
             colunas_e_valores = ', '.join([f"{coluna} = %s" for coluna in dados_processados.keys()])
@@ -79,7 +104,6 @@ def atualizar_ou_inserir_pessoa_no_banco_de_dados(doc, dados):
             query = f"INSERT INTO pessoas ({colunas}) VALUES ({valores})"
             valores_insercao = tuple(dado_processado.values())
             cursor.execute(query, valores_insercao)
-
         conn.commit()
     except Exception as e:
         print("Erro: ", e)
@@ -133,7 +157,7 @@ def atualizar_ou_inserir_pessoa_precatorio(documento, processo):
     host=os.getenv('db_server_precatorio'),
     user=os.getenv('db_username_precatorio'),
     password=os.getenv('db_password_precatorio'),
-    database='precatorias_tribunais'
+    database=os.getenv('db_database_precatorio')
     )
 
     cursor = conn.cursor()

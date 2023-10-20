@@ -1,0 +1,155 @@
+import re
+import PyPDF2
+import traceback
+from logs import log
+from cna_oab import login_cna
+from funcoes_arteria import enviar_valores_oficio_arteria
+from esaj_mato_grosso_sul_precatorios import get_docs_oficio_precatorios_tjms
+from utils import  encontrar_indice_linha, limpar_dados, mandar_dados_regex, tipo_precatorio, verificar_tribunal
+from banco_de_dados import atualizar_ou_inserir_pessoa_no_banco_de_dados, atualizar_ou_inserir_pessoa_precatorio, atualizar_ou_inserir_precatorios_no_banco_de_dados, consultar_processos
+
+def buscar_dados_tribunal_mato_grosso_do_sul():     
+  dados = consultar_processos('.8.12.')
+
+  for d in dados:
+        dados_limpos = limpar_dados(d)
+        tipo = tipo_precatorio(d)
+        dado = dados_limpos | tipo
+        if verificar_tribunal(d['processo']):
+          if dado['processo_origem'] == '':
+            dado['processo_origem'] = dado['processo']
+          ler_documentos(dado)
+        else:
+          pass
+  
+
+def verificar_tribunal(n_processo):
+        padrao = r'\d{7}-\d{2}.\d{4}.8.12.\d{4}'
+        processo = re.search(padrao, n_processo)
+        if processo != None:
+          return True
+        
+def ler_documentos(dados_xml):
+      try:
+        processo_geral = dados_xml['processo']
+        doc = get_docs_oficio_precatorios_tjms(processo_geral,zip_file=False, pdf=True)
+        if doc != None:
+          codigo_processo = next(iter(doc))
+          arquivo_pdf = f"arquivos_pdf_mato_grosso_do_sul/{processo_geral}_arquivo_precatorio.pdf"
+          merge = PyPDF2.PdfMerger()
+          for chave, valor in doc.items():
+            for i in range(len(valor)):
+              id_documento = valor[i][0] 
+              file_path = valor[i][2]
+              with open(f"arquivos_pdf_mato_grosso_do_sul/{processo_geral}_{i+1}_arquivo_precatorio.pdf", "wb") as arquivo:
+                arquivo.write(file_path)
+              merge.append(f"arquivos_pdf_mato_grosso_do_sul/{processo_geral}_{i+1}_arquivo_precatorio.pdf")
+          merge.write(arquivo_pdf)
+          
+          pdf_file = open(arquivo_pdf, 'rb')
+          pdf_reader = PyPDF2.PdfReader(pdf_file)
+          text = ''
+          for page_num in range(len(pdf_reader.pages)): 
+              page = pdf_reader.pages[page_num]
+              text += page.extract_text()
+
+          with open(f"arquivos_txt_mato_grosso_sul/{processo_geral}_extrair.txt", "w", encoding='utf-8') as arquivo:
+              arquivo.write(text)
+          dados =  {"processo_geral": processo_geral, "codigo_processo": codigo_processo, 'site': 'https://esaj.tjms.jus.br', 'id_documento': id_documento, 'estado': 'MATO GROSSO DO SUL'} | dados_xml
+          extrair_dados_pdf(arquivo_pdf, f"arquivos_txt_mato_grosso_sul/{processo_geral}_extrair.txt", dados)
+      except Exception as e:
+        print(f"Erro! Processo -> {processo_geral}", e)
+        print(traceback.print_exc())
+        pass
+
+def extrair_dados_pdf(arquivo_pdf, arquivo_txt, dados_pdf):
+  with open(arquivo_txt, 'r', encoding='utf-8') as f:
+    linhas = f.readlines()
+
+  dados = {}
+  indice_autor = encontrar_indice_linha(linhas,'autor')
+  indice_credor = encontrar_indice_linha(linhas, 'beneficiários') 
+  
+  if indice_credor != None or indice_autor != None:
+    indice_executado = encontrar_indice_linha(linhas,'réu')
+    indice_devedor = encontrar_indice_linha(linhas,'devedor:')
+    indice_vara = encontrar_indice_linha(linhas,'vara')
+    indice_cidade = encontrar_indice_linha(linhas,'comarca: ')
+    indice_natureza = encontrar_indice_linha(linhas, "natureza do crédito")
+    indice_natureza_juridica = encontrar_indice_linha(linhas, 'natureza jurídica do crédito')
+    indice_valor_total = encontrar_indice_linha(linhas, "valor total:")
+    indice_valor_principal = encontrar_indice_linha(linhas, "valor principal")
+    indice_valor_juros = encontrar_indice_linha(linhas, "valor juros")
+    indice_data_expedicao = encontrar_indice_linha(linhas,'liberado nos autos')
+    indice_oab = encontrar_indice_linha(linhas,'oab:')
+    indice_advogado = encontrar_indice_linha(linhas,'nome/oab/cpf')
+    indice_data_nascimento = encontrar_indice_linha(linhas,' nascimento')
+    if indice_natureza_juridica != None:
+      indice_natureza = indice_natureza_juridica
+    if indice_valor_total == None:
+      indice_valor_total = indice_valor_principal - 1
+    
+    indices = {'indice_vara': indice_vara, 'indice_natureza': indice_natureza, 'indice_total': indice_valor_total, 'indice_valor_juros': indice_valor_juros,  'indice_valor_principal': indice_valor_principal, 'indice_data_expedicao': indice_data_expedicao}
+    
+    dados = mandar_dados_regex(indices, linhas)
+
+    if indice_cidade == None:
+      indice_cidade = 2
+      dados['cidade'] = linhas[indice_cidade].split('-')[0].strip()
+    else:
+      dados['cidade'] = linhas[indice_cidade].split(':')[1].strip()
+    if ':' in dados['vara_pdf']:
+      dados['vara_pdf'] = dados['vara_pdf'].split(':')[1].replace('\n', '').strip()
+    if indice_autor != None:
+      dados['credor'] = pegar_valor(linhas[indice_autor + 1])
+      dados['documento'] = pegar_valor(linhas[indice_autor + 2])
+    elif indice_credor != None:
+      dados['credor'] = linhas[indice_credor + 2].replace('\n', '').strip()
+      dados['documento'] = linhas[indice_credor + 3].replace('\n', '').strip()
+
+    if indice_devedor != None:
+      dados['devedor'] = pegar_valor(linhas[indice_devedor])
+    elif indice_executado != None:
+      dados['devedor'] = pegar_valor(linhas[indice_executado + 1])
+
+    if indice_data_nascimento != None:
+      data_nascimento = linhas[indice_data_nascimento].split('Nascimento:')[1].replace('\n','').strip()
+      dia, mes, ano = data_nascimento.split('/')
+      data_padrao_arteria = f"{mes}/{dia}/{ano}"
+      dados['data_nascimento'] = data_padrao_arteria
+      
+    if indice_oab != None:
+      advogado = pegar_valor(linhas[indice_oab - 1])
+      oab_e_seccional = pegar_valor(linhas[indice_oab])
+      oab = oab_e_seccional[2:]    
+      seccional = oab_e_seccional[:2]
+      documento_advogado = pegar_valor(linhas[indice_oab + 1])
+      dados_advogado = login_cna(oab,seccional, documento_advogado,advogado, dados_pdf['processo'])
+    elif indice_advogado != None:
+      valores = linhas[indice_advogado + 1].split(':')[1].split('-')
+      advogado = valores[0].strip()
+      oab = valores[1].split('/')[0].strip()
+      seccional =  valores[2].strip()
+      documento_advogado = valores[2].replace('\n', '').strip()
+      dados_advogado = login_cna(oab,seccional, documento_advogado,advogado, dados_pdf['processo'])
+    else:
+      dados_advogado = {'telefone': '', 'advogado': '', 'seccional': '', 'oab': '', 'documento_advogado': documento_advogado}
+    
+    dados = dados | dados_advogado | dados_pdf 
+    enviar_dados_banco_de_dados_e_arteria(arquivo_pdf, dados)
+  else:
+    with open('LOG_PRECATORIO_MS.txt', 'a+') as f:
+      f.write(f'Não foi possivel ler o precatório: {dados_pdf["processo"]} \n')
+
+def pegar_valor(string):
+  valor = string.split(':')[1].replace('\n', '').strip()
+  return valor
+
+def enviar_dados_banco_de_dados_e_arteria(arquivo_pdf, dados):    
+    documento = dados['documento']
+    atualizar_ou_inserir_pessoa_no_banco_de_dados(documento, {'nome': dados['credor'], 'documento': dados['documento'], 'data_nascimento': dados['data_nascimento']})
+    id_sistema_arteria = enviar_valores_oficio_arteria(arquivo_pdf, dados)
+    dados['id_sistema_arteria'] = id_sistema_arteria
+    atualizar_ou_inserir_precatorios_no_banco_de_dados(dados['codigo_processo'], dados)
+    atualizar_ou_inserir_pessoa_precatorio(documento, dados['processo'])
+    log({'processo': dados['processo_origem'], 'tipo': 'Sucesso', 'site': dados['site'], 'mensagem': 'Precatório registrado com sucesso', 'estado': dados['estado']})

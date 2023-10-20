@@ -1,4 +1,5 @@
 import os
+import traceback
 from bs4 import BeautifulSoup
 import json
 import time
@@ -6,7 +7,7 @@ from requests import Session
 from requests.adapters import HTTPAdapter, Retry
 import re
 import functools
-
+from logs import log
 
 def configure_session(session, retries=3, backoff=0.3, timeout=None, not_retry_on_methods=None, retry_on_status=None):
     retry_methods = ["GET", "POST", "PUT", "DELETE", "HEAD", "OPTIONS"]
@@ -248,13 +249,18 @@ def get_incidentes(cnj, url, s):
 
 def get_docs_oficio_precatorios_tjam(cnj, zip_file=False, pdf=False):
     login_esja = f'{os.getenv("login_esja")}'
-    senha_esja = f'{os.getenv("senha_esja_am")}'
+    senha_esja = f'{os.getenv("senha_esja_tipo_3")}'
 
     session = login_esaj('https://consultasaj.tjam.jus.br/', login_esja, senha_esja)
 
-    incidentes = get_incidentes(cnj, 'https://consultasaj.tjam.jus.br/cpopg', session)
-
-    cods_incidentes = [incidentes.split('codigo=')[1]]
     
-    docs = {cod: get_docs_precatorio(cod, 'https://consultasaj.tjam.jus.br/cpopg', session, zip_file=zip_file, pdf=pdf) for cod in cods_incidentes}
-    return docs
+    try:
+        incidentes = get_incidentes(cnj, 'https://consultasaj.tjam.jus.br/cpopg', session)
+        cods_incidentes = [incidentes.split('codigo=')[1]]
+        
+        docs = {cod: get_docs_precatorio(cod, 'https://consultasaj.tjam.jus.br/cpopg', session, zip_file=zip_file, pdf=pdf) for cod in cods_incidentes}
+        return docs
+    except Exception as e:
+        print('Erro --> ', e)
+        print(traceback.print_exc())
+        log(cnj, 'Fracasso','https://consultasaj.tjam.jus.br/', str(e), 'Amazonas')

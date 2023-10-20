@@ -1182,8 +1182,8 @@ def enviar_valores_oficio_arteria(arquivo_pdf, dado):
     archer_instance = instancia_arteria("Precatórios")
     nome_arquivo = arquivo_pdf.split('/')[1]
     arquivo_base_64 = transformar_arquivo_para_base64(arquivo_pdf)
-    id = archer_instance.post_attachment(nome_arquivo, arquivo_base_64)
-    
+    id_documento = archer_instance.post_attachment(nome_arquivo, arquivo_base_64)
+   
     dado = limpar_dados_arteria(dado)
     if dado['processo_origem'] != '':
         foi_expedido = 'SIM'
@@ -1194,11 +1194,17 @@ def enviar_valores_oficio_arteria(arquivo_pdf, dado):
         valor_principal = dado['valor_principal_credor']
     else:
         valor_principal = dado['valor_principal']
-
+    if dado['estado'] == 'SP' or dado['estado'] == 'SÃO PAULO':
+        precatorio = dado['processo_origem']
+        processo = dado['processo']
+    else:
+        precatorio =  dado['processo']
+        processo = dado['processo_origem']
+    
     dados = {
     'Data da Expedição': dado['data_expedicao'],
-    'Código do Processo de Origem': dado['processo_origem'],
-    'Número do Precatório': dado['processo'],
+    'Código do Processo de Origem': processo,
+    'Número do Precatório': precatorio,
     'Tipo de Precatório': dado['tipo'],
     'Natureza': [dado['natureza']],
     'Status Precatório':['PRECATÓRIO'],
@@ -1214,7 +1220,7 @@ def enviar_valores_oficio_arteria(arquivo_pdf, dado):
     'Valor Global': dado['valor_global'],
     'Data  de Nascimento do Requerente': dado['data_nascimento'],
     'Número do Precatório foi Expedido?': [foi_expedido],
-    "Ofício Requisitório": [f"{id}"],
+    "Ofício Requisitório": [f"{id_documento}"],
     "Nome Advogado": dado['advogado'],
     "OAB": dado['oab'],
     "Seccional": [dado['seccional']],
@@ -1269,5 +1275,8 @@ def limpar_dados_arteria(dado):
 
     if 'qtd_credores' not in dado:
         dado['qtd_credores'] = '1' 
-        
+    
+    if 'data_nascimento' not in dado:
+        dado['data_nascimento'] = ''
+
     return dado
