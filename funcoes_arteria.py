@@ -14,7 +14,7 @@ import xml.etree.ElementTree as ET
 from zeep import Client, Settings, Transport
 from concurrent.futures import ThreadPoolExecutor
 from rsa_archer.archer_instance import ArcherInstance
-from utils import converter_data, selecionar_seccional
+from auxiliares import converter_data, selecionar_seccional
 # load_dotenv('.env')
 
 def adjust_date_and_time_to_arteria(date_audiencia, formato="%d/%m/%Y %H:%M"):
@@ -34,12 +34,12 @@ def instancia_arteria(application="", user=None, password=None):
     if 'archer_instance' not in globals():
         load_dotenv()
 
-        AMBIENTE = 'NIP_Dev'
+        AMBIENTE = 'NIP'
         user = user if user else ''
         password = password if password else ''
         global archer_instance
         archer_instance = ArcherInstance('https://att.costaesilvaadv.com.br',
-                                            'NIP_Dev',
+                                            'NIP',
                                             user,
                                             password
                                             )
@@ -1182,8 +1182,8 @@ def enviar_valores_oficio_arteria(arquivo_pdf, dado):
     archer_instance = instancia_arteria("Precatórios")
     nome_arquivo = arquivo_pdf.split('/')[1]
     arquivo_base_64 = transformar_arquivo_para_base64(arquivo_pdf)
-    id = archer_instance.post_attachment(nome_arquivo, arquivo_base_64)
-    
+    id_documento = archer_instance.post_attachment(nome_arquivo, arquivo_base_64)
+   
     dado = limpar_dados_arteria(dado)
     if dado['processo_origem'] != '':
         foi_expedido = 'SIM'
@@ -1194,11 +1194,17 @@ def enviar_valores_oficio_arteria(arquivo_pdf, dado):
         valor_principal = dado['valor_principal_credor']
     else:
         valor_principal = dado['valor_principal']
-
+    # if dado['estado'] == 'SP' or dado['estado'] == 'SÃO PAULO':
+    #     precatorio = dado['processo_origem']
+    #     processo = dado['processo']
+    # else:
+    precatorio =  dado['processo']
+    processo = dado['processo_origem']
+    
     dados = {
     'Data da Expedição': dado['data_expedicao'],
-    'Código do Processo de Origem': dado['processo_origem'],
-    'Número do Precatório': dado['processo'],
+    'Código do Processo de Origem': processo,
+    'Número do Precatório': precatorio,
     'Tipo de Precatório': dado['tipo'],
     'Natureza': [dado['natureza']],
     'Status Precatório':['PRECATÓRIO'],
@@ -1214,13 +1220,12 @@ def enviar_valores_oficio_arteria(arquivo_pdf, dado):
     'Valor Global': dado['valor_global'],
     'Data  de Nascimento do Requerente': dado['data_nascimento'],
     'Número do Precatório foi Expedido?': [foi_expedido],
-    "Ofício Requisitório": [f"{id}"],
+    "Ofício Requisitório": [f"{id_documento}"],
     "Nome Advogado": dado['advogado'],
     "OAB": dado['oab'],
     "Seccional": [dado['seccional']],
     'Telefone': dado['telefone'],
     }
-
     id_arteria = cadastrar_arteria(dados, 'Precatórios')
     return  id_arteria
 

@@ -1,0 +1,38 @@
+Espelho de Valores Cadastrados. Data: 01/04/2023
+PROCESSO : 5004448-93.2023.4.02.9388
+ORIGINÁRIO : 0002466-51.2007.4.02.5101/RJ
+TIPO : Precatório
+REQUERENTE : DUFRY DO BRASIL DUTY FREE SHOP LTDA.
+ADVOGADO : VINICIUS GOMES PEREIRA DOS SANTOS - RJ157417
+REQUERIDO : UNIÃO - FAZENDA NACIONAL
+: PROCURADOR ALCINA DOS SANTOS ALVES - p1663839
+: DEPRECANTE Juízo Federal da 30ª VF do Rio de Janeiro
+ASSUNTO : 03040207 - PIS
+Tipo de Despesa : 21 - NATUREZA NÃO ALIMENTÍCIA (21)
+Trans. Requisição : 01/04/2023 18:25:55
+Data de Entrada : 01/04/2023 18:25:55
+REQUISIÇÃO : 23510010650
+Data Ajuizamento : 14/02/2007
+Data TJ. Conhecim. : 06/11/2020
+Data TJ. Embargos : 14/10/2022
+Espécie Requisição : Parcial
+Superpreferencial : Não
+Precatório de natureza tributária
+Tipo Beneficiário
+Nome DUFRY DO BRASIL DUTY FREE SHOP LTDA.
+CPF/CGC 27.197.888/0001-50
+Valor Principal 1.200.961,52 Data Base 01/06/2021
+Valor Juros 2.354.749,78 Data Base 01/06/2021
+Renuncia Não Status Bloqueado
+IR-RRA Não
+Meses Exe. Anterior -
+Meses Exe. Corrente - Valor Exe. Corrente -Valor Exe. Anterior -
+Ano Exe. Corrente - Status Servidor -
+Valor Inicial PSS - Data Base PSS -
+Valor total execução 3.558.851,59 Data base execução 01/06/2021
+Valor Requisitado 3.555.711,30Valor Total da Requisição: 3.555.711,30
+Observações:
+1)	Precatórios classificados pelo juízo requisitante como de natureza não tributária serão atualizadas da data base
+do cálculo informada na requisição de pagamento até o efetivo pagamento pelo IPCA-E.
+2) Precatórios classificadas pelo juízo requisitante como de natureza tributária serão atualizadas da data base do
+cálculo informada na requisição de pagamento até o efetivo pagamento pela SELIC.

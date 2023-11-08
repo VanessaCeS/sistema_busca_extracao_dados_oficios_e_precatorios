@@ -1,0 +1,74 @@
+ESTADO DE SANTA CATARINA  
+TRIBUNAL DE JUSTIÇA  
+ASSESSORIA DE PRECATÓRIOS  
+ 
+REQUISIÇÃO DE PAGAMENTO DE PRECATÓRIO ELETRÔNICA
+ 
+Do(a): Dr(a). Renato Della Giustina, Juiz(a) de Direito da Vara Única da Comarca de Santa Rosa do Sul  
+Ao: Exmo. Sr. Desembargador Presidente do Egrégio Tribunal de Justiça do Estado de Santa Catarina
+Número do processo: 50029933420228240189
+Ação: Cumprimento de Sentença contra a Fazenda Pública
+Parte ativa: DILNEIA FERRAZ DOS REIS
+Procurador do autor: Pedro Arilton Barbosa - OAB: SC032396 - CPF: 69511659987
+Parte passiva: MUNICIPIO DE SANTA ROSA DO SUL
+Procurador do requerido: ROSIANE MULLER CARVALHO - OAB: SC037815 - CPF: 07179541966
+Data de ajuizamento do processo de conhecimento: 24/07/2013
+Data de intimação das partes sobre valor e expedição desta requisição de precatório: 31/03/2023
+Decorreu o prazo para manifestação das partes nos termos do art. 7º, § 5º Resolução-CNJ 303/2019?  Sim
+1. DEVEDOR
+Município de Santa Rosa do Sul
+2. CRÉDITO
+Natureza do crédito: Alimentar
+Natureza da obrigação (Assunto) TUA - CNJ: PROGRESSÃO
+3. DADOS DO BENEFICIÁRIO E ESPECIFICAÇÃO DO CRÉDITO
+(Os precatórios deverão ser expedidos individualmente, por credor, ainda que exista litisconsórcio - Ao advogado será atribuída a condição de beneficiário em relação aos honorários, devendo ser expedida 
+requisição separada para honorários de sucumbência, sendo que os contratuais serão requisitados juntamente com o principal)
+Beneficiário do crédito: MARILUZ BARBOSA DE MELO GOMES
+CPF/CNPJ: 941.894.129-53
+Tipo de beneficiário: Parte  Data de nascimento: 08/02/1973
+Preferência no pagamento (§2º do artigo 100 da CRFB): Não
+4. VALORES REQUISITADOS
+Valor corrigido: R$8.399,20
+Valor dos juros moratórios: R$0,00
+Valor dos juros compensatórios: R$1.035,30
+Despesas antecipadas: R$0,00
+Amortizações: R$0,00
+Valor total da requisição: R$9.434,50
+Data-base considerada para efeito da atualização monetária dos valores: 03/02/2023
+5. DESTINO BANCÁRIO DOS VALORES REQUISITADOS
+Transferir os valores para subconta de Juízo de origem: Sim
+Honorários Contratuais: Há decisão deferindo o destaque dos honorários contratuais nos termos do § 2º do artigo 8º da Resolução-CNJ 303/2019: 
+Não
+6. INFORMAÇÕES PROCESSUAIS
+Data da sentença 1º grau: 12/07/2021
+Data do acórdão: 09/08/2022
+Data do trânsito em julgado da sentença/acórdão: 14/09/2022
+Data da intimação da Fazenda Pública para impugnar a execução: 03/10/2022
+Data do reconhecimento da parcela incontroversa: 22/03/2023
+Data de citação no processo de conhecimento: 20/09/2013
+8. ANEXOS - ARTIGO 6º DA RESOLUÇÃO 09/2021-GP
+A não correspondência entre o número do evento indicado e a peça respectiva nos autos originários importará ausência do documento e 
+consequente cancelamento do precatório, conforme disposto no art. 7º, § 5º, da Resolução GP 9/2021.
+Eventos Eproc Anexos
+Tipo do EventoNúmero do 
+EventoSigla do doumento Justificativa/Descrição
+ev.84 - proc. de I - íntegra da sentença da fase de conhecimento ou título executivo extrajudicialconhecimento
+II - íntegra dos acórdãos de todos os recursos em caso de modificação parcial ou total 
+do título executivo original1 DOCUMENTACAO3
+III - certidões de julgamento de todos os recursos em caso de interposição de recurso 
+improcedenteinexistente
+IV - certidão de trânsito em julgado da fase de conhecimento 1 DOCUMENTACAO7
+V - decisão que homologou os cálculos dos valores requisitados ou determinou 
+expedição dos valores incontroversos24 DESPADEC1
+VI - demonstrativo de cálculo do valor requisitado 16CÁLCULO 
+PROCESSUAL1
+VI - demonstrativo de cálculo original e demais atualizações 1 DEM ATUAL DEB4
+VII - procuração outorgada pelo beneficiário com poderes expressos para "receber e 
+dar quitação" à pessoa indicada para recebimento dos valores1 PROC2
+VIII - contrato de honorários em caso de destacamento da verba inexistente
+Eu, Marcia Colares de Matos, matrícula 14324, o digitei e conferi o presente documento.
+ 
+Florianópolis (SC), 31 de Março de 2023.
+ 
+Renato Della Giustina
+Juiz de Direito

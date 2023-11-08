@@ -1,0 +1,54 @@
+Espelho de Valores Cadastrados. Data: 18/11/2021
+PROCESSO : 5027425-50.2021.4.02.9388
+ORIGINÁRIO : 0182540-56.2014.4.02.5101/RJ
+TIPO : Precatório
+REQUERENTE : SOLANGE DE ARAUJO RODRIGUES
+ADVOGADO : RENATO PEREIRA GOMES - SC015811
+REQUERIDO : INSTITUTO NACIONAL DO SEGURO SOCIAL - INSS
+: PROCURADOR ANDRÉ AMARAL DE AGUIAR - PRF-1_2_PREV
+: DEPRECANTE Juízo Federal da 9ª VF do Rio de Janeiro
+ASSUNTO : 04020101 - RMI pelo art. 202 CF/88 (média dos 36 últimos salários-de-contribuição)
+Tipo de Despesa : 12 - NATUREZA ALIMENTÍCIA - Benefícios previdenciários e
+indenizações por morte ou invalidez (12)
+Trans. Requisição : 18/11/2021 11:48:08
+Data de Entrada : 18/11/2021 11:48:08
+REQUISIÇÃO : 21510043841
+Data Ajuizamento : 15/12/2014
+Data TJ. Conhecim. : 10/10/2018
+Data TJ. Embargos : 29/09/2021
+Espécie Requisição : Original
+Precatório de natureza NÃO tributária
+Tipo Beneficiário
+Nome SOLANGE DE ARAUJO RODRIGUES
+CPF/CGC 748.399.187-91
+Valor Principal 141.441,86 Data Base 01/04/2019
+Valor Juros 31.662,21 Data Base 01/04/2019
+Juros de mora fixados na sentença: Poupança
+Renuncia Não Status Sem Bloqueio
+IR-RRA Sim
+Meses Exe. Anterior 163
+Meses Exe. Corrente - Valor Exe. Corrente -Valor Exe. Anterior -
+Ano Exe. Corrente - Status Servidor -
+Valor Inicial PSS - Data Base PSS -
+Valor total execução - Data base execução -
+Valor Requisitado 173.104,07Tipo Honorário
+Nome OSNI ALVES ADVOGADOS ASSOCIADOS S/S
+CPF/CGC 10.658.015/0001-03
+Valor Principal 60.617,93 Data Base 01/04/2019
+Valor Juros 13.569,53 Data Base 01/04/2019
+Juros de mora fixados na sentença: Poupança
+Renuncia Não Status Sem Bloqueio
+IR-RRA Não
+Tipo Hon. Judicial Honorários Contratuais
+Meses Exe. Anterior -
+Meses Exe. Corrente - Valor Exe. Corrente -Valor Exe. Anterior -
+Ano Exe. Corrente - Status Servidor -
+Valor Inicial PSS - Data Base PSS -
+Valor total execução - Data base execução -
+Valor Requisitado 74.187,46
+Valor Total da Requisição: 247.291,53
+Observações:
+1)	Precatórios classificados pelo juízo requisitante como de natureza não tributária serão atualizadas da data base
+do cálculo informada na requisição de pagamento até o efetivo pagamento pelo IPCA-E.
+2) Precatórios classificadas pelo juízo requisitante como de natureza tributária serão atualizadas da data base do
+cálculo informada na requisição de pagamento até o efetivo pagamento pela SELIC.

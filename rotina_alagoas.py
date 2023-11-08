@@ -1,14 +1,13 @@
 import re
 import PyPDF2
-import xmltodict
 import traceback
 from banco_de_dados import consultar_processos
 from rotina_alagoas_pdf_simples import extrair_dados_pdf
 from rotina_alagoas_pdf_img import extrair_dados_texto_ocr
-from utils import apagar_arquivos, limpar_dados, tipo_precatorio
+from auxiliares import  limpar_dados, tipo_precatorio
 from esaj_alagoas_precatorios import get_docs_oficio_precatorios_tjal
 
-def ler_xml():   
+def buscar_dados_tribunal_alagoas():   
   dados = consultar_processos('.8.02.')
 
   for d in dados:
@@ -17,10 +16,6 @@ def ler_xml():
         dado = dados_limpos | tipo
         if verificar_tribunal(d['processo']):
           ler_documentos(dado)
-        else:
-          pass
-
-  apagar_arquivos(['arquivos_pdf_alagoas', 'arquivos_txt_alagoas', 'arquivos_texto_ocr', 'fotos_oab'])
 
 def verificar_tribunal(n_processo):
         padrao = r'\d{7}-\d{2}.\d{4}.8.02.\d{4}'
@@ -32,7 +27,7 @@ def ler_documentos(dado_xml):
       try:
           processo_geral = dado_xml['processo']
           doc = get_docs_oficio_precatorios_tjal(dado_xml['processo'],zip_file=False, pdf=True)
-          if doc != {}:
+          if doc != None:
             codigo_processo = next(iter(doc))
             id_documento = doc[codigo_processo][0][0]
             dados_gerais = {'processo_geral': processo_geral, 'site': 'https://www2.tjal.jus.br/esaj/', 'tipo': 'ESTADUAL', 'estado': 'ALAGOAS','codigo_processo': codigo_processo, 'id_documento': id_documento}

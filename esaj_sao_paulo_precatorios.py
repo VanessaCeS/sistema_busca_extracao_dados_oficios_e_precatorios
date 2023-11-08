@@ -1,11 +1,12 @@
-import os
-from bs4 import BeautifulSoup
-import json
-import time
-from requests import Session
-from requests.adapters import HTTPAdapter, Retry
 import re
+import os
 import functools
+import traceback
+from logs import log
+from requests import Session
+from bs4 import BeautifulSoup
+from requests.adapters import HTTPAdapter, Retry
+from banco_de_dados import atualizar_ou_inserir_situacao_cadastro
 
 
 def configure_session(session, retries=3, backoff=0.3, timeout=None, not_retry_on_methods=None, retry_on_status=None):
@@ -93,76 +94,41 @@ def login_esaj(url_tribunal: str, username: str, password: str) -> Session:
 
 
 def get_docs_precatorio(codigo_prec, url, s, zip_file=False, pdf=False):
-    query = {'processo.codigo': codigo_prec}
+        oficios = []
+        id_documento = '' 
+        value = f'/cpopg/show.do?localPesquisa.cdLocal=53&processo.codigo={codigo_prec}&processo.foro=53'        
+        print(f'{url}{value}')
+        pasta_digital_req = s.get(f'{url}{value}') 
+        soup = BeautifulSoup(pasta_digital_req.text, "lxml")
+        tabela = soup.find(id="tabelaUltimasMovimentacoes")
+        colunas = tabela.find_all(class_='descricaoMovimentacao')
+        for col in colunas:
+            texto = (col.text).replace("\t", "").replace('\n','').strip()
+            if 'OFÍCIO REQUISITÓRIO' in texto.upper() and 'RPV' not in texto.upper():
+                
+                procurar_link_precatorio = col.find('a', class_='linkMovVincProc')
+                if procurar_link_precatorio:
+                    link = procurar_link_precatorio['href']
+                    abrir_documento_pdf = s.get(f'{url}{link}')
+                    soup = BeautifulSoup(abrir_documento_pdf.text, 'lxml')
+                    procurar_script = soup.find_all('script')[-2]
+                    script = str(procurar_script)
+                    padrao = re.compile(r'var requestScope = (.*?);', re.DOTALL)
+                    correspondencias = padrao.search(script)
+                    if correspondencias:
+                        correspondencias = correspondencias.group(1)
+                        params = correspondencias.split('parametros')[1].split(',')[0][2:]
+                        if pdf:
+                            file_req = s.get(f'https://esaj.tjsp.jus.br/pastadigital/getPDF.do?{params}')
+                            file_name = file_req.headers['Content-Disposition'].split('filename=')[1].replace('"', '')
+                            id_documento = params.split('idDocumento=')[1].split('&')[0]
+                            oficios.append([id_documento, file_name, file_req.content])
+                            
+                else:
+                    continue
+        return {'id_documento': id_documento, 'pdfs': oficios} if zip_file and pdf else oficios if pdf else zip_file if zip_file else None
 
-    s.get(f'{url}/show.do', params=query)
-
-    pasta_digital_req = s.get(f'{url}/abrirPastaDigital.do', params=query)
-
-    pasta_digital = s.get(pasta_digital_req.text).text
-
-    json_pasta = json.loads(pasta_digital[pasta_digital.find('requestScope = ') + 15: pasta_digital.find('requestScope = ') + 15 + pasta_digital[pasta_digital.find('requestScope = ') + 15:].find(';')])
-    
-    por_tipo = {}
-    for doc in json_pasta: 
-        if doc['data']['cdTipoDocDigital'] not in por_tipo:
-            por_tipo[doc['data']['cdTipoDocDigital']] = []
-        por_tipo[doc['data']['cdTipoDocDigital']].append(doc)
-       
-    oficios = []
-    pdfs_oficios = []
-    #? tipo 99024 = oficio
-    for doc in por_tipo['99024']:
-        for children in doc['children']:
-            params = children['data']['parametros']
-            
-            id_documento = params.split('idDocumento')[1].split('&')[0].replace('=','')
-            
-            pdfs_oficios.append(params)
-
-            if pdf:
-                file_req = s.get(f'https://esaj.tjsp.jus.br/pastadigital/getPDF.do?{params}')
-
-                file_name = file_req.headers['Content-Disposition'].split('filename=')[1].replace('"', '')
-
-                oficios.append([id_documento ,file_name, file_req.content])
-
-    if zip_file:
         
-        query_zip = {
-            'itensPdfSelecionados': pdfs_oficios,
-            'cdProcesso': codigo_prec,
-            'cdDocumento': '',
-            'separarDocumentos': 'true',
-            'acessoPeloPetsg': ''
-        }
-
-        zip_req = s.get('https://esaj.tjsp.jus.br/pastadigital/salvarDocumentoPreparado.do', params=query_zip)
-
-        query_localizador = {
-            'localizador': zip_req.text,
-            'cdProcesso': codigo_prec,
-            'cdDocumento': ''
-        }
-
-        for i in range(100):
-            localizar = s.get('https://esaj.tjsp.jus.br/pastadigital/buscarDocumentoFinalizado.do', params=query_localizador).text
-            if localizar:
-                break
-            time.sleep(1)
-        else:
-            print('[red]Erro ao localizar o zip')
-            localizar = None
-
-        zip_file_req = s.get(localizar)
-
-        zip_name = zip_file_req.headers['Content-Disposition'].split('filename=')[1].replace('"', '')
-
-        zip_file = [zip_name, zip_file_req.content]
-
-    return {'id_documentos': id_documento, 'zip': zip_file, 'pdfs': oficios} if zip_file and pdf else oficios if pdf else zip_file if zip_file else None
-
-
 def get_incidentes(cnj, url, s):
     url_tribunal = url[: url.find(".br") + 3]
 
@@ -250,15 +216,22 @@ def get_incidentes(cnj, url, s):
     else:
         print(f"[red]Tribunal no modelo antigo")
 
-
 def get_docs_oficio_precatorios_tjsp(cnj, zip_file=False, pdf=False):
     login_esja = f'{os.getenv("login_esja")}'
     senha_esja_sao_paulo = f'{os.getenv("senha_esja_sao_paulo")}'
-    session = login_esaj('https://esaj.tjsp.jus.br', login_esja, senha_esja_sao_paulo)
-
+    session = login_esaj('https://esaj.tjsp.jus.br', '69173753149', 'Costaesilva2023#')
     incidentes = get_incidentes(cnj, 'https://esaj.tjsp.jus.br/cpopg', session)
-    cods_incidentes = [v.split('codigo=')[1].split('&')[0] for k, v in incidentes.items() if 'prec' in k.lower()]
     
-    docs = {cod: get_docs_precatorio(cod, 'https://esaj.tjsp.jus.br/cpopg', session, zip_file=zip_file, pdf=pdf) for cod in cods_incidentes}
-    return docs
+    docs = {}
+    try:
+        cods_incidentes = [v.split('codigo=')[1].split('&')[0] for k, v in incidentes.items() if 'precatório' in k.lower()]
+        docs = {cod: get_docs_precatorio(cod, 'https://esaj.tjsp.jus.br', session, zip_file=zip_file, pdf=pdf) for cod in cods_incidentes}
+        return docs
+    except Exception as e:
+        print('Erro --> ', e)
+        print(traceback.print_exc())
+        log(cnj, 'Fracasso','https://esaj.tjsp.jus.br', str(e), 'São Paulo','tjsp')
+        atualizar_ou_inserir_situacao_cadastro(cnj,{'status': 'Fracasso'})
+        pass
 
+# get_docs_oficio_precatorios_tjsp('1047978-30.2019.8.26.0053', zip_file=False, pdf=True)

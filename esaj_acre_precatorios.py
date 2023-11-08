@@ -1,3 +1,4 @@
+import traceback
 from bs4 import BeautifulSoup
 import json
 import time
@@ -6,6 +7,9 @@ from requests.adapters import HTTPAdapter, Retry
 import re
 import functools
 import os
+from banco_de_dados import atualizar_ou_inserir_situacao_cadastro
+from logs import log
+
 def configure_session(session, retries=3, backoff=0.3, timeout=None, not_retry_on_methods=None, retry_on_status=None):
     retry_methods = ["GET", "POST", "PUT", "DELETE", "HEAD", "OPTIONS"]
 
@@ -244,10 +248,15 @@ def get_docs_oficio_precatorios_tjac(cnj, zip_file=False, pdf=False):
     login_esja = f'{os.getenv("login_esja")}'
     senha_esja = f'{os.getenv("senha_esja_tipo_1")}'
     session = login_esaj('https://esaj.tjac.jus.br', login_esja, senha_esja)
-    
-    cookies, incidentes = get_incidentes(cnj, 'https://esaj.tjac.jus.br/cpopg', session)
-    
-    cods_incidentes = [incidentes.split('codigo=')[1].split('&')[0]]
+    try:
+        cookies, incidentes = get_incidentes(cnj, 'https://esaj.tjac.jus.br/cpopg', session)
+        cods_incidentes = [incidentes.split('codigo=')[1].split('&')[0]]
+        docs = {cod: get_docs_precatorio(cookies, cod, 'https://esaj.tjac.jus.br/cpopg', session, zip_file=zip_file, pdf=pdf) for cod in cods_incidentes}
+        return docs
+    except Exception as e:
+        print('Erro --> ', e)
+        print(traceback.print_exc())
+        log(cnj, 'Fracasso','https://esaj.tjac.jus.br', str(e), 'Acre', 'tjac')
+        atualizar_ou_inserir_situacao_cadastro(cnj,{'status': 'Fracasso'})
 
-    docs = {cod: get_docs_precatorio(cookies, cod, 'https://esaj.tjac.jus.br/cpopg', session, zip_file=zip_file, pdf=pdf) for cod in cods_incidentes}
-    return docs
+    

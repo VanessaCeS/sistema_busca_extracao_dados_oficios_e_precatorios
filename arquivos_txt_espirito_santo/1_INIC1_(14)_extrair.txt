@@ -1,0 +1,38 @@
+Espelho de Valores Cadastrados. Data: 01/04/2023
+PROCESSO : 5004392-60.2023.4.02.9388
+ORIGINÁRIO : 5019119-27.2022.4.02.5001/ES
+TIPO : Precatório
+REQUERENTE : FERNANDO LUGON COIMBRA
+ADVOGADO : MONICA PIMENTA JUDICE - ES012639
+REQUERIDO : UNIÃO - FAZENDA NACIONAL
+: PROCURADOR ALCINA DOS SANTOS ALVES - p1663839
+: DEPRECANTE Juízo Substituto da 1ª  VF Cível de Vitória
+ASSUNTO : 03020102 - Incidência sobre Aposentadoria
+Tipo de Despesa : 21 - NATUREZA NÃO ALIMENTÍCIA (21)
+Trans. Requisição : 01/04/2023 07:45:02
+Data de Entrada : 01/04/2023 07:45:02
+REQUISIÇÃO : 23500004032
+Data Ajuizamento : 22/06/2022
+Data TJ. Conhecim. : 22/08/2022
+Data TJ. Embargos : 17/03/2023
+Espécie Requisição : Parcial
+Superpreferencial : Não
+Precatório de natureza tributária
+Tipo Beneficiário
+Nome FERNANDO LUGON COIMBRA
+CPF/CGC 578.097.397-00
+Valor Principal 217.169,14 Data Base 01/03/2023
+Valor Juros 38.528,30 Data Base 01/03/2023
+Renuncia Não Status Sem Bloqueio
+IR-RRA Não
+Meses Exe. Anterior -
+Meses Exe. Corrente - Valor Exe. Corrente -Valor Exe. Anterior -
+Ano Exe. Corrente - Status Servidor -
+Valor Inicial PSS - Data Base PSS -
+Valor total execução 269.526,31 Data base execução 01/03/2023
+Valor Requisitado 255.697,44Valor Total da Requisição: 255.697,44
+Observações:
+1)	Precatórios classificados pelo juízo requisitante como de natureza não tributária serão atualizadas da data base
+do cálculo informada na requisição de pagamento até o efetivo pagamento pelo IPCA-E.
+2) Precatórios classificadas pelo juízo requisitante como de natureza tributária serão atualizadas da data base do
+cálculo informada na requisição de pagamento até o efetivo pagamento pela SELIC.

@@ -1,4 +1,5 @@
 import os
+import traceback
 from bs4 import BeautifulSoup
 import json
 import time
@@ -6,7 +7,8 @@ from requests import Session
 from requests.adapters import HTTPAdapter, Retry
 import re
 import functools
-
+from banco_de_dados import atualizar_ou_inserir_situacao_cadastro
+from logs import log
 
 def configure_session(session, retries=3, backoff=0.3, timeout=None, not_retry_on_methods=None, retry_on_status=None):
     retry_methods = ["GET", "POST", "PUT", "DELETE", "HEAD", "OPTIONS"]
@@ -252,13 +254,15 @@ def get_docs_oficio_precatorios_tjal(cnj, zip_file=False, pdf=False):
     senha_esja = f'{os.getenv("senha_esja_tipo_1")}'
 
     session = login_esaj('https://www2.tjal.jus.br', login_esja, senha_esja)
+    try:
+        incidentes = get_incidentes(cnj, 'https://www2.tjal.jus.br/cpopg', session)
+        cods_incidentes = [incidentes.split('codigo=')[1]]
+        docs = {cod: get_docs_precatorio(cod, 'https://www2.tjal.jus.br/cpopg', session, zip_file=zip_file, pdf=pdf) for cod in cods_incidentes}
+        return docs
+    except Exception as e:
+        print('Erro --> ', e)
+        print(traceback.print_exc())
+        log(cnj, 'Fracasso','https://www2.tjal.jus.br', str(e), 'Alagoas', 'tjal')
+        atualizar_ou_inserir_situacao_cadastro(cnj, {'status': 'Fracasso'})
+        pass
 
-    incidentes = get_incidentes(cnj, 'https://www2.tjal.jus.br/cpopg', session)
-
-    cods_incidentes = [incidentes.split('codigo=')[1]]
-    
-    docs = {cod: get_docs_precatorio(cod, 'https://www2.tjal.jus.br/cpopg', session, zip_file=zip_file, pdf=pdf) for cod in cods_incidentes}
-    print(docs)
-    return docs
-
-get_docs_oficio_precatorios_tjal('0500331-85.2023.8.02.0001',zip_file=False, pdf=True)

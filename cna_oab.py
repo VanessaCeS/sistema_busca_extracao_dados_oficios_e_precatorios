@@ -3,7 +3,7 @@ import re
 import requests
 import urllib.request
 from capmon_utils import recaptcha
-from utils import mandar_documento_para_ocr
+from auxiliares import mandar_documento_para_ocr
 from banco_de_dados import atualizar_ou_inserir_pessoa_no_banco_de_dados, atualizar_ou_inserir_pessoa_precatorio
 
 def login_cna(insc, uf, documento_advogado, nome, processo):
@@ -46,17 +46,20 @@ def login(insc, uf, documento_advogado, nome, processo):
   return resp
 
 def baixar_foto_carteirinha_oab(resp_foto, url_cna, documento_advogado, processo, nome, uf,insc):
+    documento_advogado = limpar_string_documento(documento_advogado)
     if resp_foto['Data'] != [] :
       url_foto = resp_foto['Data'][0]['DetailUrl']
       pegar_foto = f'{url_cna}{url_foto}'
-      data_nome = resp_foto['Data'][0]['Nome'].capitalize()
+      data_nome = resp_foto['Data'][0]['Nome']
       foto = requests.get(pegar_foto).json()
       detalhes_foto = foto['Data']['DetailUrl']
       if insc == '':
         insc = resp_foto['Data'][0]['Inscricao']
-      caminho_foto = f'fotos_oab/{insc}_foto_oab.jpg'
+      nome_insc = insc.replace('.','').replace('/','')
+      caminho_foto = f'fotos_oab/{nome_insc}_foto_oab.jpg'
       urllib.request.urlretrieve(f'{url_cna}{detalhes_foto}', caminho_foto)
       texto_ocr = mandar_documento_para_ocr(caminho_foto, '3')
+      texto_ocr = texto_ocr.replace('\n', ' ')
       dados = dados_advogado(texto_ocr, data_nome, uf, insc, documento_advogado)
       enviar_banco_de_dados(dados, processo)  
     else:
@@ -64,9 +67,15 @@ def baixar_foto_carteirinha_oab(resp_foto, url_cna, documento_advogado, processo
       enviar_banco_de_dados(dados, processo)
     return dados
   
+def limpar_string_documento(documento):
+  padrao = r'\b(?:\d{3}\.\d{3}\.\d{3}-\d{2}|\d{2}\.\d{3}\.\d{3}\/\d{4}-\d{2}|RNE-\d{10})\b|\b\d{11}\b'
+  resultado = re.search(padrao, documento)
+  if resultado:
+    documento = resultado.group(0)
+  return documento.strip()
 
 def dados_advogado(txt, nome, uf, insc, documento_advogado):
-  padrao = r'\(?\d{2}\)?\s?\d{4,5}-\d{4}'
+  padrao = r'(?:\(?\d{2}\)?\s?\d{4,5}-\d{4}|\(?\d{2}\)?\s?\d{8,9}|\d{10,11})'
   resultado = re.search(padrao, txt, re.MULTILINE)
   if resultado != None:
     return {'telefone': resultado.group(0), 'advogado': nome, 'seccional': uf, 'oab': insc, 'documento_advogado': documento_advogado}
@@ -77,7 +86,8 @@ def enviar_banco_de_dados(dados, processo):
     dados['documento'] = dados.pop('documento_advogado')
     dados['nome'] = dados.pop('advogado')
     dados['estado'] = dados.pop('seccional')
-
+    dados['tipo'] = 'advogado'
+    
     if type(dados['documento']) is dict:
       dados['documento'] = dados['documento']['documento']
 
@@ -85,4 +95,5 @@ def enviar_banco_de_dados(dados, processo):
     atualizar_ou_inserir_pessoa_precatorio(dados['oab'], processo)
     dados['seccional'] = dados.pop('estado')
     dados['advogado'] = dados.pop('nome')
+    del dados['tipo']
     del dados['documento']

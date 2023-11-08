@@ -1,4 +1,5 @@
 import os
+import traceback
 from bs4 import BeautifulSoup
 import json
 import time
@@ -6,7 +7,8 @@ from requests import Session
 from requests.adapters import HTTPAdapter, Retry
 import re
 import functools
-
+from banco_de_dados import atualizar_ou_inserir_situacao_cadastro
+from logs import log
 
 def configure_session(session, retries=3, backoff=0.3, timeout=None, not_retry_on_methods=None, retry_on_status=None):
     retry_methods = ["GET", "POST", "PUT", "DELETE", "HEAD", "OPTIONS"]
@@ -249,8 +251,14 @@ def get_docs_oficio_precatorios_tjms(cnj, zip_file=False, pdf=False):
     session = login_esaj('https://esaj.tjms.jus.br/',login_esja , senha_esja )
 
     cookies, incidentes = get_incidentes(cnj, 'https://esaj.tjms.jus.br/cpopg5', session)
+    try:
+        cods_incidentes = [incidentes.split('codigo=')[1]]
+        
+        docs = {cod: get_docs_precatorio(cookies,cod, 'https://esaj.tjms.jus.br/cpopg5', session, zip_file=zip_file, pdf=pdf) for cod in cods_incidentes}
+        return docs
+    except Exception as e:
+        print('Erro --> ', e)
+        print(traceback.print_exc())
+        log(cnj, 'Fracasso', 'https://esaj.tjms.jus.br/', str(e), 'Mato Grosso do Sul','tjms')
+        atualizar_ou_inserir_situacao_cadastro(cnj,{'status': 'Fracasso'})
 
-    cods_incidentes = [incidentes.split('codigo=')[1]]
-    
-    docs = {cod: get_docs_precatorio(cookies,cod, 'https://esaj.tjms.jus.br/cpopg5', session, zip_file=zip_file, pdf=pdf) for cod in cods_incidentes}
-    return docs

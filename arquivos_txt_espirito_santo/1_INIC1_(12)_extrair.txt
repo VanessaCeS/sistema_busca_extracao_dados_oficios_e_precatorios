@@ -1,0 +1,38 @@
+Espelho de Valores Cadastrados. Data: 01/04/2023
+PROCESSO : 5004468-84.2023.4.02.9388
+ORIGINÁRIO : 0011828-76.2013.4.02.5001/ES
+TIPO : Precatório
+REQUERENTE : TERVAP-PITANGA MINERACAO E PAVIMENTACAO LTDA
+ADVOGADO : ANGELA CAPISTRANO CAMARGO - ES011547
+REQUERIDO : UNIÃO - FAZENDA NACIONAL
+: PROCURADOR ALCINA DOS SANTOS ALVES - p1663839
+: DEPRECANTE Juízo Federal da 6ª VF Cível de Vitória
+ASSUNTO : 031117 - Repetição de Indébito
+Tipo de Despesa : 21 - NATUREZA NÃO ALIMENTÍCIA (21)
+Trans. Requisição : 01/04/2023 19:11:01
+Data de Entrada : 01/04/2023 19:11:01
+REQUISIÇÃO : 23500001845
+Data Ajuizamento : 28/11/2013
+Data TJ. Conhecim. : 22/08/2022
+Data TJ. Embargos : 18/01/2023
+Espécie Requisição : Original
+Superpreferencial : Não
+Precatório de natureza tributária
+Tipo Beneficiário
+Nome TERVAP-PITANGA MINERACAO E PAVIMENTACAO LTDA
+CPF/CGC 28.137.081/0001-95
+Valor Principal 157.374,41 Data Base 01/11/2022
+Valor Juros 109.933,42 Data Base 01/11/2022
+Renuncia Não Status Bloqueado
+IR-RRA Não
+Meses Exe. Anterior -
+Meses Exe. Corrente - Valor Exe. Corrente -Valor Exe. Anterior -
+Ano Exe. Corrente - Status Servidor -
+Valor Inicial PSS - Data Base PSS -
+Valor total execução - Data base execução -
+Valor Requisitado 267.307,83Valor Total da Requisição: 267.307,83
+Observações:
+1)	Precatórios classificados pelo juízo requisitante como de natureza não tributária serão atualizadas da data base
+do cálculo informada na requisição de pagamento até o efetivo pagamento pelo IPCA-E.
+2) Precatórios classificadas pelo juízo requisitante como de natureza tributária serão atualizadas da data base do
+cálculo informada na requisição de pagamento até o efetivo pagamento pela SELIC.

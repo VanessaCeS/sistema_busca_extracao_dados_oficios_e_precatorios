@@ -4,8 +4,6 @@ import requests
 from bs4 import BeautifulSoup
 from datetime import datetime
 from dotenv import load_dotenv
-
-
 load_dotenv('.env')
 
 def data_corrente_formatada():
@@ -18,18 +16,19 @@ def buscar_xml():
     url_info_cons = "https://clippingbrasil.com.br/InfoWsScript/service_xml.php"
     headers = {
         'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 '
-                      '(KHTML, like Gecko) Chrome/80.0.3987.149 Safari/537.36'
+                    '(KHTML, like Gecko) Chrome/80.0.3987.149 Safari/537.36'
     }
     sigla = os.getenv('sigla')
     user = os.getenv('user')
     password = os.getenv('password')
     data = {
-        'input': (None, f'{{"data": "{data_corrente_formatada()}","sigla": "{sigla}","user": "{user}","pass":"{password}"}}')
+        'input': (None, f'{{"data": "06/11/2023","sigla": "{sigla}","user": "{user}","pass":"{password}"}}')
     }
 
     response = requests.post(url=url_info_cons, headers=headers, files=data)
 
     soup = BeautifulSoup(response.content, 'xml')
+
     with open(f'arquivos_xml/relatorio_{data_corrente_formatada().replace("/", "_")}.xml', 'w', encoding='utf-8') as f:
         f.write(response.text)
     publicacoes_tags = soup.find_all('Publicacoes')
@@ -70,7 +69,6 @@ def select_id(conn, processo):
     sql = f"SELECT id_processo FROM processos WHERE processo = '{processo}'"
     cursor.execute(sql)
 
-    # Recupere os resultados da consulta
     results = cursor.fetchall()
 
     return results[0][0]
@@ -109,4 +107,16 @@ def insert_publicacao(conn, processo_id, dados_publicacao):
 
     cursor.execute(sql, dados_publicacao)
 
+    conn.commit()
+
+def insert(conn, processo_id,cnj, dados_publicacao):
+    cursor = conn.cursor()
+
+    dados_publicacao['id_processo'] = processo_id
+    cnj_numerico = cnj.replace('-','').replace('.','').replace('/','')
+    
+    sql = '''
+    INSERT INTO publicacoes_infocons (id_publicacao, cnj, cnj_numerico, nome, data_publicacao, tribunal, dados) VALUES (%(id_publicacao)s, %(cnj)s, %(cnj_numerico)s, %(nome)s, %(data_pubicacao)s, %(tribunal)s, %(publicacoes)s)                
+    '''
+    cursor.execute(sql, dados_publicacao)
     conn.commit()

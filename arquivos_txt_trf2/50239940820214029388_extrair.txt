@@ -1,0 +1,39 @@
+Espelho de Valores Cadastrados. Data: 01/09/2021
+PROCESSO : 5023994-08.2021.4.02.9388
+ORIGINÁRIO : 0126037-10.2017.4.02.5101/RJ
+TIPO : Precatório
+REQUERENTE : MONICA ABREU BARBOSA
+ADVOGADO : JOSE CARLOS TAVARES DE MORAES SARMENTO - RJ080183
+DEPRECANTE : Juízo Substituto da 29ª VF do Rio de Janeiro
+: 
+: REQUERIDO UNIÃO - ADVOCACIA GERAL DA UNIÃO
+ASSUNTO : 0111160301 - Maioridade
+Tipo de Despesa : 11 - NATUREZA ALIMENTÍCIA - Salários, vencimentos, proventos,
+pensões e suas complementações (11)
+Trans. Requisição : 01/09/2021 18:32:54
+Data de Entrada : 01/09/2021 18:32:54
+REQUISIÇÃO : 21510034611
+Data Ajuizamento : 25/05/2017
+Data TJ. Conhecim. : 18/09/2020
+Data TJ. Embargos : 30/07/2021
+Espécie Requisição : Original
+Precatório de natureza NÃO tributária
+Tipo Beneficiário
+Nome MONICA ABREU BARBOSA
+CPF/CGC 772.384.947-87
+Valor Principal 410.005,69 Data Base 01/10/2020
+Reembolso de custas 1.604,50 (P: 1.604,50  J: 0,00) Data Base 01/10/2020
+Juros de mora fixados na sentença: Poupança
+Renuncia Não Status Sem Bloqueio
+IR-RRA Sim
+Meses Exe. Anterior 16
+Meses Exe. Corrente - Valor Exe. Corrente -Valor Exe. Anterior -
+Ano Exe. Corrente - Status Servidor P
+Valor Inicial PSS 34.770,72 Data Base PSS 01/10/2020
+Valor total execução - Data base execução -
+Valor Requisitado 411.610,19Valor Total da Requisição: 411.610,19
+Observações:
+1)	Precatórios classificados pelo juízo requisitante como de natureza não tributária serão atualizadas da data base
+do cálculo informada na requisição de pagamento até o efetivo pagamento pelo IPCA-E.
+2) Precatórios classificadas pelo juízo requisitante como de natureza tributária serão atualizadas da data base do
+cálculo informada na requisição de pagamento até o efetivo pagamento pela SELIC.
