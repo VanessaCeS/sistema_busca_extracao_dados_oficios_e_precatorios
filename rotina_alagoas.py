@@ -4,7 +4,7 @@ import traceback
 from banco_de_dados import consultar_processos
 from rotina_alagoas_pdf_simples import extrair_dados_pdf
 from rotina_alagoas_pdf_img import extrair_dados_texto_ocr
-from utils import  limpar_dados, tipo_precatorio
+from auxiliares import  limpar_dados, tipo_precatorio
 from esaj_alagoas_precatorios import get_docs_oficio_precatorios_tjal
 
 def buscar_dados_tribunal_alagoas():   
@@ -16,8 +16,6 @@ def buscar_dados_tribunal_alagoas():
         dado = dados_limpos | tipo
         if verificar_tribunal(d['processo']):
           ler_documentos(dado)
-
-
 
 def verificar_tribunal(n_processo):
         padrao = r'\d{7}-\d{2}.\d{4}.8.02.\d{4}'

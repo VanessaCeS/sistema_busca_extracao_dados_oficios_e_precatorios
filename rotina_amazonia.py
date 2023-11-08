@@ -6,8 +6,8 @@ from logs import log
 from cna_oab import login_cna
 from funcoes_arteria import enviar_valores_oficio_arteria
 from esaj_amazonas_precatorios import get_docs_oficio_precatorios_tjam
-from utils import  encontrar_indice_linha, limpar_dados, mandar_dados_regex, mandar_documento_para_ocr, regex, tipo_precatorio
-from banco_de_dados import atualizar_ou_inserir_pessoa_no_banco_de_dados, atualizar_ou_inserir_pessoa_precatorio, atualizar_ou_inserir_precatorios_no_banco_de_dados, consultar_processos
+from auxiliares import  encontrar_indice_linha, limpar_dados, mandar_dados_regex, mandar_documento_para_ocr, regex, tipo_precatorio
+from banco_de_dados import atualizar_ou_inserir_pessoa_no_banco_de_dados, atualizar_ou_inserir_pessoa_precatorio, atualizar_ou_inserir_precatorios_no_banco_de_dados, atualizar_ou_inserir_situacao_cadastro, consultar_processos
 
 def buscar_dados_tribunal_amazonas():   
   dados = consultar_processos('.8.04')
@@ -32,7 +32,7 @@ def ler_documentos(dado_xml):
       try:
         processo_geral = dado_xml['processo_origem']
         doc = get_docs_oficio_precatorios_tjam(dado_xml['processo_origem'],zip_file=False, pdf=True)
-        if doc != {}:
+        if doc:
           codigo_processo = next(iter(doc))
           arquivo_pdf = f"arquivos_pdf_amazonas/{processo_geral}_arquivo_precatorio.pdf"
           tamanho = len(doc[codigo_processo])
@@ -267,10 +267,11 @@ def extrair_valor_principal_e_juros(texto):
   
 def enviar_dados(arquivo_pdf, dados):
   documento = dados['documento']
-  dados_pessoas = {'nome': dados['credor'], 'documento':  documento,'data_nascimento': dados['data_nascimento'], 'estado': dados['estado']}
+  dados_pessoas = {'nome': dados['credor'], 'documento':  documento,'data_nascimento': dados['data_nascimento'], 'estado': 'Amazonas', 'tipo': 'credor'}
   atualizar_ou_inserir_pessoa_no_banco_de_dados(documento, dados_pessoas)
   id_sistema_arteria = enviar_valores_oficio_arteria(arquivo_pdf, dados)
   dados['id_sistema_arteria'] = id_sistema_arteria
   atualizar_ou_inserir_precatorios_no_banco_de_dados(dados['codigo_processo'], dados)
   atualizar_ou_inserir_pessoa_precatorio(documento, dados['processo'])
-  log({'processo': dados['processo_origem'], 'tipo': 'Sucesso', 'site': dados['site'], 'mensagem': 'Precatório registrado com sucesso', 'estado': dados['estado']})
+  log( dados['processo_origem'], 'Sucesso',dados['site'], 'Precatório registrado com sucesso','Amazonas', dados['tribunal'])
+  atualizar_ou_inserir_situacao_cadastro(dados['processo'],{'status': 'Sucesso'})

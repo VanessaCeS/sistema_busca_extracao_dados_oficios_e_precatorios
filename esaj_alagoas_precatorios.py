@@ -7,6 +7,7 @@ from requests import Session
 from requests.adapters import HTTPAdapter, Retry
 import re
 import functools
+from banco_de_dados import atualizar_ou_inserir_situacao_cadastro
 from logs import log
 
 def configure_session(session, retries=3, backoff=0.3, timeout=None, not_retry_on_methods=None, retry_on_status=None):
@@ -261,6 +262,7 @@ def get_docs_oficio_precatorios_tjal(cnj, zip_file=False, pdf=False):
     except Exception as e:
         print('Erro --> ', e)
         print(traceback.print_exc())
-        log(cnj, 'Fracasso','https://www2.tjal.jus.br', str(e), 'Alagoas')
+        log(cnj, 'Fracasso','https://www2.tjal.jus.br', str(e), 'Alagoas', 'tjal')
+        atualizar_ou_inserir_situacao_cadastro(cnj, {'status': 'Fracasso'})
         pass
 

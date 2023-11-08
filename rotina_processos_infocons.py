@@ -22,7 +22,7 @@ def buscar_xml():
     user = os.getenv('user')
     password = os.getenv('password')
     data = {
-        'input': (None, f'{{"data": "{data_corrente_formatada()}","sigla": "{sigla}","user": "{user}","pass":"{password}"}}')
+        'input': (None, f'{{"data": "06/11/2023","sigla": "{sigla}","user": "{user}","pass":"{password}"}}')
     }
 
     response = requests.post(url=url_info_cons, headers=headers, files=data)
@@ -107,4 +107,16 @@ def insert_publicacao(conn, processo_id, dados_publicacao):
 
     cursor.execute(sql, dados_publicacao)
 
+    conn.commit()
+
+def insert(conn, processo_id,cnj, dados_publicacao):
+    cursor = conn.cursor()
+
+    dados_publicacao['id_processo'] = processo_id
+    cnj_numerico = cnj.replace('-','').replace('.','').replace('/','')
+    
+    sql = '''
+    INSERT INTO publicacoes_infocons (id_publicacao, cnj, cnj_numerico, nome, data_publicacao, tribunal, dados) VALUES (%(id_publicacao)s, %(cnj)s, %(cnj_numerico)s, %(nome)s, %(data_pubicacao)s, %(tribunal)s, %(publicacoes)s)                
+    '''
+    cursor.execute(sql, dados_publicacao)
     conn.commit()

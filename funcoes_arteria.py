@@ -14,7 +14,7 @@ import xml.etree.ElementTree as ET
 from zeep import Client, Settings, Transport
 from concurrent.futures import ThreadPoolExecutor
 from rsa_archer.archer_instance import ArcherInstance
-from utils import converter_data, selecionar_seccional
+from auxiliares import converter_data, selecionar_seccional
 # load_dotenv('.env')
 
 def adjust_date_and_time_to_arteria(date_audiencia, formato="%d/%m/%Y %H:%M"):
@@ -34,12 +34,12 @@ def instancia_arteria(application="", user=None, password=None):
     if 'archer_instance' not in globals():
         load_dotenv()
 
-        AMBIENTE = 'NIP_Dev'
+        AMBIENTE = 'NIP'
         user = user if user else ''
         password = password if password else ''
         global archer_instance
         archer_instance = ArcherInstance('https://att.costaesilvaadv.com.br',
-                                            'NIP_Dev',
+                                            'NIP',
                                             user,
                                             password
                                             )
@@ -1194,12 +1194,12 @@ def enviar_valores_oficio_arteria(arquivo_pdf, dado):
         valor_principal = dado['valor_principal_credor']
     else:
         valor_principal = dado['valor_principal']
-    if dado['estado'] == 'SP' or dado['estado'] == 'SÃO PAULO':
-        precatorio = dado['processo_origem']
-        processo = dado['processo']
-    else:
-        precatorio =  dado['processo']
-        processo = dado['processo_origem']
+    # if dado['estado'] == 'SP' or dado['estado'] == 'SÃO PAULO':
+    #     precatorio = dado['processo_origem']
+    #     processo = dado['processo']
+    # else:
+    precatorio =  dado['processo']
+    processo = dado['processo_origem']
     
     dados = {
     'Data da Expedição': dado['data_expedicao'],
@@ -1226,7 +1226,6 @@ def enviar_valores_oficio_arteria(arquivo_pdf, dado):
     "Seccional": [dado['seccional']],
     'Telefone': dado['telefone'],
     }
-
     id_arteria = cadastrar_arteria(dados, 'Precatórios')
     return  id_arteria
 

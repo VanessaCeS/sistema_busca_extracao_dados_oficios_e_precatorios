@@ -1,0 +1,38 @@
+Espelho de Valores Cadastrados. Data: 29/04/2021
+PROCESSO : 5004824-50.2021.4.02.9388
+ORIGINÁRIO : 0002877-90.2004.4.02.5104/RJ
+TIPO : Precatório
+REQUERENTE : MARLI SILVA CLEMENTE SANA
+ADVOGADO : ANGELA MARIA PADILHA VELASCO - RJ005888D
+DEPRECANTE : 3ª Vara Federal de Volta Redonda
+: 
+: REQUERIDO INSTITUTO NACIONAL DO SEGURO SOCIAL - INSS
+ASSUNTO : 04020113 - IRSM de Fevereiro de 1994(39,67%)
+Tipo de Despesa : 21 - NATUREZA NÃO ALIMENTÍCIA (21)
+Trans. Requisição : 29/04/2021 16:16:12
+Data de Entrada : 29/04/2021 16:16:12
+REQUISIÇÃO : 21510012433
+Data Ajuizamento : 25/11/2004
+Data TJ. Conhecim. : 23/07/2009
+Data TJ. Embargos : 12/06/2020
+Espécie Requisição : Parcial
+Precatório de natureza NÃO tributária
+Tipo Beneficiário
+Nome MARLI SILVA CLEMENTE SANA
+CPF/CGC 069.482.077-66
+Valor Principal 23.311,60 Data Base 01/12/2020
+Valor Juros 25.894,52 Data Base 01/12/2020
+Juros de mora fixados na sentença: Poupança
+Renuncia Não Status Sem Bloqueio
+IR-RRA Sim
+Meses Exe. Anterior 124
+Meses Exe. Corrente - Valor Exe. Corrente -Valor Exe. Anterior -
+Ano Exe. Corrente - Status Servidor -
+Valor Inicial PSS - Data Base PSS -
+Valor total execução 98.412,24 Data base execução 01/12/2020
+Valor Requisitado 49.206,12Valor Total da Requisição: 49.206,12
+Observações:
+1)	Precatórios classificados pelo juízo requisitante como de natureza não tributária serão atualizadas da data base
+do cálculo informada na requisição de pagamento até o efetivo pagamento pelo IPCA-E.
+2) Precatórios classificadas pelo juízo requisitante como de natureza tributária serão atualizadas da data base do
+cálculo informada na requisição de pagamento até o efetivo pagamento pela SELIC.

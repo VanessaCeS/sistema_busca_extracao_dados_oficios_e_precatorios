@@ -4,8 +4,8 @@ from logs import log
 from cna_oab import login_cna
 from funcoes_arteria import enviar_valores_oficio_arteria
 from esaj_acre_precatorios import get_docs_oficio_precatorios_tjac
-from banco_de_dados import atualizar_ou_inserir_pessoa_no_banco_de_dados, atualizar_ou_inserir_pessoa_precatorio, consultar_processos, atualizar_ou_inserir_precatorios_no_banco_de_dados
-from utils import  converter_string_mes, identificar_estados, limpar_dados, mandar_documento_para_ocr,  tipo_de_natureza, tipo_precatorio, verificar_tribunal
+from banco_de_dados import atualizar_ou_inserir_pessoa_no_banco_de_dados, atualizar_ou_inserir_pessoa_precatorio, atualizar_ou_inserir_situacao_cadastro, consultar_processos, atualizar_ou_inserir_precatorios_no_banco_de_dados
+from auxiliares import  converter_string_mes, identificar_estados, limpar_dados, mandar_documento_para_ocr,  tipo_de_natureza, tipo_precatorio, verificar_tribunal
 
 def buscar_dados_tribunal_acre():
   dados = consultar_processos('.8.01')
@@ -24,7 +24,7 @@ def ler_documentos(dado_xml):
       try:      
         processo_geral = dado_xml['processo_origem']
         doc = get_docs_oficio_precatorios_tjac(dado_xml['processo_origem'],zip_file=False, pdf=True)
-        if doc != {}:
+        if doc:
           codigo_processo = next(iter(doc))
           arquivo_pdf = f"arquivos_pdf_acre/{processo_geral}_arquivo_precatorio.pdf"
           id_documento = doc[codigo_processo][0][0]
@@ -59,7 +59,7 @@ def tratar_dados_ocr(arquivo_pdf,processo, dados):
   estado = identificar_estados(estado)
   oab, seccional = pegar_aob_e_seccional(dados['advogado'][0])
   documento_advogado = ''
-  atualizar_ou_inserir_pessoa_no_banco_de_dados(documento, {'nome': credor, 'documento': documento, 'data_nascimento': ''})
+  atualizar_ou_inserir_pessoa_no_banco_de_dados(documento, {'nome': credor, 'documento': documento, 'data_nascimento': '', 'estado': estado, 'tipo': 'credor'})
   
   dados_advogado = {}
   if advogado != '':
@@ -69,8 +69,8 @@ def tratar_dados_ocr(arquivo_pdf,processo, dados):
   dado['id_sistema_arteria'] = id_sistema_arteria
   atualizar_ou_inserir_precatorios_no_banco_de_dados(dados['codigo_processo'], dado)
   atualizar_ou_inserir_pessoa_precatorio(dado['documento'], processo)
-  log({'processo': origem, 'tipo': 'Sucesso', 'site': dados['site'], 'mensagem': 'Precatório registrado com sucesso', 'estado': dados['estado']})
-
+  log(origem, 'Sucesso',dados['site'], 'Precatório registrado com sucesso',dados['estado'], dados['tribunal'])
+  atualizar_ou_inserir_situacao_cadastro(dados['processo'],{'status': 'Sucesso'})
 
 def pegar_estado(local):
   estado = ''

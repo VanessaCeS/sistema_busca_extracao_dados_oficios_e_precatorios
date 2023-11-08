@@ -1,0 +1,40 @@
+Espelho de Valores Cadastrados. Data: 30/08/2021
+PROCESSO : 5031975-34.2021.4.04.9388
+ORIGINÁRIO : 00010503320188160059/PR
+TIPO : Precatório
+REQUERENTE : LOURENCO DOS SANTOS
+ADVOGADO : RENATA POSSENTI - PR060438
+REQUERIDO : INSTITUTO NACIONAL DO SEGURO SOCIAL - INSS
+: PROCURADOR PROCURADORIA REGIONAL FEDERAL DA 4 REGIÃO - PRF4
+: DEPRECANTE JUIZO DE DIREITO DA 1A VARA CIVEL DA COMARCA DE CANDIDO
+DE ABREU/PR
+ASSUNTO : 040101 - Aposentadoria por Invalidez (Art. 42/7)
+Tipo de Despesa : 21 - NATUREZA NÃO ALIMENTÍCIA (21)
+Trans. Requisição : 29/08/2021 13:27:13
+Data de Entrada : 29/08/2021 13:27:13
+REQUISIÇÃO : 21000024418
+Data Ajuizamento : 04/10/2018
+Data TJ. Conhecim. : 12/03/2021
+Data TJ. Embargos : 05/04/2021
+Espécie Requisição : Original
+Superpreferencial : Não
+Precatório de natureza NÃO tributária
+Tipo Beneficiário
+Nome LOURENCO DOS SANTOS
+CPF/CGC 531.751.239-53
+Valor Principal 72.227,98 Data Base 01/02/2021
+Valor Juros 602,48 Data Base 01/02/2021
+Juros de mora fixados na sentença: Poupança
+Renuncia Não Status Sem Bloqueio
+IR-RRA Não
+Meses Exe. Anterior -
+Meses Exe. Corrente - Valor Exe. Corrente -Valor Exe. Anterior -
+Ano Exe. Corrente - Status Servidor -
+Valor Inicial PSS - Data Base PSS -
+Valor total execução - Data base execução -
+Valor Requisitado 72.830,46Valor Total da Requisição: 72.830,46
+Observações:
+1)	Precatórios classificados pelo juízo requisitante como de natureza não tributária serão atualizadas da data base
+do cálculo informada na requisição de pagamento até o efetivo pagamento pelo IPCA-E.
+2) Precatórios classificadas pelo juízo requisitante como de natureza tributária serão atualizadas da data base do
+cálculo informada na requisição de pagamento até o efetivo pagamento pela SELIC.

@@ -23,5 +23,5 @@ rsa_archer/__pycache__/__init__.cpython-310.pyc
 *.pickle
 pdf_oab/
 fotos_oab/
-arquivos_xml
-arquivos_*
+# arquivos_xml
+

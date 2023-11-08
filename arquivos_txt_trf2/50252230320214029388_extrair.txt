@@ -1,0 +1,39 @@
+Espelho de Valores Cadastrados. Data: 30/09/2021
+PROCESSO : 5025223-03.2021.4.02.9388
+ORIGINÁRIO : 00049946720108190050/RJ
+TIPO : Precatório
+REQUERENTE : LEILA BARBOZA DE JESUS
+ : 
+REQUERIDO : INSTITUTO NACIONAL DO SEGURO SOCIAL - INSS
+: PROCURADOR ANDRÉ AMARAL DE AGUIAR - PRF-1_2_PREV
+: DEPRECANTE 2A VARA DA COMARCA DE SANTO ANTÔNIO DE PÁDUA-RJ
+ASSUNTO : 040105 - Auxílio-Doença Previdenciário
+Tipo de Despesa : 12 - NATUREZA ALIMENTÍCIA - Benefícios previdenciários e
+indenizações por morte ou invalidez (12)
+Trans. Requisição : 24/09/2021 14:43:47
+Data de Entrada : 24/09/2021 14:43:47
+REQUISIÇÃO : 21000002915
+Data Ajuizamento : 07/12/2010
+Data TJ. Conhecim. : 03/10/2018
+Data TJ. Embargos : 25/08/2021
+Espécie Requisição : Original
+Precatório de natureza NÃO tributária
+Tipo Beneficiário
+Nome LEILA BARBOZA DE JESUS
+CPF/CGC 095.444.037-44
+Valor Principal 63.329,37 Data Base 01/01/2020
+Valor Juros 12.379,56 Data Base 01/01/2020
+Juros de mora fixados na sentença: Poupança
+Renuncia Não Status Sem Bloqueio
+IR-RRA Sim
+Meses Exe. Anterior 67
+Meses Exe. Corrente - Valor Exe. Corrente -Valor Exe. Anterior -
+Ano Exe. Corrente - Status Servidor -
+Valor Inicial PSS - Data Base PSS -
+Valor total execução - Data base execução -
+Valor Requisitado 75.708,93Valor Total da Requisição: 75.708,93
+Observações:
+1)	Precatórios classificados pelo juízo requisitante como de natureza não tributária serão atualizadas da data base
+do cálculo informada na requisição de pagamento até o efetivo pagamento pelo IPCA-E.
+2) Precatórios classificadas pelo juízo requisitante como de natureza tributária serão atualizadas da data base do
+cálculo informada na requisição de pagamento até o efetivo pagamento pela SELIC.

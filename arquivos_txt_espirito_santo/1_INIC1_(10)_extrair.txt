@@ -1,0 +1,38 @@
+Espelho de Valores Cadastrados. Data: 01/04/2023
+PROCESSO : 5004473-09.2023.4.02.9388
+ORIGINÁRIO : 0007676-39.2000.4.02.5001/ES
+TIPO : Precatório
+REQUERENTE : ALEXANDRE BODART DE ANDRADE
+ADVOGADO : TAREK MOYSES MOUSSALLEM - ES008132
+REQUERIDO : UNIÃO - FAZENDA NACIONAL
+: PROCURADOR ALCINA DOS SANTOS ALVES - p1663839
+: DEPRECANTE Juízo Federal da 6ª VF Cível de Vitória
+ASSUNTO : 030201 - IRPF/Imposto de Renda de Pessoa Física
+Tipo de Despesa : 21 - NATUREZA NÃO ALIMENTÍCIA (21)
+Trans. Requisição : 01/04/2023 19:25:04
+Data de Entrada : 01/04/2023 19:25:04
+REQUISIÇÃO : 22500011351
+Data Ajuizamento : 29/09/2000
+Data TJ. Conhecim. : 14/06/2006
+Data TJ. Embargos : 09/11/2022
+Espécie Requisição : Complementar
+Superpreferencial : Não
+Precatório de natureza tributária
+Tipo Beneficiário
+Nome ALEXANDRE BODART DE ANDRADE
+CPF/CGC 074.723.737-96
+Valor Principal 28.228,87 Data Base 01/09/2022
+Valor Juros 8.691,66 Data Base 01/09/2022
+Renuncia Não Status Bloqueado
+IR-RRA Não
+Meses Exe. Anterior -
+Meses Exe. Corrente - Valor Exe. Corrente -Valor Exe. Anterior -
+Ano Exe. Corrente - Status Servidor -
+Valor Inicial PSS - Data Base PSS -
+Valor total execução 110.761,61 Data base execução 01/09/2022
+Valor Requisitado 36.920,53Valor Total da Requisição: 36.920,53
+Observações:
+1)	Precatórios classificados pelo juízo requisitante como de natureza não tributária serão atualizadas da data base
+do cálculo informada na requisição de pagamento até o efetivo pagamento pelo IPCA-E.
+2) Precatórios classificadas pelo juízo requisitante como de natureza tributária serão atualizadas da data base do
+cálculo informada na requisição de pagamento até o efetivo pagamento pela SELIC.

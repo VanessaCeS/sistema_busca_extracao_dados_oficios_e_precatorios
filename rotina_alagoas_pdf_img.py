@@ -1,8 +1,8 @@
 import traceback
 from logs import log
 from funcoes_arteria import enviar_valores_oficio_arteria
-from utils import   mandar_documento_para_ocr, encontrar_indice_linha, mandar_dados_regex
-from banco_de_dados import atualizar_ou_inserir_pessoa_no_banco_de_dados, atualizar_ou_inserir_pessoa_precatorio, atualizar_ou_inserir_precatorios_no_banco_de_dados
+from auxiliares import   mandar_documento_para_ocr, encontrar_indice_linha, mandar_dados_regex
+from banco_de_dados import atualizar_ou_inserir_pessoa_no_banco_de_dados, atualizar_ou_inserir_pessoa_precatorio, atualizar_ou_inserir_precatorios_no_banco_de_dados, atualizar_ou_inserir_situacao_cadastro
 
 def extrair_dados_texto_ocr(arquivo_pdf, dados):
     try:
@@ -37,9 +37,10 @@ def ler_texto_ocr(arquivo_pdf, dados_xml, arquivo_txt):
 
 def enviar_dados_banco_de_dados_e_arteria_alagoas(arquivo_pdf, dados):    
     documento = dados['documento']
-    atualizar_ou_inserir_pessoa_no_banco_de_dados(documento, {'nome': dados['credor'], 'documento': dados['documento'], 'data_nascimento': dados['data_nascimento']})
+    atualizar_ou_inserir_pessoa_no_banco_de_dados(documento, {'nome': dados['credor'], 'documento': dados['documento'], 'data_nascimento': dados['data_nascimento'], 'estado': 'Alagoas', 'tipo': 'credor'})
     id_sistema_arteria = enviar_valores_oficio_arteria(arquivo_pdf, dados)
     dados['id_sistema_arteria'] = id_sistema_arteria
     atualizar_ou_inserir_precatorios_no_banco_de_dados(dados['codigo_processo'], dados)
     atualizar_ou_inserir_pessoa_precatorio(documento, dados['processo'])
-    log({'processo': dados['processo'], 'tipo': 'Sucesso', 'site': dados['site'], 'mensagem': 'Precatório registrado com sucesso', 'estado': dados['estado']})
+    log( dados['processo'], 'Sucesso', dados['site'], 'Precatório registrado com sucesso','Alagoas', dados['tribunal'])
+    atualizar_ou_inserir_situacao_cadastro(dados['processo'],{'status': 'Sucesso'})

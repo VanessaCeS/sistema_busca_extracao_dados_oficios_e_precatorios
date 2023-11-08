@@ -1,0 +1,54 @@
+Espelho de Valores Cadastrados. Data: 31/08/2021
+PROCESSO : 5023929-13.2021.4.02.9388
+ORIGINÁRIO : 0031424-66.2015.4.02.5101/RJ
+TIPO : Precatório
+REQUERENTE : CESAR BARBOSA GOMES
+ADVOGADO : SIDNEY LISBOA CHAVES - RJ148437
+REQUERIDO : INSTITUTO NACIONAL DO SEGURO SOCIAL - INSS
+: PROCURADOR ANDRÉ AMARAL DE AGUIAR - PRF-1_2_PREV
+: DEPRECANTE Juízo Federal da 31ª VF do Rio de Janeiro
+ASSUNTO : 0401 - Benefícios em Espécie
+Tipo de Despesa : 12 - NATUREZA ALIMENTÍCIA - Benefícios previdenciários e
+indenizações por morte ou invalidez (12)
+Trans. Requisição : 31/08/2021 17:21:34
+Data de Entrada : 31/08/2021 17:21:34
+REQUISIÇÃO : 21510030955
+Data Ajuizamento : 31/03/2015
+Data TJ. Conhecim. : 17/06/2019
+Data TJ. Embargos : 15/07/2021
+Espécie Requisição : Parcial
+Precatório de natureza NÃO tributária
+Tipo Beneficiário
+Nome CESAR BARBOSA GOMES
+CPF/CGC 786.044.787-87
+Valor Principal 137.039,56 Data Base 01/11/2020
+Valor Juros 26.067,34 Data Base 01/11/2020
+Juros de mora fixados na sentença: Poupança
+Renuncia Não Status Sem Bloqueio
+IR-RRA Sim
+Meses Exe. Anterior 95
+Meses Exe. Corrente - Valor Exe. Corrente -Valor Exe. Anterior -
+Ano Exe. Corrente - Status Servidor -
+Valor Inicial PSS - Data Base PSS -
+Valor total execução 233.009,86 Data base execução 01/11/2020
+Valor Requisitado 163.106,90Tipo Honorário
+Nome SIDNEY LISBOA CHAVES
+CPF/CGC 217.779.343-20
+Valor Principal 58.731,24 Data Base 01/11/2020
+Valor Juros 11.171,72 Data Base 01/11/2020
+Juros de mora fixados na sentença: Poupança
+Renuncia Não Status Sem Bloqueio
+IR-RRA Não
+Tipo Hon. Judicial Honorários Contratuais
+Meses Exe. Anterior -
+Meses Exe. Corrente - Valor Exe. Corrente -Valor Exe. Anterior -
+Ano Exe. Corrente - Status Servidor -
+Valor Inicial PSS - Data Base PSS -
+Valor total execução - Data base execução -
+Valor Requisitado 69.902,96
+Valor Total da Requisição: 233.009,86
+Observações:
+1)	Precatórios classificados pelo juízo requisitante como de natureza não tributária serão atualizadas da data base
+do cálculo informada na requisição de pagamento até o efetivo pagamento pelo IPCA-E.
+2) Precatórios classificadas pelo juízo requisitante como de natureza tributária serão atualizadas da data base do
+cálculo informada na requisição de pagamento até o efetivo pagamento pela SELIC.

@@ -263,4 +263,4 @@ def get_docs_oficio_precatorios_tjam(cnj, zip_file=False, pdf=False):
     except Exception as e:
         print('Erro --> ', e)
         print(traceback.print_exc())
-        log(cnj, 'Fracasso','https://consultasaj.tjam.jus.br/', str(e), 'Amazonas')
+        log(cnj, 'Fracasso','https://consultasaj.tjam.jus.br/', str(e), 'Amazonas', 'tjam')

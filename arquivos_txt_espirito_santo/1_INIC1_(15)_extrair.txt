@@ -1,0 +1,38 @@
+Espelho de Valores Cadastrados. Data: 01/04/2023
+PROCESSO : 5004384-83.2023.4.02.9388
+ORIGINÁRIO : 0022779-90.2017.4.02.5001/ES
+TIPO : Precatório
+REQUERENTE : COMERCIAL GUILHERME'S LTDA
+ADVOGADO : EDUARDO SANTOS SARLO - ES011096
+REQUERIDO : UNIÃO - FAZENDA NACIONAL
+: PROCURADOR ALCINA DOS SANTOS ALVES - p1663839
+: DEPRECANTE Juízo Substituto da 1ª  VF Cível de Vitória
+ASSUNTO : 0311250203 - PIS - Cofins
+Tipo de Despesa : 21 - NATUREZA NÃO ALIMENTÍCIA (21)
+Trans. Requisição : 01/04/2023 07:45:01
+Data de Entrada : 01/04/2023 07:45:01
+REQUISIÇÃO : 23500004861
+Data Ajuizamento : 10/08/2017
+Data TJ. Conhecim. : 06/05/2019
+Data TJ. Embargos : 16/03/2023
+Espécie Requisição : Original
+Superpreferencial : Não
+Precatório de natureza tributária
+Tipo Beneficiário
+Nome COMERCIAL GUILHERME'S LTDA
+CPF/CGC 30.780.795/0001-69
+Valor Principal 69.882,27 Data Base 01/12/2022
+Valor Juros 25.663,98 Data Base 01/12/2022
+Renuncia Não Status Sem Bloqueio
+IR-RRA Não
+Meses Exe. Anterior -
+Meses Exe. Corrente - Valor Exe. Corrente -Valor Exe. Anterior -
+Ano Exe. Corrente - Status Servidor -
+Valor Inicial PSS - Data Base PSS -
+Valor total execução - Data base execução -
+Valor Requisitado 95.546,25Valor Total da Requisição: 95.546,25
+Observações:
+1)	Precatórios classificados pelo juízo requisitante como de natureza não tributária serão atualizadas da data base
+do cálculo informada na requisição de pagamento até o efetivo pagamento pelo IPCA-E.
+2) Precatórios classificadas pelo juízo requisitante como de natureza tributária serão atualizadas da data base do
+cálculo informada na requisição de pagamento até o efetivo pagamento pela SELIC.

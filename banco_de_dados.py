@@ -3,7 +3,7 @@ import re
 import traceback
 import mysql.connector
 from dotenv import load_dotenv
-from utils import dados_limpos_banco_de_dados, extrair_processo_origem, extrair_processo_origem_amazonas, processar_dado
+from auxiliares import dados_limpos_banco_de_dados, extrair_processo_origem, extrair_processo_origem_amazonas, processar_dado, procurar_precatorio_trf
 load_dotenv('.env')
 
 def consultar_processos(valor_tribunal):
@@ -17,31 +17,36 @@ def consultar_processos(valor_tribunal):
   processo_origem = ''
 
   cursor = conn.cursor()
-  consulta_sql = "SELECT * FROM processos WHERE processo LIKE '%{}%'".format(valor_tribunal)
+  consulta_sql = "SELECT * FROM processos WHERE processo LIKE '0816036-39.2021.8.12.0002' ORDER BY data_criacao DESC LIMIT 400    ".format(valor_tribunal)
+#   consulta_sql = "SELECT * FROM processos WHERE processo LIKE '%{}%' AND status NOT IN ('Sucesso') ORDER BY data_criacao DESC".format(valor_tribunal)
+
   cursor.execute(consulta_sql)
   resultados = cursor.fetchall()
   
   for registro in resultados:
-    if registro[4] != 'STFSITE':
-      id_processo = registro[0]
-      processo = registro[2]
-      materia = registro[3]
-      tribunal = registro[4]
-      print('processo ---> ', processo)
-      if pesquisar_processo_em_precatorios(processo):
-        consulta_publicacao = "SELECT publicacao FROM publicacoes WHERE id_processo LIKE '%{}%'".format(id_processo)
-        cursor.execute(consulta_publicacao)
-        publicacoes = cursor.fetchall()
-        for publicacao in publicacoes:
-              processo_origem = extrair_processo_origem(publicacao[0].replace('\n', ''),processo)
-              if processo_origem == '':
-                  if verificar_tribunal(processo, valor_tribunal):
-                      processo_origem = extrair_processo_origem_amazonas(publicacao[0].replace('\n', ''), processo)
-              print("--->>> ", processo_origem)
-        if processo_origem == None:
-            processo_origem = ''
-        dados.append({"processo": processo, "tribunal": tribunal, "materia": materia, 'processo_origem': processo_origem})
-
+        if registro[4] != 'STFSITE':
+            id_processo = registro[0]
+            processo = registro[2]
+            materia = registro[3]
+            tribunal = registro[4]
+            print('processo ---> ', processo)
+            if pesquisar_processo_em_precatorios(processo):
+                consulta_publicacao = "SELECT publicacao FROM publicacoes WHERE id_processo LIKE '%{}%' ORDER BY data_criacao DESC".format(id_processo)
+                cursor.execute(consulta_publicacao)
+                publicacoes = cursor.fetchall()
+                for publicacao in publicacoes:
+                    # atualizar_ou_inserir_situacao_cadastro(processo, {'status': 'pesquisado'})
+                    if not any(item in processo for item in ['.4.02.', '.4.04.','8.08.', '.8.16.', '.8.19', '.8.21.', '.8.24.']):
+                        processo_origem = extrair_processo_origem(publicacao[0].replace('\n', ''),processo)
+                        if processo_origem == '':
+                            if verificar_tribunal(processo, valor_tribunal):
+                                processo_origem = extrair_processo_origem_amazonas(publicacao[0].replace('\n', ''), processo)
+                    else:
+                        processo_origem = procurar_precatorio_trf(publicacao[0],processo)
+                        print('origem -->', processo_origem)
+                if processo_origem == None:
+                    processo_origem = ''
+                dados.append({"processo": processo, "tribunal": tribunal, "materia": materia, 'processo_origem': processo_origem})
   cursor.close()
   conn.close()
   return dados
@@ -89,7 +94,6 @@ def atualizar_ou_inserir_pessoa_no_banco_de_dados(doc, dados):
         documento = dados.get('documento')
         oab = dados.get('oab')
         pessoa = pesquisar_pessoa_por_documento_ou_oab(conn, doc)
-        print('DADOS BD -->> ', dados)
         
         if pessoa is not None:
             dados_processados = processar_dado(dados)
@@ -160,7 +164,7 @@ def atualizar_ou_inserir_pessoa_precatorio(documento, processo):
     database=os.getenv('db_database_precatorio')
     )
 
-    cursor = conn.cursor()
+    cursor = conn.cursor(buffered=True)
     query_consultar_pessoa = 'SELECT * FROM pessoas WHERE documento = %s'
     cursor.execute(query_consultar_pessoa, (documento,))
     pessoa = cursor.fetchone()
@@ -210,3 +214,51 @@ def atualizar_ou_inserir_pessoa_precatorio(documento, processo):
                         print("E ==>> ", e)
                         print("Exec ==>> ", traceback.print_exc())
                         
+def inserir_log_no_banco_de_dados(dados):
+    conn = mysql.connector.connect(
+    host=os.getenv('db_server_precatorio'),
+    user=os.getenv('db_username_precatorio'),
+    password=os.getenv('db_password_precatorio'),
+    database=os.getenv('db_database_precatorio')
+    )
+    cursor = conn.cursor(buffered=True)
+
+    try:
+        dado_processado = {key: (value if value != '' else None) for key, value in dados.items()}
+        colunas = ', '.join(dado_processado.keys())
+        valores = ', '.join(['%s'] * len(dado_processado))
+        query = f"INSERT INTO log_rotina_esaj ({colunas}) VALUES ({valores})"
+        valores_insercao = tuple(dado_processado.values())
+        cursor.execute(query, valores_insercao)
+        conn.commit()
+        cursor.close()
+        conn.close()
+    except Exception as e:
+        print("E ==>> ", e)
+        print("Exec ==>> ", traceback.print_exc())
+
+def atualizar_ou_inserir_situacao_cadastro(n_processo, status):
+    conn = mysql.connector.connect(
+    host=os.getenv('db_server_precatorio'),
+    user=os.getenv('db_username_precatorio'),
+    password=os.getenv('db_password_precatorio'),
+    database=os.getenv('db_database_precatorio')
+    )
+
+    cursor = conn.cursor(buffered=True)
+    query_consultar_processo = 'SELECT * FROM processos WHERE processo = %s'
+    cursor.execute(query_consultar_processo, (n_processo,))
+    processo = cursor.fetchone()
+    if processo is not None:
+      try:
+                dados_processados = processar_dado(status)
+                colunas_e_valores = ', '.join([f"{coluna} = %s" for coluna in dados_processados.keys()])
+                query = f"UPDATE processos SET {colunas_e_valores} WHERE processo = %s"
+                valores = tuple(list(dados_processados.values()) + [n_processo])
+                cursor.execute(query, valores)
+                conn.commit()
+                conn.close()
+      except Exception as e:
+                print("E ==>> ", e)
+                print("Exec ==>> ", traceback.print_exc())
+    
