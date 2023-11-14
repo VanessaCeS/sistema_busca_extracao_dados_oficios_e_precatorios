@@ -1,12 +1,13 @@
 import os
 import re
+import fitz 
 import base64
-from PyPDF2 import PdfReader
 import requests
+from PIL import Image
+from PyPDF2 import PdfReader
 from datetime import datetime
 from dotenv import load_dotenv
-import fitz 
-from PIL import Image
+
 load_dotenv('.env')
 
 tipos_alimentar = os.getenv('tipos_alimentar')
@@ -18,9 +19,8 @@ def regex(string):
       padrao = r'\d{2}/\d{2}/\d{4}'
       resultado = re.findall(padrao, string)
       if resultado != []:
-        dia, mes, ano = resultado[0].strip().split('/')
-        data_padrao_arteria = f"{mes}/{dia}/{ano}"
-        return {'data_expedicao': data_padrao_arteria}
+        data_expedicao = formatar_data_padra_arteria(resultado[0].strip())
+        return {'data_expedicao': data_expedicao}
       else:
         return {'data_expedicao': ''}   
     if 'ADVOGAD' in string :
@@ -315,9 +315,7 @@ def regex(string):
       padrao = r'\b(?:\d{1,2}\/\d{1,2}\/\d{4}|\d{4}\/\d{1,2}\/\d{1,2}|\d{1,2}\-\d{1,2}\-\d{4}|\d{4}\-\d{1,2}\-\d{1,2})\b'
       nascimento = re.search(padrao, string,re.IGNORECASE)
       if nascimento != None:
-        nascimento  = nascimento.group(0).replace('-','/').strip()
-        dia, mes, ano = nascimento.split('/')
-        data_padrao_arteria = f"{mes}/{dia}/{ano}"
+        data_padrao_arteria = formatar_data_padra_arteria(nascimento.group(0).replace('-','/').strip())
         return {'data_nascimento': data_padrao_arteria}
       else:
         return {'data_nascimento': ''}
@@ -325,7 +323,7 @@ def regex(string):
       cidade_data = encontrar_data_expedicao_e_cidade_tjac(string) 
       return cidade_data
     
-      
+
 def encontrar_data_expedicao_e_cidade_tjac(string):
   partes = string.split(',')
   estado = ''
@@ -762,7 +760,7 @@ def buscar_cpf(arquivo_txt):
 
 def encontrar_indice_linha(linhas, texto):
   for indice, linha in enumerate(linhas):
-    if texto in linha.lower().replace('  ', ' '):
+    if texto in linha.lower().replace('  ', ' ').replace('\xa0\n',' '):
         return indice
   return None
 
@@ -815,24 +813,6 @@ def data_corrente_formatada():
     data_atual = datetime.now()
     data_formatada = data_atual.strftime("%d_%m_%Y")
     return data_formatada
-
-def dados_limpos_banco_de_dados(dados):
-  dados['data_nascimento'] = converter_data(dados['data_nascimento'])
-  dados['data_expedicao'] = converter_data(dados['data_expedicao'])
-
-
-  if 'conhecimento' in dados:  
-    if dados['conhecimento'] == '':
-      del dados['conhecimento']
-    else:
-      dados['processo_origem'] = dados.pop('conhecimento')
-
-  chaves_a_excluir = ['credor', 'nascimento', 'oab','seccional' ,'advogado','data_nascimento','devedor','documento','processo_geral','site','seccional','telefone', 'documento_advogado']
-
-  for chave in chaves_a_excluir:
-    dados.pop(chave, '')
-
-  return dados
 
 def mandar_dados_regex(indices, linhas):
   dados = {}
@@ -902,4 +882,7 @@ def pdf_to_png(pdf_path, output_pdf_path, processo):
     pdf_document.close()
     return f"{output_pdf_path}/{processo}_4.png"
 
-# mandar_documento_para_ocr('./teste/page_1.png', '1', '123', "teste")
+def formatar_data_padra_arteria(data):
+  dia, mes, ano = data.strip().split('/')
+  data_padrao_arteria = f"{mes}/{dia}/{ano}"
+  return data_padrao_arteria

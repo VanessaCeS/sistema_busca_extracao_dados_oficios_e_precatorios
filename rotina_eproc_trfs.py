@@ -9,7 +9,7 @@ from rotina_acre import ler_documentos
 from banco_de_dados import atualizar_ou_inserir_situacao_cadastro, consultar_processos
 from funcoes_arteria import enviar_valores_oficio_arteria
 from banco_de_dados import atualizar_ou_inserir_pessoa_no_banco_de_dados, atualizar_ou_inserir_pessoa_precatorio, atualizar_ou_inserir_precatorios_no_banco_de_dados
-from auxiliares import  encontrar_indice_linha, identificar_estados, ler_arquivo_pdf_transformar_em_txt, mandar_dados_regex, limpar_dados, tipo_precatorio, verificar_tribunal_lista
+from auxiliares import  encontrar_indice_linha, formatar_data_padra_arteria, identificar_estados, ler_arquivo_pdf_transformar_em_txt, mandar_dados_regex, limpar_dados, tipo_precatorio, verificar_tribunal_lista
 
 load_dotenv('.env')
 
@@ -98,8 +98,7 @@ def extrair_data_expedicao(texto):
   padrao = r'\d{2}/\d{2}/\d{4}'
   resultado = re.findall(padrao, texto)
   if resultado != []:
-    dia, mes, ano = resultado[0].strip().split('/')
-    data_padrao_arteria = f"{mes}/{dia}/{ano}"
+    data_padrao_arteria = formatar_data_padra_arteria(resultado[0])
     return data_padrao_arteria
   else:
     return ''

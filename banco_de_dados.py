@@ -17,12 +17,10 @@ def consultar_processos(valor_tribunal):
   processo_origem = ''
 
   cursor = conn.cursor()
-  consulta_sql = "SELECT * FROM processos WHERE processo LIKE '0816036-39.2021.8.12.0002' ORDER BY data_criacao DESC LIMIT 400    ".format(valor_tribunal)
-#   consulta_sql = "SELECT * FROM processos WHERE processo LIKE '%{}%' AND status NOT IN ('Sucesso') ORDER BY data_criacao DESC".format(valor_tribunal)
+  consulta_sql = "SELECT * FROM processos WHERE processo LIKE '%{}%' AND status NOT IN ('Sucesso') ORDER BY data_criacao DESC".format(valor_tribunal)
 
   cursor.execute(consulta_sql)
   resultados = cursor.fetchall()
-  
   for registro in resultados:
         if registro[4] != 'STFSITE':
             id_processo = registro[0]
@@ -35,18 +33,18 @@ def consultar_processos(valor_tribunal):
                 cursor.execute(consulta_publicacao)
                 publicacoes = cursor.fetchall()
                 for publicacao in publicacoes:
-                    # atualizar_ou_inserir_situacao_cadastro(processo, {'status': 'pesquisado'})
-                    if not any(item in processo for item in ['.4.02.', '.4.04.','8.08.', '.8.16.', '.8.19', '.8.21.', '.8.24.']):
-                        processo_origem = extrair_processo_origem(publicacao[0].replace('\n', ''),processo)
-                        if processo_origem == '':
-                            if verificar_tribunal(processo, valor_tribunal):
-                                processo_origem = extrair_processo_origem_amazonas(publicacao[0].replace('\n', ''), processo)
-                    else:
-                        processo_origem = procurar_precatorio_trf(publicacao[0],processo)
-                        print('origem -->', processo_origem)
+                        atualizar_ou_inserir_situacao_cadastro(processo, {'status': 'pesquisado'})
+                        if not any(item in processo for item in ['.4.02.', '.4.04.','8.08.', '.8.16.', '.8.19', '.8.21.', '.8.24.']):
+                            processo_origem = extrair_processo_origem(publicacao[0].replace('\n', ''),processo)
+                            if processo_origem == '':
+                                if verificar_tribunal(processo, valor_tribunal):
+                                    processo_origem = extrair_processo_origem_amazonas(publicacao[0].replace('\n', ''), processo)
+                        else:
+                            processo_origem = procurar_precatorio_trf(publicacao[0],processo)
                 if processo_origem == None:
-                    processo_origem = ''
+                        processo_origem = ''
                 dados.append({"processo": processo, "tribunal": tribunal, "materia": materia, 'processo_origem': processo_origem})
+        
   cursor.close()
   conn.close()
   return dados

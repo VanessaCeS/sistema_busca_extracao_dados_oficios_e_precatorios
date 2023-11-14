@@ -41,7 +41,8 @@ def instancia_arteria(application="", user=None, password=None):
         archer_instance = ArcherInstance('https://att.costaesilvaadv.com.br',
                                             'NIP',
                                             user,
-                                            password
+                                            password,
+                                            
                                             )
 
     if application:

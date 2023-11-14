@@ -5,7 +5,7 @@ from logs import log
 from cna_oab import login_cna
 from funcoes_arteria import enviar_valores_oficio_arteria
 from esaj_mato_grosso_sul_precatorios import get_docs_oficio_precatorios_tjms
-from auxiliares import  encontrar_indice_linha, ler_arquivo_pdf_transformar_em_txt, limpar_dados, mandar_dados_regex, mandar_documento_para_ocr, pdf_to_png, tipo_de_natureza, tipo_precatorio, verificar_tribunal
+from auxiliares import  encontrar_indice_linha, formatar_data_padra_arteria, ler_arquivo_pdf_transformar_em_txt, limpar_dados, mandar_dados_regex, mandar_documento_para_ocr, pdf_to_png, tipo_de_natureza, tipo_precatorio, verificar_tribunal
 from banco_de_dados import atualizar_ou_inserir_pessoa_no_banco_de_dados, atualizar_ou_inserir_pessoa_precatorio, atualizar_ou_inserir_precatorios_no_banco_de_dados, atualizar_ou_inserir_situacao_cadastro, consultar_processos
 
 def buscar_dados_tribunal_mato_grosso_do_sul():     
@@ -105,10 +105,7 @@ def extrair_dados_pdf(arquivo_pdf, arquivo_txt, dados_pdf):
 
     if indice_data_nascimento != None:
       data_nascimento = linhas[indice_data_nascimento].split('Nascimento:')[1].replace('\n','').strip()
-      dia, mes, ano = data_nascimento.split('/')
-      data_padrao_arteria = f"{mes}/{dia}/{ano}"
-      dados['data_nascimento'] = data_padrao_arteria
-      
+      dados['data_nascimento'] = formatar_data_padra_arteria(data_nascimento)      
     if indice_oab != None:
       advogado = pegar_valor(linhas[indice_oab - 1])
       oab_e_seccional = pegar_valor(linhas[indice_oab])
@@ -147,7 +144,7 @@ def extrair_dados_pdf(arquivo_pdf, arquivo_txt, dados_pdf):
     indice_devedor = encontrar_indice_linha(linhas, 'devedor')
     indice_credor = encontrar_indice_linha(linhas, 'requerente')
     indice_advogado = encontrar_indice_linha(linhas, 'advogado requerente')
-    indice_valor_global = encontrar_indice_linha(linhas, 'valor global')
+    indice_valor_global = encontrar_indice_linha(linhas, 'valor global:')
     indice_valor_principal = encontrar_indice_linha(linhas, 'valor principal')
     indice_valor_juros = encontrar_indice_linha(linhas, 'valor juros')
     indice_data_expedicao = encontrar_indice_linha(linhas, 'liberado nos autos')
@@ -199,3 +196,4 @@ def enviar_dados_banco_de_dados_e_arteria(arquivo_pdf, dados):
     atualizar_ou_inserir_pessoa_precatorio(documento, dados['processo'])
     log( dados['processo_origem'], 'Sucesso', site, 'Precatório registrado com sucesso',dados['estado'], dados['tribunal'])
     atualizar_ou_inserir_situacao_cadastro(dados['processo'],{'status': 'Sucesso'})
+

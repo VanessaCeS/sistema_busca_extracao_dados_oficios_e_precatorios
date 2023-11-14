@@ -18,7 +18,7 @@ def buscar_dados_tribunal_sao_paulo():
         dados_limpos = limpar_dados(d)
         tipo = tipo_precatorio(d)
         dado = dados_limpos | tipo
-        if verificar_tribunal(d['processo']) and d['processo'] != '1053116-70.2022.8.26.0053':
+        if verificar_tribunal(d['processo']):
           ler_documentos(dado)
         else:
           continue
