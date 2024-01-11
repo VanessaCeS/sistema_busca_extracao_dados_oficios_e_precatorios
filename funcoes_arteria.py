@@ -48,7 +48,7 @@ def instancia_arteria(application="", user=None, password=None):
     if application:
         archer_instance.from_application(application)
     return archer_instance
-
+instancia_arteria("", None, None)
 
 def busca_todos_campos_app(app):
     campos = instancia_arteria(app).application_fields_json
@@ -1177,14 +1177,14 @@ def transformar_arquivo_para_base64( nome_arquivo):
         with open(nome_arquivo, "rb") as arquivo:
             dados = arquivo.read()
             dados_base64 = base64.b64encode(dados)
-            return dados_base64.decode("utf-8") 
+            return dados_base64.decode("utf-8")  , 
 
-def enviar_valores_oficio_arteria(arquivo_pdf, dado):
+def enviar_valores_oficio_arteria(arquivo_pdf, dado, id=None):
     archer_instance = instancia_arteria("Precatórios")
     nome_arquivo = arquivo_pdf.split('/')[1]
     arquivo_base_64 = transformar_arquivo_para_base64(arquivo_pdf)
-    id_documento = archer_instance.post_attachment(nome_arquivo, arquivo_base_64)
-   
+    id_documento = archer_instance.post_attachment(nome_arquivo, arquivo_base_64[0])
+    
     dado = limpar_dados_arteria(dado)
     if dado['processo_origem'] != '':
         foi_expedido = 'SIM'
@@ -1195,13 +1195,9 @@ def enviar_valores_oficio_arteria(arquivo_pdf, dado):
         valor_principal = dado['valor_principal_credor']
     else:
         valor_principal = dado['valor_principal']
-    # if dado['estado'] == 'SP' or dado['estado'] == 'SÃO PAULO':
-    #     precatorio = dado['processo_origem']
-    #     processo = dado['processo']
-    # else:
     precatorio =  dado['processo']
     processo = dado['processo_origem']
-    
+    print('PDF ARTERIA -->> ', arquivo_pdf)
     dados = {
     'Data da Expedição': dado['data_expedicao'],
     'Código do Processo de Origem': processo,
@@ -1227,8 +1223,11 @@ def enviar_valores_oficio_arteria(arquivo_pdf, dado):
     "Seccional": [dado['seccional']],
     'Telefone': dado['telefone'],
     }
-    id_arteria = cadastrar_arteria(dados, 'Precatórios')
-    return  id_arteria
+    if id:
+        cadastrar_arteria(dados, 'Precatórios', id)
+    else:
+        id_arteria = cadastrar_arteria(dados, 'Precatórios')
+        return  id_arteria
 
 def limpar_dados_arteria(dado):
     if 'conhecimento' in dado:  

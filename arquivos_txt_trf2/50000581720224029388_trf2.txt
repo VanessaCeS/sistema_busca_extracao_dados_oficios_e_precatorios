@@ -1,0 +1,87 @@
+Espelho de Valores Cadastrados. Data: 14/01/2022
+PROCESSO : 5000058-17.2022.4.02.9388
+ORIGINÁRIO : 0169661-17.2014.4.02.5101/RJ
+TIPO : Precatório
+REQUERENTE : DOMINGOS DIAS DA SILVA
+ADVOGADO : FABIOLA ARAUJO DA SILVA - RJ158027
+REQUERIDO : UNIÃO - ADVOCACIA GERAL DA UNIÃO
+: PROCURADOR CLAUDIO JOSÉ SILVA - MILITAR
+: DEPRECANTE Juízo Substituto da 30ª VF do Rio de Janeiro
+ASSUNTO : 01120209 - Licenças
+Tipo de Despesa : 21 - NATUREZA NÃO ALIMENTÍCIA (21)
+Trans. Requisição : 14/01/2022 13:42:59
+Data de Entrada : 14/01/2022 13:42:59
+REQUISIÇÃO : 21510050765
+Data Ajuizamento : 01/12/2014
+Data TJ. Conhecim. : 23/01/2019
+Data TJ. Embargos : 26/10/2021
+Espécie Requisição : Original
+Superpreferencial : Não
+Precatório de natureza NÃO tributária
+Tipo Beneficiário
+Nome DOMINGOS DIAS DA SILVA
+CPF/CGC 403.582.167-53
+Valor Principal 42.717,61 Data Base 01/06/2021
+Valor Juros 11.228,74 Data Base 01/06/2021
+Juros de mora fixados na sentença: Poupança
+Renuncia Não Status Sem Bloqueio
+IR-RRA Não
+Meses Exe. Anterior -
+Meses Exe. Corrente - Valor Exe. Corrente -Valor Exe. Anterior -
+Ano Exe. Corrente - Status Servidor I
+Valor Inicial PSS - Data Base PSS -
+Valor total execução - Data base execução -
+Valor Requisitado 53.946,35Espelho de Valores Cadastrados. Data: 14/01/2022
+PROCESSO : 5000058-17.2022.4.02.9388
+ORIGINÁRIO : 0169661-17.2014.4.02.5101/RJ
+TIPO : Precatório
+REQUERENTE : DOMINGOS DIAS DA SILVA
+ADVOGADO : FABIOLA ARAUJO DA SILVA - RJ158027
+REQUERIDO : UNIÃO - ADVOCACIA GERAL DA UNIÃO
+: PROCURADOR CLAUDIO JOSÉ SILVA - MILITAR
+: DEPRECANTE Juízo Substituto da 30ª VF do Rio de Janeiro
+ASSUNTO : 01120209 - Licenças
+Tipo de Despesa : 21 - NATUREZA NÃO ALIMENTÍCIA (21)
+Trans. Requisição : 14/01/2022 13:42:59
+Data de Entrada : 14/01/2022 13:42:59
+REQUISIÇÃO : 21510050765
+Data Ajuizamento : 01/12/2014
+Data TJ. Conhecim. : 23/01/2019
+Data TJ. Embargos : 26/10/2021
+Espécie Requisição : Original
+Superpreferencial : Não
+Precatório de natureza NÃO tributária
+Tipo Beneficiário
+Nome DOMINGOS DIAS DA SILVA
+CPF/CGC 403.582.167-53
+Valor Principal 42.717,61 Data Base 01/06/2021
+Valor Juros 11.228,74 Data Base 01/06/2021
+Juros de mora fixados na sentença: Poupança
+Renuncia Não Status Sem Bloqueio
+IR-RRA Não
+Meses Exe. Anterior -
+Meses Exe. Corrente - Valor Exe. Corrente -Valor Exe. Anterior -
+Ano Exe. Corrente - Status Servidor I
+Valor Inicial PSS - Data Base PSS -
+Valor total execução - Data base execução -
+Valor Requisitado 53.946,35Tipo Honorário
+Nome FABIOLA ARAUJO DA SILVA
+CPF/CGC 014.269.497-58
+Valor Principal 18.307,54 Data Base 01/06/2021
+Valor Juros 4.812,33 Data Base 01/06/2021
+Juros de mora fixados na sentença: Poupança
+Renuncia Não Status Sem Bloqueio
+IR-RRA Não
+Tipo Hon. Judicial Honorários Contratuais
+Meses Exe. Anterior -
+Meses Exe. Corrente - Valor Exe. Corrente -Valor Exe. Anterior -
+Ano Exe. Corrente - Status Servidor -
+Valor Inicial PSS - Data Base PSS -
+Valor total execução - Data base execução -
+Valor Requisitado 23.119,87
+Valor Total da Requisição: 77.066,22
+Observações:
+1)	Precatórios classificados pelo juízo requisitante como de natureza não tributária serão atualizadas da data base
+do cálculo informada na requisição de pagamento até o efetivo pagamento pelo IPCA-E.
+2) Precatórios classificadas pelo juízo requisitante como de natureza tributária serão atualizadas da data base do
+cálculo informada na requisição de pagamento até o efetivo pagamento pela SELIC.

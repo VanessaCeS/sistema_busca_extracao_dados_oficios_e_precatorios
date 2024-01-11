@@ -1,0 +1,72 @@
+Espelho de Valores Cadastrados. Data: 27/09/2021
+PROCESSO : 5024708-65.2021.4.02.9388
+ORIGINÁRIO : 00001477220178080053/ES
+TIPO : Precatório
+REQUERENTE : EMILSON DE SOUZA PEREIRA
+ADVOGADO : ABILIO VILELA DE AMORIM - ES022858
+DEPRECANTE : VARA ÚNICA DA COMARCA DE ALTO RIO NOVO-ES
+: 
+: REQUERIDO INSTITUTO NACIONAL DO SEGURO SOCIAL - INSS
+ASSUNTO : 040101 - Aposentadoria por Invalidez (Art. 42/7)
+Tipo de Despesa : 12 - NATUREZA ALIMENTÍCIA - Benefícios previdenciários e
+indenizações por morte ou invalidez (12)
+Trans. Requisição : 27/09/2021 13:55:33
+Data de Entrada : 27/09/2021 13:55:33
+REQUISIÇÃO : 21000002833
+Data Ajuizamento : 09/03/2017
+Data TJ. Conhecim. : 04/12/2020
+Data TJ. Embargos : 19/08/2021
+Espécie Requisição : Original
+Precatório de natureza NÃO tributária
+Tipo Beneficiário
+Nome EMILSON DE SOUZA PEREIRA
+CPF/CGC 009.862.927-10
+Valor Principal 107.564,64 Data Base 01/07/2021
+Valor Juros 9.536,29 Data Base 01/07/2021
+Juros de mora fixados na sentença: Poupança
+Renuncia Não Status Sem Bloqueio
+IR-RRA Sim
+Meses Exe. Anterior 55
+Meses Exe. Corrente - Valor Exe. Corrente -Valor Exe. Anterior -
+Ano Exe. Corrente - Status Servidor -
+Valor Inicial PSS - Data Base PSS -
+Valor total execução - Data base execução -
+Valor Requisitado 117.100,93Espelho de Valores Cadastrados. Data: 27/09/2021
+PROCESSO : 5024708-65.2021.4.02.9388
+ORIGINÁRIO : 00001477220178080053/ES
+TIPO : Precatório
+REQUERENTE : EMILSON DE SOUZA PEREIRA
+ADVOGADO : ABILIO VILELA DE AMORIM - ES022858
+DEPRECANTE : VARA ÚNICA DA COMARCA DE ALTO RIO NOVO-ES
+: 
+: REQUERIDO INSTITUTO NACIONAL DO SEGURO SOCIAL - INSS
+ASSUNTO : 040101 - Aposentadoria por Invalidez (Art. 42/7)
+Tipo de Despesa : 12 - NATUREZA ALIMENTÍCIA - Benefícios previdenciários e
+indenizações por morte ou invalidez (12)
+Trans. Requisição : 27/09/2021 13:55:33
+Data de Entrada : 27/09/2021 13:55:33
+REQUISIÇÃO : 21000002833
+Data Ajuizamento : 09/03/2017
+Data TJ. Conhecim. : 04/12/2020
+Data TJ. Embargos : 19/08/2021
+Espécie Requisição : Original
+Precatório de natureza NÃO tributária
+Tipo Beneficiário
+Nome EMILSON DE SOUZA PEREIRA
+CPF/CGC 009.862.927-10
+Valor Principal 107.564,64 Data Base 01/07/2021
+Valor Juros 9.536,29 Data Base 01/07/2021
+Juros de mora fixados na sentença: Poupança
+Renuncia Não Status Sem Bloqueio
+IR-RRA Sim
+Meses Exe. Anterior 55
+Meses Exe. Corrente - Valor Exe. Corrente -Valor Exe. Anterior -
+Ano Exe. Corrente - Status Servidor -
+Valor Inicial PSS - Data Base PSS -
+Valor total execução - Data base execução -
+Valor Requisitado 117.100,93Valor Total da Requisição: 117.100,93
+Observações:
+1)	Precatórios classificados pelo juízo requisitante como de natureza não tributária serão atualizadas da data base
+do cálculo informada na requisição de pagamento até o efetivo pagamento pelo IPCA-E.
+2) Precatórios classificadas pelo juízo requisitante como de natureza tributária serão atualizadas da data base do
+cálculo informada na requisição de pagamento até o efetivo pagamento pela SELIC.

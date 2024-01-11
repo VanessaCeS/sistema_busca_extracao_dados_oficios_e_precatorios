@@ -4,16 +4,14 @@ import traceback
 from banco_de_dados import consultar_processos
 from rotina_alagoas_pdf_simples import extrair_dados_pdf
 from rotina_alagoas_pdf_img import extrair_dados_texto_ocr
-from auxiliares import  limpar_dados, tipo_precatorio
+from auxiliares import  limpar_dados
 from esaj_alagoas_precatorios import get_docs_oficio_precatorios_tjal
 
 def buscar_dados_tribunal_alagoas():   
   dados = consultar_processos('.8.02.')
 
   for d in dados:
-        dados_limpos = limpar_dados(d)
-        tipo = tipo_precatorio(d)
-        dado = dados_limpos | tipo
+        dado = limpar_dados(d)
         if verificar_tribunal(d['processo']):
           ler_documentos(dado)
 
@@ -48,7 +46,7 @@ def ler_documentos(dado_xml):
             if number_pages > 1:
                 extrair_dados_pdf(arquivo_pdf, dado_xml)
             else:
-                extrair_dados_texto_ocr(arquivo_pdf, dado_xml, )
+                extrair_dados_texto_ocr(arquivo_pdf, dado_xml)
       except Exception as e:
         print("Erro no processo -> ", processo_geral, f'Erro: {e}')
         print(traceback.print_exc())

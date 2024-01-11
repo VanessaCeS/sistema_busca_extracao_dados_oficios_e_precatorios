@@ -1,0 +1,72 @@
+Espelho de Valores Cadastrados. Data: 27/02/2021
+PROCESSO : 5003786-46.2021.4.04.9388
+ORIGINÁRIO : 00035641820188160104/PR
+TIPO : Precatório
+REQUERENTE : MADALENA DE LIMA
+ADVOGADO : GISELE APARECIDA SPANCERSKI - PR048364
+REQUERIDO : INSTITUTO NACIONAL DO SEGURO SOCIAL - INSS
+: PROCURADOR PROCURADORIA REGIONAL FEDERAL DA 4 REGIÃO - PRF4
+: DEPRECANTE JUIZO DE DIREITO DA 1A VARA CIVEL DA COMARCA DE
+LARANJEIRAS DO SUL/PR
+ASSUNTO : 040108 - Pensão por Morte (Art. 74/9)
+Tipo de Despesa : 21 - NATUREZA NÃO ALIMENTÍCIA (21)
+Trans. Requisição : 26/02/2021 14:50:17
+Data de Entrada : 26/02/2021 14:50:17
+REQUISIÇÃO : 21000004516
+Data Ajuizamento : 25/07/2018
+Data TJ. Conhecim. : 05/03/2020
+Data TJ. Embargos : 26/02/2021
+Espécie Requisição : Original
+Precatório de natureza NÃO tributária
+Tipo Beneficiário
+Nome MADALENA DE LIMA
+CPF/CGC 200.197.509-00
+Valor Principal 86.763,19 Data Base 01/04/2020
+Valor Juros 4.740,01 Data Base 01/04/2020
+Juros de mora fixados na sentença: Poupança
+Renuncia Não Status Sem Bloqueio
+IR-RRA Não
+Meses Exe. Anterior -
+Meses Exe. Corrente - Valor Exe. Corrente -Valor Exe. Anterior -
+Ano Exe. Corrente - Status Servidor -
+Valor Inicial PSS - Data Base PSS -
+Valor total execução - Data base execução -
+Valor Requisitado 91.503,20Espelho de Valores Cadastrados. Data: 27/02/2021
+PROCESSO : 5003786-46.2021.4.04.9388
+ORIGINÁRIO : 00035641820188160104/PR
+TIPO : Precatório
+REQUERENTE : MADALENA DE LIMA
+ADVOGADO : GISELE APARECIDA SPANCERSKI - PR048364
+REQUERIDO : INSTITUTO NACIONAL DO SEGURO SOCIAL - INSS
+: PROCURADOR PROCURADORIA REGIONAL FEDERAL DA 4 REGIÃO - PRF4
+: DEPRECANTE JUIZO DE DIREITO DA 1A VARA CIVEL DA COMARCA DE
+LARANJEIRAS DO SUL/PR
+ASSUNTO : 040108 - Pensão por Morte (Art. 74/9)
+Tipo de Despesa : 21 - NATUREZA NÃO ALIMENTÍCIA (21)
+Trans. Requisição : 26/02/2021 14:50:17
+Data de Entrada : 26/02/2021 14:50:17
+REQUISIÇÃO : 21000004516
+Data Ajuizamento : 25/07/2018
+Data TJ. Conhecim. : 05/03/2020
+Data TJ. Embargos : 26/02/2021
+Espécie Requisição : Original
+Precatório de natureza NÃO tributária
+Tipo Beneficiário
+Nome MADALENA DE LIMA
+CPF/CGC 200.197.509-00
+Valor Principal 86.763,19 Data Base 01/04/2020
+Valor Juros 4.740,01 Data Base 01/04/2020
+Juros de mora fixados na sentença: Poupança
+Renuncia Não Status Sem Bloqueio
+IR-RRA Não
+Meses Exe. Anterior -
+Meses Exe. Corrente - Valor Exe. Corrente -Valor Exe. Anterior -
+Ano Exe. Corrente - Status Servidor -
+Valor Inicial PSS - Data Base PSS -
+Valor total execução - Data base execução -
+Valor Requisitado 91.503,20Valor Total da Requisição: 91.503,20
+Observações:
+1)	Precatórios classificados pelo juízo requisitante como de natureza não tributária serão atualizadas da data base
+do cálculo informada na requisição de pagamento até o efetivo pagamento pelo IPCA-E.
+2) Precatórios classificadas pelo juízo requisitante como de natureza tributária serão atualizadas da data base do
+cálculo informada na requisição de pagamento até o efetivo pagamento pela SELIC.

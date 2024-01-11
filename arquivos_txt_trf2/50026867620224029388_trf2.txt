@@ -1,0 +1,74 @@
+Espelho de Valores Cadastrados. Data: 26/03/2022
+PROCESSO : 5002686-76.2022.4.02.9388
+ORIGINÁRIO : 0030584-94.2017.4.02.5001/ES
+TIPO : Precatório
+REQUERENTE : VIVALDO MASCARENHAS DE OLIVEIRA FILHO
+ADVOGADO : JOSE EDUARDO DO CARMO - SP108928
+REQUERIDO : INSTITUTO NACIONAL DO SEGURO SOCIAL - INSS
+: PROCURADOR ANDRÉ AMARAL DE AGUIAR - PRF-1_2_PREV
+: DEPRECANTE Juízo Federal da 6ª VF Cível de Vitória
+ASSUNTO : 040119 - Aposentadoria por Tempo de Contribuição (Art. 55/6)
+Tipo de Despesa : 12 - NATUREZA ALIMENTÍCIA - Benefícios previdenciários e
+indenizações por morte ou invalidez (12)
+Trans. Requisição : 25/03/2022 18:02:35
+Data de Entrada : 25/03/2022 18:02:35
+REQUISIÇÃO : 22500001364
+Data Ajuizamento : 16/10/2017
+Data TJ. Conhecim. : 30/11/2021
+Data TJ. Embargos : 15/12/2021
+Espécie Requisição : Original
+Superpreferencial : Não
+Precatório de natureza NÃO tributária
+Tipo Beneficiário
+Nome VIVALDO MASCARENHAS DE OLIVEIRA FILHO
+CPF/CGC 466.717.656-34
+Valor Principal 73.520,31 Data Base 01/12/2021
+Valor Juros 9.058,24 Data Base 01/12/2021
+Juros de mora fixados na sentença: Poupança
+Renuncia Não Status Bloqueado
+IR-RRA Sim
+Meses Exe. Anterior 26
+Meses Exe. Corrente - Valor Exe. Corrente -Valor Exe. Anterior -
+Ano Exe. Corrente - Status Servidor -
+Valor Inicial PSS - Data Base PSS -
+Valor total execução - Data base execução -
+Valor Requisitado 82.578,55Espelho de Valores Cadastrados. Data: 26/03/2022
+PROCESSO : 5002686-76.2022.4.02.9388
+ORIGINÁRIO : 0030584-94.2017.4.02.5001/ES
+TIPO : Precatório
+REQUERENTE : VIVALDO MASCARENHAS DE OLIVEIRA FILHO
+ADVOGADO : JOSE EDUARDO DO CARMO - SP108928
+REQUERIDO : INSTITUTO NACIONAL DO SEGURO SOCIAL - INSS
+: PROCURADOR ANDRÉ AMARAL DE AGUIAR - PRF-1_2_PREV
+: DEPRECANTE Juízo Federal da 6ª VF Cível de Vitória
+ASSUNTO : 040119 - Aposentadoria por Tempo de Contribuição (Art. 55/6)
+Tipo de Despesa : 12 - NATUREZA ALIMENTÍCIA - Benefícios previdenciários e
+indenizações por morte ou invalidez (12)
+Trans. Requisição : 25/03/2022 18:02:35
+Data de Entrada : 25/03/2022 18:02:35
+REQUISIÇÃO : 22500001364
+Data Ajuizamento : 16/10/2017
+Data TJ. Conhecim. : 30/11/2021
+Data TJ. Embargos : 15/12/2021
+Espécie Requisição : Original
+Superpreferencial : Não
+Precatório de natureza NÃO tributária
+Tipo Beneficiário
+Nome VIVALDO MASCARENHAS DE OLIVEIRA FILHO
+CPF/CGC 466.717.656-34
+Valor Principal 73.520,31 Data Base 01/12/2021
+Valor Juros 9.058,24 Data Base 01/12/2021
+Juros de mora fixados na sentença: Poupança
+Renuncia Não Status Bloqueado
+IR-RRA Sim
+Meses Exe. Anterior 26
+Meses Exe. Corrente - Valor Exe. Corrente -Valor Exe. Anterior -
+Ano Exe. Corrente - Status Servidor -
+Valor Inicial PSS - Data Base PSS -
+Valor total execução - Data base execução -
+Valor Requisitado 82.578,55Valor Total da Requisição: 82.578,55
+Observações:
+1)	Precatórios classificados pelo juízo requisitante como de natureza não tributária serão atualizadas da data base
+do cálculo informada na requisição de pagamento até o efetivo pagamento pelo IPCA-E.
+2) Precatórios classificadas pelo juízo requisitante como de natureza tributária serão atualizadas da data base do
+cálculo informada na requisição de pagamento até o efetivo pagamento pela SELIC.

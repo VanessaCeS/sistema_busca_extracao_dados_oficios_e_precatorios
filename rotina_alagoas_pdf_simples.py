@@ -5,7 +5,7 @@ from logs import log
 from cna_oab import login_cna
 from funcoes_arteria import enviar_valores_oficio_arteria
 from auxiliares import  encontrar_indice_linha, mandar_dados_regex
-from banco_de_dados import atualizar_ou_inserir_pessoa_no_banco_de_dados, atualizar_ou_inserir_pessoa_precatorio, atualizar_ou_inserir_precatorios_no_banco_de_dados, atualizar_ou_inserir_situacao_cadastro
+from banco_de_dados import atualizar_ou_inserir_pessoa_no_banco_de_dados, atualizar_ou_inserir_pessoa_precatorio, atualizar_ou_inserir_precatorios_no_banco_de_dados, atualizar_ou_inserir_situacao_cadastro, precatorio_exitente_arteria
 
 def extrair_dados_pdf(arquivo_pdf, dados):
       try:
@@ -29,10 +29,10 @@ def ler_dados_txt(arquivo_pdf, dados_xml,arquivo_txt):
         linhas = arquivo.readlines()    
 
     indice_precatorio = encontrar_indice_linha(linhas, "do processo:")
-    indice_processo = encontrar_indice_linha(linhas, 'da ação') + 1
+    indice_processo = encontrar_indice_linha(linhas, 'da ação')
     indice_vara = encontrar_indice_linha(linhas, " vara:")
     indice_valor_principal = encontrar_indice_linha(linhas, "originário:")
-    indice_valor_global = encontrar_indice_linha(linhas, "da requisição:")
+    indice_valor_global = encontrar_indice_linha(linhas, "total da requisição:")
     indice_valor_juros = encontrar_indice_linha(linhas, "moratórios:")
     indice_natureza = encontrar_indice_linha(linhas, "do crédito:")
     indice_credor = encontrar_indice_linha(linhas, "do credor:")
@@ -41,21 +41,21 @@ def ler_dados_txt(arquivo_pdf, dados_xml,arquivo_txt):
     indice_data_nascimento = encontrar_indice_linha(linhas, " nascimento:")
     indice_data_expedicao = encontrar_indice_linha(linhas, "liberado nos autos")
     indice_cidade = encontrar_indice_linha(linhas, "fone:")
-    
-    indices = {'indice_precatorio': indice_precatorio,'indice_vara': indice_vara,'indice_valor_principal': indice_valor_principal, 'indice_valor_global': indice_valor_global, 'indice_credor': indice_credor,'indice_devedor': indice_devedor, 'indice_data_expedicao': indice_data_expedicao,'indice_natureza': indice_natureza,'indice_valor_juros': indice_valor_juros, 'indice_documento': indice_documento, 'indice_data_nascimento': indice_data_nascimento}
+    if indice_credor and indice_devedor:
+      dados_xml['processo_origem'] =  linhas[indice_processo + 1]
+      indices = {'indice_precatorio': indice_precatorio,'indice_vara': indice_vara,'indice_valor_principal': indice_valor_principal, 'indice_valor_global': indice_valor_global, 'indice_credor': indice_credor,'indice_devedor': indice_devedor, 'indice_data_expedicao': indice_data_expedicao,'indice_natureza': indice_natureza,'indice_valor_juros': indice_valor_juros, 'indice_documento': indice_documento, 'indice_data_nascimento': indice_data_nascimento}
 
-    dados_regex = mandar_dados_regex(indices, linhas)
-    cidade = pegar_cidade(linhas[indice_cidade])
-    processo_origem = {'processo_origem': linhas[indice_processo]}
-    dados_advogado = extrair_e_salvar_dados_advogado(dados_regex['processo'],arquivo_pdf)
-    dados = dados_xml | dados_regex | cidade |  processo_origem | dados_advogado
-    print('VALOR GLOBAL ====>>> ', dados['valor_global'])
-    enviar_dados_banco_de_dados_e_arteria_alagoas(arquivo_pdf, dados)
+      dados_regex = mandar_dados_regex(indices, linhas)
+      dados_regex['cidade'] = pegar_cidade(linhas[indice_cidade])
+      dados_advogado = extrair_e_salvar_dados_advogado(dados_regex['processo'],arquivo_pdf)
+      dados = dados_xml | dados_regex | dados_advogado
+      print('====>>> ', dados)
+      enviar_dados_banco_de_dados_e_arteria_alagoas(arquivo_pdf, dados)
 
 def pegar_cidade(texto):
-        dividir_texto = texto.split(',')[-1]
-        cidade = dividir_texto.split('-')[0].strip()
-        return {'cidade': cidade}
+  dividir_texto = texto.split(',')[-1]
+  cidade = dividir_texto.split('-')[0].strip()
+  return cidade
 
 
 def pegar_processo_origem(texto,indice):
@@ -87,23 +87,33 @@ def extrair_e_salvar_dados_advogado(processo, arquivo_pdf):
               oab = ''
               documento_advogado = ''
             else:
-              oab = resultado_oab.group(1).strip().split(' ')[0]
+              oab = resultado_oab.group(1).strip().split(' ')[0].split('/')[0]
               padrao_documento_advogado = r'(?:CPF|CPF/CNPJ|CNPJ):(.*)'
               resultado = re.search(padrao_documento_advogado, text)
               if resultado != None:
-                documento_advogado = resultado.group(1).strip()
+                documento_advogado = resultado.group(1).strip().split(' ')[0]
               else:
                 documento_advogado = ''
+          break
     dados_advogado = login_cna(oab, 'AL', documento_advogado, advogado, processo)
 
     return dados_advogado
 
 def enviar_dados_banco_de_dados_e_arteria_alagoas(arquivo_pdf, dados):    
     documento = dados['documento']
+    site = dados['site']
     atualizar_ou_inserir_pessoa_no_banco_de_dados(documento, {'nome': dados['credor'], 'documento': dados['documento'], 'data_nascimento': dados['data_nascimento'], 'estado': 'Alagoas', 'tipo': 'credor'})
-    id_sistema_arteria = enviar_valores_oficio_arteria(arquivo_pdf, dados)
-    dados['id_sistema_arteria'] = id_sistema_arteria
+
+    existe_id_sistema_arteria = precatorio_exitente_arteria(dados['processo'])
+    if existe_id_sistema_arteria:
+      dados['id_sistema_arteria'] = existe_id_sistema_arteria[0]
+      enviar_valores_oficio_arteria(arquivo_pdf, dados, existe_id_sistema_arteria[0])
+      mensagem = 'Precatório alterado com sucesso'
+    else:
+      dados['id_sistema_arteria']  = enviar_valores_oficio_arteria(arquivo_pdf, dados)
+      mensagem = 'Precatório registrado com sucesso'
+    
     atualizar_ou_inserir_precatorios_no_banco_de_dados(dados['codigo_processo'], dados)
     atualizar_ou_inserir_pessoa_precatorio(documento, dados['processo'])
-    log( dados['processo'], 'Sucesso',dados['site'], 'Precatório registrado com sucesso', 'Alagoas', dados['tribunal'])
-    atualizar_ou_inserir_situacao_cadastro(dados['processo'],{'status': 'Sucesso'})
+    log( dados['processo_origem'], 'Sucesso',site, mensagem, 'Alagoas', dados['tribunal'])
+    atualizar_ou_inserir_situacao_cadastro(dados['processo_origem'],{'status': 'Sucesso'})

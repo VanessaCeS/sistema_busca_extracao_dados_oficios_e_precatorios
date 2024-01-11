@@ -1,0 +1,89 @@
+Espelho de Valores Cadastrados. Data: 31/03/2022
+PROCESSO : 5003142-26.2022.4.02.9388
+ORIGINÁRIO : 0012615-28.2015.4.02.5101/RJ
+TIPO : Precatório
+REQUERENTE : ALBANEZA MARIA DE SOUSA SANTIAGO
+ADVOGADO : JORGE RODRIGUES DE OLIVEIRA - RJ088173
+REQUERIDO : INSTITUTO NACIONAL DO SEGURO SOCIAL - INSS
+: PROCURADOR ANDRÉ AMARAL DE AGUIAR - PRF-1_2_PREV
+: DEPRECANTE Juízo Substituto da 31ª VF do Rio de Janeiro
+ASSUNTO : 0401 - Benefícios em Espécie
+Tipo de Despesa : 12 - NATUREZA ALIMENTÍCIA - Benefícios previdenciários e
+indenizações por morte ou invalidez (12)
+Trans. Requisição : 30/03/2022 12:22:39
+Data de Entrada : 30/03/2022 12:22:39
+REQUISIÇÃO : 22510010509
+Data Ajuizamento : 05/02/2015
+Data TJ. Conhecim. : 01/02/2021
+Data TJ. Embargos : 11/03/2022
+Espécie Requisição : Parcial
+Superpreferencial : Não
+Precatório de natureza NÃO tributária
+Tipo Beneficiário
+Nome ALBANEZA MARIA DE SOUSA SANTIAGO
+CPF/CGC 946.466.437-15
+Valor Principal 39.608,68 Data Base 01/06/2021
+Valor Juros 9.409,39 Data Base 01/06/2021
+Juros de mora fixados na sentença: Poupança
+Renuncia Não Status Sem Bloqueio
+IR-RRA Sim
+Meses Exe. Anterior 21
+Meses Exe. Corrente - Valor Exe. Corrente -Valor Exe. Anterior -
+Ano Exe. Corrente - Status Servidor -
+Valor Inicial PSS - Data Base PSS -
+Valor total execução 70.922,99 Data base execução 01/06/2021
+Valor Requisitado 49.018,07Espelho de Valores Cadastrados. Data: 31/03/2022
+PROCESSO : 5003142-26.2022.4.02.9388
+ORIGINÁRIO : 0012615-28.2015.4.02.5101/RJ
+TIPO : Precatório
+REQUERENTE : ALBANEZA MARIA DE SOUSA SANTIAGO
+ADVOGADO : JORGE RODRIGUES DE OLIVEIRA - RJ088173
+REQUERIDO : INSTITUTO NACIONAL DO SEGURO SOCIAL - INSS
+: PROCURADOR ANDRÉ AMARAL DE AGUIAR - PRF-1_2_PREV
+: DEPRECANTE Juízo Substituto da 31ª VF do Rio de Janeiro
+ASSUNTO : 0401 - Benefícios em Espécie
+Tipo de Despesa : 12 - NATUREZA ALIMENTÍCIA - Benefícios previdenciários e
+indenizações por morte ou invalidez (12)
+Trans. Requisição : 30/03/2022 12:22:39
+Data de Entrada : 30/03/2022 12:22:39
+REQUISIÇÃO : 22510010509
+Data Ajuizamento : 05/02/2015
+Data TJ. Conhecim. : 01/02/2021
+Data TJ. Embargos : 11/03/2022
+Espécie Requisição : Parcial
+Superpreferencial : Não
+Precatório de natureza NÃO tributária
+Tipo Beneficiário
+Nome ALBANEZA MARIA DE SOUSA SANTIAGO
+CPF/CGC 946.466.437-15
+Valor Principal 39.608,68 Data Base 01/06/2021
+Valor Juros 9.409,39 Data Base 01/06/2021
+Juros de mora fixados na sentença: Poupança
+Renuncia Não Status Sem Bloqueio
+IR-RRA Sim
+Meses Exe. Anterior 21
+Meses Exe. Corrente - Valor Exe. Corrente -Valor Exe. Anterior -
+Ano Exe. Corrente - Status Servidor -
+Valor Inicial PSS - Data Base PSS -
+Valor total execução 70.922,99 Data base execução 01/06/2021
+Valor Requisitado 49.018,07Tipo Honorário
+Nome JORGE RODRIGUES DE OLIVEIRA
+CPF/CGC 906.040.917-53
+Valor Principal 16.975,15 Data Base 01/06/2021
+Valor Juros 4.032,60 Data Base 01/06/2021
+Juros de mora fixados na sentença: Poupança
+Renuncia Não Status Sem Bloqueio
+IR-RRA Não
+Tipo Hon. Judicial Honorários Contratuais
+Meses Exe. Anterior -
+Meses Exe. Corrente - Valor Exe. Corrente -Valor Exe. Anterior -
+Ano Exe. Corrente - Status Servidor -
+Valor Inicial PSS - Data Base PSS -
+Valor total execução - Data base execução -
+Valor Requisitado 21.007,75
+Valor Total da Requisição: 70.025,82
+Observações:
+1)	Precatórios classificados pelo juízo requisitante como de natureza não tributária serão atualizadas da data base
+do cálculo informada na requisição de pagamento até o efetivo pagamento pelo IPCA-E.
+2) Precatórios classificadas pelo juízo requisitante como de natureza tributária serão atualizadas da data base do
+cálculo informada na requisição de pagamento até o efetivo pagamento pela SELIC.

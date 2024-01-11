@@ -1,0 +1,89 @@
+Espelho de Valores Cadastrados. Data: 16/03/2022
+PROCESSO : 5001924-60.2022.4.02.9388
+ORIGINÁRIO : 5022553-29.2019.4.02.5001/ES
+TIPO : Precatório
+REQUERENTE : JOASSY DA SILVA
+ADVOGADO : RENILDA MULINARI PIOTO - ES014144
+REQUERIDO : INSS -INSTITUTO NACIONAL DO SEGURO SOCIAL
+: 
+: DEPRECANTE Juízo Federal da 3º Juizado Especial de Vitória
+ASSUNTO : 040119 - Aposentadoria por Tempo de Contribuição (Art. 55/6)
+Tipo de Despesa : 12 - NATUREZA ALIMENTÍCIA - Benefícios previdenciários e
+indenizações por morte ou invalidez (12)
+Trans. Requisição : 15/03/2022 21:25:31
+Data de Entrada : 15/03/2022 21:25:31
+REQUISIÇÃO : 22500001928
+Data Ajuizamento : 07/10/2019
+Data TJ. Conhecim. : 01/02/2022
+Data TJ. Embargos : 
+Espécie Requisição : Original
+Superpreferencial : Não
+Precatório de natureza NÃO tributária
+Tipo Beneficiário
+Nome JOASSY DA SILVA
+CPF/CGC 756.612.847-72
+Valor Principal 56.426,64 Data Base 01/02/2022
+Valor Juros 3.403,27 Data Base 01/02/2022
+Juros de mora fixados na sentença: Poupança
+Renuncia Não Status Sem Bloqueio
+IR-RRA Sim
+Meses Exe. Anterior 10
+Meses Exe. Corrente - Valor Exe. Corrente -Valor Exe. Anterior -
+Ano Exe. Corrente - Status Servidor -
+Valor Inicial PSS - Data Base PSS -
+Valor total execução - Data base execução -
+Valor Requisitado 59.829,91Espelho de Valores Cadastrados. Data: 16/03/2022
+PROCESSO : 5001924-60.2022.4.02.9388
+ORIGINÁRIO : 5022553-29.2019.4.02.5001/ES
+TIPO : Precatório
+REQUERENTE : JOASSY DA SILVA
+ADVOGADO : RENILDA MULINARI PIOTO - ES014144
+REQUERIDO : INSS -INSTITUTO NACIONAL DO SEGURO SOCIAL
+: 
+: DEPRECANTE Juízo Federal da 3º Juizado Especial de Vitória
+ASSUNTO : 040119 - Aposentadoria por Tempo de Contribuição (Art. 55/6)
+Tipo de Despesa : 12 - NATUREZA ALIMENTÍCIA - Benefícios previdenciários e
+indenizações por morte ou invalidez (12)
+Trans. Requisição : 15/03/2022 21:25:31
+Data de Entrada : 15/03/2022 21:25:31
+REQUISIÇÃO : 22500001928
+Data Ajuizamento : 07/10/2019
+Data TJ. Conhecim. : 01/02/2022
+Data TJ. Embargos : 
+Espécie Requisição : Original
+Superpreferencial : Não
+Precatório de natureza NÃO tributária
+Tipo Beneficiário
+Nome JOASSY DA SILVA
+CPF/CGC 756.612.847-72
+Valor Principal 56.426,64 Data Base 01/02/2022
+Valor Juros 3.403,27 Data Base 01/02/2022
+Juros de mora fixados na sentença: Poupança
+Renuncia Não Status Sem Bloqueio
+IR-RRA Sim
+Meses Exe. Anterior 10
+Meses Exe. Corrente - Valor Exe. Corrente -Valor Exe. Anterior -
+Ano Exe. Corrente - Status Servidor -
+Valor Inicial PSS - Data Base PSS -
+Valor total execução - Data base execução -
+Valor Requisitado 59.829,91Tipo Honorário
+Nome RENILDA MULINARI PIOTO SOCIEDADE INDIVIDUAL DE ADVOCACIA
+CPF/CGC 25.390.027/0001-69
+Valor Principal 24.182,84 Data Base 01/02/2022
+Valor Juros 1.458,55 Data Base 01/02/2022
+Juros de mora fixados na sentença: Poupança
+Renuncia Não Status Sem Bloqueio
+IR-RRA Não
+Tipo Hon. Judicial Honorários Contratuais
+Meses Exe. Anterior -
+Meses Exe. Corrente - Valor Exe. Corrente -Valor Exe. Anterior -
+Ano Exe. Corrente - Status Servidor -
+Valor Inicial PSS - Data Base PSS -
+Valor total execução - Data base execução -
+Valor Requisitado 25.641,39
+Valor Total da Requisição: 85.471,30
+Observações:
+1)	Precatórios classificados pelo juízo requisitante como de natureza não tributária serão atualizadas da data base
+do cálculo informada na requisição de pagamento até o efetivo pagamento pelo IPCA-E.
+2) Precatórios classificadas pelo juízo requisitante como de natureza tributária serão atualizadas da data base do
+cálculo informada na requisição de pagamento até o efetivo pagamento pela SELIC.

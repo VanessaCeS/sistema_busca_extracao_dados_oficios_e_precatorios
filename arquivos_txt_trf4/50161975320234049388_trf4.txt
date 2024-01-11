@@ -1,0 +1,74 @@
+Espelho de Valores Cadastrados. Data: 01/04/2023
+PROCESSO : 5016197-53.2023.4.04.9388
+ORIGINÁRIO : 50001783520148210090/RS
+TIPO : Precatório
+REQUERENTE : AUREO CARMINATTI
+ADVOGADO : LEANDRO SIMONETTO - RS073577
+REQUERIDO : INSTITUTO NACIONAL DO SEGURO SOCIAL - INSS
+: PROCURADOR PROCURADORIA REGIONAL FEDERAL DA 4 REGIÃO - PRF4
+: DEPRECANTE JUIZO DE DIREITO DA 1A VARA CIVEL DA COMARCA DE CASCA/RS
+ASSUNTO : 040119 - Aposentadoria por Tempo de Contribuição (Art. 55/6)
+Tipo de Despesa : 12 - NATUREZA ALIMENTÍCIA - Benefícios previdenciários,
+indenizações por morte ou invalidez e demais beneficiários sem vínculo
+com a administração pública (12)Trans. Requisição : 31/03/2023 13:08:50
+Data de Entrada : 31/03/2023 13:08:50
+REQUISIÇÃO : 23000007955
+Data Ajuizamento : 28/01/2014
+Data TJ. Conhecim. : 01/10/2021
+Data TJ. Embargos : 02/02/2023
+Espécie Requisição : Original
+Superpreferencial : Não
+Precatório de natureza NÃO tributária
+Tipo Beneficiário
+Nome AUREO CARMINATTI
+CPF/CGC 427.756.390-20
+Valor Principal 71.016,05 Data Base 01/09/2022
+Valor Juros 22.473,67 Data Base 01/09/2022
+Juros de mora fixados na sentença: Não incidem 
+Renuncia Não Status Sem Bloqueio
+IR-RRA Sim
+Meses Exe. Anterior 114
+Meses Exe. Corrente - Valor Exe. Corrente -Valor Exe. Anterior -
+Ano Exe. Corrente - Status Servidor -
+Valor Inicial PSS - Data Base PSS -
+Valor total execução - Data base execução -
+Valor Requisitado 93.489,72Espelho de Valores Cadastrados. Data: 01/04/2023
+PROCESSO : 5016197-53.2023.4.04.9388
+ORIGINÁRIO : 50001783520148210090/RS
+TIPO : Precatório
+REQUERENTE : AUREO CARMINATTI
+ADVOGADO : LEANDRO SIMONETTO - RS073577
+REQUERIDO : INSTITUTO NACIONAL DO SEGURO SOCIAL - INSS
+: PROCURADOR PROCURADORIA REGIONAL FEDERAL DA 4 REGIÃO - PRF4
+: DEPRECANTE JUIZO DE DIREITO DA 1A VARA CIVEL DA COMARCA DE CASCA/RS
+ASSUNTO : 040119 - Aposentadoria por Tempo de Contribuição (Art. 55/6)
+Tipo de Despesa : 12 - NATUREZA ALIMENTÍCIA - Benefícios previdenciários,
+indenizações por morte ou invalidez e demais beneficiários sem vínculo
+com a administração pública (12)Trans. Requisição : 31/03/2023 13:08:50
+Data de Entrada : 31/03/2023 13:08:50
+REQUISIÇÃO : 23000007955
+Data Ajuizamento : 28/01/2014
+Data TJ. Conhecim. : 01/10/2021
+Data TJ. Embargos : 02/02/2023
+Espécie Requisição : Original
+Superpreferencial : Não
+Precatório de natureza NÃO tributária
+Tipo Beneficiário
+Nome AUREO CARMINATTI
+CPF/CGC 427.756.390-20
+Valor Principal 71.016,05 Data Base 01/09/2022
+Valor Juros 22.473,67 Data Base 01/09/2022
+Juros de mora fixados na sentença: Não incidem 
+Renuncia Não Status Sem Bloqueio
+IR-RRA Sim
+Meses Exe. Anterior 114
+Meses Exe. Corrente - Valor Exe. Corrente -Valor Exe. Anterior -
+Ano Exe. Corrente - Status Servidor -
+Valor Inicial PSS - Data Base PSS -
+Valor total execução - Data base execução -
+Valor Requisitado 93.489,72Valor Total da Requisição: 93.489,72
+Observações:
+1)	Precatórios classificados pelo juízo requisitante como de natureza não tributária serão atualizadas da data base
+do cálculo informada na requisição de pagamento até o efetivo pagamento pelo IPCA-E.
+2) Precatórios classificadas pelo juízo requisitante como de natureza tributária serão atualizadas da data base do
+cálculo informada na requisição de pagamento até o efetivo pagamento pela SELIC.

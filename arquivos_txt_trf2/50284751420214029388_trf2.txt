@@ -1,0 +1,74 @@
+Espelho de Valores Cadastrados. Data: 16/12/2021
+PROCESSO : 5028475-14.2021.4.02.9388
+ORIGINÁRIO : 5002820-54.2018.4.02.5117/RJ
+TIPO : Precatório
+REQUERENTE : ADMILSO OTTERO DOMINGUES
+ : 
+REQUERIDO : INSS -INSTITUTO NACIONAL DO SEGURO SOCIAL
+: 
+: DEPRECANTE Juízo Substituto do 2º JEF de São Gonçalo
+ASSUNTO : 040105 - Auxílio-Doença Previdenciário
+Tipo de Despesa : 12 - NATUREZA ALIMENTÍCIA - Benefícios previdenciários e
+indenizações por morte ou invalidez (12)
+Trans. Requisição : 16/12/2021 22:11:58
+Data de Entrada : 16/12/2021 22:11:58
+REQUISIÇÃO : 21510049126
+Data Ajuizamento : 27/08/2018
+Data TJ. Conhecim. : 02/03/2021
+Data TJ. Embargos : 
+Espécie Requisição : Original
+Superpreferencial : Não
+Precatório de natureza NÃO tributária
+Tipo Beneficiário
+Nome ADMILSO OTTERO DOMINGUES
+CPF/CGC 753.785.157-34
+Valor Principal 89.250,02 Data Base 01/10/2021
+Valor Juros 5.489,91 Data Base 01/10/2021
+Juros de mora fixados na sentença: Poupança
+Renuncia Não Status Sem Bloqueio
+IR-RRA Sim
+Meses Exe. Anterior 80
+Meses Exe. Corrente - Valor Exe. Corrente -Valor Exe. Anterior -
+Ano Exe. Corrente - Status Servidor -
+Valor Inicial PSS - Data Base PSS -
+Valor total execução - Data base execução -
+Valor Requisitado 94.739,93Espelho de Valores Cadastrados. Data: 16/12/2021
+PROCESSO : 5028475-14.2021.4.02.9388
+ORIGINÁRIO : 5002820-54.2018.4.02.5117/RJ
+TIPO : Precatório
+REQUERENTE : ADMILSO OTTERO DOMINGUES
+ : 
+REQUERIDO : INSS -INSTITUTO NACIONAL DO SEGURO SOCIAL
+: 
+: DEPRECANTE Juízo Substituto do 2º JEF de São Gonçalo
+ASSUNTO : 040105 - Auxílio-Doença Previdenciário
+Tipo de Despesa : 12 - NATUREZA ALIMENTÍCIA - Benefícios previdenciários e
+indenizações por morte ou invalidez (12)
+Trans. Requisição : 16/12/2021 22:11:58
+Data de Entrada : 16/12/2021 22:11:58
+REQUISIÇÃO : 21510049126
+Data Ajuizamento : 27/08/2018
+Data TJ. Conhecim. : 02/03/2021
+Data TJ. Embargos : 
+Espécie Requisição : Original
+Superpreferencial : Não
+Precatório de natureza NÃO tributária
+Tipo Beneficiário
+Nome ADMILSO OTTERO DOMINGUES
+CPF/CGC 753.785.157-34
+Valor Principal 89.250,02 Data Base 01/10/2021
+Valor Juros 5.489,91 Data Base 01/10/2021
+Juros de mora fixados na sentença: Poupança
+Renuncia Não Status Sem Bloqueio
+IR-RRA Sim
+Meses Exe. Anterior 80
+Meses Exe. Corrente - Valor Exe. Corrente -Valor Exe. Anterior -
+Ano Exe. Corrente - Status Servidor -
+Valor Inicial PSS - Data Base PSS -
+Valor total execução - Data base execução -
+Valor Requisitado 94.739,93Valor Total da Requisição: 94.739,93
+Observações:
+1)	Precatórios classificados pelo juízo requisitante como de natureza não tributária serão atualizadas da data base
+do cálculo informada na requisição de pagamento até o efetivo pagamento pelo IPCA-E.
+2) Precatórios classificadas pelo juízo requisitante como de natureza tributária serão atualizadas da data base do
+cálculo informada na requisição de pagamento até o efetivo pagamento pela SELIC.

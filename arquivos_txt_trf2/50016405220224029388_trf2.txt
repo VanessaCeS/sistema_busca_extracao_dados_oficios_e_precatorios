@@ -1,0 +1,90 @@
+Espelho de Valores Cadastrados. Data: 11/03/2022
+PROCESSO : 5001640-52.2022.4.02.9388
+ORIGINÁRIO : 5012435-31.2019.4.02.5118/RJ
+TIPO : Precatório
+REQUERENTE : GILSON RODRIGUES JUNIOR
+ADVOGADO : GILDA MARIA NUNES DA SILVA DE POLI - RJ141930
+REQUERIDO : INSS -INSTITUTO NACIONAL DO SEGURO SOCIAL
+: 
+: DEPRECANTE Juízo Substituto do 3º JEF de Duque de Caxias
+ASSUNTO : 040118 - Aposentadoria por Tempo de Serviço (Art. 52/4)
+Tipo de Despesa : 12 - NATUREZA ALIMENTÍCIA - Benefícios previdenciários e
+indenizações por morte ou invalidez (12)
+Trans. Requisição : 10/03/2022 19:06:26
+Data de Entrada : 10/03/2022 19:06:26
+REQUISIÇÃO : 22510005569
+Data Ajuizamento : 28/10/2019
+Data TJ. Conhecim. : 10/08/2021
+Data TJ. Embargos : 
+Espécie Requisição : Original
+Superpreferencial : Não
+Precatório de natureza NÃO tributária
+Tipo Beneficiário
+Nome GILSON RODRIGUES JUNIOR
+CPF/CGC 869.660.737-68
+Valor Principal 81.389,55 Data Base 01/01/2022
+Valor Juros 3.639,42 Data Base 01/01/2022
+Juros de mora fixados na sentença: Poupança
+Renuncia Não Status Sem Bloqueio
+IR-RRA Sim
+Meses Exe. Anterior 9
+Meses Exe. Corrente - Valor Exe. Corrente -Valor Exe. Anterior -
+Ano Exe. Corrente - Status Servidor -
+Valor Inicial PSS - Data Base PSS -
+Valor total execução - Data base execução -
+Valor Requisitado 85.028,97Espelho de Valores Cadastrados. Data: 11/03/2022
+PROCESSO : 5001640-52.2022.4.02.9388
+ORIGINÁRIO : 5012435-31.2019.4.02.5118/RJ
+TIPO : Precatório
+REQUERENTE : GILSON RODRIGUES JUNIOR
+ADVOGADO : GILDA MARIA NUNES DA SILVA DE POLI - RJ141930
+REQUERIDO : INSS -INSTITUTO NACIONAL DO SEGURO SOCIAL
+: 
+: DEPRECANTE Juízo Substituto do 3º JEF de Duque de Caxias
+ASSUNTO : 040118 - Aposentadoria por Tempo de Serviço (Art. 52/4)
+Tipo de Despesa : 12 - NATUREZA ALIMENTÍCIA - Benefícios previdenciários e
+indenizações por morte ou invalidez (12)
+Trans. Requisição : 10/03/2022 19:06:26
+Data de Entrada : 10/03/2022 19:06:26
+REQUISIÇÃO : 22510005569
+Data Ajuizamento : 28/10/2019
+Data TJ. Conhecim. : 10/08/2021
+Data TJ. Embargos : 
+Espécie Requisição : Original
+Superpreferencial : Não
+Precatório de natureza NÃO tributária
+Tipo Beneficiário
+Nome GILSON RODRIGUES JUNIOR
+CPF/CGC 869.660.737-68
+Valor Principal 81.389,55 Data Base 01/01/2022
+Valor Juros 3.639,42 Data Base 01/01/2022
+Juros de mora fixados na sentença: Poupança
+Renuncia Não Status Sem Bloqueio
+IR-RRA Sim
+Meses Exe. Anterior 9
+Meses Exe. Corrente - Valor Exe. Corrente -Valor Exe. Anterior -
+Ano Exe. Corrente - Status Servidor -
+Valor Inicial PSS - Data Base PSS -
+Valor total execução - Data base execução -
+Valor Requisitado 85.028,97Tipo Honorário
+Nome GILDA MARIA NUNES DA SILVA DE POLI
+CPF/CGC 580.888.497-72
+Valor Principal 34.881,24 Data Base 01/01/2022
+Valor Juros 1.559,76 Data Base 01/01/2022
+Juros de mora fixados na sentença: Poupança
+Renuncia Não Status Sem Bloqueio
+Preferência por Idade
+IR-RRA Não
+Tipo Hon. Judicial Honorários Contratuais
+Meses Exe. Anterior -
+Meses Exe. Corrente - Valor Exe. Corrente -Valor Exe. Anterior -
+Ano Exe. Corrente - Status Servidor -
+Valor Inicial PSS - Data Base PSS -
+Valor total execução - Data base execução -
+Valor Requisitado 36.441,00
+Valor Total da Requisição: 121.469,97
+Observações:
+1)	Precatórios classificados pelo juízo requisitante como de natureza não tributária serão atualizadas da data base
+do cálculo informada na requisição de pagamento até o efetivo pagamento pelo IPCA-E.
+2) Precatórios classificadas pelo juízo requisitante como de natureza tributária serão atualizadas da data base do
+cálculo informada na requisição de pagamento até o efetivo pagamento pela SELIC.

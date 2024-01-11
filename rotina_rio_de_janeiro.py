@@ -4,7 +4,7 @@ from logs import log
 from cna_oab import login_cna
 from funcoes_arteria import enviar_valores_oficio_arteria
 from tribunal_justica_rio_de_janeiro import get_docs_oficio_precatorio_tjrj
-from banco_de_dados import atualizar_ou_inserir_pessoa_no_banco_de_dados, atualizar_ou_inserir_pessoa_precatorio, atualizar_ou_inserir_precatorios_no_banco_de_dados, atualizar_ou_inserir_situacao_cadastro, consultar_processos
+from banco_de_dados import atualizar_ou_inserir_pessoa_no_banco_de_dados, atualizar_ou_inserir_pessoa_precatorio, atualizar_ou_inserir_precatorios_no_banco_de_dados, atualizar_ou_inserir_situacao_cadastro, consultar_processos, precatorio_exitente_arteria
 from auxiliares import encontrar_indice_linha, formatar_data_padra_arteria, ler_arquivo_pdf_transformar_em_txt, limpar_dados, tipo_de_natureza,  verificar_tribunal
 
 def buscar_dados_tribunal_rio_de_janeiro():     
@@ -167,9 +167,17 @@ def enviar_dados_banco_de_dados_e_arteria(arquivo_pdf, dados):
     documento = dados['documento']
     site = dados['site']
     atualizar_ou_inserir_pessoa_no_banco_de_dados(documento, {'nome': dados['credor'], 'documento': dados['documento'], 'data_nascimento': dados['data_nascimento'], 'estado': dados['estado'], 'tipo': 'credor'})
-    dados['id_sistema_arteria'] = enviar_valores_oficio_arteria(arquivo_pdf, dados)
+    existe_id_sistema_arteria = precatorio_exitente_arteria(dados['processo'])
+    if existe_id_sistema_arteria:
+      dados['id_sistema_arteria'] = existe_id_sistema_arteria[0]
+      enviar_valores_oficio_arteria(arquivo_pdf, dados, existe_id_sistema_arteria[0])
+      mensagem = 'Precatório alterado com sucesso'
+    else:
+      dados['id_sistema_arteria']  = enviar_valores_oficio_arteria(arquivo_pdf, dados)
+      mensagem = 'Precatório registrado com sucesso'
+
     atualizar_ou_inserir_precatorios_no_banco_de_dados(dados['codigo_processo'], dados)
     atualizar_ou_inserir_pessoa_precatorio(documento, dados['processo'])
-    log( dados['processo_origem'], 'Sucesso', site, 'Precatório registrado com sucesso',dados['estado'], dados['tribunal'])
+    log( dados['processo_origem'], 'Sucesso', site, mensagem ,dados['estado'], dados['tribunal'])
     atualizar_ou_inserir_situacao_cadastro(dados['processo'],{'status': 'Sucesso'})
 

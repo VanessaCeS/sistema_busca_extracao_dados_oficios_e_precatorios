@@ -1,0 +1,74 @@
+Espelho de Valores Cadastrados. Data: 01/04/2023
+PROCESSO : 5013503-14.2023.4.04.9388
+ORIGINÁRIO : 5008946-84.2021.4.04.7114/RS
+TIPO : Precatório
+REQUERENTE : CARLOS LUIZ FRAPORTI
+ADVOGADO : RODRIGO CAPITANIO - RS061959
+REQUERIDO : INSTITUTO NACIONAL DO SEGURO SOCIAL - INSS
+: PROCURADOR PROCURADORIA REGIONAL FEDERAL DA 4 REGIÃO - PRF4
+: DEPRECANTE Juízo Substituto da 2ª VF de Lajeado
+ASSUNTO : 0401041402 - Por Tempo de Contribuição
+Tipo de Despesa : 12 - NATUREZA ALIMENTÍCIA - Benefícios previdenciários,
+indenizações por morte ou invalidez e demais beneficiários sem vínculo
+com a administração pública (12)Trans. Requisição : 31/03/2023 13:03:22
+Data de Entrada : 31/03/2023 13:03:22
+REQUISIÇÃO : 23710015872
+Data Ajuizamento : 03/12/2021
+Data TJ. Conhecim. : 15/08/2022
+Data TJ. Embargos : 
+Espécie Requisição : Original
+Superpreferencial : Não
+Precatório de natureza NÃO tributária
+Tipo Beneficiário
+Nome CARLOS LUIZ FRAPORTI
+CPF/CGC 400.618.920-68
+Valor Principal 210.533,23 Data Base 01/10/2022
+Valor Juros 19.663,61 Data Base 01/10/2022
+Juros de mora fixados na sentença: Não incidem 
+Renuncia Não Status Bloqueado
+IR-RRA Sim
+Meses Exe. Anterior 37
+Meses Exe. Corrente - Valor Exe. Corrente -Valor Exe. Anterior -
+Ano Exe. Corrente - Status Servidor -
+Valor Inicial PSS - Data Base PSS -
+Valor total execução - Data base execução -
+Valor Requisitado 230.196,84Espelho de Valores Cadastrados. Data: 01/04/2023
+PROCESSO : 5013503-14.2023.4.04.9388
+ORIGINÁRIO : 5008946-84.2021.4.04.7114/RS
+TIPO : Precatório
+REQUERENTE : CARLOS LUIZ FRAPORTI
+ADVOGADO : RODRIGO CAPITANIO - RS061959
+REQUERIDO : INSTITUTO NACIONAL DO SEGURO SOCIAL - INSS
+: PROCURADOR PROCURADORIA REGIONAL FEDERAL DA 4 REGIÃO - PRF4
+: DEPRECANTE Juízo Substituto da 2ª VF de Lajeado
+ASSUNTO : 0401041402 - Por Tempo de Contribuição
+Tipo de Despesa : 12 - NATUREZA ALIMENTÍCIA - Benefícios previdenciários,
+indenizações por morte ou invalidez e demais beneficiários sem vínculo
+com a administração pública (12)Trans. Requisição : 31/03/2023 13:03:22
+Data de Entrada : 31/03/2023 13:03:22
+REQUISIÇÃO : 23710015872
+Data Ajuizamento : 03/12/2021
+Data TJ. Conhecim. : 15/08/2022
+Data TJ. Embargos : 
+Espécie Requisição : Original
+Superpreferencial : Não
+Precatório de natureza NÃO tributária
+Tipo Beneficiário
+Nome CARLOS LUIZ FRAPORTI
+CPF/CGC 400.618.920-68
+Valor Principal 210.533,23 Data Base 01/10/2022
+Valor Juros 19.663,61 Data Base 01/10/2022
+Juros de mora fixados na sentença: Não incidem 
+Renuncia Não Status Bloqueado
+IR-RRA Sim
+Meses Exe. Anterior 37
+Meses Exe. Corrente - Valor Exe. Corrente -Valor Exe. Anterior -
+Ano Exe. Corrente - Status Servidor -
+Valor Inicial PSS - Data Base PSS -
+Valor total execução - Data base execução -
+Valor Requisitado 230.196,84Valor Total da Requisição: 230.196,84
+Observações:
+1)	Precatórios classificados pelo juízo requisitante como de natureza não tributária serão atualizadas da data base
+do cálculo informada na requisição de pagamento até o efetivo pagamento pelo IPCA-E.
+2) Precatórios classificadas pelo juízo requisitante como de natureza tributária serão atualizadas da data base do
+cálculo informada na requisição de pagamento até o efetivo pagamento pela SELIC.

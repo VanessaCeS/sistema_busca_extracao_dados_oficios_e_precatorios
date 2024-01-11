@@ -1,0 +1,86 @@
+Espelho de Valores Cadastrados. Data: 25/02/2022
+PROCESSO : 5001090-57.2022.4.02.9388
+ORIGINÁRIO : 0014365-80.2006.4.02.5101/RJ
+TIPO : Precatório
+REQUERENTE : JORGE EDUARDO DOS SANTOS
+ADVOGADO : BRUNO RAFAEL OLIVEIRA GOMES - RJ094135
+DEPRECANTE : Juízo Substituto da 23ª VF do Rio de Janeiro
+: 
+: REQUERIDO UNIÃO - ADVOCACIA GERAL DA UNIÃO
+ASSUNTO : 01120103 - Reintegração
+Tipo de Despesa : 11 - NATUREZA ALIMENTÍCIA - Salários, vencimentos, proventos,
+pensões e suas complementações (11)
+Trans. Requisição : 24/02/2022 17:34:57
+Data de Entrada : 24/02/2022 17:34:57
+REQUISIÇÃO : 22510004587
+Data Ajuizamento : 26/07/2006
+Data TJ. Conhecim. : 11/07/2016
+Data TJ. Embargos : 28/09/2021
+Espécie Requisição : Original
+Superpreferencial : Não
+Precatório de natureza NÃO tributária
+Tipo Beneficiário
+Nome JORGE EDUARDO DOS SANTOS
+CPF/CGC 758.268.877-53
+Valor Principal 81.502,70 Data Base 01/08/2021
+Juros de mora fixados na sentença: Não incidem 
+Renuncia Não Status Bloqueado
+IR-RRA Não
+Meses Exe. Anterior -
+Meses Exe. Corrente - Valor Exe. Corrente -Valor Exe. Anterior -
+Ano Exe. Corrente - Status Servidor I
+Valor Inicial PSS - Data Base PSS -
+Valor total execução - Data base execução -
+Valor Requisitado 81.502,70Espelho de Valores Cadastrados. Data: 25/02/2022
+PROCESSO : 5001090-57.2022.4.02.9388
+ORIGINÁRIO : 0014365-80.2006.4.02.5101/RJ
+TIPO : Precatório
+REQUERENTE : JORGE EDUARDO DOS SANTOS
+ADVOGADO : BRUNO RAFAEL OLIVEIRA GOMES - RJ094135
+DEPRECANTE : Juízo Substituto da 23ª VF do Rio de Janeiro
+: 
+: REQUERIDO UNIÃO - ADVOCACIA GERAL DA UNIÃO
+ASSUNTO : 01120103 - Reintegração
+Tipo de Despesa : 11 - NATUREZA ALIMENTÍCIA - Salários, vencimentos, proventos,
+pensões e suas complementações (11)
+Trans. Requisição : 24/02/2022 17:34:57
+Data de Entrada : 24/02/2022 17:34:57
+REQUISIÇÃO : 22510004587
+Data Ajuizamento : 26/07/2006
+Data TJ. Conhecim. : 11/07/2016
+Data TJ. Embargos : 28/09/2021
+Espécie Requisição : Original
+Superpreferencial : Não
+Precatório de natureza NÃO tributária
+Tipo Beneficiário
+Nome JORGE EDUARDO DOS SANTOS
+CPF/CGC 758.268.877-53
+Valor Principal 81.502,70 Data Base 01/08/2021
+Juros de mora fixados na sentença: Não incidem 
+Renuncia Não Status Bloqueado
+IR-RRA Não
+Meses Exe. Anterior -
+Meses Exe. Corrente - Valor Exe. Corrente -Valor Exe. Anterior -
+Ano Exe. Corrente - Status Servidor I
+Valor Inicial PSS - Data Base PSS -
+Valor total execução - Data base execução -
+Valor Requisitado 81.502,70Tipo Honorário
+Nome ADILSON DE VASCONCELLOS LEAL ADVOGADOS ASSOCIADOS
+CPF/CGC 05.016.087/0001-09
+Valor Principal 20.375,68 Data Base 01/08/2021
+Juros de mora fixados na sentença: Não incidem 
+Renuncia Não Status Bloqueado
+IR-RRA Não
+Tipo Hon. Judicial Honorários Contratuais
+Meses Exe. Anterior -
+Meses Exe. Corrente - Valor Exe. Corrente -Valor Exe. Anterior -
+Ano Exe. Corrente - Status Servidor -
+Valor Inicial PSS - Data Base PSS -
+Valor total execução - Data base execução -
+Valor Requisitado 20.375,68
+Valor Total da Requisição: 101.878,38
+Observações:
+1)	Precatórios classificados pelo juízo requisitante como de natureza não tributária serão atualizadas da data base
+do cálculo informada na requisição de pagamento até o efetivo pagamento pelo IPCA-E.
+2) Precatórios classificadas pelo juízo requisitante como de natureza tributária serão atualizadas da data base do
+cálculo informada na requisição de pagamento até o efetivo pagamento pela SELIC.

@@ -1,0 +1,70 @@
+Espelho de Valores Cadastrados. Data: 30/04/2021
+PROCESSO : 5009430-67.2021.4.04.9388
+ORIGINÁRIO : 5080673-19.2019.4.04.7100/RS
+TIPO : Precatório
+REQUERENTE : CLARISSA WEINSTEIN NESTROVSKI
+ADVOGADO : Cristine Carlesso Ávila - RS069853
+REQUERIDO : UNIÃO - FAZENDA NACIONAL
+: PROCURADOR RAFAEL DIAS DEGANI - prfn-4r
+: DEPRECANTE Juízo Federal da 13ª VF de Porto Alegre
+ASSUNTO : 03020102 - Incidência sobre Aposentadoria
+Tipo de Despesa : 21 - NATUREZA NÃO ALIMENTÍCIA (21)
+Trans. Requisição : 29/04/2021 15:45:20
+Data de Entrada : 29/04/2021 15:45:20
+REQUISIÇÃO : 21710016905
+Data Ajuizamento : 09/11/2019
+Data TJ. Conhecim. : 26/05/2020
+Data TJ. Embargos : 
+Espécie Requisição : Original
+Superpreferencial : Não
+Precatório de natureza tributária
+Tipo Beneficiário
+Nome CLARISSA WEINSTEIN NESTROVSKI
+CPF/CGC 183.889.140-49
+Valor Principal 59.833,37 Data Base 01/01/2021
+Valor Juros 10.146,60 Data Base 01/01/2021
+Renuncia Não Status Sem Bloqueio
+IR-RRA Não
+Meses Exe. Anterior -
+Meses Exe. Corrente - Valor Exe. Corrente -Valor Exe. Anterior -
+Ano Exe. Corrente - Status Servidor -
+Valor Inicial PSS - Data Base PSS -
+Valor total execução - Data base execução -
+Valor Requisitado 69.979,97Espelho de Valores Cadastrados. Data: 30/04/2021
+PROCESSO : 5009430-67.2021.4.04.9388
+ORIGINÁRIO : 5080673-19.2019.4.04.7100/RS
+TIPO : Precatório
+REQUERENTE : CLARISSA WEINSTEIN NESTROVSKI
+ADVOGADO : Cristine Carlesso Ávila - RS069853
+REQUERIDO : UNIÃO - FAZENDA NACIONAL
+: PROCURADOR RAFAEL DIAS DEGANI - prfn-4r
+: DEPRECANTE Juízo Federal da 13ª VF de Porto Alegre
+ASSUNTO : 03020102 - Incidência sobre Aposentadoria
+Tipo de Despesa : 21 - NATUREZA NÃO ALIMENTÍCIA (21)
+Trans. Requisição : 29/04/2021 15:45:20
+Data de Entrada : 29/04/2021 15:45:20
+REQUISIÇÃO : 21710016905
+Data Ajuizamento : 09/11/2019
+Data TJ. Conhecim. : 26/05/2020
+Data TJ. Embargos : 
+Espécie Requisição : Original
+Superpreferencial : Não
+Precatório de natureza tributária
+Tipo Beneficiário
+Nome CLARISSA WEINSTEIN NESTROVSKI
+CPF/CGC 183.889.140-49
+Valor Principal 59.833,37 Data Base 01/01/2021
+Valor Juros 10.146,60 Data Base 01/01/2021
+Renuncia Não Status Sem Bloqueio
+IR-RRA Não
+Meses Exe. Anterior -
+Meses Exe. Corrente - Valor Exe. Corrente -Valor Exe. Anterior -
+Ano Exe. Corrente - Status Servidor -
+Valor Inicial PSS - Data Base PSS -
+Valor total execução - Data base execução -
+Valor Requisitado 69.979,97Valor Total da Requisição: 69.979,97
+Observações:
+1)	Precatórios classificados pelo juízo requisitante como de natureza não tributária serão atualizadas da data base
+do cálculo informada na requisição de pagamento até o efetivo pagamento pelo IPCA-E.
+2) Precatórios classificadas pelo juízo requisitante como de natureza tributária serão atualizadas da data base do
+cálculo informada na requisição de pagamento até o efetivo pagamento pela SELIC.

@@ -1,0 +1,72 @@
+Espelho de Valores Cadastrados. Data: 13/10/2021
+PROCESSO : 5025385-95.2021.4.02.9388
+ORIGINÁRIO : 5004662-43.2020.4.02.5103/RJ
+TIPO : Precatório
+REQUERENTE : CARLOS GUILHERME FERREIRA MACHADO
+ADVOGADO : NADIA DE SOUZA COSTA NUNES - RJ124909
+REQUERIDO : INSTITUTO NACIONAL DO SEGURO SOCIAL - INSS
+: PROCURADOR ANDRÉ AMARAL DE AGUIAR - PRF-1_2_PREV
+: DEPRECANTE Juízo Federal da 4ª VF de Campos
+ASSUNTO : 040104 - Aposentadoria Especial (Art. 57/8)
+Tipo de Despesa : 12 - NATUREZA ALIMENTÍCIA - Benefícios previdenciários e
+indenizações por morte ou invalidez (12)
+Trans. Requisição : 13/10/2021 12:38:04
+Data de Entrada : 13/10/2021 12:38:04
+REQUISIÇÃO : 21510039668
+Data Ajuizamento : 23/09/2020
+Data TJ. Conhecim. : 28/06/2021
+Data TJ. Embargos : 
+Espécie Requisição : Original
+Precatório de natureza NÃO tributária
+Tipo Beneficiário
+Nome CARLOS GUILHERME FERREIRA MACHADO
+CPF/CGC 872.155.277-00
+Valor Principal 67.937,57 Data Base 01/07/2021
+Valor Juros 825,64 Data Base 01/07/2021
+Juros de mora fixados na sentença: Poupança
+Renuncia Não Status Sem Bloqueio
+IR-RRA Sim
+Meses Exe. Anterior 18
+Meses Exe. Corrente - Valor Exe. Corrente -Valor Exe. Anterior -
+Ano Exe. Corrente - Status Servidor -
+Valor Inicial PSS - Data Base PSS -
+Valor total execução - Data base execução -
+Valor Requisitado 68.763,21Espelho de Valores Cadastrados. Data: 13/10/2021
+PROCESSO : 5025385-95.2021.4.02.9388
+ORIGINÁRIO : 5004662-43.2020.4.02.5103/RJ
+TIPO : Precatório
+REQUERENTE : CARLOS GUILHERME FERREIRA MACHADO
+ADVOGADO : NADIA DE SOUZA COSTA NUNES - RJ124909
+REQUERIDO : INSTITUTO NACIONAL DO SEGURO SOCIAL - INSS
+: PROCURADOR ANDRÉ AMARAL DE AGUIAR - PRF-1_2_PREV
+: DEPRECANTE Juízo Federal da 4ª VF de Campos
+ASSUNTO : 040104 - Aposentadoria Especial (Art. 57/8)
+Tipo de Despesa : 12 - NATUREZA ALIMENTÍCIA - Benefícios previdenciários e
+indenizações por morte ou invalidez (12)
+Trans. Requisição : 13/10/2021 12:38:04
+Data de Entrada : 13/10/2021 12:38:04
+REQUISIÇÃO : 21510039668
+Data Ajuizamento : 23/09/2020
+Data TJ. Conhecim. : 28/06/2021
+Data TJ. Embargos : 
+Espécie Requisição : Original
+Precatório de natureza NÃO tributária
+Tipo Beneficiário
+Nome CARLOS GUILHERME FERREIRA MACHADO
+CPF/CGC 872.155.277-00
+Valor Principal 67.937,57 Data Base 01/07/2021
+Valor Juros 825,64 Data Base 01/07/2021
+Juros de mora fixados na sentença: Poupança
+Renuncia Não Status Sem Bloqueio
+IR-RRA Sim
+Meses Exe. Anterior 18
+Meses Exe. Corrente - Valor Exe. Corrente -Valor Exe. Anterior -
+Ano Exe. Corrente - Status Servidor -
+Valor Inicial PSS - Data Base PSS -
+Valor total execução - Data base execução -
+Valor Requisitado 68.763,21Valor Total da Requisição: 68.763,21
+Observações:
+1)	Precatórios classificados pelo juízo requisitante como de natureza não tributária serão atualizadas da data base
+do cálculo informada na requisição de pagamento até o efetivo pagamento pelo IPCA-E.
+2) Precatórios classificadas pelo juízo requisitante como de natureza tributária serão atualizadas da data base do
+cálculo informada na requisição de pagamento até o efetivo pagamento pela SELIC.

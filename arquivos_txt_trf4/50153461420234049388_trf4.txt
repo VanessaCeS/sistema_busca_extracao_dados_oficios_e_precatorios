@@ -1,0 +1,74 @@
+Espelho de Valores Cadastrados. Data: 01/04/2023
+PROCESSO : 5015346-14.2023.4.04.9388
+ORIGINÁRIO : 5000340-33.2022.4.04.7211/SC
+TIPO : Precatório
+REQUERENTE : CARLOS ALUIZIO MORGENSTERN
+ADVOGADO : GISLAINE FATIMA GROLLI - SC037679
+REQUERIDO : INSTITUTO NACIONAL DO SEGURO SOCIAL - INSS
+: PROCURADOR PROCURADORIA REGIONAL FEDERAL DA 4 REGIÃO - PRF4
+: DEPRECANTE Juízo Substituto da 1ª VF de Caçador
+ASSUNTO : 0401080604 - Óbito de Companheiro/Companheira
+Tipo de Despesa : 12 - NATUREZA ALIMENTÍCIA - Benefícios previdenciários,
+indenizações por morte ou invalidez e demais beneficiários sem vínculo
+com a administração pública (12)Trans. Requisição : 31/03/2023 12:57:25
+Data de Entrada : 31/03/2023 12:57:25
+REQUISIÇÃO : 23720011727
+Data Ajuizamento : 17/03/2022
+Data TJ. Conhecim. : 15/11/2022
+Data TJ. Embargos : 
+Espécie Requisição : Original
+Superpreferencial : Não
+Precatório de natureza NÃO tributária
+Tipo Beneficiário
+Nome CARLOS ALUIZIO MORGENSTERN
+CPF/CGC 494.123.379-49
+Valor Principal 74.359,17 Data Base 01/02/2023
+Valor Juros 8.865,13 Data Base 01/02/2023
+Juros de mora fixados na sentença: Não incidem 
+Renuncia Não Status Bloqueado
+IR-RRA Sim
+Meses Exe. Anterior 51
+Meses Exe. Corrente - Valor Exe. Corrente -Valor Exe. Anterior -
+Ano Exe. Corrente - Status Servidor -
+Valor Inicial PSS - Data Base PSS -
+Valor total execução - Data base execução -
+Valor Requisitado 83.224,30Espelho de Valores Cadastrados. Data: 01/04/2023
+PROCESSO : 5015346-14.2023.4.04.9388
+ORIGINÁRIO : 5000340-33.2022.4.04.7211/SC
+TIPO : Precatório
+REQUERENTE : CARLOS ALUIZIO MORGENSTERN
+ADVOGADO : GISLAINE FATIMA GROLLI - SC037679
+REQUERIDO : INSTITUTO NACIONAL DO SEGURO SOCIAL - INSS
+: PROCURADOR PROCURADORIA REGIONAL FEDERAL DA 4 REGIÃO - PRF4
+: DEPRECANTE Juízo Substituto da 1ª VF de Caçador
+ASSUNTO : 0401080604 - Óbito de Companheiro/Companheira
+Tipo de Despesa : 12 - NATUREZA ALIMENTÍCIA - Benefícios previdenciários,
+indenizações por morte ou invalidez e demais beneficiários sem vínculo
+com a administração pública (12)Trans. Requisição : 31/03/2023 12:57:25
+Data de Entrada : 31/03/2023 12:57:25
+REQUISIÇÃO : 23720011727
+Data Ajuizamento : 17/03/2022
+Data TJ. Conhecim. : 15/11/2022
+Data TJ. Embargos : 
+Espécie Requisição : Original
+Superpreferencial : Não
+Precatório de natureza NÃO tributária
+Tipo Beneficiário
+Nome CARLOS ALUIZIO MORGENSTERN
+CPF/CGC 494.123.379-49
+Valor Principal 74.359,17 Data Base 01/02/2023
+Valor Juros 8.865,13 Data Base 01/02/2023
+Juros de mora fixados na sentença: Não incidem 
+Renuncia Não Status Bloqueado
+IR-RRA Sim
+Meses Exe. Anterior 51
+Meses Exe. Corrente - Valor Exe. Corrente -Valor Exe. Anterior -
+Ano Exe. Corrente - Status Servidor -
+Valor Inicial PSS - Data Base PSS -
+Valor total execução - Data base execução -
+Valor Requisitado 83.224,30Valor Total da Requisição: 83.224,30
+Observações:
+1)	Precatórios classificados pelo juízo requisitante como de natureza não tributária serão atualizadas da data base
+do cálculo informada na requisição de pagamento até o efetivo pagamento pelo IPCA-E.
+2) Precatórios classificadas pelo juízo requisitante como de natureza tributária serão atualizadas da data base do
+cálculo informada na requisição de pagamento até o efetivo pagamento pela SELIC.

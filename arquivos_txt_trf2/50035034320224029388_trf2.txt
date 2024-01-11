@@ -1,0 +1,177 @@
+Espelho de Valores Cadastrados. Data: 01/04/2022
+PROCESSO : 5003503-43.2022.4.02.9388
+ORIGINÁRIO : 5004608-66.2019.4.02.5118/RJ
+TIPO : Precatório
+REQUERENTE : WANNER DOS SANTOS CARVALHO
+ADVOGADO : DAYANA BARBOSA ESTEVAM LOPES - RJ196057
+REQUERIDO : INSTITUTO NACIONAL DO SEGURO SOCIAL - INSS
+: PROCURADOR ANDRÉ AMARAL DE AGUIAR - PRF-1_2_PREV
+: DEPRECANTE Juízo Federal do 2º JEF de Duque de Caxias
+ASSUNTO : 040120 - Auxílio-Doença Acidentário
+Tipo de Despesa : 12 - NATUREZA ALIMENTÍCIA - Benefícios previdenciários e
+indenizações por morte ou invalidez (12)
+Trans. Requisição : 31/03/2022 12:14:36
+Data de Entrada : 31/03/2022 12:14:36
+REQUISIÇÃO : 22510009801
+Data Ajuizamento : 07/05/2019
+Data TJ. Conhecim. : 27/10/2021
+Data TJ. Embargos : 
+Espécie Requisição : Original
+Superpreferencial : Não
+Precatório de natureza NÃO tributária
+Tipo Beneficiário
+Nome WANNER DOS SANTOS CARVALHO
+CPF/CGC 808.911.527-68
+Valor Principal 83.138,46 Data Base 01/01/2022
+Valor Juros 3.243,75 Data Base 01/01/2022
+Juros de mora fixados na sentença: Poupança
+Renuncia Não Status Sem Bloqueio
+IR-RRA Sim
+Meses Exe. Anterior 32
+Meses Exe. Corrente - Valor Exe. Corrente -Valor Exe. Anterior -
+Ano Exe. Corrente - Status Servidor -
+Valor Inicial PSS - Data Base PSS -
+Valor total execução - Data base execução -
+Valor Requisitado 86.382,21Espelho de Valores Cadastrados. Data: 01/04/2022
+PROCESSO : 5003503-43.2022.4.02.9388
+ORIGINÁRIO : 5004608-66.2019.4.02.5118/RJ
+TIPO : Precatório
+REQUERENTE : WANNER DOS SANTOS CARVALHO
+ADVOGADO : DAYANA BARBOSA ESTEVAM LOPES - RJ196057
+REQUERIDO : INSTITUTO NACIONAL DO SEGURO SOCIAL - INSS
+: PROCURADOR ANDRÉ AMARAL DE AGUIAR - PRF-1_2_PREV
+: DEPRECANTE Juízo Federal do 2º JEF de Duque de Caxias
+ASSUNTO : 040120 - Auxílio-Doença Acidentário
+Tipo de Despesa : 12 - NATUREZA ALIMENTÍCIA - Benefícios previdenciários e
+indenizações por morte ou invalidez (12)
+Trans. Requisição : 31/03/2022 12:14:36
+Data de Entrada : 31/03/2022 12:14:36
+REQUISIÇÃO : 22510009801
+Data Ajuizamento : 07/05/2019
+Data TJ. Conhecim. : 27/10/2021
+Data TJ. Embargos : 
+Espécie Requisição : Original
+Superpreferencial : Não
+Precatório de natureza NÃO tributária
+Tipo Beneficiário
+Nome WANNER DOS SANTOS CARVALHO
+CPF/CGC 808.911.527-68
+Valor Principal 83.138,46 Data Base 01/01/2022
+Valor Juros 3.243,75 Data Base 01/01/2022
+Juros de mora fixados na sentença: Poupança
+Renuncia Não Status Sem Bloqueio
+IR-RRA Sim
+Meses Exe. Anterior 32
+Meses Exe. Corrente - Valor Exe. Corrente -Valor Exe. Anterior -
+Ano Exe. Corrente - Status Servidor -
+Valor Inicial PSS - Data Base PSS -
+Valor total execução - Data base execução -
+Valor Requisitado 86.382,21Tipo Honorário
+Nome DAYANA BARBOSA ESTEVAM LOPES
+CPF/CGC 125.389.387-08
+Valor Principal 35.630,77 Data Base 01/01/2022
+Valor Juros 1.390,18 Data Base 01/01/2022
+Juros de mora fixados na sentença: Poupança
+Renuncia Não Status Sem Bloqueio
+IR-RRA Não
+Tipo Hon. Judicial Honorários Contratuais
+Meses Exe. Anterior -
+Meses Exe. Corrente - Valor Exe. Corrente -Valor Exe. Anterior -
+Ano Exe. Corrente - Status Servidor -
+Valor Inicial PSS - Data Base PSS -
+Valor total execução - Data base execução -
+Valor Requisitado 37.020,95
+Valor Total da Requisição: 123.403,16
+Observações:
+1)	Precatórios classificados pelo juízo requisitante como de natureza não tributária serão atualizadas da data base
+do cálculo informada na requisição de pagamento até o efetivo pagamento pelo IPCA-E.
+2) Precatórios classificadas pelo juízo requisitante como de natureza tributária serão atualizadas da data base do
+cálculo informada na requisição de pagamento até o efetivo pagamento pela SELIC.Espelho de Valores Cadastrados. Data: 01/04/2022
+PROCESSO : 5003503-43.2022.4.02.9388
+ORIGINÁRIO : 5004608-66.2019.4.02.5118/RJ
+TIPO : Precatório
+REQUERENTE : WANNER DOS SANTOS CARVALHO
+ADVOGADO : DAYANA BARBOSA ESTEVAM LOPES - RJ196057
+REQUERIDO : INSTITUTO NACIONAL DO SEGURO SOCIAL - INSS
+: PROCURADOR ANDRÉ AMARAL DE AGUIAR - PRF-1_2_PREV
+: DEPRECANTE Juízo Federal do 2º JEF de Duque de Caxias
+ASSUNTO : 040120 - Auxílio-Doença Acidentário
+Tipo de Despesa : 12 - NATUREZA ALIMENTÍCIA - Benefícios previdenciários e
+indenizações por morte ou invalidez (12)
+Trans. Requisição : 31/03/2022 12:14:36
+Data de Entrada : 31/03/2022 12:14:36
+REQUISIÇÃO : 22510009801
+Data Ajuizamento : 07/05/2019
+Data TJ. Conhecim. : 27/10/2021
+Data TJ. Embargos : 
+Espécie Requisição : Original
+Superpreferencial : Não
+Precatório de natureza NÃO tributária
+Tipo Beneficiário
+Nome WANNER DOS SANTOS CARVALHO
+CPF/CGC 808.911.527-68
+Valor Principal 83.138,46 Data Base 01/01/2022
+Valor Juros 3.243,75 Data Base 01/01/2022
+Juros de mora fixados na sentença: Poupança
+Renuncia Não Status Sem Bloqueio
+IR-RRA Sim
+Meses Exe. Anterior 32
+Meses Exe. Corrente - Valor Exe. Corrente -Valor Exe. Anterior -
+Ano Exe. Corrente - Status Servidor -
+Valor Inicial PSS - Data Base PSS -
+Valor total execução - Data base execução -
+Valor Requisitado 86.382,21Espelho de Valores Cadastrados. Data: 01/04/2022
+PROCESSO : 5003503-43.2022.4.02.9388
+ORIGINÁRIO : 5004608-66.2019.4.02.5118/RJ
+TIPO : Precatório
+REQUERENTE : WANNER DOS SANTOS CARVALHO
+ADVOGADO : DAYANA BARBOSA ESTEVAM LOPES - RJ196057
+REQUERIDO : INSTITUTO NACIONAL DO SEGURO SOCIAL - INSS
+: PROCURADOR ANDRÉ AMARAL DE AGUIAR - PRF-1_2_PREV
+: DEPRECANTE Juízo Federal do 2º JEF de Duque de Caxias
+ASSUNTO : 040120 - Auxílio-Doença Acidentário
+Tipo de Despesa : 12 - NATUREZA ALIMENTÍCIA - Benefícios previdenciários e
+indenizações por morte ou invalidez (12)
+Trans. Requisição : 31/03/2022 12:14:36
+Data de Entrada : 31/03/2022 12:14:36
+REQUISIÇÃO : 22510009801
+Data Ajuizamento : 07/05/2019
+Data TJ. Conhecim. : 27/10/2021
+Data TJ. Embargos : 
+Espécie Requisição : Original
+Superpreferencial : Não
+Precatório de natureza NÃO tributária
+Tipo Beneficiário
+Nome WANNER DOS SANTOS CARVALHO
+CPF/CGC 808.911.527-68
+Valor Principal 83.138,46 Data Base 01/01/2022
+Valor Juros 3.243,75 Data Base 01/01/2022
+Juros de mora fixados na sentença: Poupança
+Renuncia Não Status Sem Bloqueio
+IR-RRA Sim
+Meses Exe. Anterior 32
+Meses Exe. Corrente - Valor Exe. Corrente -Valor Exe. Anterior -
+Ano Exe. Corrente - Status Servidor -
+Valor Inicial PSS - Data Base PSS -
+Valor total execução - Data base execução -
+Valor Requisitado 86.382,21Tipo Honorário
+Nome DAYANA BARBOSA ESTEVAM LOPES
+CPF/CGC 125.389.387-08
+Valor Principal 35.630,77 Data Base 01/01/2022
+Valor Juros 1.390,18 Data Base 01/01/2022
+Juros de mora fixados na sentença: Poupança
+Renuncia Não Status Sem Bloqueio
+IR-RRA Não
+Tipo Hon. Judicial Honorários Contratuais
+Meses Exe. Anterior -
+Meses Exe. Corrente - Valor Exe. Corrente -Valor Exe. Anterior -
+Ano Exe. Corrente - Status Servidor -
+Valor Inicial PSS - Data Base PSS -
+Valor total execução - Data base execução -
+Valor Requisitado 37.020,95
+Valor Total da Requisição: 123.403,16
+Observações:
+1)	Precatórios classificados pelo juízo requisitante como de natureza não tributária serão atualizadas da data base
+do cálculo informada na requisição de pagamento até o efetivo pagamento pelo IPCA-E.
+2) Precatórios classificadas pelo juízo requisitante como de natureza tributária serão atualizadas da data base do
+cálculo informada na requisição de pagamento até o efetivo pagamento pela SELIC.

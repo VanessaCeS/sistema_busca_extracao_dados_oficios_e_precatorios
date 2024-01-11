@@ -1,0 +1,89 @@
+Espelho de Valores Cadastrados. Data: 01/04/2023
+PROCESSO : 5016203-60.2023.4.04.9388
+ORIGINÁRIO : 50038896720228210090/RS
+TIPO : Precatório
+REQUERENTE : CLAIR LUIZ TONOLI
+ADVOGADO : MAURICIO FERRON - RS055817
+REQUERIDO : INSTITUTO NACIONAL DO SEGURO SOCIAL - INSS
+: PROCURADOR PROCURADORIA REGIONAL FEDERAL DA 4 REGIÃO - PRF4
+: DEPRECANTE JUIZO DE DIREITO DA 1A VARA CIVEL DA COMARCA DE CASCA/RS
+ASSUNTO : 040119 - Aposentadoria por Tempo de Contribuição (Art. 55/6)
+Tipo de Despesa : 12 - NATUREZA ALIMENTÍCIA - Benefícios previdenciários,
+indenizações por morte ou invalidez e demais beneficiários sem vínculo
+com a administração pública (12)Trans. Requisição : 31/03/2023 13:08:50
+Data de Entrada : 31/03/2023 13:08:50
+REQUISIÇÃO : 23000008640
+Data Ajuizamento : 12/07/2013
+Data TJ. Conhecim. : 13/09/2022
+Data TJ. Embargos : 14/03/2023
+Espécie Requisição : Original
+Superpreferencial : Não
+Precatório de natureza NÃO tributária
+Tipo Beneficiário
+Nome CLAIR LUIZ TONOLI
+CPF/CGC 495.852.660-91
+Valor Principal 107.999,22 Data Base 01/12/2022
+Valor Juros 16.904,51 Data Base 01/12/2022
+Juros de mora fixados na sentença: Não incidem 
+Renuncia Não Status Bloqueado
+IR-RRA Sim
+Meses Exe. Anterior 111
+Meses Exe. Corrente - Valor Exe. Corrente -Valor Exe. Anterior -
+Ano Exe. Corrente - Status Servidor -
+Valor Inicial PSS - Data Base PSS -
+Valor total execução - Data base execução -
+Valor Requisitado 124.903,73Espelho de Valores Cadastrados. Data: 01/04/2023
+PROCESSO : 5016203-60.2023.4.04.9388
+ORIGINÁRIO : 50038896720228210090/RS
+TIPO : Precatório
+REQUERENTE : CLAIR LUIZ TONOLI
+ADVOGADO : MAURICIO FERRON - RS055817
+REQUERIDO : INSTITUTO NACIONAL DO SEGURO SOCIAL - INSS
+: PROCURADOR PROCURADORIA REGIONAL FEDERAL DA 4 REGIÃO - PRF4
+: DEPRECANTE JUIZO DE DIREITO DA 1A VARA CIVEL DA COMARCA DE CASCA/RS
+ASSUNTO : 040119 - Aposentadoria por Tempo de Contribuição (Art. 55/6)
+Tipo de Despesa : 12 - NATUREZA ALIMENTÍCIA - Benefícios previdenciários,
+indenizações por morte ou invalidez e demais beneficiários sem vínculo
+com a administração pública (12)Trans. Requisição : 31/03/2023 13:08:50
+Data de Entrada : 31/03/2023 13:08:50
+REQUISIÇÃO : 23000008640
+Data Ajuizamento : 12/07/2013
+Data TJ. Conhecim. : 13/09/2022
+Data TJ. Embargos : 14/03/2023
+Espécie Requisição : Original
+Superpreferencial : Não
+Precatório de natureza NÃO tributária
+Tipo Beneficiário
+Nome CLAIR LUIZ TONOLI
+CPF/CGC 495.852.660-91
+Valor Principal 107.999,22 Data Base 01/12/2022
+Valor Juros 16.904,51 Data Base 01/12/2022
+Juros de mora fixados na sentença: Não incidem 
+Renuncia Não Status Bloqueado
+IR-RRA Sim
+Meses Exe. Anterior 111
+Meses Exe. Corrente - Valor Exe. Corrente -Valor Exe. Anterior -
+Ano Exe. Corrente - Status Servidor -
+Valor Inicial PSS - Data Base PSS -
+Valor total execução - Data base execução -
+Valor Requisitado 124.903,73Tipo Honorário
+Nome FERRON E GONÇALVES ADVOCACIA
+CPF/CGC 17.407.584/0001-17
+Valor Principal 35.999,75 Data Base 01/12/2022
+Valor Juros 5.634,83 Data Base 01/12/2022
+Juros de mora fixados na sentença: Não incidem 
+Renuncia Não Status Bloqueado
+IR-RRA Não
+Tipo Hon. Judicial Honorários Contratuais
+Meses Exe. Anterior -
+Meses Exe. Corrente - Valor Exe. Corrente -Valor Exe. Anterior -
+Ano Exe. Corrente - Status Servidor -
+Valor Inicial PSS - Data Base PSS -
+Valor total execução - Data base execução -
+Valor Requisitado 41.634,58
+Valor Total da Requisição: 166.538,31
+Observações:
+1)	Precatórios classificados pelo juízo requisitante como de natureza não tributária serão atualizadas da data base
+do cálculo informada na requisição de pagamento até o efetivo pagamento pelo IPCA-E.
+2) Precatórios classificadas pelo juízo requisitante como de natureza tributária serão atualizadas da data base do
+cálculo informada na requisição de pagamento até o efetivo pagamento pela SELIC.

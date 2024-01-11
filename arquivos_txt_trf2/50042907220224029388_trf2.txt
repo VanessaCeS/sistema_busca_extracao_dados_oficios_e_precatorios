@@ -1,0 +1,92 @@
+Espelho de Valores Cadastrados. Data: 02/04/2022
+PROCESSO : 5004290-72.2022.4.02.9388
+ORIGINÁRIO : 0006689-48.1987.4.02.5101/RJ
+TIPO : Precatório
+REQUERENTE : HELOISA CORDEIRO SILVA
+ADVOGADO : REGINALDO MATHIAS DOS SANTOS - RJ017524
+REQUERIDO : INSTITUTO NACIONAL DO SEGURO SOCIAL - INSS
+: PROCURADOR ANDRÉ AMARAL DE AGUIAR - PRF-1_2_PREV
+: DEPRECANTE Juízo Substituto da 31ª VF do Rio de Janeiro
+ASSUNTO : 040203 - Reajustes e Revisões Específicos
+Tipo de Despesa : 12 - NATUREZA ALIMENTÍCIA - Benefícios previdenciários e
+indenizações por morte ou invalidez (12)
+Trans. Requisição : 01/04/2022 18:53:22
+Data de Entrada : 01/04/2022 18:53:22
+REQUISIÇÃO : 22510009989
+Data Ajuizamento : 17/11/1987
+Data TJ. Conhecim. : 09/01/1990
+Data TJ. Embargos : 02/12/2021
+Espécie Requisição : Reinclusão (Lei 13.463)
+Superpreferencial : Não
+Precatório de natureza NÃO tributária
+Tipo Beneficiário
+Nome HELOISA CORDEIRO SILVA
+CPF/CGC 763.429.217-68
+Processo Estorno 0000.00.20.170569-6
+Autuação Estorno 29/06/2016
+Valor Principal 8.793,55 Data Base 01/07/2019
+Juros de mora fixados na sentença: Não incidem 
+Renuncia Não Status Sem Bloqueio
+IR-RRA Não
+Meses Exe. Anterior -
+Meses Exe. Corrente - Valor Exe. Corrente -Valor Exe. Anterior -
+Ano Exe. Corrente - Status Servidor -
+Valor Inicial PSS - Data Base PSS -
+Valor total execução - Data base execução -
+Valor Requisitado 8.793,55Espelho de Valores Cadastrados. Data: 02/04/2022
+PROCESSO : 5004290-72.2022.4.02.9388
+ORIGINÁRIO : 0006689-48.1987.4.02.5101/RJ
+TIPO : Precatório
+REQUERENTE : HELOISA CORDEIRO SILVA
+ADVOGADO : REGINALDO MATHIAS DOS SANTOS - RJ017524
+REQUERIDO : INSTITUTO NACIONAL DO SEGURO SOCIAL - INSS
+: PROCURADOR ANDRÉ AMARAL DE AGUIAR - PRF-1_2_PREV
+: DEPRECANTE Juízo Substituto da 31ª VF do Rio de Janeiro
+ASSUNTO : 040203 - Reajustes e Revisões Específicos
+Tipo de Despesa : 12 - NATUREZA ALIMENTÍCIA - Benefícios previdenciários e
+indenizações por morte ou invalidez (12)
+Trans. Requisição : 01/04/2022 18:53:22
+Data de Entrada : 01/04/2022 18:53:22
+REQUISIÇÃO : 22510009989
+Data Ajuizamento : 17/11/1987
+Data TJ. Conhecim. : 09/01/1990
+Data TJ. Embargos : 02/12/2021
+Espécie Requisição : Reinclusão (Lei 13.463)
+Superpreferencial : Não
+Precatório de natureza NÃO tributária
+Tipo Beneficiário
+Nome HELOISA CORDEIRO SILVA
+CPF/CGC 763.429.217-68
+Processo Estorno 0000.00.20.170569-6
+Autuação Estorno 29/06/2016
+Valor Principal 8.793,55 Data Base 01/07/2019
+Juros de mora fixados na sentença: Não incidem 
+Renuncia Não Status Sem Bloqueio
+IR-RRA Não
+Meses Exe. Anterior -
+Meses Exe. Corrente - Valor Exe. Corrente -Valor Exe. Anterior -
+Ano Exe. Corrente - Status Servidor -
+Valor Inicial PSS - Data Base PSS -
+Valor total execução - Data base execução -
+Valor Requisitado 8.793,55Tipo Honorário
+Nome REGINALDO MATHIAS E ADVOGADOS
+CPF/CGC 10.410.297/0001-17
+Processo Estorno 0000.00.20.170569-8
+Autuação Estorno 29/06/2016
+Valor Principal 977,07 Data Base 01/07/2019
+Juros de mora fixados na sentença: Não incidem 
+Renuncia Não Status Sem Bloqueio
+IR-RRA Não
+Tipo Hon. Judicial Honorários Contratuais
+Meses Exe. Anterior -
+Meses Exe. Corrente - Valor Exe. Corrente -Valor Exe. Anterior -
+Ano Exe. Corrente - Status Servidor -
+Valor Inicial PSS - Data Base PSS -
+Valor total execução - Data base execução -
+Valor Requisitado 977,07
+Valor Total da Requisição: 9.770,62
+Observações:
+1)	Precatórios classificados pelo juízo requisitante como de natureza não tributária serão atualizadas da data base
+do cálculo informada na requisição de pagamento até o efetivo pagamento pelo IPCA-E.
+2) Precatórios classificadas pelo juízo requisitante como de natureza tributária serão atualizadas da data base do
+cálculo informada na requisição de pagamento até o efetivo pagamento pela SELIC.

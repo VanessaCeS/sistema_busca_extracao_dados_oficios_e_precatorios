@@ -5,15 +5,13 @@ from cna_oab import login_cna
 from funcoes_arteria import enviar_valores_oficio_arteria
 from esaj_acre_precatorios import get_docs_oficio_precatorios_tjac
 from banco_de_dados import atualizar_ou_inserir_pessoa_no_banco_de_dados, atualizar_ou_inserir_pessoa_precatorio, atualizar_ou_inserir_situacao_cadastro, consultar_processos, atualizar_ou_inserir_precatorios_no_banco_de_dados
-from auxiliares import  converter_string_mes, identificar_estados, limpar_dados, mandar_documento_para_ocr,  tipo_de_natureza, tipo_precatorio, verificar_tribunal
+from auxiliares import  converter_string_mes, identificar_estados, limpar_dados, mandar_documento_para_ocr,  tipo_de_natureza,  verificar_tribunal
 
 def buscar_dados_tribunal_acre():
   dados = consultar_processos('.8.01')
 
   for d in dados:
-          dados_limpos = limpar_dados(d)
-          tipo = tipo_precatorio(d)
-          dado = dados_limpos | tipo
+          dado = limpar_dados(d)
           if verificar_tribunal(d['processo']):
             ler_documentos(dado)
           else:
@@ -33,7 +31,7 @@ def ler_documentos(dado_xml):
                   arquivo.write(file_path)
 
           dados_ocr = mandar_documento_para_ocr(arquivo_pdf, '2')
-          dados_complementares = {"processo_geral": 'processo_geral', "codigo_processo": codigo_processo, 'site': 'https://esaj.tjac.jus.br', 'id_documento': id_documento, 'valor_juros': '', 'valor_principal': ''}
+          dados_complementares = {"processo_geral": 'processo_geral', "codigo_processo": codigo_processo, 'site': 'https://esaj.tjac.jus.br', 'id_documento': id_documento, 'valor_juros': '', 'valor_principal': '', 'tipo': 'FEDERAL'}
           dados_ocr = dados_ocr | dados_complementares
           tratar_dados_ocr(arquivo_pdf ,processo_geral, dados_ocr)
           

@@ -1,0 +1,74 @@
+Espelho de Valores Cadastrados. Data: 01/04/2023
+PROCESSO : 5015350-51.2023.4.04.9388
+ORIGINÁRIO : 5001165-45.2020.4.04.7211/SC
+TIPO : Precatório
+REQUERENTE : LUIZ CARLOS MALMAM
+ADVOGADO : DARCISIO ANTONIO MULLER - SC017504
+REQUERIDO : INSTITUTO NACIONAL DO SEGURO SOCIAL - INSS
+: PROCURADOR PROCURADORIA REGIONAL FEDERAL DA 4 REGIÃO - PRF4
+: DEPRECANTE Juízo Substituto da 1ª VF de Caçador
+ASSUNTO : 040119 - Aposentadoria por Tempo de Contribuição (Art. 55/6)
+Tipo de Despesa : 12 - NATUREZA ALIMENTÍCIA - Benefícios previdenciários,
+indenizações por morte ou invalidez e demais beneficiários sem vínculo
+com a administração pública (12)Trans. Requisição : 31/03/2023 13:00:31
+Data de Entrada : 31/03/2023 13:00:31
+REQUISIÇÃO : 23720014732
+Data Ajuizamento : 10/07/2020
+Data TJ. Conhecim. : 16/09/2022
+Data TJ. Embargos : 21/03/2023
+Espécie Requisição : Original
+Superpreferencial : Não
+Precatório de natureza NÃO tributária
+Tipo Beneficiário
+Nome LUIZ CARLOS MALMAM
+CPF/CGC 701.986.169-53
+Valor Principal 74.984,14 Data Base 01/12/2022
+Valor Juros 10.083,22 Data Base 01/12/2022
+Juros de mora fixados na sentença: Não incidem 
+Renuncia Não Status Bloqueado
+IR-RRA Sim
+Meses Exe. Anterior 73
+Meses Exe. Corrente - Valor Exe. Corrente -Valor Exe. Anterior -
+Ano Exe. Corrente - Status Servidor -
+Valor Inicial PSS - Data Base PSS -
+Valor total execução - Data base execução -
+Valor Requisitado 85.067,36Espelho de Valores Cadastrados. Data: 01/04/2023
+PROCESSO : 5015350-51.2023.4.04.9388
+ORIGINÁRIO : 5001165-45.2020.4.04.7211/SC
+TIPO : Precatório
+REQUERENTE : LUIZ CARLOS MALMAM
+ADVOGADO : DARCISIO ANTONIO MULLER - SC017504
+REQUERIDO : INSTITUTO NACIONAL DO SEGURO SOCIAL - INSS
+: PROCURADOR PROCURADORIA REGIONAL FEDERAL DA 4 REGIÃO - PRF4
+: DEPRECANTE Juízo Substituto da 1ª VF de Caçador
+ASSUNTO : 040119 - Aposentadoria por Tempo de Contribuição (Art. 55/6)
+Tipo de Despesa : 12 - NATUREZA ALIMENTÍCIA - Benefícios previdenciários,
+indenizações por morte ou invalidez e demais beneficiários sem vínculo
+com a administração pública (12)Trans. Requisição : 31/03/2023 13:00:31
+Data de Entrada : 31/03/2023 13:00:31
+REQUISIÇÃO : 23720014732
+Data Ajuizamento : 10/07/2020
+Data TJ. Conhecim. : 16/09/2022
+Data TJ. Embargos : 21/03/2023
+Espécie Requisição : Original
+Superpreferencial : Não
+Precatório de natureza NÃO tributária
+Tipo Beneficiário
+Nome LUIZ CARLOS MALMAM
+CPF/CGC 701.986.169-53
+Valor Principal 74.984,14 Data Base 01/12/2022
+Valor Juros 10.083,22 Data Base 01/12/2022
+Juros de mora fixados na sentença: Não incidem 
+Renuncia Não Status Bloqueado
+IR-RRA Sim
+Meses Exe. Anterior 73
+Meses Exe. Corrente - Valor Exe. Corrente -Valor Exe. Anterior -
+Ano Exe. Corrente - Status Servidor -
+Valor Inicial PSS - Data Base PSS -
+Valor total execução - Data base execução -
+Valor Requisitado 85.067,36Valor Total da Requisição: 85.067,36
+Observações:
+1)	Precatórios classificados pelo juízo requisitante como de natureza não tributária serão atualizadas da data base
+do cálculo informada na requisição de pagamento até o efetivo pagamento pelo IPCA-E.
+2) Precatórios classificadas pelo juízo requisitante como de natureza tributária serão atualizadas da data base do
+cálculo informada na requisição de pagamento até o efetivo pagamento pela SELIC.

@@ -1,0 +1,177 @@
+Espelho de Valores Cadastrados. Data: 30/03/2022
+PROCESSO : 5003072-09.2022.4.02.9388
+ORIGINÁRIO : 0012725-07.2013.4.02.5001/ES
+TIPO : Precatório
+REQUERENTE : MARIA DE FATIMA PINTO DE ALVARENGA
+ADVOGADO : MARCELO CARVALHINHO VIEIRA - ES012411
+REQUERIDO : INSTITUTO NACIONAL DO SEGURO SOCIAL - INSS
+: PROCURADOR ANDRÉ AMARAL DE AGUIAR - PRF-1_2_PREV
+: DEPRECANTE Juízo Substituto da 2ª  VF Cível de Vitória
+ASSUNTO : 040201 - RMI - Renda Mensal Inicial
+Tipo de Despesa : 12 - NATUREZA ALIMENTÍCIA - Benefícios previdenciários e
+indenizações por morte ou invalidez (12)
+Trans. Requisição : 29/03/2022 19:00:15
+Data de Entrada : 29/03/2022 19:00:15
+REQUISIÇÃO : 22500003650
+Data Ajuizamento : 20/12/2013
+Data TJ. Conhecim. : 16/08/2019
+Data TJ. Embargos : 30/09/2021
+Espécie Requisição : Parcial
+Superpreferencial : Não
+Precatório de natureza NÃO tributária
+Tipo Beneficiário
+Nome MARIA DE FATIMA PINTO DE ALVARENGA
+CPF/CGC 082.482.337-07
+Valor Principal 24.241,49 Data Base 01/07/2020
+Valor Juros 5.281,20 Data Base 01/07/2020
+Juros de mora fixados na sentença: Poupança
+Renuncia Não Status Sem Bloqueio
+IR-RRA Sim
+Meses Exe. Anterior 125
+Meses Exe. Corrente - Valor Exe. Corrente -Valor Exe. Anterior -
+Ano Exe. Corrente - Status Servidor -
+Valor Inicial PSS - Data Base PSS -
+Valor total execução 258.323,59 Data base execução 01/07/2020
+Valor Requisitado 29.522,69Espelho de Valores Cadastrados. Data: 30/03/2022
+PROCESSO : 5003072-09.2022.4.02.9388
+ORIGINÁRIO : 0012725-07.2013.4.02.5001/ES
+TIPO : Precatório
+REQUERENTE : MARIA DE FATIMA PINTO DE ALVARENGA
+ADVOGADO : MARCELO CARVALHINHO VIEIRA - ES012411
+REQUERIDO : INSTITUTO NACIONAL DO SEGURO SOCIAL - INSS
+: PROCURADOR ANDRÉ AMARAL DE AGUIAR - PRF-1_2_PREV
+: DEPRECANTE Juízo Substituto da 2ª  VF Cível de Vitória
+ASSUNTO : 040201 - RMI - Renda Mensal Inicial
+Tipo de Despesa : 12 - NATUREZA ALIMENTÍCIA - Benefícios previdenciários e
+indenizações por morte ou invalidez (12)
+Trans. Requisição : 29/03/2022 19:00:15
+Data de Entrada : 29/03/2022 19:00:15
+REQUISIÇÃO : 22500003650
+Data Ajuizamento : 20/12/2013
+Data TJ. Conhecim. : 16/08/2019
+Data TJ. Embargos : 30/09/2021
+Espécie Requisição : Parcial
+Superpreferencial : Não
+Precatório de natureza NÃO tributária
+Tipo Beneficiário
+Nome MARIA DE FATIMA PINTO DE ALVARENGA
+CPF/CGC 082.482.337-07
+Valor Principal 24.241,49 Data Base 01/07/2020
+Valor Juros 5.281,20 Data Base 01/07/2020
+Juros de mora fixados na sentença: Poupança
+Renuncia Não Status Sem Bloqueio
+IR-RRA Sim
+Meses Exe. Anterior 125
+Meses Exe. Corrente - Valor Exe. Corrente -Valor Exe. Anterior -
+Ano Exe. Corrente - Status Servidor -
+Valor Inicial PSS - Data Base PSS -
+Valor total execução 258.323,59 Data base execução 01/07/2020
+Valor Requisitado 29.522,69Tipo Honorário
+Nome MARCELO CARVALHINHO VIEIRA
+CPF/CGC 078.065.597-44
+Valor Principal 6.060,38 Data Base 01/07/2020
+Valor Juros 1.320,30 Data Base 01/07/2020
+Juros de mora fixados na sentença: Poupança
+Renuncia Não Status Sem Bloqueio
+IR-RRA Não
+Tipo Hon. Judicial Honorários Contratuais
+Meses Exe. Anterior -
+Meses Exe. Corrente - Valor Exe. Corrente -Valor Exe. Anterior -
+Ano Exe. Corrente - Status Servidor -
+Valor Inicial PSS - Data Base PSS -
+Valor total execução - Data base execução -
+Valor Requisitado 7.380,68
+Valor Total da Requisição: 36.903,37
+Observações:
+1)	Precatórios classificados pelo juízo requisitante como de natureza não tributária serão atualizadas da data base
+do cálculo informada na requisição de pagamento até o efetivo pagamento pelo IPCA-E.
+2) Precatórios classificadas pelo juízo requisitante como de natureza tributária serão atualizadas da data base do
+cálculo informada na requisição de pagamento até o efetivo pagamento pela SELIC.Espelho de Valores Cadastrados. Data: 30/03/2022
+PROCESSO : 5003072-09.2022.4.02.9388
+ORIGINÁRIO : 0012725-07.2013.4.02.5001/ES
+TIPO : Precatório
+REQUERENTE : MARIA DE FATIMA PINTO DE ALVARENGA
+ADVOGADO : MARCELO CARVALHINHO VIEIRA - ES012411
+REQUERIDO : INSTITUTO NACIONAL DO SEGURO SOCIAL - INSS
+: PROCURADOR ANDRÉ AMARAL DE AGUIAR - PRF-1_2_PREV
+: DEPRECANTE Juízo Substituto da 2ª  VF Cível de Vitória
+ASSUNTO : 040201 - RMI - Renda Mensal Inicial
+Tipo de Despesa : 12 - NATUREZA ALIMENTÍCIA - Benefícios previdenciários e
+indenizações por morte ou invalidez (12)
+Trans. Requisição : 29/03/2022 19:00:15
+Data de Entrada : 29/03/2022 19:00:15
+REQUISIÇÃO : 22500003650
+Data Ajuizamento : 20/12/2013
+Data TJ. Conhecim. : 16/08/2019
+Data TJ. Embargos : 30/09/2021
+Espécie Requisição : Parcial
+Superpreferencial : Não
+Precatório de natureza NÃO tributária
+Tipo Beneficiário
+Nome MARIA DE FATIMA PINTO DE ALVARENGA
+CPF/CGC 082.482.337-07
+Valor Principal 24.241,49 Data Base 01/07/2020
+Valor Juros 5.281,20 Data Base 01/07/2020
+Juros de mora fixados na sentença: Poupança
+Renuncia Não Status Sem Bloqueio
+IR-RRA Sim
+Meses Exe. Anterior 125
+Meses Exe. Corrente - Valor Exe. Corrente -Valor Exe. Anterior -
+Ano Exe. Corrente - Status Servidor -
+Valor Inicial PSS - Data Base PSS -
+Valor total execução 258.323,59 Data base execução 01/07/2020
+Valor Requisitado 29.522,69Espelho de Valores Cadastrados. Data: 30/03/2022
+PROCESSO : 5003072-09.2022.4.02.9388
+ORIGINÁRIO : 0012725-07.2013.4.02.5001/ES
+TIPO : Precatório
+REQUERENTE : MARIA DE FATIMA PINTO DE ALVARENGA
+ADVOGADO : MARCELO CARVALHINHO VIEIRA - ES012411
+REQUERIDO : INSTITUTO NACIONAL DO SEGURO SOCIAL - INSS
+: PROCURADOR ANDRÉ AMARAL DE AGUIAR - PRF-1_2_PREV
+: DEPRECANTE Juízo Substituto da 2ª  VF Cível de Vitória
+ASSUNTO : 040201 - RMI - Renda Mensal Inicial
+Tipo de Despesa : 12 - NATUREZA ALIMENTÍCIA - Benefícios previdenciários e
+indenizações por morte ou invalidez (12)
+Trans. Requisição : 29/03/2022 19:00:15
+Data de Entrada : 29/03/2022 19:00:15
+REQUISIÇÃO : 22500003650
+Data Ajuizamento : 20/12/2013
+Data TJ. Conhecim. : 16/08/2019
+Data TJ. Embargos : 30/09/2021
+Espécie Requisição : Parcial
+Superpreferencial : Não
+Precatório de natureza NÃO tributária
+Tipo Beneficiário
+Nome MARIA DE FATIMA PINTO DE ALVARENGA
+CPF/CGC 082.482.337-07
+Valor Principal 24.241,49 Data Base 01/07/2020
+Valor Juros 5.281,20 Data Base 01/07/2020
+Juros de mora fixados na sentença: Poupança
+Renuncia Não Status Sem Bloqueio
+IR-RRA Sim
+Meses Exe. Anterior 125
+Meses Exe. Corrente - Valor Exe. Corrente -Valor Exe. Anterior -
+Ano Exe. Corrente - Status Servidor -
+Valor Inicial PSS - Data Base PSS -
+Valor total execução 258.323,59 Data base execução 01/07/2020
+Valor Requisitado 29.522,69Tipo Honorário
+Nome MARCELO CARVALHINHO VIEIRA
+CPF/CGC 078.065.597-44
+Valor Principal 6.060,38 Data Base 01/07/2020
+Valor Juros 1.320,30 Data Base 01/07/2020
+Juros de mora fixados na sentença: Poupança
+Renuncia Não Status Sem Bloqueio
+IR-RRA Não
+Tipo Hon. Judicial Honorários Contratuais
+Meses Exe. Anterior -
+Meses Exe. Corrente - Valor Exe. Corrente -Valor Exe. Anterior -
+Ano Exe. Corrente - Status Servidor -
+Valor Inicial PSS - Data Base PSS -
+Valor total execução - Data base execução -
+Valor Requisitado 7.380,68
+Valor Total da Requisição: 36.903,37
+Observações:
+1)	Precatórios classificados pelo juízo requisitante como de natureza não tributária serão atualizadas da data base
+do cálculo informada na requisição de pagamento até o efetivo pagamento pelo IPCA-E.
+2) Precatórios classificadas pelo juízo requisitante como de natureza tributária serão atualizadas da data base do
+cálculo informada na requisição de pagamento até o efetivo pagamento pela SELIC.

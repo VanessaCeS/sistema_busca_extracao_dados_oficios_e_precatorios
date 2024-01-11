@@ -1,0 +1,72 @@
+Espelho de Valores Cadastrados. Data: 02/07/2021
+PROCESSO : 5029617-96.2021.4.04.9388
+ORIGINÁRIO : 5000389-63.2021.4.04.7032/PR
+TIPO : Precatório
+REQUERENTE : JOSE ORLEI RIBAS
+ADVOGADO : WILLYAN ROWER SOARES - PR019887
+REQUERIDO : INSTITUTO NACIONAL DO SEGURO SOCIAL - INSS
+: PROCURADOR PROCURADORIA REGIONAL FEDERAL DA 4 REGIÃO - PRF4
+: DEPRECANTE Juízo Federal da 1ª VF de Pitanga
+ASSUNTO : 040104 - Aposentadoria Especial (Art. 57/8)
+Tipo de Despesa : 12 - NATUREZA ALIMENTÍCIA - Benefícios previdenciários e
+indenizações por morte ou invalidez (12)
+Trans. Requisição : 01/07/2021 13:16:11
+Data de Entrada : 01/07/2021 13:16:11
+REQUISIÇÃO : 21700029308
+Data Ajuizamento : 17/04/2012
+Data TJ. Conhecim. : 18/12/2020
+Data TJ. Embargos : 01/07/2021
+Espécie Requisição : Original
+Superpreferencial : Não
+Precatório de natureza NÃO tributária
+Tipo Beneficiário
+Nome JOSE ORLEI RIBAS
+CPF/CGC 541.692.329-68
+Valor Principal 432.586,45 Data Base 01/03/2021
+Juros de mora fixados na sentença: Não incidem 
+Renuncia Não Status Bloqueado
+IR-RRA Sim
+Meses Exe. Anterior 111
+Meses Exe. Corrente - Valor Exe. Corrente -Valor Exe. Anterior -
+Ano Exe. Corrente - Status Servidor -
+Valor Inicial PSS - Data Base PSS -
+Valor total execução - Data base execução -
+Valor Requisitado 432.586,45Espelho de Valores Cadastrados. Data: 02/07/2021
+PROCESSO : 5029617-96.2021.4.04.9388
+ORIGINÁRIO : 5000389-63.2021.4.04.7032/PR
+TIPO : Precatório
+REQUERENTE : JOSE ORLEI RIBAS
+ADVOGADO : WILLYAN ROWER SOARES - PR019887
+REQUERIDO : INSTITUTO NACIONAL DO SEGURO SOCIAL - INSS
+: PROCURADOR PROCURADORIA REGIONAL FEDERAL DA 4 REGIÃO - PRF4
+: DEPRECANTE Juízo Federal da 1ª VF de Pitanga
+ASSUNTO : 040104 - Aposentadoria Especial (Art. 57/8)
+Tipo de Despesa : 12 - NATUREZA ALIMENTÍCIA - Benefícios previdenciários e
+indenizações por morte ou invalidez (12)
+Trans. Requisição : 01/07/2021 13:16:11
+Data de Entrada : 01/07/2021 13:16:11
+REQUISIÇÃO : 21700029308
+Data Ajuizamento : 17/04/2012
+Data TJ. Conhecim. : 18/12/2020
+Data TJ. Embargos : 01/07/2021
+Espécie Requisição : Original
+Superpreferencial : Não
+Precatório de natureza NÃO tributária
+Tipo Beneficiário
+Nome JOSE ORLEI RIBAS
+CPF/CGC 541.692.329-68
+Valor Principal 432.586,45 Data Base 01/03/2021
+Juros de mora fixados na sentença: Não incidem 
+Renuncia Não Status Bloqueado
+IR-RRA Sim
+Meses Exe. Anterior 111
+Meses Exe. Corrente - Valor Exe. Corrente -Valor Exe. Anterior -
+Ano Exe. Corrente - Status Servidor -
+Valor Inicial PSS - Data Base PSS -
+Valor total execução - Data base execução -
+Valor Requisitado 432.586,45Valor Total da Requisição: 432.586,45
+Observações:
+1)	Precatórios classificados pelo juízo requisitante como de natureza não tributária serão atualizadas da data base
+do cálculo informada na requisição de pagamento até o efetivo pagamento pelo IPCA-E.
+2) Precatórios classificadas pelo juízo requisitante como de natureza tributária serão atualizadas da data base do
+cálculo informada na requisição de pagamento até o efetivo pagamento pela SELIC.

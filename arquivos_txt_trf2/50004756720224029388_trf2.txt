@@ -1,0 +1,90 @@
+Espelho de Valores Cadastrados. Data: 03/02/2022
+PROCESSO : 5000475-67.2022.4.02.9388
+ORIGINÁRIO : 5011356-43.2020.4.02.5001/ES
+TIPO : Precatório
+REQUERENTE : ALTAMIRO BORGES DOS REIS
+ADVOGADO : JOSE ALCIDES BORGES DA SILVA - ES006803
+REQUERIDO : INSS -INSTITUTO NACIONAL DO SEGURO SOCIAL
+: 
+: DEPRECANTE Juízo Federal da 2ª  VF Cível de Vitória
+ASSUNTO : 040119 - Aposentadoria por Tempo de Contribuição (Art. 55/6)
+Tipo de Despesa : 12 - NATUREZA ALIMENTÍCIA - Benefícios previdenciários e
+indenizações por morte ou invalidez (12)
+Trans. Requisição : 03/02/2022 19:51:29
+Data de Entrada : 03/02/2022 19:51:29
+REQUISIÇÃO : 22500000103
+Data Ajuizamento : 19/05/2020
+Data TJ. Conhecim. : 19/07/2021
+Data TJ. Embargos : 08/10/2021
+Espécie Requisição : Parcial
+Superpreferencial : Não
+Precatório de natureza NÃO tributária
+Tipo Beneficiário
+Nome ALTAMIRO BORGES DOS REIS
+CPF/CGC 732.509.537-68
+Valor Principal 77.271,74 Data Base 01/08/2021
+Valor Juros 1.350,71 Data Base 01/08/2021
+Juros de mora fixados na sentença: Poupança
+Renuncia Não Status Sem Bloqueio
+IR-RRA Sim
+Meses Exe. Anterior 33
+Meses Exe. Corrente - Valor Exe. Corrente -Valor Exe. Anterior -
+Ano Exe. Corrente - Status Servidor -
+Valor Inicial PSS - Data Base PSS -
+Valor total execução 112.317,79 Data base execução 01/08/2021
+Valor Requisitado 78.622,45Espelho de Valores Cadastrados. Data: 03/02/2022
+PROCESSO : 5000475-67.2022.4.02.9388
+ORIGINÁRIO : 5011356-43.2020.4.02.5001/ES
+TIPO : Precatório
+REQUERENTE : ALTAMIRO BORGES DOS REIS
+ADVOGADO : JOSE ALCIDES BORGES DA SILVA - ES006803
+REQUERIDO : INSS -INSTITUTO NACIONAL DO SEGURO SOCIAL
+: 
+: DEPRECANTE Juízo Federal da 2ª  VF Cível de Vitória
+ASSUNTO : 040119 - Aposentadoria por Tempo de Contribuição (Art. 55/6)
+Tipo de Despesa : 12 - NATUREZA ALIMENTÍCIA - Benefícios previdenciários e
+indenizações por morte ou invalidez (12)
+Trans. Requisição : 03/02/2022 19:51:29
+Data de Entrada : 03/02/2022 19:51:29
+REQUISIÇÃO : 22500000103
+Data Ajuizamento : 19/05/2020
+Data TJ. Conhecim. : 19/07/2021
+Data TJ. Embargos : 08/10/2021
+Espécie Requisição : Parcial
+Superpreferencial : Não
+Precatório de natureza NÃO tributária
+Tipo Beneficiário
+Nome ALTAMIRO BORGES DOS REIS
+CPF/CGC 732.509.537-68
+Valor Principal 77.271,74 Data Base 01/08/2021
+Valor Juros 1.350,71 Data Base 01/08/2021
+Juros de mora fixados na sentença: Poupança
+Renuncia Não Status Sem Bloqueio
+IR-RRA Sim
+Meses Exe. Anterior 33
+Meses Exe. Corrente - Valor Exe. Corrente -Valor Exe. Anterior -
+Ano Exe. Corrente - Status Servidor -
+Valor Inicial PSS - Data Base PSS -
+Valor total execução 112.317,79 Data base execução 01/08/2021
+Valor Requisitado 78.622,45Tipo Honorário
+Nome JOSE ALCIDES BORGES DA SILVA
+CPF/CGC 376.753.467-34
+Valor Principal 33.116,45 Data Base 01/08/2021
+Valor Juros 578,89 Data Base 01/08/2021
+Juros de mora fixados na sentença: Poupança
+Renuncia Não Status Sem Bloqueio
+Preferência por Idade
+IR-RRA Não
+Tipo Hon. Judicial Honorários Contratuais
+Meses Exe. Anterior -
+Meses Exe. Corrente - Valor Exe. Corrente -Valor Exe. Anterior -
+Ano Exe. Corrente - Status Servidor -
+Valor Inicial PSS - Data Base PSS -
+Valor total execução - Data base execução -
+Valor Requisitado 33.695,34
+Valor Total da Requisição: 112.317,79
+Observações:
+1)	Precatórios classificados pelo juízo requisitante como de natureza não tributária serão atualizadas da data base
+do cálculo informada na requisição de pagamento até o efetivo pagamento pelo IPCA-E.
+2) Precatórios classificadas pelo juízo requisitante como de natureza tributária serão atualizadas da data base do
+cálculo informada na requisição de pagamento até o efetivo pagamento pela SELIC.

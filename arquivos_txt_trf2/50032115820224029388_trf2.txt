@@ -1,0 +1,283 @@
+Espelho de Valores Cadastrados. Data: 31/03/2022
+PROCESSO : 5003211-58.2022.4.02.9388
+ORIGINÁRIO : 0313401-29.1900.4.02.5101/RJ
+TIPO : Precatório
+REQUERENTE : MARGARIDA MARIA SILVA FERREIRA
+ADVOGADO : IZABEL DILOHE PISKE SILVERIO - RJ001403A
+REQUERIDO : UNIÃO - ADVOCACIA GERAL DA UNIÃO
+: PROCURADOR CLAUDIO JOSÉ SILVA - MILITAR
+: DEPRECANTE Juízo Substituto da 5ª VF do Rio de Janeiro
+ASSUNTO : 01110118 - Readaptação
+Tipo de Despesa : 11 - NATUREZA ALIMENTÍCIA - Salários, vencimentos, proventos,
+pensões e suas complementações (11)
+Trans. Requisição : 30/03/2022 13:20:12
+Data de Entrada : 30/03/2022 13:20:12
+REQUISIÇÃO : 22510009250
+Data Ajuizamento : 14/02/1970
+Data TJ. Conhecim. : 28/10/1980
+Data TJ. Embargos : 22/06/2011
+Espécie Requisição : Reinclusão (Lei 13.463)
+Superpreferencial : Não
+Precatório de natureza NÃO tributária
+Tipo Beneficiário
+Nome MARGARIDA MARIA SILVA FERREIRA
+CPF/CGC 549.051.256-34
+Processo Estorno 0000.00.20.190618-9
+Autuação Estorno 28/06/2018
+Valor Principal 53.412,72 Data Base 01/01/2022
+Valor Juros 247.917,72 Data Base 01/01/2022
+Juros de mora fixados na sentença: Poupança
+Renuncia Não Status Sem Bloqueio
+IR-RRA Sim
+Meses Exe. Anterior 159
+Meses Exe. Corrente - Valor Exe. Corrente -Valor Exe. Anterior -
+Ano Exe. Corrente - Status Servidor I
+Valor Inicial PSS 8.393,42 Data Base PSS 01/01/2022
+Valor total execução - Data base execução -
+Valor Requisitado 301.330,44Espelho de Valores Cadastrados. Data: 31/03/2022
+PROCESSO : 5003211-58.2022.4.02.9388
+ORIGINÁRIO : 0313401-29.1900.4.02.5101/RJ
+TIPO : Precatório
+REQUERENTE : MARGARIDA MARIA SILVA FERREIRA
+ADVOGADO : IZABEL DILOHE PISKE SILVERIO - RJ001403A
+REQUERIDO : UNIÃO - ADVOCACIA GERAL DA UNIÃO
+: PROCURADOR CLAUDIO JOSÉ SILVA - MILITAR
+: DEPRECANTE Juízo Substituto da 5ª VF do Rio de Janeiro
+ASSUNTO : 01110118 - Readaptação
+Tipo de Despesa : 11 - NATUREZA ALIMENTÍCIA - Salários, vencimentos, proventos,
+pensões e suas complementações (11)
+Trans. Requisição : 30/03/2022 13:20:12
+Data de Entrada : 30/03/2022 13:20:12
+REQUISIÇÃO : 22510009250
+Data Ajuizamento : 14/02/1970
+Data TJ. Conhecim. : 28/10/1980
+Data TJ. Embargos : 22/06/2011
+Espécie Requisição : Reinclusão (Lei 13.463)
+Superpreferencial : Não
+Precatório de natureza NÃO tributária
+Tipo Beneficiário
+Nome MARGARIDA MARIA SILVA FERREIRA
+CPF/CGC 549.051.256-34
+Processo Estorno 0000.00.20.190618-9
+Autuação Estorno 28/06/2018
+Valor Principal 53.412,72 Data Base 01/01/2022
+Valor Juros 247.917,72 Data Base 01/01/2022
+Juros de mora fixados na sentença: Poupança
+Renuncia Não Status Sem Bloqueio
+IR-RRA Sim
+Meses Exe. Anterior 159
+Meses Exe. Corrente - Valor Exe. Corrente -Valor Exe. Anterior -
+Ano Exe. Corrente - Status Servidor I
+Valor Inicial PSS 8.393,42 Data Base PSS 01/01/2022
+Valor total execução - Data base execução -
+Valor Requisitado 301.330,44Tipo Honorário
+Nome PISKE SILVERIO - SOCIEDADE DE ADVOGADOS
+CPF/CGC 72.411.135/0001-50
+Processo Estorno 0000.00.20.190618-9
+Autuação Estorno 28/06/2018
+Valor Principal 22.891,17 Data Base 01/01/2022
+Valor Juros 106.250,44 Data Base 01/01/2022
+Juros de mora fixados na sentença: Poupança
+Renuncia Não Status Sem Bloqueio
+IR-RRA Não
+Tipo Hon. Judicial Honorários Contratuais
+Meses Exe. Anterior -
+Meses Exe. Corrente - Valor Exe. Corrente -Valor Exe. Anterior -
+Ano Exe. Corrente - Status Servidor -
+Valor Inicial PSS - Data Base PSS -
+Valor total execução - Data base execução -
+Valor Requisitado 129.141,61
+Valor Total da Requisição: 430.472,05
+Observações:
+1)	Precatórios classificados pelo juízo requisitante como de natureza não tributária serão atualizadas da data base
+do cálculo informada na requisição de pagamento até o efetivo pagamento pelo IPCA-E.
+2) Precatórios classificadas pelo juízo requisitante como de natureza tributária serão atualizadas da data base do
+cálculo informada na requisição de pagamento até o efetivo pagamento pela SELIC.Espelho de Valores Cadastrados. Data: 31/03/2022
+PROCESSO : 5003211-58.2022.4.02.9388
+ORIGINÁRIO : 0313401-29.1900.4.02.5101/RJ
+TIPO : Precatório
+REQUERENTE : MARGARIDA MARIA SILVA FERREIRA
+ADVOGADO : IZABEL DILOHE PISKE SILVERIO - RJ001403A
+REQUERIDO : UNIÃO - ADVOCACIA GERAL DA UNIÃO
+: PROCURADOR CLAUDIO JOSÉ SILVA - MILITAR
+: DEPRECANTE Juízo Substituto da 5ª VF do Rio de Janeiro
+ASSUNTO : 01110118 - Readaptação
+Tipo de Despesa : 11 - NATUREZA ALIMENTÍCIA - Salários, vencimentos, proventos,
+pensões e suas complementações (11)
+Trans. Requisição : 30/03/2022 13:20:12
+Data de Entrada : 30/03/2022 13:20:12
+REQUISIÇÃO : 22510009250
+Data Ajuizamento : 14/02/1970
+Data TJ. Conhecim. : 28/10/1980
+Data TJ. Embargos : 22/06/2011
+Espécie Requisição : Reinclusão (Lei 13.463)
+Superpreferencial : Não
+Precatório de natureza NÃO tributária
+Tipo Beneficiário
+Nome MARGARIDA MARIA SILVA FERREIRA
+CPF/CGC 549.051.256-34
+Processo Estorno 0000.00.20.190618-9
+Autuação Estorno 28/06/2018
+Valor Principal 53.412,72 Data Base 01/01/2022
+Valor Juros 247.917,72 Data Base 01/01/2022
+Juros de mora fixados na sentença: Poupança
+Renuncia Não Status Sem Bloqueio
+IR-RRA Sim
+Meses Exe. Anterior 159
+Meses Exe. Corrente - Valor Exe. Corrente -Valor Exe. Anterior -
+Ano Exe. Corrente - Status Servidor I
+Valor Inicial PSS 8.393,42 Data Base PSS 01/01/2022
+Valor total execução - Data base execução -
+Valor Requisitado 301.330,44Espelho de Valores Cadastrados. Data: 31/03/2022
+PROCESSO : 5003211-58.2022.4.02.9388
+ORIGINÁRIO : 0313401-29.1900.4.02.5101/RJ
+TIPO : Precatório
+REQUERENTE : MARGARIDA MARIA SILVA FERREIRA
+ADVOGADO : IZABEL DILOHE PISKE SILVERIO - RJ001403A
+REQUERIDO : UNIÃO - ADVOCACIA GERAL DA UNIÃO
+: PROCURADOR CLAUDIO JOSÉ SILVA - MILITAR
+: DEPRECANTE Juízo Substituto da 5ª VF do Rio de Janeiro
+ASSUNTO : 01110118 - Readaptação
+Tipo de Despesa : 11 - NATUREZA ALIMENTÍCIA - Salários, vencimentos, proventos,
+pensões e suas complementações (11)
+Trans. Requisição : 30/03/2022 13:20:12
+Data de Entrada : 30/03/2022 13:20:12
+REQUISIÇÃO : 22510009250
+Data Ajuizamento : 14/02/1970
+Data TJ. Conhecim. : 28/10/1980
+Data TJ. Embargos : 22/06/2011
+Espécie Requisição : Reinclusão (Lei 13.463)
+Superpreferencial : Não
+Precatório de natureza NÃO tributária
+Tipo Beneficiário
+Nome MARGARIDA MARIA SILVA FERREIRA
+CPF/CGC 549.051.256-34
+Processo Estorno 0000.00.20.190618-9
+Autuação Estorno 28/06/2018
+Valor Principal 53.412,72 Data Base 01/01/2022
+Valor Juros 247.917,72 Data Base 01/01/2022
+Juros de mora fixados na sentença: Poupança
+Renuncia Não Status Sem Bloqueio
+IR-RRA Sim
+Meses Exe. Anterior 159
+Meses Exe. Corrente - Valor Exe. Corrente -Valor Exe. Anterior -
+Ano Exe. Corrente - Status Servidor I
+Valor Inicial PSS 8.393,42 Data Base PSS 01/01/2022
+Valor total execução - Data base execução -
+Valor Requisitado 301.330,44Tipo Honorário
+Nome PISKE SILVERIO - SOCIEDADE DE ADVOGADOS
+CPF/CGC 72.411.135/0001-50
+Processo Estorno 0000.00.20.190618-9
+Autuação Estorno 28/06/2018
+Valor Principal 22.891,17 Data Base 01/01/2022
+Valor Juros 106.250,44 Data Base 01/01/2022
+Juros de mora fixados na sentença: Poupança
+Renuncia Não Status Sem Bloqueio
+IR-RRA Não
+Tipo Hon. Judicial Honorários Contratuais
+Meses Exe. Anterior -
+Meses Exe. Corrente - Valor Exe. Corrente -Valor Exe. Anterior -
+Ano Exe. Corrente - Status Servidor -
+Valor Inicial PSS - Data Base PSS -
+Valor total execução - Data base execução -
+Valor Requisitado 129.141,61
+Valor Total da Requisição: 430.472,05
+Observações:
+1)	Precatórios classificados pelo juízo requisitante como de natureza não tributária serão atualizadas da data base
+do cálculo informada na requisição de pagamento até o efetivo pagamento pelo IPCA-E.
+2) Precatórios classificadas pelo juízo requisitante como de natureza tributária serão atualizadas da data base do
+cálculo informada na requisição de pagamento até o efetivo pagamento pela SELIC.Espelho de Valores Cadastrados. Data: 31/03/2022
+PROCESSO : 5003211-58.2022.4.02.9388
+ORIGINÁRIO : 0313401-29.1900.4.02.5101/RJ
+TIPO : Precatório
+REQUERENTE : MARGARIDA MARIA SILVA FERREIRA
+ADVOGADO : IZABEL DILOHE PISKE SILVERIO - RJ001403A
+REQUERIDO : UNIÃO - ADVOCACIA GERAL DA UNIÃO
+: PROCURADOR CLAUDIO JOSÉ SILVA - MILITAR
+: DEPRECANTE Juízo Substituto da 5ª VF do Rio de Janeiro
+ASSUNTO : 01110118 - Readaptação
+Tipo de Despesa : 11 - NATUREZA ALIMENTÍCIA - Salários, vencimentos, proventos,
+pensões e suas complementações (11)
+Trans. Requisição : 30/03/2022 13:20:12
+Data de Entrada : 30/03/2022 13:20:12
+REQUISIÇÃO : 22510009250
+Data Ajuizamento : 14/02/1970
+Data TJ. Conhecim. : 28/10/1980
+Data TJ. Embargos : 22/06/2011
+Espécie Requisição : Reinclusão (Lei 13.463)
+Superpreferencial : Não
+Precatório de natureza NÃO tributária
+Tipo Beneficiário
+Nome MARGARIDA MARIA SILVA FERREIRA
+CPF/CGC 549.051.256-34
+Processo Estorno 0000.00.20.190618-9
+Autuação Estorno 28/06/2018
+Valor Principal 53.412,72 Data Base 01/01/2022
+Valor Juros 247.917,72 Data Base 01/01/2022
+Juros de mora fixados na sentença: Poupança
+Renuncia Não Status Sem Bloqueio
+IR-RRA Sim
+Meses Exe. Anterior 159
+Meses Exe. Corrente - Valor Exe. Corrente -Valor Exe. Anterior -
+Ano Exe. Corrente - Status Servidor I
+Valor Inicial PSS 8.393,42 Data Base PSS 01/01/2022
+Valor total execução - Data base execução -
+Valor Requisitado 301.330,44Espelho de Valores Cadastrados. Data: 31/03/2022
+PROCESSO : 5003211-58.2022.4.02.9388
+ORIGINÁRIO : 0313401-29.1900.4.02.5101/RJ
+TIPO : Precatório
+REQUERENTE : MARGARIDA MARIA SILVA FERREIRA
+ADVOGADO : IZABEL DILOHE PISKE SILVERIO - RJ001403A
+REQUERIDO : UNIÃO - ADVOCACIA GERAL DA UNIÃO
+: PROCURADOR CLAUDIO JOSÉ SILVA - MILITAR
+: DEPRECANTE Juízo Substituto da 5ª VF do Rio de Janeiro
+ASSUNTO : 01110118 - Readaptação
+Tipo de Despesa : 11 - NATUREZA ALIMENTÍCIA - Salários, vencimentos, proventos,
+pensões e suas complementações (11)
+Trans. Requisição : 30/03/2022 13:20:12
+Data de Entrada : 30/03/2022 13:20:12
+REQUISIÇÃO : 22510009250
+Data Ajuizamento : 14/02/1970
+Data TJ. Conhecim. : 28/10/1980
+Data TJ. Embargos : 22/06/2011
+Espécie Requisição : Reinclusão (Lei 13.463)
+Superpreferencial : Não
+Precatório de natureza NÃO tributária
+Tipo Beneficiário
+Nome MARGARIDA MARIA SILVA FERREIRA
+CPF/CGC 549.051.256-34
+Processo Estorno 0000.00.20.190618-9
+Autuação Estorno 28/06/2018
+Valor Principal 53.412,72 Data Base 01/01/2022
+Valor Juros 247.917,72 Data Base 01/01/2022
+Juros de mora fixados na sentença: Poupança
+Renuncia Não Status Sem Bloqueio
+IR-RRA Sim
+Meses Exe. Anterior 159
+Meses Exe. Corrente - Valor Exe. Corrente -Valor Exe. Anterior -
+Ano Exe. Corrente - Status Servidor I
+Valor Inicial PSS 8.393,42 Data Base PSS 01/01/2022
+Valor total execução - Data base execução -
+Valor Requisitado 301.330,44Tipo Honorário
+Nome PISKE SILVERIO - SOCIEDADE DE ADVOGADOS
+CPF/CGC 72.411.135/0001-50
+Processo Estorno 0000.00.20.190618-9
+Autuação Estorno 28/06/2018
+Valor Principal 22.891,17 Data Base 01/01/2022
+Valor Juros 106.250,44 Data Base 01/01/2022
+Juros de mora fixados na sentença: Poupança
+Renuncia Não Status Sem Bloqueio
+IR-RRA Não
+Tipo Hon. Judicial Honorários Contratuais
+Meses Exe. Anterior -
+Meses Exe. Corrente - Valor Exe. Corrente -Valor Exe. Anterior -
+Ano Exe. Corrente - Status Servidor -
+Valor Inicial PSS - Data Base PSS -
+Valor total execução - Data base execução -
+Valor Requisitado 129.141,61
+Valor Total da Requisição: 430.472,05
+Observações:
+1)	Precatórios classificados pelo juízo requisitante como de natureza não tributária serão atualizadas da data base
+do cálculo informada na requisição de pagamento até o efetivo pagamento pelo IPCA-E.
+2) Precatórios classificadas pelo juízo requisitante como de natureza tributária serão atualizadas da data base do
+cálculo informada na requisição de pagamento até o efetivo pagamento pela SELIC.

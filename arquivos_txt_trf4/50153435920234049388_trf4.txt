@@ -1,0 +1,89 @@
+Espelho de Valores Cadastrados. Data: 01/04/2023
+PROCESSO : 5015343-59.2023.4.04.9388
+ORIGINÁRIO : 5002189-73.2022.4.04.7200/SC
+TIPO : Precatório
+REQUERENTE : RAFAEL CAMPOS
+ADVOGADO : MONIQUE TATIANE PIRES DE LIMA - SC056803
+REQUERIDO : INSTITUTO NACIONAL DO SEGURO SOCIAL - INSS
+: PROCURADOR PROCURADORIA REGIONAL FEDERAL DA 4 REGIÃO - PRF4
+: DEPRECANTE Juízo Substituto da 1ª VF de Caçador
+ASSUNTO : 040111 - Auxílio-Acidente (Art. 86)
+Tipo de Despesa : 12 - NATUREZA ALIMENTÍCIA - Benefícios previdenciários,
+indenizações por morte ou invalidez e demais beneficiários sem vínculo
+com a administração pública (12)Trans. Requisição : 31/03/2023 12:56:49
+Data de Entrada : 31/03/2023 12:56:49
+REQUISIÇÃO : 23720015649
+Data Ajuizamento : 01/02/2022
+Data TJ. Conhecim. : 09/11/2022
+Data TJ. Embargos : 14/03/2023
+Espécie Requisição : Original
+Superpreferencial : Não
+Precatório de natureza NÃO tributária
+Tipo Beneficiário
+Nome RAFAEL CAMPOS
+CPF/CGC 047.467.719-28
+Valor Principal 76.091,48 Data Base 01/12/2022
+Valor Juros 6.075,82 Data Base 01/12/2022
+Juros de mora fixados na sentença: Não incidem 
+Renuncia Não Status Bloqueado
+IR-RRA Sim
+Meses Exe. Anterior 73
+Meses Exe. Corrente - Valor Exe. Corrente -Valor Exe. Anterior -
+Ano Exe. Corrente - Status Servidor -
+Valor Inicial PSS - Data Base PSS -
+Valor total execução - Data base execução -
+Valor Requisitado 82.167,30Espelho de Valores Cadastrados. Data: 01/04/2023
+PROCESSO : 5015343-59.2023.4.04.9388
+ORIGINÁRIO : 5002189-73.2022.4.04.7200/SC
+TIPO : Precatório
+REQUERENTE : RAFAEL CAMPOS
+ADVOGADO : MONIQUE TATIANE PIRES DE LIMA - SC056803
+REQUERIDO : INSTITUTO NACIONAL DO SEGURO SOCIAL - INSS
+: PROCURADOR PROCURADORIA REGIONAL FEDERAL DA 4 REGIÃO - PRF4
+: DEPRECANTE Juízo Substituto da 1ª VF de Caçador
+ASSUNTO : 040111 - Auxílio-Acidente (Art. 86)
+Tipo de Despesa : 12 - NATUREZA ALIMENTÍCIA - Benefícios previdenciários,
+indenizações por morte ou invalidez e demais beneficiários sem vínculo
+com a administração pública (12)Trans. Requisição : 31/03/2023 12:56:49
+Data de Entrada : 31/03/2023 12:56:49
+REQUISIÇÃO : 23720015649
+Data Ajuizamento : 01/02/2022
+Data TJ. Conhecim. : 09/11/2022
+Data TJ. Embargos : 14/03/2023
+Espécie Requisição : Original
+Superpreferencial : Não
+Precatório de natureza NÃO tributária
+Tipo Beneficiário
+Nome RAFAEL CAMPOS
+CPF/CGC 047.467.719-28
+Valor Principal 76.091,48 Data Base 01/12/2022
+Valor Juros 6.075,82 Data Base 01/12/2022
+Juros de mora fixados na sentença: Não incidem 
+Renuncia Não Status Bloqueado
+IR-RRA Sim
+Meses Exe. Anterior 73
+Meses Exe. Corrente - Valor Exe. Corrente -Valor Exe. Anterior -
+Ano Exe. Corrente - Status Servidor -
+Valor Inicial PSS - Data Base PSS -
+Valor total execução - Data base execução -
+Valor Requisitado 82.167,30Tipo Honorário
+Nome MONIQUE TATIANE PIRES DE LIMA
+CPF/CGC 095.348.519-65
+Valor Principal 32.610,64 Data Base 01/12/2022
+Valor Juros 2.603,93 Data Base 01/12/2022
+Juros de mora fixados na sentença: Não incidem 
+Renuncia Não Status Bloqueado
+IR-RRA Não
+Tipo Hon. Judicial Honorários Contratuais
+Meses Exe. Anterior -
+Meses Exe. Corrente - Valor Exe. Corrente -Valor Exe. Anterior -
+Ano Exe. Corrente - Status Servidor -
+Valor Inicial PSS - Data Base PSS -
+Valor total execução - Data base execução -
+Valor Requisitado 35.214,57
+Valor Total da Requisição: 117.381,87
+Observações:
+1)	Precatórios classificados pelo juízo requisitante como de natureza não tributária serão atualizadas da data base
+do cálculo informada na requisição de pagamento até o efetivo pagamento pelo IPCA-E.
+2) Precatórios classificadas pelo juízo requisitante como de natureza tributária serão atualizadas da data base do
+cálculo informada na requisição de pagamento até o efetivo pagamento pela SELIC.

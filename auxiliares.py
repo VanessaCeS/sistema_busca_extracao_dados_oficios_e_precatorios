@@ -355,7 +355,6 @@ def principal_e_juros_poupanca(string):
 
 def tipo_de_natureza(natureza):
   natureza = limpar_string(natureza)
-  print('natureza = ', natureza)
   if natureza in tipos_alimentar:
     return {'natureza': 'ALIMENTAR'.upper()}
   elif  natureza in tipos_comum:
@@ -529,29 +528,6 @@ def extrair_processo_origem(processo, processo_xml):
   else:
     return ''
 
-def tipo_precatorio(dado):
-  try:
-    processo = dado['processo'].split('.')
-    dict_tribunais = {
-        '1': 'FEDERAL',
-        '2': 'FEDERAL',
-        '3': 'FEDERAL',
-        '4': 'FEDERAL',
-        '5': 'FEDERAL',
-        '6': 'FEDERAL',
-        '7': 'FEDERAL',
-        '8': 'ESTADUAL',
-        '9': 'ESTADUAL',
-      }
-
-    for tribunal in dict.keys(dict_tribunais):
-      if tribunal == processo[2]:
-        tipo = {'tipo': dict_tribunais[tribunal].upper()}
-    return tipo
-  except:
-    return {'tipo': ''}
-  
-
 def identificar_tribunal(processo):
   processo = processo.split('.')
   tribunais = {
@@ -588,7 +564,7 @@ def identificar_tribunal(processo):
       return {'estado': f'{tribunais[t].upper()}'} 
     else:
       {'estado': ''}
-  
+
 def verificar_tribunal(n_processo):
   padrao = r'\d{2,4}|\d{7}-\d{2}.\d{4}.\d{1}.\d{2}.\d{4}'
   processo = re.search(padrao, n_processo)
@@ -641,6 +617,7 @@ def mandar_documento_para_ocr(arquivo, op,insc='',pasta="arquivos_texto_ocr"):
   if op == '4':
     arquivo_txt = ler_img_sem_google(arquivo_base_64, insc, pasta)
     return arquivo_txt
+  
 
 def converter_arquivo_base_64(nome_arquivo):
   with open(nome_arquivo, "rb") as arquivo:
@@ -689,6 +666,7 @@ def ler_imagem_ocr(arquivo_base_64_pdf):
   }
   response = requests.post(url, headers=headers, json=json_data).json()
   txt = response['img_text']
+  print(txt)
   return txt
 
 def ler_img_sem_google(arquivo_base_64_pdf, insc,pasta):
@@ -712,15 +690,13 @@ def ler_img_sem_google(arquivo_base_64_pdf, insc,pasta):
 def dados_limpos_banco_de_dados(dados):
   dados['data_nascimento'] = converter_data(dados['data_nascimento'])
   dados['data_expedicao'] = converter_data(dados['data_expedicao'])
-
-
   if 'conhecimento' in dados:  
     if dados['conhecimento'] == '':
       del dados['conhecimento']
     else:
       dados['processo_origem'] = dados.pop('conhecimento')
 
-  chaves_a_excluir = ['credor', 'data_nascimento', 'oab','seccional' ,'advogado','data_nascimento','devedor','documento','processo_geral','site','seccional','telefone', 'documento_advogado']
+  chaves_a_excluir = ['credor', 'data_nascimento', 'oab','seccional' ,'advogado','data_nascimento','devedor','documento','processo_geral','site','seccional','telefone', 'documento_advogado', 'email']
 
   for chave in chaves_a_excluir:
     dados.pop(chave, '')
@@ -879,10 +855,18 @@ def pdf_to_png(pdf_path, output_pdf_path, processo):
         image = page.get_pixmap()
         pil_image = Image.frombytes("RGB", [image.width, image.height], image.samples)
         pil_image.save(f"{output_pdf_path}/{processo}_{page_number + 1}.png", "PNG")
+        mandar_documento_para_ocr(f"{output_pdf_path}/{processo}_{page_number + 1}.png", '4', processo, 'arquivos_txt_mato_grosso_do_sul')
     pdf_document.close()
-    return f"{output_pdf_path}/{processo}_4.png"
+    print(f"arquivos_txt_mato_grosso_do_sul/{processo}_texto_ocr.txt")
+    return f"arquivos_txt_mato_grosso_do_sul/{processo}_texto_ocr.txt"
+
 
 def formatar_data_padra_arteria(data):
   dia, mes, ano = data.strip().split('/')
   data_padrao_arteria = f"{mes}/{dia}/{ano}"
   return data_padrao_arteria
+
+def mascara_processo(processo_numerico):
+  processo = re.sub(r'(\d{7})(\d{2})(\d{4})(\d{1})(\d{2})(\d{2})(\d{4})', r'\1-\2.\3.\4.\5.\6.\7', processo_numerico)
+  return processo
+

@@ -1,0 +1,89 @@
+Espelho de Valores Cadastrados. Data: 02/07/2021
+PROCESSO : 5028062-44.2021.4.04.9388
+ORIGINÁRIO : 5012699-22.2011.4.04.7107/RS
+TIPO : Precatório
+REQUERENTE : IVO ANDRÉ PAVIANI
+ADVOGADO : CÉSAR GABARDO - RS037253
+REQUERIDO : INSTITUTO NACIONAL DO SEGURO SOCIAL - INSS
+: PROCURADOR PROCURADORIA REGIONAL FEDERAL DA 4 REGIÃO - PRF4
+: DEPRECANTE Juízo Federal da 1ª VF de Stana.do Livramento
+ASSUNTO : 040104 - Aposentadoria Especial (Art. 57/8)
+Tipo de Despesa : 12 - NATUREZA ALIMENTÍCIA - Benefícios previdenciários e
+indenizações por morte ou invalidez (12)
+Trans. Requisição : 01/07/2021 10:36:38
+Data de Entrada : 01/07/2021 10:36:38
+REQUISIÇÃO : 21710045740
+Data Ajuizamento : 16/06/2009
+Data TJ. Conhecim. : 02/03/2021
+Data TJ. Embargos : 22/06/2021
+Espécie Requisição : Original
+Superpreferencial : Não
+Precatório de natureza NÃO tributária
+Tipo Beneficiário
+Nome IVO ANDRÉ PAVIANI
+CPF/CGC 396.566.160-49
+Valor Principal 288.111,14 Data Base 01/05/2021
+Valor Juros 141.082,74 Data Base 01/05/2021
+Juros de mora fixados na sentença: Poupança
+Renuncia Não Status Sem Bloqueio
+IR-RRA Sim
+Meses Exe. Anterior 83
+Meses Exe. Corrente - Valor Exe. Corrente -Valor Exe. Anterior -
+Ano Exe. Corrente - Status Servidor -
+Valor Inicial PSS - Data Base PSS -
+Valor total execução - Data base execução -
+Valor Requisitado 429.193,88Espelho de Valores Cadastrados. Data: 02/07/2021
+PROCESSO : 5028062-44.2021.4.04.9388
+ORIGINÁRIO : 5012699-22.2011.4.04.7107/RS
+TIPO : Precatório
+REQUERENTE : IVO ANDRÉ PAVIANI
+ADVOGADO : CÉSAR GABARDO - RS037253
+REQUERIDO : INSTITUTO NACIONAL DO SEGURO SOCIAL - INSS
+: PROCURADOR PROCURADORIA REGIONAL FEDERAL DA 4 REGIÃO - PRF4
+: DEPRECANTE Juízo Federal da 1ª VF de Stana.do Livramento
+ASSUNTO : 040104 - Aposentadoria Especial (Art. 57/8)
+Tipo de Despesa : 12 - NATUREZA ALIMENTÍCIA - Benefícios previdenciários e
+indenizações por morte ou invalidez (12)
+Trans. Requisição : 01/07/2021 10:36:38
+Data de Entrada : 01/07/2021 10:36:38
+REQUISIÇÃO : 21710045740
+Data Ajuizamento : 16/06/2009
+Data TJ. Conhecim. : 02/03/2021
+Data TJ. Embargos : 22/06/2021
+Espécie Requisição : Original
+Superpreferencial : Não
+Precatório de natureza NÃO tributária
+Tipo Beneficiário
+Nome IVO ANDRÉ PAVIANI
+CPF/CGC 396.566.160-49
+Valor Principal 288.111,14 Data Base 01/05/2021
+Valor Juros 141.082,74 Data Base 01/05/2021
+Juros de mora fixados na sentença: Poupança
+Renuncia Não Status Sem Bloqueio
+IR-RRA Sim
+Meses Exe. Anterior 83
+Meses Exe. Corrente - Valor Exe. Corrente -Valor Exe. Anterior -
+Ano Exe. Corrente - Status Servidor -
+Valor Inicial PSS - Data Base PSS -
+Valor total execução - Data base execução -
+Valor Requisitado 429.193,88Tipo Honorário
+Nome GABARDO ADVOCACIA
+CPF/CGC 04.549.441/0001-06
+Valor Principal 72.027,79 Data Base 01/05/2021
+Valor Juros 35.270,68 Data Base 01/05/2021
+Juros de mora fixados na sentença: Poupança
+Renuncia Não Status Sem Bloqueio
+IR-RRA Não
+Tipo Hon. Judicial Honorários Contratuais
+Meses Exe. Anterior -
+Meses Exe. Corrente - Valor Exe. Corrente -Valor Exe. Anterior -
+Ano Exe. Corrente - Status Servidor -
+Valor Inicial PSS - Data Base PSS -
+Valor total execução - Data base execução -
+Valor Requisitado 107.298,47
+Valor Total da Requisição: 536.492,35
+Observações:
+1)	Precatórios classificados pelo juízo requisitante como de natureza não tributária serão atualizadas da data base
+do cálculo informada na requisição de pagamento até o efetivo pagamento pelo IPCA-E.
+2) Precatórios classificadas pelo juízo requisitante como de natureza tributária serão atualizadas da data base do
+cálculo informada na requisição de pagamento até o efetivo pagamento pela SELIC.

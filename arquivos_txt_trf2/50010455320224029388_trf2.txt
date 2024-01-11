@@ -1,0 +1,89 @@
+Espelho de Valores Cadastrados. Data: 24/02/2022
+PROCESSO : 5001045-53.2022.4.02.9388
+ORIGINÁRIO : 5016579-11.2019.4.02.5001/ES
+TIPO : Precatório
+REQUERENTE : GLEIDSON VIEIRA E SILVA
+ADVOGADO : MARCELO CARVALHINHO VIEIRA - ES012411
+DEPRECANTE : Juízo Substituto da 2ª  VF Cível de Vitória
+: 
+: REQUERIDO INSS -INSTITUTO NACIONAL DO SEGURO SOCIAL
+ASSUNTO : 040119 - Aposentadoria por Tempo de Contribuição (Art. 55/6)
+Tipo de Despesa : 12 - NATUREZA ALIMENTÍCIA - Benefícios previdenciários e
+indenizações por morte ou invalidez (12)
+Trans. Requisição : 23/02/2022 15:48:47
+Data de Entrada : 23/02/2022 15:48:47
+REQUISIÇÃO : 22500001216
+Data Ajuizamento : 29/07/2019
+Data TJ. Conhecim. : 03/08/2021
+Data TJ. Embargos : 11/11/2021
+Espécie Requisição : Parcial
+Superpreferencial : Não
+Precatório de natureza NÃO tributária
+Tipo Beneficiário
+Nome GLEIDSON VIEIRA E SILVA
+CPF/CGC 813.461.827-87
+Valor Principal 267.397,71 Data Base 01/09/2021
+Valor Juros 10.166,08 Data Base 01/09/2021
+Juros de mora fixados na sentença: Poupança
+Renuncia Não Status Sem Bloqueio
+IR-RRA Sim
+Meses Exe. Anterior 55
+Meses Exe. Corrente - Valor Exe. Corrente -Valor Exe. Anterior -
+Ano Exe. Corrente - Status Servidor -
+Valor Inicial PSS - Data Base PSS -
+Valor total execução 327.683,65 Data base execução 01/09/2021
+Valor Requisitado 277.563,79Espelho de Valores Cadastrados. Data: 24/02/2022
+PROCESSO : 5001045-53.2022.4.02.9388
+ORIGINÁRIO : 5016579-11.2019.4.02.5001/ES
+TIPO : Precatório
+REQUERENTE : GLEIDSON VIEIRA E SILVA
+ADVOGADO : MARCELO CARVALHINHO VIEIRA - ES012411
+DEPRECANTE : Juízo Substituto da 2ª  VF Cível de Vitória
+: 
+: REQUERIDO INSS -INSTITUTO NACIONAL DO SEGURO SOCIAL
+ASSUNTO : 040119 - Aposentadoria por Tempo de Contribuição (Art. 55/6)
+Tipo de Despesa : 12 - NATUREZA ALIMENTÍCIA - Benefícios previdenciários e
+indenizações por morte ou invalidez (12)
+Trans. Requisição : 23/02/2022 15:48:47
+Data de Entrada : 23/02/2022 15:48:47
+REQUISIÇÃO : 22500001216
+Data Ajuizamento : 29/07/2019
+Data TJ. Conhecim. : 03/08/2021
+Data TJ. Embargos : 11/11/2021
+Espécie Requisição : Parcial
+Superpreferencial : Não
+Precatório de natureza NÃO tributária
+Tipo Beneficiário
+Nome GLEIDSON VIEIRA E SILVA
+CPF/CGC 813.461.827-87
+Valor Principal 267.397,71 Data Base 01/09/2021
+Valor Juros 10.166,08 Data Base 01/09/2021
+Juros de mora fixados na sentença: Poupança
+Renuncia Não Status Sem Bloqueio
+IR-RRA Sim
+Meses Exe. Anterior 55
+Meses Exe. Corrente - Valor Exe. Corrente -Valor Exe. Anterior -
+Ano Exe. Corrente - Status Servidor -
+Valor Inicial PSS - Data Base PSS -
+Valor total execução 327.683,65 Data base execução 01/09/2021
+Valor Requisitado 277.563,79Tipo Honorário
+Nome MARCELO CARVALHINHO VIEIRA
+CPF/CGC 078.065.597-44
+Valor Principal 48.284,17 Data Base 01/09/2021
+Valor Juros 1.835,69 Data Base 01/09/2021
+Juros de mora fixados na sentença: Poupança
+Renuncia Não Status Sem Bloqueio
+IR-RRA Não
+Tipo Hon. Judicial Honorários Contratuais
+Meses Exe. Anterior -
+Meses Exe. Corrente - Valor Exe. Corrente -Valor Exe. Anterior -
+Ano Exe. Corrente - Status Servidor -
+Valor Inicial PSS - Data Base PSS -
+Valor total execução - Data base execução -
+Valor Requisitado 50.119,86
+Valor Total da Requisição: 327.683,65
+Observações:
+1)	Precatórios classificados pelo juízo requisitante como de natureza não tributária serão atualizadas da data base
+do cálculo informada na requisição de pagamento até o efetivo pagamento pelo IPCA-E.
+2) Precatórios classificadas pelo juízo requisitante como de natureza tributária serão atualizadas da data base do
+cálculo informada na requisição de pagamento até o efetivo pagamento pela SELIC.

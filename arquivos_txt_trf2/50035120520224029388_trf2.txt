@@ -1,0 +1,88 @@
+Espelho de Valores Cadastrados. Data: 01/04/2022
+PROCESSO : 5003512-05.2022.4.02.9388
+ORIGINÁRIO : 0124472-45.2016.4.02.5101/RJ
+TIPO : Precatório
+REQUERENTE : IGNACIO DE HOLANDA CAVALCANTI PACHECO DE ARAGAO
+ADVOGADO : LEONARDO DUARTE ALVES VIEIRA - RJ141193
+REQUERIDO : UNIÃO - ADVOCACIA GERAL DA UNIÃO
+: PROCURADOR CLAUDIO JOSÉ SILVA - MILITAR
+: DEPRECANTE Juízo Federal da 19ª VF do Rio de Janeiro
+ASSUNTO : 011102 - Sistema Remuneratório e Benefícios
+Tipo de Despesa : 11 - NATUREZA ALIMENTÍCIA - Salários, vencimentos, proventos,
+pensões e suas complementações (11)
+Trans. Requisição : 31/03/2022 13:30:15
+Data de Entrada : 31/03/2022 13:30:15
+REQUISIÇÃO : 22510013475
+Data Ajuizamento : 12/09/2016
+Data TJ. Conhecim. : 30/04/2021
+Data TJ. Embargos : 24/11/2021
+Espécie Requisição : Parcial
+Superpreferencial : Não
+Precatório de natureza NÃO tributária
+Tipo Beneficiário
+Nome IGNACIO DE HOLANDA CAVALCANTI PACHECO DE ARAGAO
+CPF/CGC 763.008.037-91
+Valor Principal 700.884,56 Data Base 01/08/2021
+Valor Juros 120.223,49 Data Base 01/08/2021
+Juros de mora fixados na sentença: Poupança
+Renuncia Não Status Bloqueado
+IR-RRA Sim
+Meses Exe. Anterior 32
+Meses Exe. Corrente - Valor Exe. Corrente -Valor Exe. Anterior -
+Ano Exe. Corrente - Status Servidor I
+Valor Inicial PSS 79.237,88 Data Base PSS 01/08/2021
+Valor total execução 840.567,86 Data base execução 01/08/2021
+Valor Requisitado 821.108,05Espelho de Valores Cadastrados. Data: 01/04/2022
+PROCESSO : 5003512-05.2022.4.02.9388
+ORIGINÁRIO : 0124472-45.2016.4.02.5101/RJ
+TIPO : Precatório
+REQUERENTE : IGNACIO DE HOLANDA CAVALCANTI PACHECO DE ARAGAO
+ADVOGADO : LEONARDO DUARTE ALVES VIEIRA - RJ141193
+REQUERIDO : UNIÃO - ADVOCACIA GERAL DA UNIÃO
+: PROCURADOR CLAUDIO JOSÉ SILVA - MILITAR
+: DEPRECANTE Juízo Federal da 19ª VF do Rio de Janeiro
+ASSUNTO : 011102 - Sistema Remuneratório e Benefícios
+Tipo de Despesa : 11 - NATUREZA ALIMENTÍCIA - Salários, vencimentos, proventos,
+pensões e suas complementações (11)
+Trans. Requisição : 31/03/2022 13:30:15
+Data de Entrada : 31/03/2022 13:30:15
+REQUISIÇÃO : 22510013475
+Data Ajuizamento : 12/09/2016
+Data TJ. Conhecim. : 30/04/2021
+Data TJ. Embargos : 24/11/2021
+Espécie Requisição : Parcial
+Superpreferencial : Não
+Precatório de natureza NÃO tributária
+Tipo Beneficiário
+Nome IGNACIO DE HOLANDA CAVALCANTI PACHECO DE ARAGAO
+CPF/CGC 763.008.037-91
+Valor Principal 700.884,56 Data Base 01/08/2021
+Valor Juros 120.223,49 Data Base 01/08/2021
+Juros de mora fixados na sentença: Poupança
+Renuncia Não Status Bloqueado
+IR-RRA Sim
+Meses Exe. Anterior 32
+Meses Exe. Corrente - Valor Exe. Corrente -Valor Exe. Anterior -
+Ano Exe. Corrente - Status Servidor I
+Valor Inicial PSS 79.237,88 Data Base PSS 01/08/2021
+Valor total execução 840.567,86 Data base execução 01/08/2021
+Valor Requisitado 821.108,05Tipo Honorário
+Nome CONSELHO CURADOR DOS HONORARIOS ADVOCATICIOS
+CPF/CGC 26.707.621/0001-01
+Valor Principal 19.459,80 Data Base 01/08/2021
+Juros de mora fixados na sentença: Poupança
+Renuncia Não Status Bloqueado
+IR-RRA Não
+Tipo Hon. Judicial Cessão de Crédito
+Meses Exe. Anterior -
+Meses Exe. Corrente - Valor Exe. Corrente -Valor Exe. Anterior -
+Ano Exe. Corrente - Status Servidor -
+Valor Inicial PSS - Data Base PSS -
+Valor total execução 840.567,86 Data base execução 01/08/2021
+Valor Requisitado 19.459,80
+Valor Total da Requisição: 840.567,85
+Observações:
+1)	Precatórios classificados pelo juízo requisitante como de natureza não tributária serão atualizadas da data base
+do cálculo informada na requisição de pagamento até o efetivo pagamento pelo IPCA-E.
+2) Precatórios classificadas pelo juízo requisitante como de natureza tributária serão atualizadas da data base do
+cálculo informada na requisição de pagamento até o efetivo pagamento pela SELIC.

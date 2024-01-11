@@ -17,37 +17,39 @@ def consultar_processos(valor_tribunal):
   processo_origem = ''
 
   cursor = conn.cursor()
-  consulta_sql = "SELECT * FROM processos WHERE processo LIKE '%{}%' AND status NOT IN ('Sucesso') ORDER BY data_criacao DESC".format(valor_tribunal)
+  consulta_sql = "SELECT * FROM processos WHERE processo LIKE '%{}%' ORDER BY data_criacao DESC ".format(valor_tribunal)
+
 
   cursor.execute(consulta_sql)
   resultados = cursor.fetchall()
+  
   for registro in resultados:
         if registro[4] != 'STFSITE':
             id_processo = registro[0]
             processo = registro[2]
             materia = registro[3]
             tribunal = registro[4]
-            print('processo ---> ', processo)
             if pesquisar_processo_em_precatorios(processo):
                 consulta_publicacao = "SELECT publicacao FROM publicacoes WHERE id_processo LIKE '%{}%' ORDER BY data_criacao DESC".format(id_processo)
                 cursor.execute(consulta_publicacao)
                 publicacoes = cursor.fetchall()
                 for publicacao in publicacoes:
-                        atualizar_ou_inserir_situacao_cadastro(processo, {'status': 'pesquisado'})
-                        if not any(item in processo for item in ['.4.02.', '.4.04.','8.08.', '.8.16.', '.8.19', '.8.21.', '.8.24.']):
-                            processo_origem = extrair_processo_origem(publicacao[0].replace('\n', ''),processo)
-                            if processo_origem == '':
-                                if verificar_tribunal(processo, valor_tribunal):
-                                    processo_origem = extrair_processo_origem_amazonas(publicacao[0].replace('\n', ''), processo)
-                        else:
-                            processo_origem = procurar_precatorio_trf(publicacao[0],processo)
+                    atualizar_ou_inserir_situacao_cadastro(processo, {'status': 'pesquisado'})
+                    if not any(item in processo for item in ['.4.02.', '.4.04.','8.08.', '.8.16.', '.8.19', '.8.21.', '.8.24.']):
+                        processo_origem = extrair_processo_origem(publicacao[0].replace('\n', ''),processo)
+                        if processo_origem == '':
+                            if verificar_tribunal(processo, valor_tribunal):
+                                processo_origem = extrair_processo_origem_amazonas(publicacao[0].replace('\n', ''), processo)
+                    else:
+                        processo_origem = procurar_precatorio_trf(publicacao[0],processo)
+                        print('origem -->', processo_origem)
                 if processo_origem == None:
-                        processo_origem = ''
+                    processo_origem = ''
                 dados.append({"processo": processo, "tribunal": tribunal, "materia": materia, 'processo_origem': processo_origem})
-        
   cursor.close()
   conn.close()
   return dados
+
 
 def verificar_tribunal(n_processo, n_tribunal):
         padrao = fr'\d{{7}}-\d{{2}}.*?{re.escape(n_tribunal)}.*?\d{{4}}'
@@ -56,7 +58,7 @@ def verificar_tribunal(n_processo, n_tribunal):
           return True
 
 def pesquisar_pessoa_por_documento_ou_oab(conn, valor_pesquisa):
-    cursor = conn.cursor(dictionary=True)
+    cursor = conn.cursor(buffered=True,dictionary=True)
     query = 'SELECT * FROM pessoas WHERE documento = %s OR oab = %s'
     cursor.execute(query, (valor_pesquisa, valor_pesquisa))
     pessoa = cursor.fetchone()
@@ -86,7 +88,7 @@ def atualizar_ou_inserir_pessoa_no_banco_de_dados(doc, dados):
         password=os.getenv('db_password_precatorio'),
         database=os.getenv('db_database_precatorio'))
     
-    cursor = conn.cursor()
+    cursor = conn.cursor(buffered=True, dictionary=True)
 
     try:
         documento = dados.get('documento')
@@ -259,4 +261,20 @@ def atualizar_ou_inserir_situacao_cadastro(n_processo, status):
       except Exception as e:
                 print("E ==>> ", e)
                 print("Exec ==>> ", traceback.print_exc())
+
+def precatorio_exitente_arteria(processo_precatorio):
+  conn = mysql.connector.connect(
+        host=os.getenv('db_server_precatorio'),
+        user=os.getenv('db_username_precatorio'),
+        password=os.getenv('db_password_precatorio'),
+        database=os.getenv('db_database_precatorio'))
     
+  cursor = conn.cursor()
+  query = 'SELECT id_sistema_arteria FROM precatorios WHERE processo = %s'
+  cursor.execute(query, (processo_precatorio,))
+  pesquisa = cursor.fetchone()
+  if pesquisa:
+    print(pesquisa)
+    return pesquisa
+  else: 
+    return False

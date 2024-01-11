@@ -3,7 +3,7 @@ import os
 
 
 def log_file(site_key, url, tipo):
-    with open('LOG_CAPMONSTER.txt', 'a+') as f:
+    with open('arquivos_logs/LOG_CAPMONSTER.txt', 'a+') as f:
         f.write(f'{tipo} - {site_key} - {url}\n')
 
 

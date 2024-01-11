@@ -14,18 +14,17 @@ def log(cnj,tipo, site, mensagem, estado, tribunal):
 
     if tipo != 'Sucesso':
         mensagem = dict_erros(mensagem)
-        with open('log_falha_rotina_precatorios.txt', '+a', encoding='utf-8') as f:
+        with open('arquivos_logs/log_falha_rotina_precatorios.txt', '+a', encoding='utf-8') as f:
             f.write(f"{data_corrente_formatada()} {hora_formatada} - {regiao} - {cnj} - {mensagem} - {site}\n")
     else:
-        with open('log_sucesso_rotina_precatorios.txt', '+a', encoding='utf-8') as f:
+        with open('arquivos_logs/log_sucesso_rotina_precatorios.txt', '+a', encoding='utf-8') as f:
             f.write(f"{data_corrente_formatada()} {hora_formatada} - {regiao} - {cnj} - {mensagem} - {site}\n")
 
-    with open('log_completo_rotina_precatorios.txt', '+a', encoding='utf-8') as f:
+    with open('arquivos_logs/log_completo_rotina_precatorios.txt', '+a', encoding='utf-8') as f:
         f.write(f"{data_corrente_formatada()} {hora_formatada} - {regiao} - {cnj} - {mensagem} - {site}\n")
         
     dados = {'processo': cnj, 'site': site, 'mensagem': mensagem, 'tipo': tipo, 'tentativas': tentativas, 'estado': estado, 'tribunal': tribunal}
     inserir_log_no_banco_de_dados(dados)
-    salvar_em_excel(dados)
 
 def dict_erros(mensagem):
     erros = {

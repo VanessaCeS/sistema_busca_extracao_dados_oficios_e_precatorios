@@ -1,5 +1,6 @@
 import re
 import time
+from banco_de_dados import atualizar_ou_inserir_situacao_cadastro
 from logs import log
 from rich import print
 from requests import Session
@@ -14,6 +15,7 @@ def login_eproc(
         password, 
         raiz,
         n_processo,  
+        processo_xml,
         endpoint="PesquisaRapida", 
         f_encoding="ISO-8859-1"):
     """
@@ -112,21 +114,19 @@ def login_eproc(
         raise ValueError("Endpoint not found")
     print(endpoint)
     hash = endpoint.split('hash=')[1]
-    pdf_precatorio, id_documento = buscar_processo(s, raiz,hash, n_processo)
+    pdf_precatorio, id_documento = buscar_processo(s, raiz,hash, n_processo, processo_xml)
     return pdf_precatorio, id_documento
 
-def buscar_processo(s, raiz, hash, n_processo):
+def buscar_processo(s, raiz, hash, n_processo, processo_xml):
     tipo_processo = s.post(f'{raiz}/controlador.php?acao=processo_selecionar&num_processo={n_processo}&hash={hash}')
     soup = BeautifulSoup(tipo_processo.content, 'lxml')
     procurar = soup.find(id='divInfraAreaGlobal').find('h1').text
     tribunal = raiz.split('.')[1]
+    time.sleep(7)
     try:
         if 'Detalhes do Processo' in procurar: 
             txtClasse = soup.find(id='divCapaProcesso').find(id='txtClasse').text.strip()
             processo_origem = soup.find(id='divCapaProcesso').find(id='tableRelacionado').text.strip()
-            with open('processo_origem_eprocs.txt', 'a', encoding='utf-8') as f:
-                f.write(f'TRIBUNAL {tribunal} | PROCESSO ---> {processo_origem} \n')
-            print('processo origem - ', processo_origem)
             if 'PRECATÓRIO' in txtClasse.upper():
                 pesq_acoes = soup.find(id='fldAcoes')
                 pesq_autos = pesq_acoes.find(class_="infraButton").get('onclick', None)
@@ -134,7 +134,6 @@ def buscar_processo(s, raiz, hash, n_processo):
                 url_autos = s.get(f"{raiz}/controlador.php?acao=processo_vista_sem_procuracao&txtNumProcesso={n_processo}&hash={hash_autos}")
                 soup = BeautifulSoup(url_autos.content, 'lxml')
                 procurar_img_captcha = soup.find(id='lblInfraCaptcha')
-                    
                 img_captcha = procurar_img_captcha.find('img').get('src').split('base64,')[1]
                 captcha = quebra_imagem(img_captcha, is_base64=True)
                 params = {
@@ -142,19 +141,24 @@ def buscar_processo(s, raiz, hash, n_processo):
                         'hdnInfraCaptcha': ''
                     }
                 nos_autos = s.post(url_autos.url, data=params).url
-                pdf_precatorio, id_documento = download_precatorio(s,raiz,nos_autos, n_processo )
+                pdf_precatorio, id_documento = download_precatorio(s,raiz,nos_autos, n_processo, processo_xml)
                 return pdf_precatorio, id_documento
             else:
                 print('ERRO: não é precatório')
+                # processo_xml = n_processo if processo_xml == '' else processo_xml
+                # processo = re.sub(r'(\d{7})(\d{2})(\d{4})(\d{1})(\d{2})(\d{2})(\d{4})', r'\1-\2.\3.\4.\5.\6.\7', processo_xml)
+                atualizar_ou_inserir_situacao_cadastro(processo_xml, {'status': 'Não é precatório'})
                 log(n_processo, 'Fracasso', raiz, "Esse processo não gera precatório", '',tribunal)
                 return '',''
         else:
             log(n_processo, 'Fracasso', raiz, "O processo informado não existe", '',tribunal)
             return '', ''
     except Exception as e:
+        with open('rodar_novamente.txt', 'a') as f:
+            f.write(f'{processo_xml}\n')
         return '',''
     
-def download_precatorio(s, raiz, url_autos, n_processo):
+def download_precatorio(s, raiz, url_autos, n_processo, processo_xml):
     tribunal = raiz.split('.')[1]
     procurar_precatorio = s.get(url_autos)
     soup = BeautifulSoup(procurar_precatorio.content, 'lxml')
@@ -173,10 +177,18 @@ def download_precatorio(s, raiz, url_autos, n_processo):
         if url_pdf:
             response = s.get(url_pdf)
             pdf_precatorio = f'arquivos_pdf_{tribunal}/{n_processo}_{tribunal}.pdf'
+            print('--->> ', pdf_precatorio)
             with open(pdf_precatorio, 'wb') as pdf_file:
                 pdf_file.write(response.content)
+            print('PDF --->> ', pdf_precatorio)
+            
         return pdf_precatorio, id_documento
     else:
+        # processo_xml = n_processo if processo_xml == '' else processo_xml
+        # processo = re.sub(r'(\d{7})(\d{2})(\d{4})(\d{1})(\d{2})(\d{2})(\d{4})', r'\1-\2.\3.\4.\5.\6.\7', processo_xml)
+        atualizar_ou_inserir_situacao_cadastro(processo_xml, {'status': 'Não foi possivel acessar pdf'})
+        with open('rodar_novamente.txt', 'a') as f:
+            f.write(f'{processo_xml}\n')
         log(n_processo, 'Fracasso', raiz, "Não foi possivel acessar o pdf referente ao precatório.", '',tribunal)
 
 def extrair_url_pdf(raiz, html_content):
@@ -188,25 +200,3 @@ def extrair_url_pdf(raiz, html_content):
     else:
         return '', ''
 
-# login_eproc('DF018283','Costaesilva35*', 'https://eproc.trf2.jus.br/eproc', '00005356720194020007')
-
-# login_eproc('DF018283','Costaesilva4*', 'https://eproc.trf4.jus.br/eproc2trf4','50174524620234049388' )
-
-# max_retries = 3
-# retry_delay = 90
-# for retry_count in range(max_retries):
-#     try:
-        # login_eproc('DF018283', 'Costaesilva33*', 'https://eproc2g.tjsc.jus.br/eproc', '50437770420238240000')
-# with open('precatorios_tfr4.txt', 'r', encoding='utf-8') as f:
-#             precatorios = f.readlines()
-# for precatorio in precatorios:        
-#     precatorio = precatorio.replace('\n', '').replace('.','').replace('-','')
-#     login_eproc('DF018283','Costaesilva4*', 'https://eproc.trf4.jus.br/eproc2trf4',f'{precatorio}' )
-    #     break
-    # except Exception as e:
-    #         print(f"Tentativa {retry_count + 1} falhou. Razão: {e}")
-    #         if retry_count < max_retries - 1:
-    #             print(f"Esperando {retry_delay} segundos antes da próxima tentativa...")
-    #             time.sleep(retry_delay)
-    #         else:
-    #             print("Número máximo de tentativas alcançado. Desistindo.")

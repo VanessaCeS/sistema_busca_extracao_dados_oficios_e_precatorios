@@ -1,0 +1,72 @@
+Espelho de Valores Cadastrados. Data: 29/07/2021
+PROCESSO : 5023457-12.2021.4.02.9388
+ORIGINÁRIO : 5007052-17.2019.4.02.5104/RJ
+TIPO : Precatório
+REQUERENTE : JOAQUIM DE OLIVEIRA PINTO
+ADVOGADO : SUZE OLIVEIRA MENDONCA RONDELLI - RJ085049
+REQUERIDO : INSTITUTO NACIONAL DO SEGURO SOCIAL - INSS
+: PROCURADOR ANDRÉ AMARAL DE AGUIAR - PRF-1_2_PREV
+: DEPRECANTE Juízo Federal do 1º JEF de Volta Redonda
+ASSUNTO : 040119 - Aposentadoria por Tempo de Contribuição (Art. 55/6)
+Tipo de Despesa : 12 - NATUREZA ALIMENTÍCIA - Benefícios previdenciários e
+indenizações por morte ou invalidez (12)
+Trans. Requisição : 29/07/2021 18:23:50
+Data de Entrada : 29/07/2021 18:23:50
+REQUISIÇÃO : 21510029911
+Data Ajuizamento : 18/10/2019
+Data TJ. Conhecim. : 01/06/2021
+Data TJ. Embargos : 
+Espécie Requisição : Original
+Precatório de natureza NÃO tributária
+Tipo Beneficiário
+Nome JOAQUIM DE OLIVEIRA PINTO
+CPF/CGC 768.332.917-72
+Valor Principal 87.295,80 Data Base 01/06/2021
+Valor Juros 1.702,31 Data Base 01/06/2021
+Juros de mora fixados na sentença: Poupança
+Renuncia Não Status Sem Bloqueio
+IR-RRA Sim
+Meses Exe. Anterior 28
+Meses Exe. Corrente - Valor Exe. Corrente -Valor Exe. Anterior -
+Ano Exe. Corrente - Status Servidor -
+Valor Inicial PSS - Data Base PSS -
+Valor total execução - Data base execução -
+Valor Requisitado 88.998,11Espelho de Valores Cadastrados. Data: 29/07/2021
+PROCESSO : 5023457-12.2021.4.02.9388
+ORIGINÁRIO : 5007052-17.2019.4.02.5104/RJ
+TIPO : Precatório
+REQUERENTE : JOAQUIM DE OLIVEIRA PINTO
+ADVOGADO : SUZE OLIVEIRA MENDONCA RONDELLI - RJ085049
+REQUERIDO : INSTITUTO NACIONAL DO SEGURO SOCIAL - INSS
+: PROCURADOR ANDRÉ AMARAL DE AGUIAR - PRF-1_2_PREV
+: DEPRECANTE Juízo Federal do 1º JEF de Volta Redonda
+ASSUNTO : 040119 - Aposentadoria por Tempo de Contribuição (Art. 55/6)
+Tipo de Despesa : 12 - NATUREZA ALIMENTÍCIA - Benefícios previdenciários e
+indenizações por morte ou invalidez (12)
+Trans. Requisição : 29/07/2021 18:23:50
+Data de Entrada : 29/07/2021 18:23:50
+REQUISIÇÃO : 21510029911
+Data Ajuizamento : 18/10/2019
+Data TJ. Conhecim. : 01/06/2021
+Data TJ. Embargos : 
+Espécie Requisição : Original
+Precatório de natureza NÃO tributária
+Tipo Beneficiário
+Nome JOAQUIM DE OLIVEIRA PINTO
+CPF/CGC 768.332.917-72
+Valor Principal 87.295,80 Data Base 01/06/2021
+Valor Juros 1.702,31 Data Base 01/06/2021
+Juros de mora fixados na sentença: Poupança
+Renuncia Não Status Sem Bloqueio
+IR-RRA Sim
+Meses Exe. Anterior 28
+Meses Exe. Corrente - Valor Exe. Corrente -Valor Exe. Anterior -
+Ano Exe. Corrente - Status Servidor -
+Valor Inicial PSS - Data Base PSS -
+Valor total execução - Data base execução -
+Valor Requisitado 88.998,11Valor Total da Requisição: 88.998,11
+Observações:
+1)	Precatórios classificados pelo juízo requisitante como de natureza não tributária serão atualizadas da data base
+do cálculo informada na requisição de pagamento até o efetivo pagamento pelo IPCA-E.
+2) Precatórios classificadas pelo juízo requisitante como de natureza tributária serão atualizadas da data base do
+cálculo informada na requisição de pagamento até o efetivo pagamento pela SELIC.

@@ -1,0 +1,72 @@
+Espelho de Valores Cadastrados. Data: 28/11/2020
+PROCESSO : 5032483-14.2020.4.04.9388
+ORIGINÁRIO : 00001981520118160104/PR
+TIPO : Precatório
+REQUERENTE : OLIVINO LACERDA
+ADVOGADO : GISELE APARECIDA SPANCERSKI - PR048364
+REQUERIDO : INSTITUTO NACIONAL DO SEGURO SOCIAL - INSS
+: PROCURADOR PROCURADORIA REGIONAL FEDERAL DA 4 REGIÃO - PRF4
+: DEPRECANTE JUIZO DE DIREITO DA 1A VARA CIVEL DA COMARCA DE
+LARANJEIRAS DO SUL/PR
+ASSUNTO : 040105 - Auxílio-Doença Previdenciário
+Tipo de Despesa : 21 - NATUREZA NÃO ALIMENTÍCIA (21)
+Trans. Requisição : 27/11/2020 17:38:53
+Data de Entrada : 27/11/2020 17:38:53
+REQUISIÇÃO : 20000033284
+Data Ajuizamento : 24/01/2011
+Data TJ. Conhecim. : 13/01/2020
+Data TJ. Embargos : 26/11/2020
+Espécie Requisição : Original
+Precatório de natureza NÃO tributária
+Tipo Beneficiário
+Nome OLIVINO LACERDA
+CPF/CGC 575.230.299-49
+Valor Principal 54.440,36 Data Base 01/09/2020
+Valor Juros 21.659,20 Data Base 01/09/2020
+Juros de mora fixados na sentença: Poupança
+Renuncia Não Status Sem Bloqueio
+IR-RRA Não
+Meses Exe. Anterior -
+Meses Exe. Corrente - Valor Exe. Corrente -Valor Exe. Anterior -
+Ano Exe. Corrente - Status Servidor -
+Valor Inicial PSS - Data Base PSS -
+Valor total execução - Data base execução -
+Valor Requisitado 76.099,56Espelho de Valores Cadastrados. Data: 28/11/2020
+PROCESSO : 5032483-14.2020.4.04.9388
+ORIGINÁRIO : 00001981520118160104/PR
+TIPO : Precatório
+REQUERENTE : OLIVINO LACERDA
+ADVOGADO : GISELE APARECIDA SPANCERSKI - PR048364
+REQUERIDO : INSTITUTO NACIONAL DO SEGURO SOCIAL - INSS
+: PROCURADOR PROCURADORIA REGIONAL FEDERAL DA 4 REGIÃO - PRF4
+: DEPRECANTE JUIZO DE DIREITO DA 1A VARA CIVEL DA COMARCA DE
+LARANJEIRAS DO SUL/PR
+ASSUNTO : 040105 - Auxílio-Doença Previdenciário
+Tipo de Despesa : 21 - NATUREZA NÃO ALIMENTÍCIA (21)
+Trans. Requisição : 27/11/2020 17:38:53
+Data de Entrada : 27/11/2020 17:38:53
+REQUISIÇÃO : 20000033284
+Data Ajuizamento : 24/01/2011
+Data TJ. Conhecim. : 13/01/2020
+Data TJ. Embargos : 26/11/2020
+Espécie Requisição : Original
+Precatório de natureza NÃO tributária
+Tipo Beneficiário
+Nome OLIVINO LACERDA
+CPF/CGC 575.230.299-49
+Valor Principal 54.440,36 Data Base 01/09/2020
+Valor Juros 21.659,20 Data Base 01/09/2020
+Juros de mora fixados na sentença: Poupança
+Renuncia Não Status Sem Bloqueio
+IR-RRA Não
+Meses Exe. Anterior -
+Meses Exe. Corrente - Valor Exe. Corrente -Valor Exe. Anterior -
+Ano Exe. Corrente - Status Servidor -
+Valor Inicial PSS - Data Base PSS -
+Valor total execução - Data base execução -
+Valor Requisitado 76.099,56Valor Total da Requisição: 76.099,56
+Observações:
+1)	Precatórios classificados pelo juízo requisitante como de natureza não tributária serão atualizadas da data base
+do cálculo informada na requisição de pagamento até o efetivo pagamento pelo IPCA-E.
+2) Precatórios classificadas pelo juízo requisitante como de natureza tributária serão atualizadas da data base do
+cálculo informada na requisição de pagamento até o efetivo pagamento pela SELIC.

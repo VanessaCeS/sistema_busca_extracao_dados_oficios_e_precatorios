@@ -1,0 +1,88 @@
+Espelho de Valores Cadastrados. Data: 08/05/2021
+PROCESSO : 5010952-32.2021.4.04.9388
+ORIGINÁRIO : 5003003-47.2015.4.04.7001/PR
+TIPO : Precatório
+REQUERENTE : JOSE CARLOS BAZANA
+ADVOGADO : Pabla Mendes Rodrigues - MG137125
+REQUERIDO : INSTITUTO NACIONAL DO SEGURO SOCIAL - INSS
+: PROCURADOR PROCURADORIA REGIONAL FEDERAL DA 4 REGIÃO - PRF4
+: DEPRECANTE Juízo Substituto da 1ª VF de Cascavel
+ASSUNTO : 040104 - Aposentadoria Especial (Art. 57/8)
+Tipo de Despesa : 12 - NATUREZA ALIMENTÍCIA - Benefícios previdenciários e
+indenizações por morte ou invalidez (12)
+Trans. Requisição : 07/05/2021 13:48:08
+Data de Entrada : 07/05/2021 13:48:08
+REQUISIÇÃO : 21700010331
+Data Ajuizamento : 14/03/2015
+Data TJ. Conhecim. : 25/09/2020
+Data TJ. Embargos : 11/02/2021
+Espécie Requisição : Original
+Superpreferencial : Não
+Precatório de natureza NÃO tributária
+Tipo Beneficiário
+Nome JOSE CARLOS BAZANA
+CPF/CGC 574.217.309-15
+Valor Principal 248.705,22 Data Base 01/10/2020
+Juros de mora fixados na sentença: Poupança
+Renuncia Não Status Sem Bloqueio
+Preferência por Doença grave
+IR-RRA Sim
+Meses Exe. Anterior 69
+Meses Exe. Corrente - Valor Exe. Corrente -Valor Exe. Anterior -
+Ano Exe. Corrente - Status Servidor -
+Valor Inicial PSS - Data Base PSS -
+Valor total execução - Data base execução -
+Valor Requisitado 248.705,22Espelho de Valores Cadastrados. Data: 08/05/2021
+PROCESSO : 5010952-32.2021.4.04.9388
+ORIGINÁRIO : 5003003-47.2015.4.04.7001/PR
+TIPO : Precatório
+REQUERENTE : JOSE CARLOS BAZANA
+ADVOGADO : Pabla Mendes Rodrigues - MG137125
+REQUERIDO : INSTITUTO NACIONAL DO SEGURO SOCIAL - INSS
+: PROCURADOR PROCURADORIA REGIONAL FEDERAL DA 4 REGIÃO - PRF4
+: DEPRECANTE Juízo Substituto da 1ª VF de Cascavel
+ASSUNTO : 040104 - Aposentadoria Especial (Art. 57/8)
+Tipo de Despesa : 12 - NATUREZA ALIMENTÍCIA - Benefícios previdenciários e
+indenizações por morte ou invalidez (12)
+Trans. Requisição : 07/05/2021 13:48:08
+Data de Entrada : 07/05/2021 13:48:08
+REQUISIÇÃO : 21700010331
+Data Ajuizamento : 14/03/2015
+Data TJ. Conhecim. : 25/09/2020
+Data TJ. Embargos : 11/02/2021
+Espécie Requisição : Original
+Superpreferencial : Não
+Precatório de natureza NÃO tributária
+Tipo Beneficiário
+Nome JOSE CARLOS BAZANA
+CPF/CGC 574.217.309-15
+Valor Principal 248.705,22 Data Base 01/10/2020
+Juros de mora fixados na sentença: Poupança
+Renuncia Não Status Sem Bloqueio
+Preferência por Doença grave
+IR-RRA Sim
+Meses Exe. Anterior 69
+Meses Exe. Corrente - Valor Exe. Corrente -Valor Exe. Anterior -
+Ano Exe. Corrente - Status Servidor -
+Valor Inicial PSS - Data Base PSS -
+Valor total execução - Data base execução -
+Valor Requisitado 248.705,22Tipo Honorário
+Nome MENDES PANIAGO SOCIEDADE DE ADVOGADOS
+CPF/CGC 24.689.558/0001-94
+Valor Principal 106.587,96 Data Base 01/10/2020
+Juros de mora fixados na sentença: Poupança
+Renuncia Não Status Sem Bloqueio
+IR-RRA Não
+Tipo Hon. Judicial Honorários Contratuais
+Meses Exe. Anterior -
+Meses Exe. Corrente - Valor Exe. Corrente -Valor Exe. Anterior -
+Ano Exe. Corrente - Status Servidor -
+Valor Inicial PSS - Data Base PSS -
+Valor total execução - Data base execução -
+Valor Requisitado 106.587,96
+Valor Total da Requisição: 355.293,18
+Observações:
+1)	Precatórios classificados pelo juízo requisitante como de natureza não tributária serão atualizadas da data base
+do cálculo informada na requisição de pagamento até o efetivo pagamento pelo IPCA-E.
+2) Precatórios classificadas pelo juízo requisitante como de natureza tributária serão atualizadas da data base do
+cálculo informada na requisição de pagamento até o efetivo pagamento pela SELIC.

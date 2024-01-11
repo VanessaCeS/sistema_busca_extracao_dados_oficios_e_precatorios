@@ -1,0 +1,89 @@
+Espelho de Valores Cadastrados. Data: 02/07/2021
+PROCESSO : 5028105-78.2021.4.04.9388
+ORIGINÁRIO : 5014340-03.2010.4.04.7100/RS
+TIPO : Precatório
+REQUERENTE : VILMAR FERREIRA DA SILVA
+ADVOGADO : ELIANDRO DA ROCHA MENDES - RS061961
+REQUERIDO : INSTITUTO NACIONAL DO SEGURO SOCIAL - INSS
+: PROCURADOR PROCURADORIA REGIONAL FEDERAL DA 4 REGIÃO - PRF4
+: DEPRECANTE Juízo Federal da 20ª VF de Porto Alegre
+ASSUNTO : 040119 - Aposentadoria por Tempo de Contribuição (Art. 55/6)
+Tipo de Despesa : 12 - NATUREZA ALIMENTÍCIA - Benefícios previdenciários e
+indenizações por morte ou invalidez (12)
+Trans. Requisição : 01/07/2021 10:54:34
+Data de Entrada : 01/07/2021 10:54:34
+REQUISIÇÃO : 21710044938
+Data Ajuizamento : 16/07/2010
+Data TJ. Conhecim. : 13/04/2021
+Data TJ. Embargos : 18/06/2021
+Espécie Requisição : Original
+Superpreferencial : Não
+Precatório de natureza NÃO tributária
+Tipo Beneficiário
+Nome VILMAR FERREIRA DA SILVA
+CPF/CGC 436.617.500-20
+Valor Principal 74.359,68 Data Base 01/06/2021
+Valor Juros 40.050,96 Data Base 01/06/2021
+Juros de mora fixados na sentença: Poupança
+Renuncia Não Status Sem Bloqueio
+IR-RRA Sim
+Meses Exe. Anterior 151
+Meses Exe. Corrente - Valor Exe. Corrente -Valor Exe. Anterior -
+Ano Exe. Corrente - Status Servidor -
+Valor Inicial PSS - Data Base PSS -
+Valor total execução - Data base execução -
+Valor Requisitado 114.410,64Espelho de Valores Cadastrados. Data: 02/07/2021
+PROCESSO : 5028105-78.2021.4.04.9388
+ORIGINÁRIO : 5014340-03.2010.4.04.7100/RS
+TIPO : Precatório
+REQUERENTE : VILMAR FERREIRA DA SILVA
+ADVOGADO : ELIANDRO DA ROCHA MENDES - RS061961
+REQUERIDO : INSTITUTO NACIONAL DO SEGURO SOCIAL - INSS
+: PROCURADOR PROCURADORIA REGIONAL FEDERAL DA 4 REGIÃO - PRF4
+: DEPRECANTE Juízo Federal da 20ª VF de Porto Alegre
+ASSUNTO : 040119 - Aposentadoria por Tempo de Contribuição (Art. 55/6)
+Tipo de Despesa : 12 - NATUREZA ALIMENTÍCIA - Benefícios previdenciários e
+indenizações por morte ou invalidez (12)
+Trans. Requisição : 01/07/2021 10:54:34
+Data de Entrada : 01/07/2021 10:54:34
+REQUISIÇÃO : 21710044938
+Data Ajuizamento : 16/07/2010
+Data TJ. Conhecim. : 13/04/2021
+Data TJ. Embargos : 18/06/2021
+Espécie Requisição : Original
+Superpreferencial : Não
+Precatório de natureza NÃO tributária
+Tipo Beneficiário
+Nome VILMAR FERREIRA DA SILVA
+CPF/CGC 436.617.500-20
+Valor Principal 74.359,68 Data Base 01/06/2021
+Valor Juros 40.050,96 Data Base 01/06/2021
+Juros de mora fixados na sentença: Poupança
+Renuncia Não Status Sem Bloqueio
+IR-RRA Sim
+Meses Exe. Anterior 151
+Meses Exe. Corrente - Valor Exe. Corrente -Valor Exe. Anterior -
+Ano Exe. Corrente - Status Servidor -
+Valor Inicial PSS - Data Base PSS -
+Valor total execução - Data base execução -
+Valor Requisitado 114.410,64Tipo Honorário
+Nome ELIANDRO DA ROCHA MENDES
+CPF/CGC 602.163.440-34
+Valor Principal 31.868,44 Data Base 01/06/2021
+Valor Juros 17.164,70 Data Base 01/06/2021
+Juros de mora fixados na sentença: Poupança
+Renuncia Não Status Sem Bloqueio
+IR-RRA Não
+Tipo Hon. Judicial Honorários Contratuais
+Meses Exe. Anterior -
+Meses Exe. Corrente - Valor Exe. Corrente -Valor Exe. Anterior -
+Ano Exe. Corrente - Status Servidor -
+Valor Inicial PSS - Data Base PSS -
+Valor total execução - Data base execução -
+Valor Requisitado 49.033,14
+Valor Total da Requisição: 163.443,78
+Observações:
+1)	Precatórios classificados pelo juízo requisitante como de natureza não tributária serão atualizadas da data base
+do cálculo informada na requisição de pagamento até o efetivo pagamento pelo IPCA-E.
+2) Precatórios classificadas pelo juízo requisitante como de natureza tributária serão atualizadas da data base do
+cálculo informada na requisição de pagamento até o efetivo pagamento pela SELIC.

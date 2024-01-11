@@ -97,7 +97,6 @@ def get_docs_precatorio(codigo_prec, url, s, zip_file=False, pdf=False):
         oficios = []
         id_documento = '' 
         value = f'/cpopg/show.do?localPesquisa.cdLocal=53&processo.codigo={codigo_prec}&processo.foro=53'        
-        print(f'{url}{value}')
         pasta_digital_req = s.get(f'{url}{value}') 
         soup = BeautifulSoup(pasta_digital_req.text, "lxml")
         tabela = soup.find(id="tabelaUltimasMovimentacoes")
@@ -232,6 +231,4 @@ def get_docs_oficio_precatorios_tjsp(cnj, zip_file=False, pdf=False):
         print(traceback.print_exc())
         log(cnj, 'Fracasso','https://esaj.tjsp.jus.br', str(e), 'São Paulo','tjsp')
         atualizar_ou_inserir_situacao_cadastro(cnj,{'status': 'Fracasso'})
-        pass
-
-# get_docs_oficio_precatorios_tjsp('1047978-30.2019.8.26.0053', zip_file=False, pdf=True)
+        

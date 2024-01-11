@@ -1,0 +1,74 @@
+Espelho de Valores Cadastrados. Data: 13/01/2022
+PROCESSO : 5000056-47.2022.4.02.9388
+ORIGINÁRIO : 5001217-21.2019.4.02.5113/RJ
+TIPO : Precatório
+REQUERENTE : LUIZ JOSE RODRIGUES
+ADVOGADO : DANIELLE ROBERTO CORDEIRO MEDEIROS DE LIMA - RJ175671
+REQUERIDO : INSS -INSTITUTO NACIONAL DO SEGURO SOCIAL
+: 
+: DEPRECANTE Juízo Substituto da 1ª VF de Três Rios
+ASSUNTO : 040119 - Aposentadoria por Tempo de Contribuição (Art. 55/6)
+Tipo de Despesa : 12 - NATUREZA ALIMENTÍCIA - Benefícios previdenciários e
+indenizações por morte ou invalidez (12)
+Trans. Requisição : 13/01/2022 16:48:22
+Data de Entrada : 13/01/2022 16:48:22
+REQUISIÇÃO : 21510051351
+Data Ajuizamento : 18/09/2019
+Data TJ. Conhecim. : 18/08/2021
+Data TJ. Embargos : 
+Espécie Requisição : Original
+Superpreferencial : Não
+Precatório de natureza NÃO tributária
+Tipo Beneficiário
+Nome LUIZ JOSE RODRIGUES
+CPF/CGC 003.783.077-54
+Valor Principal 66.687,56 Data Base 01/10/2021
+Valor Juros 2.616,93 Data Base 01/10/2021
+Juros de mora fixados na sentença: Poupança
+Renuncia Não Status Sem Bloqueio
+IR-RRA Sim
+Meses Exe. Anterior 59
+Meses Exe. Corrente - Valor Exe. Corrente -Valor Exe. Anterior -
+Ano Exe. Corrente - Status Servidor -
+Valor Inicial PSS - Data Base PSS -
+Valor total execução - Data base execução -
+Valor Requisitado 69.304,49Espelho de Valores Cadastrados. Data: 13/01/2022
+PROCESSO : 5000056-47.2022.4.02.9388
+ORIGINÁRIO : 5001217-21.2019.4.02.5113/RJ
+TIPO : Precatório
+REQUERENTE : LUIZ JOSE RODRIGUES
+ADVOGADO : DANIELLE ROBERTO CORDEIRO MEDEIROS DE LIMA - RJ175671
+REQUERIDO : INSS -INSTITUTO NACIONAL DO SEGURO SOCIAL
+: 
+: DEPRECANTE Juízo Substituto da 1ª VF de Três Rios
+ASSUNTO : 040119 - Aposentadoria por Tempo de Contribuição (Art. 55/6)
+Tipo de Despesa : 12 - NATUREZA ALIMENTÍCIA - Benefícios previdenciários e
+indenizações por morte ou invalidez (12)
+Trans. Requisição : 13/01/2022 16:48:22
+Data de Entrada : 13/01/2022 16:48:22
+REQUISIÇÃO : 21510051351
+Data Ajuizamento : 18/09/2019
+Data TJ. Conhecim. : 18/08/2021
+Data TJ. Embargos : 
+Espécie Requisição : Original
+Superpreferencial : Não
+Precatório de natureza NÃO tributária
+Tipo Beneficiário
+Nome LUIZ JOSE RODRIGUES
+CPF/CGC 003.783.077-54
+Valor Principal 66.687,56 Data Base 01/10/2021
+Valor Juros 2.616,93 Data Base 01/10/2021
+Juros de mora fixados na sentença: Poupança
+Renuncia Não Status Sem Bloqueio
+IR-RRA Sim
+Meses Exe. Anterior 59
+Meses Exe. Corrente - Valor Exe. Corrente -Valor Exe. Anterior -
+Ano Exe. Corrente - Status Servidor -
+Valor Inicial PSS - Data Base PSS -
+Valor total execução - Data base execução -
+Valor Requisitado 69.304,49Valor Total da Requisição: 69.304,49
+Observações:
+1)	Precatórios classificados pelo juízo requisitante como de natureza não tributária serão atualizadas da data base
+do cálculo informada na requisição de pagamento até o efetivo pagamento pelo IPCA-E.
+2) Precatórios classificadas pelo juízo requisitante como de natureza tributária serão atualizadas da data base do
+cálculo informada na requisição de pagamento até o efetivo pagamento pela SELIC.

@@ -1,0 +1,89 @@
+Espelho de Valores Cadastrados. Data: 01/04/2023
+PROCESSO : 5013549-03.2023.4.04.9388
+ORIGINÁRIO : 5065768-53.2012.4.04.7100/RS
+TIPO : Precatório
+REQUERENTE : STELA MARIS DE JEZUS CASTRO
+ADVOGADO : FRANCIS CAMPOS BORDAS - RS029219
+REQUERIDO : UNIVERSIDADE FEDERAL DO RIO GRANDE DO SUL - UFRGS
+: PROCURADOR PROCURADORIA REGIONAL FEDERAL DA 4 REGIÃO - PRF4
+: DEPRECANTE Juízo Substituto da 3ª VF de Porto Alegre
+ASSUNTO : 01110304 - Índice de 28,86% Lei 8.622/1993 e 8.627/1993
+Tipo de Despesa : 11 - NATUREZA ALIMENTÍCIA - Salários, vencimentos, proventos,
+pensões e suas complementações (11)
+Trans. Requisição : 31/03/2023 13:18:41
+Data de Entrada : 31/03/2023 13:18:41
+REQUISIÇÃO : 23710026057
+Data Ajuizamento : 29/01/1998
+Data TJ. Conhecim. : 04/03/2004
+Data TJ. Embargos : 24/03/2023
+Espécie Requisição : Original
+Superpreferencial : Não
+Precatório de natureza NÃO tributária
+Tipo Beneficiário
+Nome STELA MARIS DE JEZUS CASTRO
+CPF/CGC 704.691.800-72
+Valor Principal 141.515,08 Data Base 01/12/2022
+Valor Juros 191.661,33 Data Base 01/12/2022
+Juros de mora fixados na sentença: Não incidem 
+Renuncia Não Status Bloqueado
+IR-RRA Sim
+Meses Exe. Anterior 135
+Meses Exe. Corrente - Valor Exe. Corrente -Valor Exe. Anterior -
+Ano Exe. Corrente - Status Servidor A
+Valor Inicial PSS 18.561,75 Data Base PSS 01/12/2022
+Valor total execução - Data base execução -
+Valor Requisitado 333.176,41Espelho de Valores Cadastrados. Data: 01/04/2023
+PROCESSO : 5013549-03.2023.4.04.9388
+ORIGINÁRIO : 5065768-53.2012.4.04.7100/RS
+TIPO : Precatório
+REQUERENTE : STELA MARIS DE JEZUS CASTRO
+ADVOGADO : FRANCIS CAMPOS BORDAS - RS029219
+REQUERIDO : UNIVERSIDADE FEDERAL DO RIO GRANDE DO SUL - UFRGS
+: PROCURADOR PROCURADORIA REGIONAL FEDERAL DA 4 REGIÃO - PRF4
+: DEPRECANTE Juízo Substituto da 3ª VF de Porto Alegre
+ASSUNTO : 01110304 - Índice de 28,86% Lei 8.622/1993 e 8.627/1993
+Tipo de Despesa : 11 - NATUREZA ALIMENTÍCIA - Salários, vencimentos, proventos,
+pensões e suas complementações (11)
+Trans. Requisição : 31/03/2023 13:18:41
+Data de Entrada : 31/03/2023 13:18:41
+REQUISIÇÃO : 23710026057
+Data Ajuizamento : 29/01/1998
+Data TJ. Conhecim. : 04/03/2004
+Data TJ. Embargos : 24/03/2023
+Espécie Requisição : Original
+Superpreferencial : Não
+Precatório de natureza NÃO tributária
+Tipo Beneficiário
+Nome STELA MARIS DE JEZUS CASTRO
+CPF/CGC 704.691.800-72
+Valor Principal 141.515,08 Data Base 01/12/2022
+Valor Juros 191.661,33 Data Base 01/12/2022
+Juros de mora fixados na sentença: Não incidem 
+Renuncia Não Status Bloqueado
+IR-RRA Sim
+Meses Exe. Anterior 135
+Meses Exe. Corrente - Valor Exe. Corrente -Valor Exe. Anterior -
+Ano Exe. Corrente - Status Servidor A
+Valor Inicial PSS 18.561,75 Data Base PSS 01/12/2022
+Valor total execução - Data base execução -
+Valor Requisitado 333.176,41Tipo Honorário
+Nome BORDAS ADVOGADOS ASSOCIADOS
+CPF/CGC 08.056.110/0001-87
+Valor Principal 26.955,25 Data Base 01/12/2022
+Valor Juros 36.506,92 Data Base 01/12/2022
+Juros de mora fixados na sentença: Não incidem 
+Renuncia Não Status Bloqueado
+IR-RRA Não
+Tipo Hon. Judicial Honorários Contratuais
+Meses Exe. Anterior -
+Meses Exe. Corrente - Valor Exe. Corrente -Valor Exe. Anterior -
+Ano Exe. Corrente - Status Servidor -
+Valor Inicial PSS - Data Base PSS -
+Valor total execução - Data base execução -
+Valor Requisitado 63.462,17
+Valor Total da Requisição: 396.638,58
+Observações:
+1)	Precatórios classificados pelo juízo requisitante como de natureza não tributária serão atualizadas da data base
+do cálculo informada na requisição de pagamento até o efetivo pagamento pelo IPCA-E.
+2) Precatórios classificadas pelo juízo requisitante como de natureza tributária serão atualizadas da data base do
+cálculo informada na requisição de pagamento até o efetivo pagamento pela SELIC.

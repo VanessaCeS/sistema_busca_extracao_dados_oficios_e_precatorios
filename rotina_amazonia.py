@@ -6,21 +6,15 @@ from logs import log
 from cna_oab import login_cna
 from funcoes_arteria import enviar_valores_oficio_arteria
 from esaj_amazonas_precatorios import get_docs_oficio_precatorios_tjam
-from auxiliares import  encontrar_indice_linha, limpar_dados, mandar_dados_regex, mandar_documento_para_ocr, regex, tipo_precatorio
-from banco_de_dados import atualizar_ou_inserir_pessoa_no_banco_de_dados, atualizar_ou_inserir_pessoa_precatorio, atualizar_ou_inserir_precatorios_no_banco_de_dados, atualizar_ou_inserir_situacao_cadastro, consultar_processos
+from auxiliares import  encontrar_indice_linha, limpar_dados, mandar_dados_regex, mandar_documento_para_ocr, regex
+from banco_de_dados import atualizar_ou_inserir_pessoa_no_banco_de_dados, atualizar_ou_inserir_pessoa_precatorio, atualizar_ou_inserir_precatorios_no_banco_de_dados, atualizar_ou_inserir_situacao_cadastro, consultar_processos, precatorio_exitente_arteria
 
 def buscar_dados_tribunal_amazonas():   
   dados = consultar_processos('.8.04')
-
   for d in dados:
-        dados_limpos = limpar_dados(d)
-        tipo = tipo_precatorio(d)
-        dado = dados_limpos | tipo
-        if verificar_tribunal(d['processo']) and d['processo_origem'] != '':
+        dado = limpar_dados(d)
+        if d['processo_origem'] != '':
           ler_documentos(dado)
-        else:
-          pass
-  
   
 def verificar_tribunal(n_processo):
         padrao = r'\d{7}-\d{2}.\d{4}.8.04.\d{4}'
@@ -45,7 +39,7 @@ def ler_documentos(dado_xml):
                   'id_documento': id_documento,
                   "processo_geral": processo_geral,             
                   'codigo_processo':codigo_processo,'site':'https://consultasaj.tjam.jus.br/', 
-                  'tipo':  'MUNICIPAL', 'estado': 'AMAZONAS', 'cidade': 'Manaus'} | dado_xml
+                  'tipo':  'ESTADUAL', 'estado': 'AMAZONAS', 'cidade': 'Manaus'} | dado_xml
               pdf_precatorio = verificar_pdf(file_path, arquivo_pdf)
               if pdf_precatorio:
                   extrair_dados_pdf(arquivo_pdf, dados_complementares, f"arquivos_txt_amazonas/{processo_geral}_{i + 1}_texto_ocr.txt")
@@ -267,11 +261,20 @@ def extrair_valor_principal_e_juros(texto):
   
 def enviar_dados(arquivo_pdf, dados):
   documento = dados['documento']
+  site = dados['site']
   dados_pessoas = {'nome': dados['credor'], 'documento':  documento,'data_nascimento': dados['data_nascimento'], 'estado': 'Amazonas', 'tipo': 'credor'}
   atualizar_ou_inserir_pessoa_no_banco_de_dados(documento, dados_pessoas)
-  id_sistema_arteria = enviar_valores_oficio_arteria(arquivo_pdf, dados)
-  dados['id_sistema_arteria'] = id_sistema_arteria
+
+  existe_id_sistema_arteria = precatorio_exitente_arteria(dados['processo'])
+  if existe_id_sistema_arteria:
+    dados['id_sistema_arteria'] = existe_id_sistema_arteria[0]
+    enviar_valores_oficio_arteria(arquivo_pdf, dados, existe_id_sistema_arteria[0])
+    mensagem = 'Precatório alterado com sucesso'
+  else:
+    dados['id_sistema_arteria']  = enviar_valores_oficio_arteria(arquivo_pdf, dados)
+    mensagem = 'Precatório registrado com sucesso'
+
   atualizar_ou_inserir_precatorios_no_banco_de_dados(dados['codigo_processo'], dados)
   atualizar_ou_inserir_pessoa_precatorio(documento, dados['processo'])
-  log( dados['processo_origem'], 'Sucesso',dados['site'], 'Precatório registrado com sucesso','Amazonas', dados['tribunal'])
+  log( dados['processo_origem'], 'Sucesso', site, mensagem,'Amazonas', dados['tribunal'])
   atualizar_ou_inserir_situacao_cadastro(dados['processo'],{'status': 'Sucesso'})

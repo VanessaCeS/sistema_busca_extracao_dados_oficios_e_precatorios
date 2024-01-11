@@ -1,0 +1,76 @@
+Espelho de Valores Cadastrados. Data: 01/04/2023
+PROCESSO : 5016220-96.2023.4.04.9388
+ORIGINÁRIO : 50006339520148210123/RS
+TIPO : Precatório
+REQUERENTE : LUIZ MATEUS JACQUES
+ADVOGADO : ALEX FABIANO BLATT - RS094597
+REQUERIDO : INSTITUTO NACIONAL DO SEGURO SOCIAL - INSS
+: PROCURADOR PROCURADORIA REGIONAL FEDERAL DA 4 REGIÃO - PRF4
+: DEPRECANTE JUIZO DE DIREITO DA 2A VARA CIVEL DA COMARCA DE SANTO
+AUGUSTO/RS
+ASSUNTO : 040101 - Aposentadoria por Invalidez (Art. 42/7)
+Tipo de Despesa : 12 - NATUREZA ALIMENTÍCIA - Benefícios previdenciários,
+indenizações por morte ou invalidez e demais beneficiários sem vínculo
+com a administração pública (12)Trans. Requisição : 31/03/2023 13:20:54
+Data de Entrada : 31/03/2023 13:20:54
+REQUISIÇÃO : 23000006631
+Data Ajuizamento : 17/09/2014
+Data TJ. Conhecim. : 09/01/2023
+Data TJ. Embargos : 27/01/2023
+Espécie Requisição : Original
+Superpreferencial : Não
+Precatório de natureza NÃO tributária
+Tipo Beneficiário
+Nome LUIZ MATEUS JACQUES
+CPF/CGC 016.702.150-83
+Valor Principal 118.048,35 Data Base 01/01/2023
+Valor Juros 28.782,22 Data Base 01/01/2023
+Juros de mora fixados na sentença: Não incidem 
+Renuncia Não Status Sem Bloqueio
+IR-RRA Não
+Meses Exe. Anterior -
+Meses Exe. Corrente - Valor Exe. Corrente -Valor Exe. Anterior -
+Ano Exe. Corrente - Status Servidor -
+Valor Inicial PSS - Data Base PSS -
+Valor total execução - Data base execução -
+Valor Requisitado 146.830,57Espelho de Valores Cadastrados. Data: 01/04/2023
+PROCESSO : 5016220-96.2023.4.04.9388
+ORIGINÁRIO : 50006339520148210123/RS
+TIPO : Precatório
+REQUERENTE : LUIZ MATEUS JACQUES
+ADVOGADO : ALEX FABIANO BLATT - RS094597
+REQUERIDO : INSTITUTO NACIONAL DO SEGURO SOCIAL - INSS
+: PROCURADOR PROCURADORIA REGIONAL FEDERAL DA 4 REGIÃO - PRF4
+: DEPRECANTE JUIZO DE DIREITO DA 2A VARA CIVEL DA COMARCA DE SANTO
+AUGUSTO/RS
+ASSUNTO : 040101 - Aposentadoria por Invalidez (Art. 42/7)
+Tipo de Despesa : 12 - NATUREZA ALIMENTÍCIA - Benefícios previdenciários,
+indenizações por morte ou invalidez e demais beneficiários sem vínculo
+com a administração pública (12)Trans. Requisição : 31/03/2023 13:20:54
+Data de Entrada : 31/03/2023 13:20:54
+REQUISIÇÃO : 23000006631
+Data Ajuizamento : 17/09/2014
+Data TJ. Conhecim. : 09/01/2023
+Data TJ. Embargos : 27/01/2023
+Espécie Requisição : Original
+Superpreferencial : Não
+Precatório de natureza NÃO tributária
+Tipo Beneficiário
+Nome LUIZ MATEUS JACQUES
+CPF/CGC 016.702.150-83
+Valor Principal 118.048,35 Data Base 01/01/2023
+Valor Juros 28.782,22 Data Base 01/01/2023
+Juros de mora fixados na sentença: Não incidem 
+Renuncia Não Status Sem Bloqueio
+IR-RRA Não
+Meses Exe. Anterior -
+Meses Exe. Corrente - Valor Exe. Corrente -Valor Exe. Anterior -
+Ano Exe. Corrente - Status Servidor -
+Valor Inicial PSS - Data Base PSS -
+Valor total execução - Data base execução -
+Valor Requisitado 146.830,57Valor Total da Requisição: 146.830,57
+Observações:
+1)	Precatórios classificados pelo juízo requisitante como de natureza não tributária serão atualizadas da data base
+do cálculo informada na requisição de pagamento até o efetivo pagamento pelo IPCA-E.
+2) Precatórios classificadas pelo juízo requisitante como de natureza tributária serão atualizadas da data base do
+cálculo informada na requisição de pagamento até o efetivo pagamento pela SELIC.

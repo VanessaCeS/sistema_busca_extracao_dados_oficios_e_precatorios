@@ -1,0 +1,89 @@
+Espelho de Valores Cadastrados. Data: 23/03/2022
+PROCESSO : 5002395-76.2022.4.02.9388
+ORIGINÁRIO : 5003078-24.2018.4.02.5001/ES
+TIPO : Precatório
+REQUERENTE : OTIMAR FERREIRA DIANA
+ADVOGADO : OLDER VASCO DALBEM DE OLIVEIRA - ES010321
+DEPRECANTE : Juízo Substituto da 2ª  VF Cível de Vitória
+: 
+: REQUERIDO INSS -INSTITUTO NACIONAL DO SEGURO SOCIAL
+ASSUNTO : 040104 - Aposentadoria Especial (Art. 57/8)
+Tipo de Despesa : 12 - NATUREZA ALIMENTÍCIA - Benefícios previdenciários e
+indenizações por morte ou invalidez (12)
+Trans. Requisição : 22/03/2022 21:16:40
+Data de Entrada : 22/03/2022 21:16:40
+REQUISIÇÃO : 22500003339
+Data Ajuizamento : 18/05/2018
+Data TJ. Conhecim. : 01/10/2021
+Data TJ. Embargos : 11/03/2022
+Espécie Requisição : Parcial
+Superpreferencial : Não
+Precatório de natureza NÃO tributária
+Tipo Beneficiário
+Nome OTIMAR FERREIRA DIANA
+CPF/CGC 751.358.337-49
+Valor Principal 206.911,62 Data Base 01/12/2021
+Valor Juros 17.520,04 Data Base 01/12/2021
+Juros de mora fixados na sentença: Poupança
+Renuncia Não Status Sem Bloqueio
+IR-RRA Sim
+Meses Exe. Anterior 116
+Meses Exe. Corrente - Valor Exe. Corrente -Valor Exe. Anterior -
+Ano Exe. Corrente - Status Servidor -
+Valor Inicial PSS - Data Base PSS -
+Valor total execução 320.616,67 Data base execução 01/12/2021
+Valor Requisitado 224.431,66Espelho de Valores Cadastrados. Data: 23/03/2022
+PROCESSO : 5002395-76.2022.4.02.9388
+ORIGINÁRIO : 5003078-24.2018.4.02.5001/ES
+TIPO : Precatório
+REQUERENTE : OTIMAR FERREIRA DIANA
+ADVOGADO : OLDER VASCO DALBEM DE OLIVEIRA - ES010321
+DEPRECANTE : Juízo Substituto da 2ª  VF Cível de Vitória
+: 
+: REQUERIDO INSS -INSTITUTO NACIONAL DO SEGURO SOCIAL
+ASSUNTO : 040104 - Aposentadoria Especial (Art. 57/8)
+Tipo de Despesa : 12 - NATUREZA ALIMENTÍCIA - Benefícios previdenciários e
+indenizações por morte ou invalidez (12)
+Trans. Requisição : 22/03/2022 21:16:40
+Data de Entrada : 22/03/2022 21:16:40
+REQUISIÇÃO : 22500003339
+Data Ajuizamento : 18/05/2018
+Data TJ. Conhecim. : 01/10/2021
+Data TJ. Embargos : 11/03/2022
+Espécie Requisição : Parcial
+Superpreferencial : Não
+Precatório de natureza NÃO tributária
+Tipo Beneficiário
+Nome OTIMAR FERREIRA DIANA
+CPF/CGC 751.358.337-49
+Valor Principal 206.911,62 Data Base 01/12/2021
+Valor Juros 17.520,04 Data Base 01/12/2021
+Juros de mora fixados na sentença: Poupança
+Renuncia Não Status Sem Bloqueio
+IR-RRA Sim
+Meses Exe. Anterior 116
+Meses Exe. Corrente - Valor Exe. Corrente -Valor Exe. Anterior -
+Ano Exe. Corrente - Status Servidor -
+Valor Inicial PSS - Data Base PSS -
+Valor total execução 320.616,67 Data base execução 01/12/2021
+Valor Requisitado 224.431,66Tipo Honorário
+Nome SALAZAR E OLIVEIRA ADVOGADOS ASSOCIADOS
+CPF/CGC 17.827.010/0001-06
+Valor Principal 88.676,41 Data Base 01/12/2021
+Valor Juros 7.508,60 Data Base 01/12/2021
+Juros de mora fixados na sentença: Poupança
+Renuncia Não Status Sem Bloqueio
+IR-RRA Não
+Tipo Hon. Judicial Honorários Contratuais
+Meses Exe. Anterior -
+Meses Exe. Corrente - Valor Exe. Corrente -Valor Exe. Anterior -
+Ano Exe. Corrente - Status Servidor -
+Valor Inicial PSS - Data Base PSS -
+Valor total execução - Data base execução -
+Valor Requisitado 96.185,01
+Valor Total da Requisição: 320.616,67
+Observações:
+1)	Precatórios classificados pelo juízo requisitante como de natureza não tributária serão atualizadas da data base
+do cálculo informada na requisição de pagamento até o efetivo pagamento pelo IPCA-E.
+2) Precatórios classificadas pelo juízo requisitante como de natureza tributária serão atualizadas da data base do
+cálculo informada na requisição de pagamento até o efetivo pagamento pela SELIC.

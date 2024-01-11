@@ -1,0 +1,87 @@
+Espelho de Valores Cadastrados. Data: 18/11/2021
+PROCESSO : 5027432-42.2021.4.02.9388
+ORIGINÁRIO : 5098364-83.2019.4.02.5101/RJ
+TIPO : Precatório
+REQUERENTE : MARLENE CRISTINA VARGAS DE SOUZA
+ADVOGADO : DALVA SILVA DE SOUSA - RJ205335
+REQUERIDO : INSTITUTO NACIONAL DO SEGURO SOCIAL - INSS
+: PROCURADOR ANDRÉ AMARAL DE AGUIAR - PRF-1_2_PREV
+: DEPRECANTE Juízo Federal da 9ª VF do Rio de Janeiro
+ASSUNTO : 040119 - Aposentadoria por Tempo de Contribuição (Art. 55/6)
+Tipo de Despesa : 12 - NATUREZA ALIMENTÍCIA - Benefícios previdenciários e
+indenizações por morte ou invalidez (12)
+Trans. Requisição : 18/11/2021 12:10:22
+Data de Entrada : 18/11/2021 12:10:22
+REQUISIÇÃO : 21510041630
+Data Ajuizamento : 09/12/2019
+Data TJ. Conhecim. : 09/08/2021
+Data TJ. Embargos : 14/09/2021
+Espécie Requisição : Original
+Precatório de natureza NÃO tributária
+Tipo Beneficiário
+Nome MARLENE CRISTINA VARGAS DE SOUZA
+CPF/CGC 922.940.907-30
+Valor Principal 65.052,07 Data Base 01/08/2021
+Valor Juros 1.486,87 Data Base 01/08/2021
+Juros de mora fixados na sentença: Poupança
+Renuncia Não Status Sem Bloqueio
+IR-RRA Sim
+Meses Exe. Anterior 27
+Meses Exe. Corrente - Valor Exe. Corrente -Valor Exe. Anterior -
+Ano Exe. Corrente - Status Servidor -
+Valor Inicial PSS - Data Base PSS -
+Valor total execução - Data base execução -
+Valor Requisitado 66.538,94Espelho de Valores Cadastrados. Data: 18/11/2021
+PROCESSO : 5027432-42.2021.4.02.9388
+ORIGINÁRIO : 5098364-83.2019.4.02.5101/RJ
+TIPO : Precatório
+REQUERENTE : MARLENE CRISTINA VARGAS DE SOUZA
+ADVOGADO : DALVA SILVA DE SOUSA - RJ205335
+REQUERIDO : INSTITUTO NACIONAL DO SEGURO SOCIAL - INSS
+: PROCURADOR ANDRÉ AMARAL DE AGUIAR - PRF-1_2_PREV
+: DEPRECANTE Juízo Federal da 9ª VF do Rio de Janeiro
+ASSUNTO : 040119 - Aposentadoria por Tempo de Contribuição (Art. 55/6)
+Tipo de Despesa : 12 - NATUREZA ALIMENTÍCIA - Benefícios previdenciários e
+indenizações por morte ou invalidez (12)
+Trans. Requisição : 18/11/2021 12:10:22
+Data de Entrada : 18/11/2021 12:10:22
+REQUISIÇÃO : 21510041630
+Data Ajuizamento : 09/12/2019
+Data TJ. Conhecim. : 09/08/2021
+Data TJ. Embargos : 14/09/2021
+Espécie Requisição : Original
+Precatório de natureza NÃO tributária
+Tipo Beneficiário
+Nome MARLENE CRISTINA VARGAS DE SOUZA
+CPF/CGC 922.940.907-30
+Valor Principal 65.052,07 Data Base 01/08/2021
+Valor Juros 1.486,87 Data Base 01/08/2021
+Juros de mora fixados na sentença: Poupança
+Renuncia Não Status Sem Bloqueio
+IR-RRA Sim
+Meses Exe. Anterior 27
+Meses Exe. Corrente - Valor Exe. Corrente -Valor Exe. Anterior -
+Ano Exe. Corrente - Status Servidor -
+Valor Inicial PSS - Data Base PSS -
+Valor total execução - Data base execução -
+Valor Requisitado 66.538,94Tipo Honorário
+Nome DALVA SILVA DE SOUSA
+CPF/CGC 028.289.047-50
+Valor Principal 27.879,46 Data Base 01/08/2021
+Valor Juros 637,23 Data Base 01/08/2021
+Juros de mora fixados na sentença: Poupança
+Renuncia Não Status Sem Bloqueio
+IR-RRA Não
+Tipo Hon. Judicial Honorários Contratuais
+Meses Exe. Anterior -
+Meses Exe. Corrente - Valor Exe. Corrente -Valor Exe. Anterior -
+Ano Exe. Corrente - Status Servidor -
+Valor Inicial PSS - Data Base PSS -
+Valor total execução - Data base execução -
+Valor Requisitado 28.516,69
+Valor Total da Requisição: 95.055,63
+Observações:
+1)	Precatórios classificados pelo juízo requisitante como de natureza não tributária serão atualizadas da data base
+do cálculo informada na requisição de pagamento até o efetivo pagamento pelo IPCA-E.
+2) Precatórios classificadas pelo juízo requisitante como de natureza tributária serão atualizadas da data base do
+cálculo informada na requisição de pagamento até o efetivo pagamento pela SELIC.

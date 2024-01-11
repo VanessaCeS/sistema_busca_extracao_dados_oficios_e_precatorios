@@ -1,15 +1,16 @@
 import os
 import re
+from time import sleep
 import traceback
 from logs import log
 from cna_oab import login_cna
 from eproc_ import login_eproc
 from dotenv import load_dotenv
 from rotina_acre import ler_documentos
-from banco_de_dados import atualizar_ou_inserir_situacao_cadastro, consultar_processos
+from banco_de_dados import atualizar_ou_inserir_situacao_cadastro, consultar_processos, precatorio_exitente_arteria
 from funcoes_arteria import enviar_valores_oficio_arteria
 from banco_de_dados import atualizar_ou_inserir_pessoa_no_banco_de_dados, atualizar_ou_inserir_pessoa_precatorio, atualizar_ou_inserir_precatorios_no_banco_de_dados
-from auxiliares import  encontrar_indice_linha, formatar_data_padra_arteria, identificar_estados, ler_arquivo_pdf_transformar_em_txt, mandar_dados_regex, limpar_dados, tipo_precatorio, verificar_tribunal_lista
+from auxiliares import  encontrar_indice_linha, formatar_data_padra_arteria, identificar_estados, ler_arquivo_pdf_transformar_em_txt, mandar_dados_regex, limpar_dados, mascara_processo,verificar_tribunal_lista
 
 load_dotenv('.env')
 
@@ -19,37 +20,37 @@ def buscar_dados_tribunal_regional_federal():
     dados = consultar_processos(f'{trf}')
     for d in dados:
           dados_limpos = limpar_dados(d)
-          tipo = tipo_precatorio(d)
           processo_origem = verificar_tribunal_lista(d['processo_origem'])
-          dado = dados_limpos | tipo
+          dado = dados_limpos 
           dado['processo_origem'] = processo_origem
           if dado['processo_origem'] != []:
             ler_documentos(dado)
-          else:
-            pass
+
 
 def ler_documentos(dados_xml):
     try:
       login_trf = 'DF018283'
       codigos_trf4 = ['.4.04', '.8.16.', '.8.21.', '.8.24.']
-      codigos_trf2 = ['.4.02','.8.04.','.8.19.']
+      codigos_trf2 = ['.4.02','.8.04.','8.08','.8.19.']
       processo_origem = dados_xml['processo']
       if any(s in processo_origem for s in codigos_trf4):
         site = 'https://eproc.trf4.jus.br/eproc2trf4'
-        tribunal = 'trf4'
+        tribunal = 'TRF4'
         senha = 'Costaesilva4*'
       elif any(s in processo_origem for s in codigos_trf2):
         site = 'https://eproc.trf2.jus.br/eproc'
-        tribunal = 'trf2'
-        senha = os.getenv('senha_trf2')
+        tribunal = 'TRF2'
+        senha = 'Costaesilva35*'
 
-      for processo_origem in dados_xml['processo_origem']:
-        processo_origem = processo_origem.replace('-','').replace('.','')
-        arquivo_pdf, id_documento = login_eproc(login_trf,senha,site, processo_origem)
+      # for processo_origem in dados_xml['processo_origem']:
+        # processo_origem = processo_origem.replace('-','').replace('.','')
+      processo_origem = dados_xml['processo'].replace('-','').replace('.','').replace('\n','').strip()
 
-        if arquivo_pdf != '':
+      arquivo_pdf, id_documento = login_eproc(login_trf,senha,site, processo_origem, dados_xml['processo'].replace('\n','').strip())
+
+      if arquivo_pdf:
             arquivo_txt = ler_arquivo_pdf_transformar_em_txt(arquivo_pdf)
-            dados_complementares = { 'site': site, 'id_documento': id_documento, 'codigo_processo': id_documento, 'tipo': 'FEDERAL', 'cidade': '', 'tribunal': tribunal}  | dados_xml
+            dados_complementares = { 'site': site, 'id_documento': id_documento, 'codigo_processo': id_documento, 'tipo': 'FEDERAL', 'cidade': ''}  | dados_xml
             
             extrair_dados_txt(arquivo_pdf, arquivo_txt, dados_complementares)            
     except Exception as e:
@@ -116,11 +117,20 @@ def extrair_dados_advogado(texto, processo):
 def enviar_dados(dados, arquivo_pdf):
   documento = dados['documento']
   site = dados['site']
+  print('TRIBUNAL -->> ', dados['tribunal'])
 
   atualizar_ou_inserir_pessoa_no_banco_de_dados(documento, {'nome': dados['credor'], 'documento': dados['documento'], 'data_nascimento': dados['data_nascimento'], 'estado': dados['estado'], 'tipo': 'credor'})
-  id_sistema_arteria = enviar_valores_oficio_arteria(arquivo_pdf, dados)
-  dados['id_sistema_arteria'] = id_sistema_arteria
+
+  existe_id_sistema_arteria = precatorio_exitente_arteria(dados['processo'])
+  if existe_id_sistema_arteria:
+    dados['id_sistema_arteria'] = existe_id_sistema_arteria[0]
+    enviar_valores_oficio_arteria(arquivo_pdf, dados, existe_id_sistema_arteria[0])
+    mensagem = 'Precatório alterado com sucesso'
+  else:
+    dados['id_sistema_arteria']  = enviar_valores_oficio_arteria(arquivo_pdf, dados)
+    mensagem = 'Precatório registrado com sucesso'
+
   atualizar_ou_inserir_precatorios_no_banco_de_dados(dados['codigo_processo'], dados)
   atualizar_ou_inserir_pessoa_precatorio(documento, dados['processo'])
-  log(dados['processo'], 'Sucesso', site, 'Precatório registrado com sucesso',dados['estado'], dados['tribunal'])
+  log(dados['processo'], 'Sucesso', site, mensagem ,dados['estado'], dados['tribunal'])
   atualizar_ou_inserir_situacao_cadastro(dados['processo'],{'status': 'Sucesso'})

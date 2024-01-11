@@ -1,0 +1,958 @@
+Espelho de Valores Cadastrados. Data: 02/12/2020
+PROCESSO : 5010007-36.2020.4.02.9388
+ORIGINÁRIO : 0006105-71.2016.4.02.5001/ES
+TIPO : Precatório
+REQUERENTE : ANTONIO TAVARES DE SOUZA NETO
+ADVOGADO : CELSO JOSE DE CARVALHO - ES018718
+REQUERIDO : INSTITUTO NACIONAL DO SEGURO SOCIAL - INSS
+: PROCURADOR ANDRÉ AMARAL DE AGUIAR - PRF-1_2_PREV
+: DEPRECANTE 6ª Vara Federal Cível de Vitória
+ASSUNTO : 040118 - Aposentadoria por Tempo de Serviço (Art. 52/4)
+Tipo de Despesa : 21 - NATUREZA NÃO ALIMENTÍCIA (21)
+Trans. Requisição : 02/12/2020 20:03:50
+Data de Entrada : 02/12/2020 20:03:50
+REQUISIÇÃO : 20500012272
+Data Ajuizamento : 14/03/2016
+Data TJ. Conhecim. : 05/12/2017
+Data TJ. Embargos : 10/08/2020
+Espécie Requisição : Parcial
+Precatório de natureza NÃO tributária
+Tipo Beneficiário
+Nome ANTONIO TAVARES DE SOUZA NETO
+CPF/CGC 208.165.886-00
+Valor Principal 139.752,11 Data Base 01/07/2018
+Valor Juros 14.922,18 Data Base 01/07/2018
+Juros de mora fixados na sentença: Poupança
+Renuncia Não Status Liberado
+Doença Grave Não Compensação Não
+IR-RRA Sim
+Meses Exe. Anterior 44
+Meses Exe. Corrente - Valor Exe. Corrente -Valor Exe. Anterior -
+Ano Exe. Corrente - Status Servidor -
+Valor Inicial PSS - Data Base PSS -
+Valor total execução 212.677,15 Data base execução 01/07/2018
+Valor Requisitado 154.674,29Espelho de Valores Cadastrados. Data: 02/12/2020
+PROCESSO : 5010007-36.2020.4.02.9388
+ORIGINÁRIO : 0006105-71.2016.4.02.5001/ES
+TIPO : Precatório
+REQUERENTE : ANTONIO TAVARES DE SOUZA NETO
+ADVOGADO : CELSO JOSE DE CARVALHO - ES018718
+REQUERIDO : INSTITUTO NACIONAL DO SEGURO SOCIAL - INSS
+: PROCURADOR ANDRÉ AMARAL DE AGUIAR - PRF-1_2_PREV
+: DEPRECANTE 6ª Vara Federal Cível de Vitória
+ASSUNTO : 040118 - Aposentadoria por Tempo de Serviço (Art. 52/4)
+Tipo de Despesa : 21 - NATUREZA NÃO ALIMENTÍCIA (21)
+Trans. Requisição : 02/12/2020 20:03:50
+Data de Entrada : 02/12/2020 20:03:50
+REQUISIÇÃO : 20500012272
+Data Ajuizamento : 14/03/2016
+Data TJ. Conhecim. : 05/12/2017
+Data TJ. Embargos : 10/08/2020
+Espécie Requisição : Parcial
+Precatório de natureza NÃO tributária
+Tipo Beneficiário
+Nome ANTONIO TAVARES DE SOUZA NETO
+CPF/CGC 208.165.886-00
+Valor Principal 139.752,11 Data Base 01/07/2018
+Valor Juros 14.922,18 Data Base 01/07/2018
+Juros de mora fixados na sentença: Poupança
+Renuncia Não Status Liberado
+Doença Grave Não Compensação Não
+IR-RRA Sim
+Meses Exe. Anterior 44
+Meses Exe. Corrente - Valor Exe. Corrente -Valor Exe. Anterior -
+Ano Exe. Corrente - Status Servidor -
+Valor Inicial PSS - Data Base PSS -
+Valor total execução 212.677,15 Data base execução 01/07/2018
+Valor Requisitado 154.674,29Tipo Honorário
+Nome CELSO JOSE DE CARVALHO
+CPF/CGC 079.038.547-39
+Valor Principal 34.938,03 Data Base 01/07/2018
+Valor Juros 3.730,54 Data Base 01/07/2018
+Juros de mora fixados na sentença: Poupança
+Renuncia Não Status Liberado
+Doença Grave Não Compensação Não
+IR-RRA Não
+Tipo Hon. Judicial Honorários Contratuais
+Meses Exe. Anterior -
+Meses Exe. Corrente - Valor Exe. Corrente -Valor Exe. Anterior -
+Ano Exe. Corrente - Status Servidor -
+Valor Inicial PSS - Data Base PSS -
+Valor total execução - Data base execução -
+Valor Requisitado 38.668,57
+Valor Total da Requisição: 193.342,86
+Observações:
+1)	Precatórios classificados pelo juízo requisitante como de natureza não tributária serão atualizadas da data base
+do cálculo informada na requisição de pagamento até o efetivo pagamento pelo IPCA-E.
+2) Precatórios classificadas pelo juízo requisitante como de natureza tributária serão atualizadas da data base do
+cálculo informada na requisição de pagamento até o efetivo pagamento pela SELIC.Espelho de Valores Cadastrados. Data: 02/12/2020
+PROCESSO : 5010007-36.2020.4.02.9388
+ORIGINÁRIO : 0006105-71.2016.4.02.5001/ES
+TIPO : Precatório
+REQUERENTE : ANTONIO TAVARES DE SOUZA NETO
+ADVOGADO : CELSO JOSE DE CARVALHO - ES018718
+REQUERIDO : INSTITUTO NACIONAL DO SEGURO SOCIAL - INSS
+: PROCURADOR ANDRÉ AMARAL DE AGUIAR - PRF-1_2_PREV
+: DEPRECANTE 6ª Vara Federal Cível de Vitória
+ASSUNTO : 040118 - Aposentadoria por Tempo de Serviço (Art. 52/4)
+Tipo de Despesa : 21 - NATUREZA NÃO ALIMENTÍCIA (21)
+Trans. Requisição : 02/12/2020 20:03:50
+Data de Entrada : 02/12/2020 20:03:50
+REQUISIÇÃO : 20500012272
+Data Ajuizamento : 14/03/2016
+Data TJ. Conhecim. : 05/12/2017
+Data TJ. Embargos : 10/08/2020
+Espécie Requisição : Parcial
+Precatório de natureza NÃO tributária
+Tipo Beneficiário
+Nome ANTONIO TAVARES DE SOUZA NETO
+CPF/CGC 208.165.886-00
+Valor Principal 139.752,11 Data Base 01/07/2018
+Valor Juros 14.922,18 Data Base 01/07/2018
+Juros de mora fixados na sentença: Poupança
+Renuncia Não Status Liberado
+Doença Grave Não Compensação Não
+IR-RRA Sim
+Meses Exe. Anterior 44
+Meses Exe. Corrente - Valor Exe. Corrente -Valor Exe. Anterior -
+Ano Exe. Corrente - Status Servidor -
+Valor Inicial PSS - Data Base PSS -
+Valor total execução 212.677,15 Data base execução 01/07/2018
+Valor Requisitado 154.674,29Espelho de Valores Cadastrados. Data: 02/12/2020
+PROCESSO : 5010007-36.2020.4.02.9388
+ORIGINÁRIO : 0006105-71.2016.4.02.5001/ES
+TIPO : Precatório
+REQUERENTE : ANTONIO TAVARES DE SOUZA NETO
+ADVOGADO : CELSO JOSE DE CARVALHO - ES018718
+REQUERIDO : INSTITUTO NACIONAL DO SEGURO SOCIAL - INSS
+: PROCURADOR ANDRÉ AMARAL DE AGUIAR - PRF-1_2_PREV
+: DEPRECANTE 6ª Vara Federal Cível de Vitória
+ASSUNTO : 040118 - Aposentadoria por Tempo de Serviço (Art. 52/4)
+Tipo de Despesa : 21 - NATUREZA NÃO ALIMENTÍCIA (21)
+Trans. Requisição : 02/12/2020 20:03:50
+Data de Entrada : 02/12/2020 20:03:50
+REQUISIÇÃO : 20500012272
+Data Ajuizamento : 14/03/2016
+Data TJ. Conhecim. : 05/12/2017
+Data TJ. Embargos : 10/08/2020
+Espécie Requisição : Parcial
+Precatório de natureza NÃO tributária
+Tipo Beneficiário
+Nome ANTONIO TAVARES DE SOUZA NETO
+CPF/CGC 208.165.886-00
+Valor Principal 139.752,11 Data Base 01/07/2018
+Valor Juros 14.922,18 Data Base 01/07/2018
+Juros de mora fixados na sentença: Poupança
+Renuncia Não Status Liberado
+Doença Grave Não Compensação Não
+IR-RRA Sim
+Meses Exe. Anterior 44
+Meses Exe. Corrente - Valor Exe. Corrente -Valor Exe. Anterior -
+Ano Exe. Corrente - Status Servidor -
+Valor Inicial PSS - Data Base PSS -
+Valor total execução 212.677,15 Data base execução 01/07/2018
+Valor Requisitado 154.674,29Tipo Honorário
+Nome CELSO JOSE DE CARVALHO
+CPF/CGC 079.038.547-39
+Valor Principal 34.938,03 Data Base 01/07/2018
+Valor Juros 3.730,54 Data Base 01/07/2018
+Juros de mora fixados na sentença: Poupança
+Renuncia Não Status Liberado
+Doença Grave Não Compensação Não
+IR-RRA Não
+Tipo Hon. Judicial Honorários Contratuais
+Meses Exe. Anterior -
+Meses Exe. Corrente - Valor Exe. Corrente -Valor Exe. Anterior -
+Ano Exe. Corrente - Status Servidor -
+Valor Inicial PSS - Data Base PSS -
+Valor total execução - Data base execução -
+Valor Requisitado 38.668,57
+Valor Total da Requisição: 193.342,86
+Observações:
+1)	Precatórios classificados pelo juízo requisitante como de natureza não tributária serão atualizadas da data base
+do cálculo informada na requisição de pagamento até o efetivo pagamento pelo IPCA-E.
+2) Precatórios classificadas pelo juízo requisitante como de natureza tributária serão atualizadas da data base do
+cálculo informada na requisição de pagamento até o efetivo pagamento pela SELIC.Espelho de Valores Cadastrados. Data: 02/12/2020
+PROCESSO : 5010007-36.2020.4.02.9388
+ORIGINÁRIO : 0006105-71.2016.4.02.5001/ES
+TIPO : Precatório
+REQUERENTE : ANTONIO TAVARES DE SOUZA NETO
+ADVOGADO : CELSO JOSE DE CARVALHO - ES018718
+REQUERIDO : INSTITUTO NACIONAL DO SEGURO SOCIAL - INSS
+: PROCURADOR ANDRÉ AMARAL DE AGUIAR - PRF-1_2_PREV
+: DEPRECANTE 6ª Vara Federal Cível de Vitória
+ASSUNTO : 040118 - Aposentadoria por Tempo de Serviço (Art. 52/4)
+Tipo de Despesa : 21 - NATUREZA NÃO ALIMENTÍCIA (21)
+Trans. Requisição : 02/12/2020 20:03:50
+Data de Entrada : 02/12/2020 20:03:50
+REQUISIÇÃO : 20500012272
+Data Ajuizamento : 14/03/2016
+Data TJ. Conhecim. : 05/12/2017
+Data TJ. Embargos : 10/08/2020
+Espécie Requisição : Parcial
+Precatório de natureza NÃO tributária
+Tipo Beneficiário
+Nome ANTONIO TAVARES DE SOUZA NETO
+CPF/CGC 208.165.886-00
+Valor Principal 139.752,11 Data Base 01/07/2018
+Valor Juros 14.922,18 Data Base 01/07/2018
+Juros de mora fixados na sentença: Poupança
+Renuncia Não Status Liberado
+Doença Grave Não Compensação Não
+IR-RRA Sim
+Meses Exe. Anterior 44
+Meses Exe. Corrente - Valor Exe. Corrente -Valor Exe. Anterior -
+Ano Exe. Corrente - Status Servidor -
+Valor Inicial PSS - Data Base PSS -
+Valor total execução 212.677,15 Data base execução 01/07/2018
+Valor Requisitado 154.674,29Espelho de Valores Cadastrados. Data: 02/12/2020
+PROCESSO : 5010007-36.2020.4.02.9388
+ORIGINÁRIO : 0006105-71.2016.4.02.5001/ES
+TIPO : Precatório
+REQUERENTE : ANTONIO TAVARES DE SOUZA NETO
+ADVOGADO : CELSO JOSE DE CARVALHO - ES018718
+REQUERIDO : INSTITUTO NACIONAL DO SEGURO SOCIAL - INSS
+: PROCURADOR ANDRÉ AMARAL DE AGUIAR - PRF-1_2_PREV
+: DEPRECANTE 6ª Vara Federal Cível de Vitória
+ASSUNTO : 040118 - Aposentadoria por Tempo de Serviço (Art. 52/4)
+Tipo de Despesa : 21 - NATUREZA NÃO ALIMENTÍCIA (21)
+Trans. Requisição : 02/12/2020 20:03:50
+Data de Entrada : 02/12/2020 20:03:50
+REQUISIÇÃO : 20500012272
+Data Ajuizamento : 14/03/2016
+Data TJ. Conhecim. : 05/12/2017
+Data TJ. Embargos : 10/08/2020
+Espécie Requisição : Parcial
+Precatório de natureza NÃO tributária
+Tipo Beneficiário
+Nome ANTONIO TAVARES DE SOUZA NETO
+CPF/CGC 208.165.886-00
+Valor Principal 139.752,11 Data Base 01/07/2018
+Valor Juros 14.922,18 Data Base 01/07/2018
+Juros de mora fixados na sentença: Poupança
+Renuncia Não Status Liberado
+Doença Grave Não Compensação Não
+IR-RRA Sim
+Meses Exe. Anterior 44
+Meses Exe. Corrente - Valor Exe. Corrente -Valor Exe. Anterior -
+Ano Exe. Corrente - Status Servidor -
+Valor Inicial PSS - Data Base PSS -
+Valor total execução 212.677,15 Data base execução 01/07/2018
+Valor Requisitado 154.674,29Tipo Honorário
+Nome CELSO JOSE DE CARVALHO
+CPF/CGC 079.038.547-39
+Valor Principal 34.938,03 Data Base 01/07/2018
+Valor Juros 3.730,54 Data Base 01/07/2018
+Juros de mora fixados na sentença: Poupança
+Renuncia Não Status Liberado
+Doença Grave Não Compensação Não
+IR-RRA Não
+Tipo Hon. Judicial Honorários Contratuais
+Meses Exe. Anterior -
+Meses Exe. Corrente - Valor Exe. Corrente -Valor Exe. Anterior -
+Ano Exe. Corrente - Status Servidor -
+Valor Inicial PSS - Data Base PSS -
+Valor total execução - Data base execução -
+Valor Requisitado 38.668,57
+Valor Total da Requisição: 193.342,86
+Observações:
+1)	Precatórios classificados pelo juízo requisitante como de natureza não tributária serão atualizadas da data base
+do cálculo informada na requisição de pagamento até o efetivo pagamento pelo IPCA-E.
+2) Precatórios classificadas pelo juízo requisitante como de natureza tributária serão atualizadas da data base do
+cálculo informada na requisição de pagamento até o efetivo pagamento pela SELIC.Espelho de Valores Cadastrados. Data: 02/12/2020
+PROCESSO : 5010007-36.2020.4.02.9388
+ORIGINÁRIO : 0006105-71.2016.4.02.5001/ES
+TIPO : Precatório
+REQUERENTE : ANTONIO TAVARES DE SOUZA NETO
+ADVOGADO : CELSO JOSE DE CARVALHO - ES018718
+REQUERIDO : INSTITUTO NACIONAL DO SEGURO SOCIAL - INSS
+: PROCURADOR ANDRÉ AMARAL DE AGUIAR - PRF-1_2_PREV
+: DEPRECANTE 6ª Vara Federal Cível de Vitória
+ASSUNTO : 040118 - Aposentadoria por Tempo de Serviço (Art. 52/4)
+Tipo de Despesa : 21 - NATUREZA NÃO ALIMENTÍCIA (21)
+Trans. Requisição : 02/12/2020 20:03:50
+Data de Entrada : 02/12/2020 20:03:50
+REQUISIÇÃO : 20500012272
+Data Ajuizamento : 14/03/2016
+Data TJ. Conhecim. : 05/12/2017
+Data TJ. Embargos : 10/08/2020
+Espécie Requisição : Parcial
+Precatório de natureza NÃO tributária
+Tipo Beneficiário
+Nome ANTONIO TAVARES DE SOUZA NETO
+CPF/CGC 208.165.886-00
+Valor Principal 139.752,11 Data Base 01/07/2018
+Valor Juros 14.922,18 Data Base 01/07/2018
+Juros de mora fixados na sentença: Poupança
+Renuncia Não Status Liberado
+Doença Grave Não Compensação Não
+IR-RRA Sim
+Meses Exe. Anterior 44
+Meses Exe. Corrente - Valor Exe. Corrente -Valor Exe. Anterior -
+Ano Exe. Corrente - Status Servidor -
+Valor Inicial PSS - Data Base PSS -
+Valor total execução 212.677,15 Data base execução 01/07/2018
+Valor Requisitado 154.674,29Espelho de Valores Cadastrados. Data: 02/12/2020
+PROCESSO : 5010007-36.2020.4.02.9388
+ORIGINÁRIO : 0006105-71.2016.4.02.5001/ES
+TIPO : Precatório
+REQUERENTE : ANTONIO TAVARES DE SOUZA NETO
+ADVOGADO : CELSO JOSE DE CARVALHO - ES018718
+REQUERIDO : INSTITUTO NACIONAL DO SEGURO SOCIAL - INSS
+: PROCURADOR ANDRÉ AMARAL DE AGUIAR - PRF-1_2_PREV
+: DEPRECANTE 6ª Vara Federal Cível de Vitória
+ASSUNTO : 040118 - Aposentadoria por Tempo de Serviço (Art. 52/4)
+Tipo de Despesa : 21 - NATUREZA NÃO ALIMENTÍCIA (21)
+Trans. Requisição : 02/12/2020 20:03:50
+Data de Entrada : 02/12/2020 20:03:50
+REQUISIÇÃO : 20500012272
+Data Ajuizamento : 14/03/2016
+Data TJ. Conhecim. : 05/12/2017
+Data TJ. Embargos : 10/08/2020
+Espécie Requisição : Parcial
+Precatório de natureza NÃO tributária
+Tipo Beneficiário
+Nome ANTONIO TAVARES DE SOUZA NETO
+CPF/CGC 208.165.886-00
+Valor Principal 139.752,11 Data Base 01/07/2018
+Valor Juros 14.922,18 Data Base 01/07/2018
+Juros de mora fixados na sentença: Poupança
+Renuncia Não Status Liberado
+Doença Grave Não Compensação Não
+IR-RRA Sim
+Meses Exe. Anterior 44
+Meses Exe. Corrente - Valor Exe. Corrente -Valor Exe. Anterior -
+Ano Exe. Corrente - Status Servidor -
+Valor Inicial PSS - Data Base PSS -
+Valor total execução 212.677,15 Data base execução 01/07/2018
+Valor Requisitado 154.674,29Tipo Honorário
+Nome CELSO JOSE DE CARVALHO
+CPF/CGC 079.038.547-39
+Valor Principal 34.938,03 Data Base 01/07/2018
+Valor Juros 3.730,54 Data Base 01/07/2018
+Juros de mora fixados na sentença: Poupança
+Renuncia Não Status Liberado
+Doença Grave Não Compensação Não
+IR-RRA Não
+Tipo Hon. Judicial Honorários Contratuais
+Meses Exe. Anterior -
+Meses Exe. Corrente - Valor Exe. Corrente -Valor Exe. Anterior -
+Ano Exe. Corrente - Status Servidor -
+Valor Inicial PSS - Data Base PSS -
+Valor total execução - Data base execução -
+Valor Requisitado 38.668,57
+Valor Total da Requisição: 193.342,86
+Observações:
+1)	Precatórios classificados pelo juízo requisitante como de natureza não tributária serão atualizadas da data base
+do cálculo informada na requisição de pagamento até o efetivo pagamento pelo IPCA-E.
+2) Precatórios classificadas pelo juízo requisitante como de natureza tributária serão atualizadas da data base do
+cálculo informada na requisição de pagamento até o efetivo pagamento pela SELIC.Espelho de Valores Cadastrados. Data: 02/12/2020
+PROCESSO : 5010007-36.2020.4.02.9388
+ORIGINÁRIO : 0006105-71.2016.4.02.5001/ES
+TIPO : Precatório
+REQUERENTE : ANTONIO TAVARES DE SOUZA NETO
+ADVOGADO : CELSO JOSE DE CARVALHO - ES018718
+REQUERIDO : INSTITUTO NACIONAL DO SEGURO SOCIAL - INSS
+: PROCURADOR ANDRÉ AMARAL DE AGUIAR - PRF-1_2_PREV
+: DEPRECANTE 6ª Vara Federal Cível de Vitória
+ASSUNTO : 040118 - Aposentadoria por Tempo de Serviço (Art. 52/4)
+Tipo de Despesa : 21 - NATUREZA NÃO ALIMENTÍCIA (21)
+Trans. Requisição : 02/12/2020 20:03:50
+Data de Entrada : 02/12/2020 20:03:50
+REQUISIÇÃO : 20500012272
+Data Ajuizamento : 14/03/2016
+Data TJ. Conhecim. : 05/12/2017
+Data TJ. Embargos : 10/08/2020
+Espécie Requisição : Parcial
+Precatório de natureza NÃO tributária
+Tipo Beneficiário
+Nome ANTONIO TAVARES DE SOUZA NETO
+CPF/CGC 208.165.886-00
+Valor Principal 139.752,11 Data Base 01/07/2018
+Valor Juros 14.922,18 Data Base 01/07/2018
+Juros de mora fixados na sentença: Poupança
+Renuncia Não Status Liberado
+Doença Grave Não Compensação Não
+IR-RRA Sim
+Meses Exe. Anterior 44
+Meses Exe. Corrente - Valor Exe. Corrente -Valor Exe. Anterior -
+Ano Exe. Corrente - Status Servidor -
+Valor Inicial PSS - Data Base PSS -
+Valor total execução 212.677,15 Data base execução 01/07/2018
+Valor Requisitado 154.674,29Espelho de Valores Cadastrados. Data: 02/12/2020
+PROCESSO : 5010007-36.2020.4.02.9388
+ORIGINÁRIO : 0006105-71.2016.4.02.5001/ES
+TIPO : Precatório
+REQUERENTE : ANTONIO TAVARES DE SOUZA NETO
+ADVOGADO : CELSO JOSE DE CARVALHO - ES018718
+REQUERIDO : INSTITUTO NACIONAL DO SEGURO SOCIAL - INSS
+: PROCURADOR ANDRÉ AMARAL DE AGUIAR - PRF-1_2_PREV
+: DEPRECANTE 6ª Vara Federal Cível de Vitória
+ASSUNTO : 040118 - Aposentadoria por Tempo de Serviço (Art. 52/4)
+Tipo de Despesa : 21 - NATUREZA NÃO ALIMENTÍCIA (21)
+Trans. Requisição : 02/12/2020 20:03:50
+Data de Entrada : 02/12/2020 20:03:50
+REQUISIÇÃO : 20500012272
+Data Ajuizamento : 14/03/2016
+Data TJ. Conhecim. : 05/12/2017
+Data TJ. Embargos : 10/08/2020
+Espécie Requisição : Parcial
+Precatório de natureza NÃO tributária
+Tipo Beneficiário
+Nome ANTONIO TAVARES DE SOUZA NETO
+CPF/CGC 208.165.886-00
+Valor Principal 139.752,11 Data Base 01/07/2018
+Valor Juros 14.922,18 Data Base 01/07/2018
+Juros de mora fixados na sentença: Poupança
+Renuncia Não Status Liberado
+Doença Grave Não Compensação Não
+IR-RRA Sim
+Meses Exe. Anterior 44
+Meses Exe. Corrente - Valor Exe. Corrente -Valor Exe. Anterior -
+Ano Exe. Corrente - Status Servidor -
+Valor Inicial PSS - Data Base PSS -
+Valor total execução 212.677,15 Data base execução 01/07/2018
+Valor Requisitado 154.674,29Tipo Honorário
+Nome CELSO JOSE DE CARVALHO
+CPF/CGC 079.038.547-39
+Valor Principal 34.938,03 Data Base 01/07/2018
+Valor Juros 3.730,54 Data Base 01/07/2018
+Juros de mora fixados na sentença: Poupança
+Renuncia Não Status Liberado
+Doença Grave Não Compensação Não
+IR-RRA Não
+Tipo Hon. Judicial Honorários Contratuais
+Meses Exe. Anterior -
+Meses Exe. Corrente - Valor Exe. Corrente -Valor Exe. Anterior -
+Ano Exe. Corrente - Status Servidor -
+Valor Inicial PSS - Data Base PSS -
+Valor total execução - Data base execução -
+Valor Requisitado 38.668,57
+Valor Total da Requisição: 193.342,86
+Observações:
+1)	Precatórios classificados pelo juízo requisitante como de natureza não tributária serão atualizadas da data base
+do cálculo informada na requisição de pagamento até o efetivo pagamento pelo IPCA-E.
+2) Precatórios classificadas pelo juízo requisitante como de natureza tributária serão atualizadas da data base do
+cálculo informada na requisição de pagamento até o efetivo pagamento pela SELIC.Espelho de Valores Cadastrados. Data: 02/12/2020
+PROCESSO : 5010007-36.2020.4.02.9388
+ORIGINÁRIO : 0006105-71.2016.4.02.5001/ES
+TIPO : Precatório
+REQUERENTE : ANTONIO TAVARES DE SOUZA NETO
+ADVOGADO : CELSO JOSE DE CARVALHO - ES018718
+REQUERIDO : INSTITUTO NACIONAL DO SEGURO SOCIAL - INSS
+: PROCURADOR ANDRÉ AMARAL DE AGUIAR - PRF-1_2_PREV
+: DEPRECANTE 6ª Vara Federal Cível de Vitória
+ASSUNTO : 040118 - Aposentadoria por Tempo de Serviço (Art. 52/4)
+Tipo de Despesa : 21 - NATUREZA NÃO ALIMENTÍCIA (21)
+Trans. Requisição : 02/12/2020 20:03:50
+Data de Entrada : 02/12/2020 20:03:50
+REQUISIÇÃO : 20500012272
+Data Ajuizamento : 14/03/2016
+Data TJ. Conhecim. : 05/12/2017
+Data TJ. Embargos : 10/08/2020
+Espécie Requisição : Parcial
+Precatório de natureza NÃO tributária
+Tipo Beneficiário
+Nome ANTONIO TAVARES DE SOUZA NETO
+CPF/CGC 208.165.886-00
+Valor Principal 139.752,11 Data Base 01/07/2018
+Valor Juros 14.922,18 Data Base 01/07/2018
+Juros de mora fixados na sentença: Poupança
+Renuncia Não Status Liberado
+Doença Grave Não Compensação Não
+IR-RRA Sim
+Meses Exe. Anterior 44
+Meses Exe. Corrente - Valor Exe. Corrente -Valor Exe. Anterior -
+Ano Exe. Corrente - Status Servidor -
+Valor Inicial PSS - Data Base PSS -
+Valor total execução 212.677,15 Data base execução 01/07/2018
+Valor Requisitado 154.674,29Espelho de Valores Cadastrados. Data: 02/12/2020
+PROCESSO : 5010007-36.2020.4.02.9388
+ORIGINÁRIO : 0006105-71.2016.4.02.5001/ES
+TIPO : Precatório
+REQUERENTE : ANTONIO TAVARES DE SOUZA NETO
+ADVOGADO : CELSO JOSE DE CARVALHO - ES018718
+REQUERIDO : INSTITUTO NACIONAL DO SEGURO SOCIAL - INSS
+: PROCURADOR ANDRÉ AMARAL DE AGUIAR - PRF-1_2_PREV
+: DEPRECANTE 6ª Vara Federal Cível de Vitória
+ASSUNTO : 040118 - Aposentadoria por Tempo de Serviço (Art. 52/4)
+Tipo de Despesa : 21 - NATUREZA NÃO ALIMENTÍCIA (21)
+Trans. Requisição : 02/12/2020 20:03:50
+Data de Entrada : 02/12/2020 20:03:50
+REQUISIÇÃO : 20500012272
+Data Ajuizamento : 14/03/2016
+Data TJ. Conhecim. : 05/12/2017
+Data TJ. Embargos : 10/08/2020
+Espécie Requisição : Parcial
+Precatório de natureza NÃO tributária
+Tipo Beneficiário
+Nome ANTONIO TAVARES DE SOUZA NETO
+CPF/CGC 208.165.886-00
+Valor Principal 139.752,11 Data Base 01/07/2018
+Valor Juros 14.922,18 Data Base 01/07/2018
+Juros de mora fixados na sentença: Poupança
+Renuncia Não Status Liberado
+Doença Grave Não Compensação Não
+IR-RRA Sim
+Meses Exe. Anterior 44
+Meses Exe. Corrente - Valor Exe. Corrente -Valor Exe. Anterior -
+Ano Exe. Corrente - Status Servidor -
+Valor Inicial PSS - Data Base PSS -
+Valor total execução 212.677,15 Data base execução 01/07/2018
+Valor Requisitado 154.674,29Tipo Honorário
+Nome CELSO JOSE DE CARVALHO
+CPF/CGC 079.038.547-39
+Valor Principal 34.938,03 Data Base 01/07/2018
+Valor Juros 3.730,54 Data Base 01/07/2018
+Juros de mora fixados na sentença: Poupança
+Renuncia Não Status Liberado
+Doença Grave Não Compensação Não
+IR-RRA Não
+Tipo Hon. Judicial Honorários Contratuais
+Meses Exe. Anterior -
+Meses Exe. Corrente - Valor Exe. Corrente -Valor Exe. Anterior -
+Ano Exe. Corrente - Status Servidor -
+Valor Inicial PSS - Data Base PSS -
+Valor total execução - Data base execução -
+Valor Requisitado 38.668,57
+Valor Total da Requisição: 193.342,86
+Observações:
+1)	Precatórios classificados pelo juízo requisitante como de natureza não tributária serão atualizadas da data base
+do cálculo informada na requisição de pagamento até o efetivo pagamento pelo IPCA-E.
+2) Precatórios classificadas pelo juízo requisitante como de natureza tributária serão atualizadas da data base do
+cálculo informada na requisição de pagamento até o efetivo pagamento pela SELIC.Espelho de Valores Cadastrados. Data: 02/12/2020
+PROCESSO : 5010007-36.2020.4.02.9388
+ORIGINÁRIO : 0006105-71.2016.4.02.5001/ES
+TIPO : Precatório
+REQUERENTE : ANTONIO TAVARES DE SOUZA NETO
+ADVOGADO : CELSO JOSE DE CARVALHO - ES018718
+REQUERIDO : INSTITUTO NACIONAL DO SEGURO SOCIAL - INSS
+: PROCURADOR ANDRÉ AMARAL DE AGUIAR - PRF-1_2_PREV
+: DEPRECANTE 6ª Vara Federal Cível de Vitória
+ASSUNTO : 040118 - Aposentadoria por Tempo de Serviço (Art. 52/4)
+Tipo de Despesa : 21 - NATUREZA NÃO ALIMENTÍCIA (21)
+Trans. Requisição : 02/12/2020 20:03:50
+Data de Entrada : 02/12/2020 20:03:50
+REQUISIÇÃO : 20500012272
+Data Ajuizamento : 14/03/2016
+Data TJ. Conhecim. : 05/12/2017
+Data TJ. Embargos : 10/08/2020
+Espécie Requisição : Parcial
+Precatório de natureza NÃO tributária
+Tipo Beneficiário
+Nome ANTONIO TAVARES DE SOUZA NETO
+CPF/CGC 208.165.886-00
+Valor Principal 139.752,11 Data Base 01/07/2018
+Valor Juros 14.922,18 Data Base 01/07/2018
+Juros de mora fixados na sentença: Poupança
+Renuncia Não Status Liberado
+Doença Grave Não Compensação Não
+IR-RRA Sim
+Meses Exe. Anterior 44
+Meses Exe. Corrente - Valor Exe. Corrente -Valor Exe. Anterior -
+Ano Exe. Corrente - Status Servidor -
+Valor Inicial PSS - Data Base PSS -
+Valor total execução 212.677,15 Data base execução 01/07/2018
+Valor Requisitado 154.674,29Espelho de Valores Cadastrados. Data: 02/12/2020
+PROCESSO : 5010007-36.2020.4.02.9388
+ORIGINÁRIO : 0006105-71.2016.4.02.5001/ES
+TIPO : Precatório
+REQUERENTE : ANTONIO TAVARES DE SOUZA NETO
+ADVOGADO : CELSO JOSE DE CARVALHO - ES018718
+REQUERIDO : INSTITUTO NACIONAL DO SEGURO SOCIAL - INSS
+: PROCURADOR ANDRÉ AMARAL DE AGUIAR - PRF-1_2_PREV
+: DEPRECANTE 6ª Vara Federal Cível de Vitória
+ASSUNTO : 040118 - Aposentadoria por Tempo de Serviço (Art. 52/4)
+Tipo de Despesa : 21 - NATUREZA NÃO ALIMENTÍCIA (21)
+Trans. Requisição : 02/12/2020 20:03:50
+Data de Entrada : 02/12/2020 20:03:50
+REQUISIÇÃO : 20500012272
+Data Ajuizamento : 14/03/2016
+Data TJ. Conhecim. : 05/12/2017
+Data TJ. Embargos : 10/08/2020
+Espécie Requisição : Parcial
+Precatório de natureza NÃO tributária
+Tipo Beneficiário
+Nome ANTONIO TAVARES DE SOUZA NETO
+CPF/CGC 208.165.886-00
+Valor Principal 139.752,11 Data Base 01/07/2018
+Valor Juros 14.922,18 Data Base 01/07/2018
+Juros de mora fixados na sentença: Poupança
+Renuncia Não Status Liberado
+Doença Grave Não Compensação Não
+IR-RRA Sim
+Meses Exe. Anterior 44
+Meses Exe. Corrente - Valor Exe. Corrente -Valor Exe. Anterior -
+Ano Exe. Corrente - Status Servidor -
+Valor Inicial PSS - Data Base PSS -
+Valor total execução 212.677,15 Data base execução 01/07/2018
+Valor Requisitado 154.674,29Tipo Honorário
+Nome CELSO JOSE DE CARVALHO
+CPF/CGC 079.038.547-39
+Valor Principal 34.938,03 Data Base 01/07/2018
+Valor Juros 3.730,54 Data Base 01/07/2018
+Juros de mora fixados na sentença: Poupança
+Renuncia Não Status Liberado
+Doença Grave Não Compensação Não
+IR-RRA Não
+Tipo Hon. Judicial Honorários Contratuais
+Meses Exe. Anterior -
+Meses Exe. Corrente - Valor Exe. Corrente -Valor Exe. Anterior -
+Ano Exe. Corrente - Status Servidor -
+Valor Inicial PSS - Data Base PSS -
+Valor total execução - Data base execução -
+Valor Requisitado 38.668,57
+Valor Total da Requisição: 193.342,86
+Observações:
+1)	Precatórios classificados pelo juízo requisitante como de natureza não tributária serão atualizadas da data base
+do cálculo informada na requisição de pagamento até o efetivo pagamento pelo IPCA-E.
+2) Precatórios classificadas pelo juízo requisitante como de natureza tributária serão atualizadas da data base do
+cálculo informada na requisição de pagamento até o efetivo pagamento pela SELIC.Espelho de Valores Cadastrados. Data: 02/12/2020
+PROCESSO : 5010007-36.2020.4.02.9388
+ORIGINÁRIO : 0006105-71.2016.4.02.5001/ES
+TIPO : Precatório
+REQUERENTE : ANTONIO TAVARES DE SOUZA NETO
+ADVOGADO : CELSO JOSE DE CARVALHO - ES018718
+REQUERIDO : INSTITUTO NACIONAL DO SEGURO SOCIAL - INSS
+: PROCURADOR ANDRÉ AMARAL DE AGUIAR - PRF-1_2_PREV
+: DEPRECANTE 6ª Vara Federal Cível de Vitória
+ASSUNTO : 040118 - Aposentadoria por Tempo de Serviço (Art. 52/4)
+Tipo de Despesa : 21 - NATUREZA NÃO ALIMENTÍCIA (21)
+Trans. Requisição : 02/12/2020 20:03:50
+Data de Entrada : 02/12/2020 20:03:50
+REQUISIÇÃO : 20500012272
+Data Ajuizamento : 14/03/2016
+Data TJ. Conhecim. : 05/12/2017
+Data TJ. Embargos : 10/08/2020
+Espécie Requisição : Parcial
+Precatório de natureza NÃO tributária
+Tipo Beneficiário
+Nome ANTONIO TAVARES DE SOUZA NETO
+CPF/CGC 208.165.886-00
+Valor Principal 139.752,11 Data Base 01/07/2018
+Valor Juros 14.922,18 Data Base 01/07/2018
+Juros de mora fixados na sentença: Poupança
+Renuncia Não Status Liberado
+Doença Grave Não Compensação Não
+IR-RRA Sim
+Meses Exe. Anterior 44
+Meses Exe. Corrente - Valor Exe. Corrente -Valor Exe. Anterior -
+Ano Exe. Corrente - Status Servidor -
+Valor Inicial PSS - Data Base PSS -
+Valor total execução 212.677,15 Data base execução 01/07/2018
+Valor Requisitado 154.674,29Espelho de Valores Cadastrados. Data: 02/12/2020
+PROCESSO : 5010007-36.2020.4.02.9388
+ORIGINÁRIO : 0006105-71.2016.4.02.5001/ES
+TIPO : Precatório
+REQUERENTE : ANTONIO TAVARES DE SOUZA NETO
+ADVOGADO : CELSO JOSE DE CARVALHO - ES018718
+REQUERIDO : INSTITUTO NACIONAL DO SEGURO SOCIAL - INSS
+: PROCURADOR ANDRÉ AMARAL DE AGUIAR - PRF-1_2_PREV
+: DEPRECANTE 6ª Vara Federal Cível de Vitória
+ASSUNTO : 040118 - Aposentadoria por Tempo de Serviço (Art. 52/4)
+Tipo de Despesa : 21 - NATUREZA NÃO ALIMENTÍCIA (21)
+Trans. Requisição : 02/12/2020 20:03:50
+Data de Entrada : 02/12/2020 20:03:50
+REQUISIÇÃO : 20500012272
+Data Ajuizamento : 14/03/2016
+Data TJ. Conhecim. : 05/12/2017
+Data TJ. Embargos : 10/08/2020
+Espécie Requisição : Parcial
+Precatório de natureza NÃO tributária
+Tipo Beneficiário
+Nome ANTONIO TAVARES DE SOUZA NETO
+CPF/CGC 208.165.886-00
+Valor Principal 139.752,11 Data Base 01/07/2018
+Valor Juros 14.922,18 Data Base 01/07/2018
+Juros de mora fixados na sentença: Poupança
+Renuncia Não Status Liberado
+Doença Grave Não Compensação Não
+IR-RRA Sim
+Meses Exe. Anterior 44
+Meses Exe. Corrente - Valor Exe. Corrente -Valor Exe. Anterior -
+Ano Exe. Corrente - Status Servidor -
+Valor Inicial PSS - Data Base PSS -
+Valor total execução 212.677,15 Data base execução 01/07/2018
+Valor Requisitado 154.674,29Tipo Honorário
+Nome CELSO JOSE DE CARVALHO
+CPF/CGC 079.038.547-39
+Valor Principal 34.938,03 Data Base 01/07/2018
+Valor Juros 3.730,54 Data Base 01/07/2018
+Juros de mora fixados na sentença: Poupança
+Renuncia Não Status Liberado
+Doença Grave Não Compensação Não
+IR-RRA Não
+Tipo Hon. Judicial Honorários Contratuais
+Meses Exe. Anterior -
+Meses Exe. Corrente - Valor Exe. Corrente -Valor Exe. Anterior -
+Ano Exe. Corrente - Status Servidor -
+Valor Inicial PSS - Data Base PSS -
+Valor total execução - Data base execução -
+Valor Requisitado 38.668,57
+Valor Total da Requisição: 193.342,86
+Observações:
+1)	Precatórios classificados pelo juízo requisitante como de natureza não tributária serão atualizadas da data base
+do cálculo informada na requisição de pagamento até o efetivo pagamento pelo IPCA-E.
+2) Precatórios classificadas pelo juízo requisitante como de natureza tributária serão atualizadas da data base do
+cálculo informada na requisição de pagamento até o efetivo pagamento pela SELIC.Espelho de Valores Cadastrados. Data: 02/12/2020
+PROCESSO : 5010007-36.2020.4.02.9388
+ORIGINÁRIO : 0006105-71.2016.4.02.5001/ES
+TIPO : Precatório
+REQUERENTE : ANTONIO TAVARES DE SOUZA NETO
+ADVOGADO : CELSO JOSE DE CARVALHO - ES018718
+REQUERIDO : INSTITUTO NACIONAL DO SEGURO SOCIAL - INSS
+: PROCURADOR ANDRÉ AMARAL DE AGUIAR - PRF-1_2_PREV
+: DEPRECANTE 6ª Vara Federal Cível de Vitória
+ASSUNTO : 040118 - Aposentadoria por Tempo de Serviço (Art. 52/4)
+Tipo de Despesa : 21 - NATUREZA NÃO ALIMENTÍCIA (21)
+Trans. Requisição : 02/12/2020 20:03:50
+Data de Entrada : 02/12/2020 20:03:50
+REQUISIÇÃO : 20500012272
+Data Ajuizamento : 14/03/2016
+Data TJ. Conhecim. : 05/12/2017
+Data TJ. Embargos : 10/08/2020
+Espécie Requisição : Parcial
+Precatório de natureza NÃO tributária
+Tipo Beneficiário
+Nome ANTONIO TAVARES DE SOUZA NETO
+CPF/CGC 208.165.886-00
+Valor Principal 139.752,11 Data Base 01/07/2018
+Valor Juros 14.922,18 Data Base 01/07/2018
+Juros de mora fixados na sentença: Poupança
+Renuncia Não Status Liberado
+Doença Grave Não Compensação Não
+IR-RRA Sim
+Meses Exe. Anterior 44
+Meses Exe. Corrente - Valor Exe. Corrente -Valor Exe. Anterior -
+Ano Exe. Corrente - Status Servidor -
+Valor Inicial PSS - Data Base PSS -
+Valor total execução 212.677,15 Data base execução 01/07/2018
+Valor Requisitado 154.674,29Espelho de Valores Cadastrados. Data: 02/12/2020
+PROCESSO : 5010007-36.2020.4.02.9388
+ORIGINÁRIO : 0006105-71.2016.4.02.5001/ES
+TIPO : Precatório
+REQUERENTE : ANTONIO TAVARES DE SOUZA NETO
+ADVOGADO : CELSO JOSE DE CARVALHO - ES018718
+REQUERIDO : INSTITUTO NACIONAL DO SEGURO SOCIAL - INSS
+: PROCURADOR ANDRÉ AMARAL DE AGUIAR - PRF-1_2_PREV
+: DEPRECANTE 6ª Vara Federal Cível de Vitória
+ASSUNTO : 040118 - Aposentadoria por Tempo de Serviço (Art. 52/4)
+Tipo de Despesa : 21 - NATUREZA NÃO ALIMENTÍCIA (21)
+Trans. Requisição : 02/12/2020 20:03:50
+Data de Entrada : 02/12/2020 20:03:50
+REQUISIÇÃO : 20500012272
+Data Ajuizamento : 14/03/2016
+Data TJ. Conhecim. : 05/12/2017
+Data TJ. Embargos : 10/08/2020
+Espécie Requisição : Parcial
+Precatório de natureza NÃO tributária
+Tipo Beneficiário
+Nome ANTONIO TAVARES DE SOUZA NETO
+CPF/CGC 208.165.886-00
+Valor Principal 139.752,11 Data Base 01/07/2018
+Valor Juros 14.922,18 Data Base 01/07/2018
+Juros de mora fixados na sentença: Poupança
+Renuncia Não Status Liberado
+Doença Grave Não Compensação Não
+IR-RRA Sim
+Meses Exe. Anterior 44
+Meses Exe. Corrente - Valor Exe. Corrente -Valor Exe. Anterior -
+Ano Exe. Corrente - Status Servidor -
+Valor Inicial PSS - Data Base PSS -
+Valor total execução 212.677,15 Data base execução 01/07/2018
+Valor Requisitado 154.674,29Tipo Honorário
+Nome CELSO JOSE DE CARVALHO
+CPF/CGC 079.038.547-39
+Valor Principal 34.938,03 Data Base 01/07/2018
+Valor Juros 3.730,54 Data Base 01/07/2018
+Juros de mora fixados na sentença: Poupança
+Renuncia Não Status Liberado
+Doença Grave Não Compensação Não
+IR-RRA Não
+Tipo Hon. Judicial Honorários Contratuais
+Meses Exe. Anterior -
+Meses Exe. Corrente - Valor Exe. Corrente -Valor Exe. Anterior -
+Ano Exe. Corrente - Status Servidor -
+Valor Inicial PSS - Data Base PSS -
+Valor total execução - Data base execução -
+Valor Requisitado 38.668,57
+Valor Total da Requisição: 193.342,86
+Observações:
+1)	Precatórios classificados pelo juízo requisitante como de natureza não tributária serão atualizadas da data base
+do cálculo informada na requisição de pagamento até o efetivo pagamento pelo IPCA-E.
+2) Precatórios classificadas pelo juízo requisitante como de natureza tributária serão atualizadas da data base do
+cálculo informada na requisição de pagamento até o efetivo pagamento pela SELIC.Espelho de Valores Cadastrados. Data: 02/12/2020
+PROCESSO : 5010007-36.2020.4.02.9388
+ORIGINÁRIO : 0006105-71.2016.4.02.5001/ES
+TIPO : Precatório
+REQUERENTE : ANTONIO TAVARES DE SOUZA NETO
+ADVOGADO : CELSO JOSE DE CARVALHO - ES018718
+REQUERIDO : INSTITUTO NACIONAL DO SEGURO SOCIAL - INSS
+: PROCURADOR ANDRÉ AMARAL DE AGUIAR - PRF-1_2_PREV
+: DEPRECANTE 6ª Vara Federal Cível de Vitória
+ASSUNTO : 040118 - Aposentadoria por Tempo de Serviço (Art. 52/4)
+Tipo de Despesa : 21 - NATUREZA NÃO ALIMENTÍCIA (21)
+Trans. Requisição : 02/12/2020 20:03:50
+Data de Entrada : 02/12/2020 20:03:50
+REQUISIÇÃO : 20500012272
+Data Ajuizamento : 14/03/2016
+Data TJ. Conhecim. : 05/12/2017
+Data TJ. Embargos : 10/08/2020
+Espécie Requisição : Parcial
+Precatório de natureza NÃO tributária
+Tipo Beneficiário
+Nome ANTONIO TAVARES DE SOUZA NETO
+CPF/CGC 208.165.886-00
+Valor Principal 139.752,11 Data Base 01/07/2018
+Valor Juros 14.922,18 Data Base 01/07/2018
+Juros de mora fixados na sentença: Poupança
+Renuncia Não Status Liberado
+Doença Grave Não Compensação Não
+IR-RRA Sim
+Meses Exe. Anterior 44
+Meses Exe. Corrente - Valor Exe. Corrente -Valor Exe. Anterior -
+Ano Exe. Corrente - Status Servidor -
+Valor Inicial PSS - Data Base PSS -
+Valor total execução 212.677,15 Data base execução 01/07/2018
+Valor Requisitado 154.674,29Espelho de Valores Cadastrados. Data: 02/12/2020
+PROCESSO : 5010007-36.2020.4.02.9388
+ORIGINÁRIO : 0006105-71.2016.4.02.5001/ES
+TIPO : Precatório
+REQUERENTE : ANTONIO TAVARES DE SOUZA NETO
+ADVOGADO : CELSO JOSE DE CARVALHO - ES018718
+REQUERIDO : INSTITUTO NACIONAL DO SEGURO SOCIAL - INSS
+: PROCURADOR ANDRÉ AMARAL DE AGUIAR - PRF-1_2_PREV
+: DEPRECANTE 6ª Vara Federal Cível de Vitória
+ASSUNTO : 040118 - Aposentadoria por Tempo de Serviço (Art. 52/4)
+Tipo de Despesa : 21 - NATUREZA NÃO ALIMENTÍCIA (21)
+Trans. Requisição : 02/12/2020 20:03:50
+Data de Entrada : 02/12/2020 20:03:50
+REQUISIÇÃO : 20500012272
+Data Ajuizamento : 14/03/2016
+Data TJ. Conhecim. : 05/12/2017
+Data TJ. Embargos : 10/08/2020
+Espécie Requisição : Parcial
+Precatório de natureza NÃO tributária
+Tipo Beneficiário
+Nome ANTONIO TAVARES DE SOUZA NETO
+CPF/CGC 208.165.886-00
+Valor Principal 139.752,11 Data Base 01/07/2018
+Valor Juros 14.922,18 Data Base 01/07/2018
+Juros de mora fixados na sentença: Poupança
+Renuncia Não Status Liberado
+Doença Grave Não Compensação Não
+IR-RRA Sim
+Meses Exe. Anterior 44
+Meses Exe. Corrente - Valor Exe. Corrente -Valor Exe. Anterior -
+Ano Exe. Corrente - Status Servidor -
+Valor Inicial PSS - Data Base PSS -
+Valor total execução 212.677,15 Data base execução 01/07/2018
+Valor Requisitado 154.674,29Tipo Honorário
+Nome CELSO JOSE DE CARVALHO
+CPF/CGC 079.038.547-39
+Valor Principal 34.938,03 Data Base 01/07/2018
+Valor Juros 3.730,54 Data Base 01/07/2018
+Juros de mora fixados na sentença: Poupança
+Renuncia Não Status Liberado
+Doença Grave Não Compensação Não
+IR-RRA Não
+Tipo Hon. Judicial Honorários Contratuais
+Meses Exe. Anterior -
+Meses Exe. Corrente - Valor Exe. Corrente -Valor Exe. Anterior -
+Ano Exe. Corrente - Status Servidor -
+Valor Inicial PSS - Data Base PSS -
+Valor total execução - Data base execução -
+Valor Requisitado 38.668,57
+Valor Total da Requisição: 193.342,86
+Observações:
+1)	Precatórios classificados pelo juízo requisitante como de natureza não tributária serão atualizadas da data base
+do cálculo informada na requisição de pagamento até o efetivo pagamento pelo IPCA-E.
+2) Precatórios classificadas pelo juízo requisitante como de natureza tributária serão atualizadas da data base do
+cálculo informada na requisição de pagamento até o efetivo pagamento pela SELIC.Espelho de Valores Cadastrados. Data: 02/12/2020
+PROCESSO : 5010007-36.2020.4.02.9388
+ORIGINÁRIO : 0006105-71.2016.4.02.5001/ES
+TIPO : Precatório
+REQUERENTE : ANTONIO TAVARES DE SOUZA NETO
+ADVOGADO : CELSO JOSE DE CARVALHO - ES018718
+REQUERIDO : INSTITUTO NACIONAL DO SEGURO SOCIAL - INSS
+: PROCURADOR ANDRÉ AMARAL DE AGUIAR - PRF-1_2_PREV
+: DEPRECANTE 6ª Vara Federal Cível de Vitória
+ASSUNTO : 040118 - Aposentadoria por Tempo de Serviço (Art. 52/4)
+Tipo de Despesa : 21 - NATUREZA NÃO ALIMENTÍCIA (21)
+Trans. Requisição : 02/12/2020 20:03:50
+Data de Entrada : 02/12/2020 20:03:50
+REQUISIÇÃO : 20500012272
+Data Ajuizamento : 14/03/2016
+Data TJ. Conhecim. : 05/12/2017
+Data TJ. Embargos : 10/08/2020
+Espécie Requisição : Parcial
+Precatório de natureza NÃO tributária
+Tipo Beneficiário
+Nome ANTONIO TAVARES DE SOUZA NETO
+CPF/CGC 208.165.886-00
+Valor Principal 139.752,11 Data Base 01/07/2018
+Valor Juros 14.922,18 Data Base 01/07/2018
+Juros de mora fixados na sentença: Poupança
+Renuncia Não Status Liberado
+Doença Grave Não Compensação Não
+IR-RRA Sim
+Meses Exe. Anterior 44
+Meses Exe. Corrente - Valor Exe. Corrente -Valor Exe. Anterior -
+Ano Exe. Corrente - Status Servidor -
+Valor Inicial PSS - Data Base PSS -
+Valor total execução 212.677,15 Data base execução 01/07/2018
+Valor Requisitado 154.674,29Espelho de Valores Cadastrados. Data: 02/12/2020
+PROCESSO : 5010007-36.2020.4.02.9388
+ORIGINÁRIO : 0006105-71.2016.4.02.5001/ES
+TIPO : Precatório
+REQUERENTE : ANTONIO TAVARES DE SOUZA NETO
+ADVOGADO : CELSO JOSE DE CARVALHO - ES018718
+REQUERIDO : INSTITUTO NACIONAL DO SEGURO SOCIAL - INSS
+: PROCURADOR ANDRÉ AMARAL DE AGUIAR - PRF-1_2_PREV
+: DEPRECANTE 6ª Vara Federal Cível de Vitória
+ASSUNTO : 040118 - Aposentadoria por Tempo de Serviço (Art. 52/4)
+Tipo de Despesa : 21 - NATUREZA NÃO ALIMENTÍCIA (21)
+Trans. Requisição : 02/12/2020 20:03:50
+Data de Entrada : 02/12/2020 20:03:50
+REQUISIÇÃO : 20500012272
+Data Ajuizamento : 14/03/2016
+Data TJ. Conhecim. : 05/12/2017
+Data TJ. Embargos : 10/08/2020
+Espécie Requisição : Parcial
+Precatório de natureza NÃO tributária
+Tipo Beneficiário
+Nome ANTONIO TAVARES DE SOUZA NETO
+CPF/CGC 208.165.886-00
+Valor Principal 139.752,11 Data Base 01/07/2018
+Valor Juros 14.922,18 Data Base 01/07/2018
+Juros de mora fixados na sentença: Poupança
+Renuncia Não Status Liberado
+Doença Grave Não Compensação Não
+IR-RRA Sim
+Meses Exe. Anterior 44
+Meses Exe. Corrente - Valor Exe. Corrente -Valor Exe. Anterior -
+Ano Exe. Corrente - Status Servidor -
+Valor Inicial PSS - Data Base PSS -
+Valor total execução 212.677,15 Data base execução 01/07/2018
+Valor Requisitado 154.674,29Tipo Honorário
+Nome CELSO JOSE DE CARVALHO
+CPF/CGC 079.038.547-39
+Valor Principal 34.938,03 Data Base 01/07/2018
+Valor Juros 3.730,54 Data Base 01/07/2018
+Juros de mora fixados na sentença: Poupança
+Renuncia Não Status Liberado
+Doença Grave Não Compensação Não
+IR-RRA Não
+Tipo Hon. Judicial Honorários Contratuais
+Meses Exe. Anterior -
+Meses Exe. Corrente - Valor Exe. Corrente -Valor Exe. Anterior -
+Ano Exe. Corrente - Status Servidor -
+Valor Inicial PSS - Data Base PSS -
+Valor total execução - Data base execução -
+Valor Requisitado 38.668,57
+Valor Total da Requisição: 193.342,86
+Observações:
+1)	Precatórios classificados pelo juízo requisitante como de natureza não tributária serão atualizadas da data base
+do cálculo informada na requisição de pagamento até o efetivo pagamento pelo IPCA-E.
+2) Precatórios classificadas pelo juízo requisitante como de natureza tributária serão atualizadas da data base do
+cálculo informada na requisição de pagamento até o efetivo pagamento pela SELIC.

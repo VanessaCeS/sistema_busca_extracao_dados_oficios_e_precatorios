@@ -1,0 +1,89 @@
+Espelho de Valores Cadastrados. Data: 26/03/2022
+PROCESSO : 5002636-50.2022.4.02.9388
+ORIGINÁRIO : 5006392-78.2019.4.02.5118/RJ
+TIPO : Precatório
+REQUERENTE : EDSON DIAS GERALDO
+ADVOGADO : ALANA MACHADO DA CUNHA LOPES - RJ224964
+REQUERIDO : INSTITUTO NACIONAL DO SEGURO SOCIAL - INSS
+: PROCURADOR ANDRÉ AMARAL DE AGUIAR - PRF-1_2_PREV
+: DEPRECANTE Juízo Federal do 2º JEF de Duque de Caxias
+ASSUNTO : 040119 - Aposentadoria por Tempo de Contribuição (Art. 55/6)
+Tipo de Despesa : 12 - NATUREZA ALIMENTÍCIA - Benefícios previdenciários e
+indenizações por morte ou invalidez (12)
+Trans. Requisição : 25/03/2022 17:36:28
+Data de Entrada : 25/03/2022 17:36:28
+REQUISIÇÃO : 22510002267
+Data Ajuizamento : 17/06/2019
+Data TJ. Conhecim. : 17/06/2021
+Data TJ. Embargos : 03/12/2021
+Espécie Requisição : Original
+Superpreferencial : Não
+Precatório de natureza NÃO tributária
+Tipo Beneficiário
+Nome EDSON DIAS GERALDO
+CPF/CGC 844.243.207-82
+Valor Principal 102.388,41 Data Base 01/08/2021
+Valor Juros 4.036,83 Data Base 01/08/2021
+Juros de mora fixados na sentença: Poupança
+Renuncia Não Status Sem Bloqueio
+IR-RRA Sim
+Meses Exe. Anterior 52
+Meses Exe. Corrente - Valor Exe. Corrente -Valor Exe. Anterior -
+Ano Exe. Corrente - Status Servidor -
+Valor Inicial PSS - Data Base PSS -
+Valor total execução - Data base execução -
+Valor Requisitado 106.425,24Espelho de Valores Cadastrados. Data: 26/03/2022
+PROCESSO : 5002636-50.2022.4.02.9388
+ORIGINÁRIO : 5006392-78.2019.4.02.5118/RJ
+TIPO : Precatório
+REQUERENTE : EDSON DIAS GERALDO
+ADVOGADO : ALANA MACHADO DA CUNHA LOPES - RJ224964
+REQUERIDO : INSTITUTO NACIONAL DO SEGURO SOCIAL - INSS
+: PROCURADOR ANDRÉ AMARAL DE AGUIAR - PRF-1_2_PREV
+: DEPRECANTE Juízo Federal do 2º JEF de Duque de Caxias
+ASSUNTO : 040119 - Aposentadoria por Tempo de Contribuição (Art. 55/6)
+Tipo de Despesa : 12 - NATUREZA ALIMENTÍCIA - Benefícios previdenciários e
+indenizações por morte ou invalidez (12)
+Trans. Requisição : 25/03/2022 17:36:28
+Data de Entrada : 25/03/2022 17:36:28
+REQUISIÇÃO : 22510002267
+Data Ajuizamento : 17/06/2019
+Data TJ. Conhecim. : 17/06/2021
+Data TJ. Embargos : 03/12/2021
+Espécie Requisição : Original
+Superpreferencial : Não
+Precatório de natureza NÃO tributária
+Tipo Beneficiário
+Nome EDSON DIAS GERALDO
+CPF/CGC 844.243.207-82
+Valor Principal 102.388,41 Data Base 01/08/2021
+Valor Juros 4.036,83 Data Base 01/08/2021
+Juros de mora fixados na sentença: Poupança
+Renuncia Não Status Sem Bloqueio
+IR-RRA Sim
+Meses Exe. Anterior 52
+Meses Exe. Corrente - Valor Exe. Corrente -Valor Exe. Anterior -
+Ano Exe. Corrente - Status Servidor -
+Valor Inicial PSS - Data Base PSS -
+Valor total execução - Data base execução -
+Valor Requisitado 106.425,24Tipo Honorário
+Nome ALANA MACHADO DA CUNHA LOPES
+CPF/CGC 149.217.997-33
+Valor Principal 43.880,75 Data Base 01/08/2021
+Valor Juros 1.730,08 Data Base 01/08/2021
+Juros de mora fixados na sentença: Poupança
+Renuncia Não Status Sem Bloqueio
+IR-RRA Não
+Tipo Hon. Judicial Honorários Contratuais
+Meses Exe. Anterior -
+Meses Exe. Corrente - Valor Exe. Corrente -Valor Exe. Anterior -
+Ano Exe. Corrente - Status Servidor -
+Valor Inicial PSS - Data Base PSS -
+Valor total execução - Data base execução -
+Valor Requisitado 45.610,83
+Valor Total da Requisição: 152.036,07
+Observações:
+1)	Precatórios classificados pelo juízo requisitante como de natureza não tributária serão atualizadas da data base
+do cálculo informada na requisição de pagamento até o efetivo pagamento pelo IPCA-E.
+2) Precatórios classificadas pelo juízo requisitante como de natureza tributária serão atualizadas da data base do
+cálculo informada na requisição de pagamento até o efetivo pagamento pela SELIC.

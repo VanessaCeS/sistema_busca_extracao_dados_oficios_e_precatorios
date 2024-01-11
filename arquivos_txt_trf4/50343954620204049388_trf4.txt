@@ -1,0 +1,82 @@
+Espelho de Valores Cadastrados. Data: 19/12/2020
+PROCESSO : 5034395-46.2020.4.04.9388
+ORIGINÁRIO : 5059496-33.2018.4.04.7100/RS
+TIPO : Precatório
+REQUERENTE : VERA LUCIA MARRANGHELLO
+ADVOGADO : ANA PAULA MACHADO DA SILVA - RS087524
+REQUERIDO : UNIÃO - FAZENDA NACIONAL
+: PROCURADOR RAFAEL DIAS DEGANI - prfn-4r
+: DEPRECANTE Juízo Federal da 13ª VF de Porto Alegre
+ASSUNTO : 03020106 - Retido na fonte
+Tipo de Despesa : 21 - NATUREZA NÃO ALIMENTÍCIA (21)
+Trans. Requisição : 18/12/2020 06:32:50
+Data de Entrada : 18/12/2020 06:32:50
+REQUISIÇÃO : 20710072577
+Data Ajuizamento : 04/10/2018
+Data TJ. Conhecim. : 27/11/2019
+Data TJ. Embargos : 07/10/2020
+Espécie Requisição : Original
+Precatório de natureza tributária
+Tipo Beneficiário
+Nome VERA LUCIA MARRANGHELLO
+CPF/CGC 432.516.840-00
+Valor Principal 52.880,53 Data Base 01/02/2020
+Valor Juros 13.610,36 Data Base 01/02/2020
+Renuncia Não Status Sem Bloqueio
+IR-RRA Não
+Meses Exe. Anterior -
+Meses Exe. Corrente - Valor Exe. Corrente -Valor Exe. Anterior -
+Ano Exe. Corrente - Status Servidor -
+Valor Inicial PSS - Data Base PSS -
+Valor total execução - Data base execução -
+Valor Requisitado 66.490,89Espelho de Valores Cadastrados. Data: 19/12/2020
+PROCESSO : 5034395-46.2020.4.04.9388
+ORIGINÁRIO : 5059496-33.2018.4.04.7100/RS
+TIPO : Precatório
+REQUERENTE : VERA LUCIA MARRANGHELLO
+ADVOGADO : ANA PAULA MACHADO DA SILVA - RS087524
+REQUERIDO : UNIÃO - FAZENDA NACIONAL
+: PROCURADOR RAFAEL DIAS DEGANI - prfn-4r
+: DEPRECANTE Juízo Federal da 13ª VF de Porto Alegre
+ASSUNTO : 03020106 - Retido na fonte
+Tipo de Despesa : 21 - NATUREZA NÃO ALIMENTÍCIA (21)
+Trans. Requisição : 18/12/2020 06:32:50
+Data de Entrada : 18/12/2020 06:32:50
+REQUISIÇÃO : 20710072577
+Data Ajuizamento : 04/10/2018
+Data TJ. Conhecim. : 27/11/2019
+Data TJ. Embargos : 07/10/2020
+Espécie Requisição : Original
+Precatório de natureza tributária
+Tipo Beneficiário
+Nome VERA LUCIA MARRANGHELLO
+CPF/CGC 432.516.840-00
+Valor Principal 52.880,53 Data Base 01/02/2020
+Valor Juros 13.610,36 Data Base 01/02/2020
+Renuncia Não Status Sem Bloqueio
+IR-RRA Não
+Meses Exe. Anterior -
+Meses Exe. Corrente - Valor Exe. Corrente -Valor Exe. Anterior -
+Ano Exe. Corrente - Status Servidor -
+Valor Inicial PSS - Data Base PSS -
+Valor total execução - Data base execução -
+Valor Requisitado 66.490,89Tipo Honorário
+Nome ANA PAULA MACHADO DA SILVA
+CPF/CGC 000.460.180-77
+Valor Principal 22.663,08 Data Base 01/02/2020
+Valor Juros 5.833,02 Data Base 01/02/2020
+Renuncia Não Status Sem Bloqueio
+IR-RRA Não
+Tipo Hon. Judicial Honorários Contratuais
+Meses Exe. Anterior -
+Meses Exe. Corrente - Valor Exe. Corrente -Valor Exe. Anterior -
+Ano Exe. Corrente - Status Servidor -
+Valor Inicial PSS - Data Base PSS -
+Valor total execução - Data base execução -
+Valor Requisitado 28.496,10
+Valor Total da Requisição: 94.986,99
+Observações:
+1)	Precatórios classificados pelo juízo requisitante como de natureza não tributária serão atualizadas da data base
+do cálculo informada na requisição de pagamento até o efetivo pagamento pelo IPCA-E.
+2) Precatórios classificadas pelo juízo requisitante como de natureza tributária serão atualizadas da data base do
+cálculo informada na requisição de pagamento até o efetivo pagamento pela SELIC.

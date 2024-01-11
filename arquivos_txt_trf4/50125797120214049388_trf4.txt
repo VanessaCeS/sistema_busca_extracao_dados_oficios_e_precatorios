@@ -1,0 +1,74 @@
+Espelho de Valores Cadastrados. Data: 26/05/2021
+PROCESSO : 5012579-71.2021.4.04.9388
+ORIGINÁRIO : 00015497620188160104/PR
+TIPO : Precatório
+REQUERENTE : EMILIO GONCALVES DE OLIVEIRA
+ADVOGADO : GISELE APARECIDA SPANCERSKI - PR048364
+REQUERIDO : INSTITUTO NACIONAL DO SEGURO SOCIAL - INSS
+: PROCURADOR PROCURADORIA REGIONAL FEDERAL DA 4 REGIÃO - PRF4
+: DEPRECANTE JUIZO DE DIREITO DA 1A VARA CIVEL DA COMARCA DE
+LARANJEIRAS DO SUL/PR
+ASSUNTO : 040119 - Aposentadoria por Tempo de Contribuição (Art. 55/6)
+Tipo de Despesa : 21 - NATUREZA NÃO ALIMENTÍCIA (21)
+Trans. Requisição : 25/05/2021 19:02:42
+Data de Entrada : 25/05/2021 19:02:42
+REQUISIÇÃO : 21000013420
+Data Ajuizamento : 03/04/2018
+Data TJ. Conhecim. : 27/05/2020
+Data TJ. Embargos : 10/05/2021
+Espécie Requisição : Original
+Superpreferencial : Não
+Precatório de natureza NÃO tributária
+Tipo Beneficiário
+Nome EMILIO GONCALVES DE OLIVEIRA
+CPF/CGC 483.621.409-25
+Valor Principal 83.841,00 Data Base 01/01/2021
+Valor Juros 5.322,37 Data Base 01/01/2021
+Juros de mora fixados na sentença: Poupança
+Renuncia Não Status Sem Bloqueio
+IR-RRA Não
+Meses Exe. Anterior -
+Meses Exe. Corrente - Valor Exe. Corrente -Valor Exe. Anterior -
+Ano Exe. Corrente - Status Servidor -
+Valor Inicial PSS - Data Base PSS -
+Valor total execução - Data base execução -
+Valor Requisitado 89.163,37Espelho de Valores Cadastrados. Data: 26/05/2021
+PROCESSO : 5012579-71.2021.4.04.9388
+ORIGINÁRIO : 00015497620188160104/PR
+TIPO : Precatório
+REQUERENTE : EMILIO GONCALVES DE OLIVEIRA
+ADVOGADO : GISELE APARECIDA SPANCERSKI - PR048364
+REQUERIDO : INSTITUTO NACIONAL DO SEGURO SOCIAL - INSS
+: PROCURADOR PROCURADORIA REGIONAL FEDERAL DA 4 REGIÃO - PRF4
+: DEPRECANTE JUIZO DE DIREITO DA 1A VARA CIVEL DA COMARCA DE
+LARANJEIRAS DO SUL/PR
+ASSUNTO : 040119 - Aposentadoria por Tempo de Contribuição (Art. 55/6)
+Tipo de Despesa : 21 - NATUREZA NÃO ALIMENTÍCIA (21)
+Trans. Requisição : 25/05/2021 19:02:42
+Data de Entrada : 25/05/2021 19:02:42
+REQUISIÇÃO : 21000013420
+Data Ajuizamento : 03/04/2018
+Data TJ. Conhecim. : 27/05/2020
+Data TJ. Embargos : 10/05/2021
+Espécie Requisição : Original
+Superpreferencial : Não
+Precatório de natureza NÃO tributária
+Tipo Beneficiário
+Nome EMILIO GONCALVES DE OLIVEIRA
+CPF/CGC 483.621.409-25
+Valor Principal 83.841,00 Data Base 01/01/2021
+Valor Juros 5.322,37 Data Base 01/01/2021
+Juros de mora fixados na sentença: Poupança
+Renuncia Não Status Sem Bloqueio
+IR-RRA Não
+Meses Exe. Anterior -
+Meses Exe. Corrente - Valor Exe. Corrente -Valor Exe. Anterior -
+Ano Exe. Corrente - Status Servidor -
+Valor Inicial PSS - Data Base PSS -
+Valor total execução - Data base execução -
+Valor Requisitado 89.163,37Valor Total da Requisição: 89.163,37
+Observações:
+1)	Precatórios classificados pelo juízo requisitante como de natureza não tributária serão atualizadas da data base
+do cálculo informada na requisição de pagamento até o efetivo pagamento pelo IPCA-E.
+2) Precatórios classificadas pelo juízo requisitante como de natureza tributária serão atualizadas da data base do
+cálculo informada na requisição de pagamento até o efetivo pagamento pela SELIC.

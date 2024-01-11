@@ -1,0 +1,88 @@
+Espelho de Valores Cadastrados. Data: 01/04/2023
+PROCESSO : 5013517-95.2023.4.04.9388
+ORIGINÁRIO : 5050317-22.2011.4.04.7100/RS
+TIPO : Precatório
+REQUERENTE : HOSPITAL DE CARIDADE DE SANTO CRISTO
+ADVOGADO : REGINA TAPIA SIKILERO - RS071288
+REQUERIDO : UNIÃO - ADVOCACIA GERAL DA UNIÃO
+: PROCURADOR MARIANA FILCHTINER FIGUEIREDO - P1311668 PRU4
+: DEPRECANTE Juízo Substituto da 3ª VF de Porto Alegre
+ASSUNTO : 13040404 - Reajuste da tabela do SUS
+Tipo de Despesa : 11 - NATUREZA ALIMENTÍCIA - Salários, vencimentos, proventos,
+pensões e suas complementações (11)
+Trans. Requisição : 31/03/2023 13:18:41
+Data de Entrada : 31/03/2023 13:18:41
+REQUISIÇÃO : 23710021655
+Data Ajuizamento : 20/05/1999
+Data TJ. Conhecim. : 16/09/2005
+Data TJ. Embargos : 07/03/2023
+Espécie Requisição : Complementar
+Superpreferencial : Não
+Precatório de natureza NÃO tributária
+Tipo Beneficiário
+Nome HOSPITAL DE CARIDADE DE SANTO CRISTO
+CPF/CGC 96.418.025/0001-89
+Valor Principal 716.745,87 Data Base 01/11/2022
+Juros de mora fixados na sentença: Não incidem 
+Renuncia Não Status Sem Bloqueio
+IR-RRA Não
+Meses Exe. Anterior -
+Meses Exe. Corrente - Valor Exe. Corrente -Valor Exe. Anterior -
+Ano Exe. Corrente - Status Servidor -
+Valor Inicial PSS - Data Base PSS -
+Justificativa Saldo remanescente
+Valor total execução 880.987,77 Data base execução 01/09/2011
+Valor Requisitado 716.745,87Espelho de Valores Cadastrados. Data: 01/04/2023
+PROCESSO : 5013517-95.2023.4.04.9388
+ORIGINÁRIO : 5050317-22.2011.4.04.7100/RS
+TIPO : Precatório
+REQUERENTE : HOSPITAL DE CARIDADE DE SANTO CRISTO
+ADVOGADO : REGINA TAPIA SIKILERO - RS071288
+REQUERIDO : UNIÃO - ADVOCACIA GERAL DA UNIÃO
+: PROCURADOR MARIANA FILCHTINER FIGUEIREDO - P1311668 PRU4
+: DEPRECANTE Juízo Substituto da 3ª VF de Porto Alegre
+ASSUNTO : 13040404 - Reajuste da tabela do SUS
+Tipo de Despesa : 11 - NATUREZA ALIMENTÍCIA - Salários, vencimentos, proventos,
+pensões e suas complementações (11)
+Trans. Requisição : 31/03/2023 13:18:41
+Data de Entrada : 31/03/2023 13:18:41
+REQUISIÇÃO : 23710021655
+Data Ajuizamento : 20/05/1999
+Data TJ. Conhecim. : 16/09/2005
+Data TJ. Embargos : 07/03/2023
+Espécie Requisição : Complementar
+Superpreferencial : Não
+Precatório de natureza NÃO tributária
+Tipo Beneficiário
+Nome HOSPITAL DE CARIDADE DE SANTO CRISTO
+CPF/CGC 96.418.025/0001-89
+Valor Principal 716.745,87 Data Base 01/11/2022
+Juros de mora fixados na sentença: Não incidem 
+Renuncia Não Status Sem Bloqueio
+IR-RRA Não
+Meses Exe. Anterior -
+Meses Exe. Corrente - Valor Exe. Corrente -Valor Exe. Anterior -
+Ano Exe. Corrente - Status Servidor -
+Valor Inicial PSS - Data Base PSS -
+Justificativa Saldo remanescente
+Valor total execução 880.987,77 Data base execução 01/09/2011
+Valor Requisitado 716.745,87Tipo Honorário
+Nome TAPIA ADVOGADOS S/C - EPP
+CPF/CGC 01.483.017/0001-00
+Valor Principal 126.484,56 Data Base 01/11/2022
+Juros de mora fixados na sentença: Não incidem 
+Renuncia Não Status Sem Bloqueio
+IR-RRA Não
+Tipo Hon. Judicial Honorários Contratuais
+Meses Exe. Anterior -
+Meses Exe. Corrente - Valor Exe. Corrente -Valor Exe. Anterior -
+Ano Exe. Corrente - Status Servidor -
+Valor Inicial PSS - Data Base PSS -
+Valor total execução - Data base execução -
+Valor Requisitado 126.484,56
+Valor Total da Requisição: 843.230,43
+Observações:
+1)	Precatórios classificados pelo juízo requisitante como de natureza não tributária serão atualizadas da data base
+do cálculo informada na requisição de pagamento até o efetivo pagamento pelo IPCA-E.
+2) Precatórios classificadas pelo juízo requisitante como de natureza tributária serão atualizadas da data base do
+cálculo informada na requisição de pagamento até o efetivo pagamento pela SELIC.

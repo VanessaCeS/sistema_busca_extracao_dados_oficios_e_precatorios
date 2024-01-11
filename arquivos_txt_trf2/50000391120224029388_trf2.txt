@@ -1,0 +1,89 @@
+Espelho de Valores Cadastrados. Data: 11/01/2022
+PROCESSO : 5000039-11.2022.4.02.9388
+ORIGINÁRIO : 5004083-16.2021.4.02.5118/RJ
+TIPO : Precatório
+REQUERENTE : GUIOMAR LOURENCO GUEDES
+ADVOGADO : ROBERTO MARINHO LUIZ DA ROCHA - RJ112248
+DEPRECANTE : Juízo Substituto da 1ª VF de Duque de Caxias
+: 
+: REQUERIDO INSS -INSTITUTO NACIONAL DO SEGURO SOCIAL
+ASSUNTO : 01110304 - Índice de 28,86% Lei 8.622/1993 e 8.627/1993
+Tipo de Despesa : 11 - NATUREZA ALIMENTÍCIA - Salários, vencimentos, proventos,
+pensões e suas complementações (11)
+Trans. Requisição : 11/01/2022 15:21:42
+Data de Entrada : 11/01/2022 15:21:42
+REQUISIÇÃO : 21510049488
+Data Ajuizamento : 12/11/1995
+Data TJ. Conhecim. : 26/11/2019
+Data TJ. Embargos : 18/10/2021
+Espécie Requisição : Original
+Superpreferencial : Não
+Precatório de natureza NÃO tributária
+Tipo Beneficiário
+Nome GUIOMAR LOURENCO GUEDES
+CPF/CGC 852.295.047-49
+Valor Principal 24.925,53 Data Base 01/09/2020
+Valor Juros 50.998,48 Data Base 01/09/2020
+Juros de mora fixados na sentença: Poupança
+Renuncia Não Status Sem Bloqueio
+IR-RRA Sim
+Meses Exe. Anterior 66
+Meses Exe. Corrente - Valor Exe. Corrente -Valor Exe. Anterior -
+Ano Exe. Corrente - Status Servidor A
+Valor Inicial PSS 3.225,66 Data Base PSS 01/09/2020
+Valor total execução - Data base execução -
+Valor Requisitado 75.924,01Espelho de Valores Cadastrados. Data: 11/01/2022
+PROCESSO : 5000039-11.2022.4.02.9388
+ORIGINÁRIO : 5004083-16.2021.4.02.5118/RJ
+TIPO : Precatório
+REQUERENTE : GUIOMAR LOURENCO GUEDES
+ADVOGADO : ROBERTO MARINHO LUIZ DA ROCHA - RJ112248
+DEPRECANTE : Juízo Substituto da 1ª VF de Duque de Caxias
+: 
+: REQUERIDO INSS -INSTITUTO NACIONAL DO SEGURO SOCIAL
+ASSUNTO : 01110304 - Índice de 28,86% Lei 8.622/1993 e 8.627/1993
+Tipo de Despesa : 11 - NATUREZA ALIMENTÍCIA - Salários, vencimentos, proventos,
+pensões e suas complementações (11)
+Trans. Requisição : 11/01/2022 15:21:42
+Data de Entrada : 11/01/2022 15:21:42
+REQUISIÇÃO : 21510049488
+Data Ajuizamento : 12/11/1995
+Data TJ. Conhecim. : 26/11/2019
+Data TJ. Embargos : 18/10/2021
+Espécie Requisição : Original
+Superpreferencial : Não
+Precatório de natureza NÃO tributária
+Tipo Beneficiário
+Nome GUIOMAR LOURENCO GUEDES
+CPF/CGC 852.295.047-49
+Valor Principal 24.925,53 Data Base 01/09/2020
+Valor Juros 50.998,48 Data Base 01/09/2020
+Juros de mora fixados na sentença: Poupança
+Renuncia Não Status Sem Bloqueio
+IR-RRA Sim
+Meses Exe. Anterior 66
+Meses Exe. Corrente - Valor Exe. Corrente -Valor Exe. Anterior -
+Ano Exe. Corrente - Status Servidor A
+Valor Inicial PSS 3.225,66 Data Base PSS 01/09/2020
+Valor total execução - Data base execução -
+Valor Requisitado 75.924,01Tipo Honorário
+Nome COSTA E ROCHA - ADVOGADOS ASSOCIADOS
+CPF/CGC 06.287.801/0001-66
+Valor Principal 4.398,62 Data Base 01/09/2020
+Valor Juros 8.999,74 Data Base 01/09/2020
+Juros de mora fixados na sentença: Poupança
+Renuncia Não Status Sem Bloqueio
+IR-RRA Não
+Tipo Hon. Judicial Honorários Contratuais
+Meses Exe. Anterior -
+Meses Exe. Corrente - Valor Exe. Corrente -Valor Exe. Anterior -
+Ano Exe. Corrente - Status Servidor -
+Valor Inicial PSS - Data Base PSS -
+Valor total execução - Data base execução -
+Valor Requisitado 13.398,36
+Valor Total da Requisição: 89.322,37
+Observações:
+1)	Precatórios classificados pelo juízo requisitante como de natureza não tributária serão atualizadas da data base
+do cálculo informada na requisição de pagamento até o efetivo pagamento pelo IPCA-E.
+2) Precatórios classificadas pelo juízo requisitante como de natureza tributária serão atualizadas da data base do
+cálculo informada na requisição de pagamento até o efetivo pagamento pela SELIC.

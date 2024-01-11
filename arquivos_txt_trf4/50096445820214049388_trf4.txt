@@ -1,0 +1,74 @@
+Espelho de Valores Cadastrados. Data: 30/04/2021
+PROCESSO : 5009644-58.2021.4.04.9388
+ORIGINÁRIO : 00021571120178160104/PR
+TIPO : Precatório
+REQUERENTE : JAIR RIBEIRO BATISTA
+ADVOGADO : Anderson Jose Bittencourt - PR048143
+REQUERIDO : INSTITUTO NACIONAL DO SEGURO SOCIAL - INSS
+: PROCURADOR PROCURADORIA REGIONAL FEDERAL DA 4 REGIÃO - PRF4
+: DEPRECANTE JUIZO DE DIREITO DA 1A VARA CIVEL DA COMARCA DE
+LARANJEIRAS DO SUL/PR
+ASSUNTO : 040102 - Aposentadoria por Idade (Art. 48/51)
+Tipo de Despesa : 21 - NATUREZA NÃO ALIMENTÍCIA (21)
+Trans. Requisição : 29/04/2021 18:21:42
+Data de Entrada : 29/04/2021 18:21:42
+REQUISIÇÃO : 21000012058
+Data Ajuizamento : 09/05/2017
+Data TJ. Conhecim. : 31/10/2020
+Data TJ. Embargos : 28/04/2021
+Espécie Requisição : Original
+Superpreferencial : Não
+Precatório de natureza NÃO tributária
+Tipo Beneficiário
+Nome JAIR RIBEIRO BATISTA
+CPF/CGC 212.209.489-34
+Valor Principal 118.157,90 Data Base 01/02/2021
+Valor Juros 12.624,21 Data Base 01/02/2021
+Juros de mora fixados na sentença: Poupança
+Renuncia Não Status Sem Bloqueio
+IR-RRA Não
+Meses Exe. Anterior -
+Meses Exe. Corrente - Valor Exe. Corrente -Valor Exe. Anterior -
+Ano Exe. Corrente - Status Servidor -
+Valor Inicial PSS - Data Base PSS -
+Valor total execução - Data base execução -
+Valor Requisitado 130.782,11Espelho de Valores Cadastrados. Data: 30/04/2021
+PROCESSO : 5009644-58.2021.4.04.9388
+ORIGINÁRIO : 00021571120178160104/PR
+TIPO : Precatório
+REQUERENTE : JAIR RIBEIRO BATISTA
+ADVOGADO : Anderson Jose Bittencourt - PR048143
+REQUERIDO : INSTITUTO NACIONAL DO SEGURO SOCIAL - INSS
+: PROCURADOR PROCURADORIA REGIONAL FEDERAL DA 4 REGIÃO - PRF4
+: DEPRECANTE JUIZO DE DIREITO DA 1A VARA CIVEL DA COMARCA DE
+LARANJEIRAS DO SUL/PR
+ASSUNTO : 040102 - Aposentadoria por Idade (Art. 48/51)
+Tipo de Despesa : 21 - NATUREZA NÃO ALIMENTÍCIA (21)
+Trans. Requisição : 29/04/2021 18:21:42
+Data de Entrada : 29/04/2021 18:21:42
+REQUISIÇÃO : 21000012058
+Data Ajuizamento : 09/05/2017
+Data TJ. Conhecim. : 31/10/2020
+Data TJ. Embargos : 28/04/2021
+Espécie Requisição : Original
+Superpreferencial : Não
+Precatório de natureza NÃO tributária
+Tipo Beneficiário
+Nome JAIR RIBEIRO BATISTA
+CPF/CGC 212.209.489-34
+Valor Principal 118.157,90 Data Base 01/02/2021
+Valor Juros 12.624,21 Data Base 01/02/2021
+Juros de mora fixados na sentença: Poupança
+Renuncia Não Status Sem Bloqueio
+IR-RRA Não
+Meses Exe. Anterior -
+Meses Exe. Corrente - Valor Exe. Corrente -Valor Exe. Anterior -
+Ano Exe. Corrente - Status Servidor -
+Valor Inicial PSS - Data Base PSS -
+Valor total execução - Data base execução -
+Valor Requisitado 130.782,11Valor Total da Requisição: 130.782,11
+Observações:
+1)	Precatórios classificados pelo juízo requisitante como de natureza não tributária serão atualizadas da data base
+do cálculo informada na requisição de pagamento até o efetivo pagamento pelo IPCA-E.
+2) Precatórios classificadas pelo juízo requisitante como de natureza tributária serão atualizadas da data base do
+cálculo informada na requisição de pagamento até o efetivo pagamento pela SELIC.

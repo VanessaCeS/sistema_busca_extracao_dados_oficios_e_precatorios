@@ -1,0 +1,89 @@
+Espelho de Valores Cadastrados. Data: 31/03/2022
+PROCESSO : 5003419-42.2022.4.02.9388
+ORIGINÁRIO : 0065808-61.1992.4.02.5101/RJ
+TIPO : Precatório
+REQUERENTE : MARIO GUILHERME SEVE JAEGER
+ADVOGADO : IZABEL DILOHE PISKE SILVERIO - RJ001403A
+REQUERIDO : UNIÃO - ADVOCACIA GERAL DA UNIÃO
+: PROCURADOR CLAUDIO JOSÉ SILVA - MILITAR
+: DEPRECANTE Juízo Federal da 28ª VF do Rio de Janeiro
+ASSUNTO : 011103 - Reajustes de Remuneração, Proventos ou Pensão
+Tipo de Despesa : 11 - NATUREZA ALIMENTÍCIA - Salários, vencimentos, proventos,
+pensões e suas complementações (11)
+Trans. Requisição : 30/03/2022 18:16:11
+Data de Entrada : 30/03/2022 18:16:11
+REQUISIÇÃO : 22510007978
+Data Ajuizamento : 30/01/1992
+Data TJ. Conhecim. : 16/06/2006
+Data TJ. Embargos : 14/12/2020
+Espécie Requisição : Complementar
+Superpreferencial : Não
+Precatório de natureza NÃO tributária
+Tipo Beneficiário
+Nome MARIO GUILHERME SEVE JAEGER
+CPF/CGC 782.488.097-49
+Valor Principal 4.196,20 Data Base 01/06/2021
+Valor Juros 12.501,39 Data Base 01/06/2021
+Juros de mora fixados na sentença: Poupança
+Renuncia Não Status Sem Bloqueio
+IR-RRA Sim
+Meses Exe. Anterior 17
+Meses Exe. Corrente - Valor Exe. Corrente -Valor Exe. Anterior -
+Ano Exe. Corrente - Status Servidor P
+Valor Inicial PSS 659,40 Data Base PSS 01/06/2021
+Valor total execução 136.662,65 Data base execução 01/06/2021
+Valor Requisitado 16.697,59Espelho de Valores Cadastrados. Data: 31/03/2022
+PROCESSO : 5003419-42.2022.4.02.9388
+ORIGINÁRIO : 0065808-61.1992.4.02.5101/RJ
+TIPO : Precatório
+REQUERENTE : MARIO GUILHERME SEVE JAEGER
+ADVOGADO : IZABEL DILOHE PISKE SILVERIO - RJ001403A
+REQUERIDO : UNIÃO - ADVOCACIA GERAL DA UNIÃO
+: PROCURADOR CLAUDIO JOSÉ SILVA - MILITAR
+: DEPRECANTE Juízo Federal da 28ª VF do Rio de Janeiro
+ASSUNTO : 011103 - Reajustes de Remuneração, Proventos ou Pensão
+Tipo de Despesa : 11 - NATUREZA ALIMENTÍCIA - Salários, vencimentos, proventos,
+pensões e suas complementações (11)
+Trans. Requisição : 30/03/2022 18:16:11
+Data de Entrada : 30/03/2022 18:16:11
+REQUISIÇÃO : 22510007978
+Data Ajuizamento : 30/01/1992
+Data TJ. Conhecim. : 16/06/2006
+Data TJ. Embargos : 14/12/2020
+Espécie Requisição : Complementar
+Superpreferencial : Não
+Precatório de natureza NÃO tributária
+Tipo Beneficiário
+Nome MARIO GUILHERME SEVE JAEGER
+CPF/CGC 782.488.097-49
+Valor Principal 4.196,20 Data Base 01/06/2021
+Valor Juros 12.501,39 Data Base 01/06/2021
+Juros de mora fixados na sentença: Poupança
+Renuncia Não Status Sem Bloqueio
+IR-RRA Sim
+Meses Exe. Anterior 17
+Meses Exe. Corrente - Valor Exe. Corrente -Valor Exe. Anterior -
+Ano Exe. Corrente - Status Servidor P
+Valor Inicial PSS 659,40 Data Base PSS 01/06/2021
+Valor total execução 136.662,65 Data base execução 01/06/2021
+Valor Requisitado 16.697,59Tipo Honorário
+Nome PISKE SILVERIO - SOCIEDADE DE ADVOGADOS
+CPF/CGC 72.411.135/0001-50
+Valor Principal 1.798,36 Data Base 01/06/2021
+Valor Juros 5.357,75 Data Base 01/06/2021
+Juros de mora fixados na sentença: Poupança
+Renuncia Não Status Sem Bloqueio
+IR-RRA Não
+Tipo Hon. Judicial Honorários Contratuais
+Meses Exe. Anterior -
+Meses Exe. Corrente - Valor Exe. Corrente -Valor Exe. Anterior -
+Ano Exe. Corrente - Status Servidor -
+Valor Inicial PSS - Data Base PSS -
+Valor total execução - Data base execução -
+Valor Requisitado 7.156,11
+Valor Total da Requisição: 23.853,70
+Observações:
+1)	Precatórios classificados pelo juízo requisitante como de natureza não tributária serão atualizadas da data base
+do cálculo informada na requisição de pagamento até o efetivo pagamento pelo IPCA-E.
+2) Precatórios classificadas pelo juízo requisitante como de natureza tributária serão atualizadas da data base do
+cálculo informada na requisição de pagamento até o efetivo pagamento pela SELIC.

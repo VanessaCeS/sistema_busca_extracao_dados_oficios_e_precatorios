@@ -1,0 +1,76 @@
+Espelho de Valores Cadastrados. Data: 11/03/2022
+PROCESSO : 5001536-60.2022.4.02.9388
+ORIGINÁRIO : 0009403-29.1997.4.02.5101/RJ
+TIPO : Precatório
+REQUERENTE : LIDIA FIGUEIRA HALLIER
+ADVOGADO : MAURO ROBERTO GOMES DE MATTOS - RJ057739
+DEPRECANTE : Juízo Substituto da 6ª VF do Rio de Janeiro
+: 
+: REQUERIDO UNIRIO - UNIVERSIDADE FEDERAL DO ESTADO DO RIO DE
+JANEIRO
+ASSUNTO : 011103 - Reajustes de Remuneração, Proventos ou Pensão
+Tipo de Despesa : 11 - NATUREZA ALIMENTÍCIA - Salários, vencimentos, proventos,
+pensões e suas complementações (11)
+Trans. Requisição : 10/03/2022 11:28:04
+Data de Entrada : 10/03/2022 11:28:04
+REQUISIÇÃO : 22510009369
+Data Ajuizamento : 25/04/1997
+Data TJ. Conhecim. : 17/05/1999
+Data TJ. Embargos : 24/03/2008
+Espécie Requisição : Original
+Superpreferencial : Não
+Precatório de natureza NÃO tributária
+Tipo Beneficiário
+Nome LIDIA FIGUEIRA HALLIER
+CPF/CGC 729.117.277-20
+Valor Principal 25.769,91 Data Base 01/04/2005
+Valor Juros 11.766,25 Data Base 01/04/2005
+Juros de mora fixados na sentença: 0,5% ao mês
+Renuncia Não Status Bloqueado
+IR-RRA Sim
+Meses Exe. Anterior 66
+Meses Exe. Corrente - Valor Exe. Corrente -Valor Exe. Anterior -
+Ano Exe. Corrente - Status Servidor A
+Valor Inicial PSS 4.128,98 Data Base PSS 01/04/2005
+Valor total execução - Data base execução -
+Valor Requisitado 37.536,16Espelho de Valores Cadastrados. Data: 11/03/2022
+PROCESSO : 5001536-60.2022.4.02.9388
+ORIGINÁRIO : 0009403-29.1997.4.02.5101/RJ
+TIPO : Precatório
+REQUERENTE : LIDIA FIGUEIRA HALLIER
+ADVOGADO : MAURO ROBERTO GOMES DE MATTOS - RJ057739
+DEPRECANTE : Juízo Substituto da 6ª VF do Rio de Janeiro
+: 
+: REQUERIDO UNIRIO - UNIVERSIDADE FEDERAL DO ESTADO DO RIO DE
+JANEIRO
+ASSUNTO : 011103 - Reajustes de Remuneração, Proventos ou Pensão
+Tipo de Despesa : 11 - NATUREZA ALIMENTÍCIA - Salários, vencimentos, proventos,
+pensões e suas complementações (11)
+Trans. Requisição : 10/03/2022 11:28:04
+Data de Entrada : 10/03/2022 11:28:04
+REQUISIÇÃO : 22510009369
+Data Ajuizamento : 25/04/1997
+Data TJ. Conhecim. : 17/05/1999
+Data TJ. Embargos : 24/03/2008
+Espécie Requisição : Original
+Superpreferencial : Não
+Precatório de natureza NÃO tributária
+Tipo Beneficiário
+Nome LIDIA FIGUEIRA HALLIER
+CPF/CGC 729.117.277-20
+Valor Principal 25.769,91 Data Base 01/04/2005
+Valor Juros 11.766,25 Data Base 01/04/2005
+Juros de mora fixados na sentença: 0,5% ao mês
+Renuncia Não Status Bloqueado
+IR-RRA Sim
+Meses Exe. Anterior 66
+Meses Exe. Corrente - Valor Exe. Corrente -Valor Exe. Anterior -
+Ano Exe. Corrente - Status Servidor A
+Valor Inicial PSS 4.128,98 Data Base PSS 01/04/2005
+Valor total execução - Data base execução -
+Valor Requisitado 37.536,16Valor Total da Requisição: 37.536,16
+Observações:
+1)	Precatórios classificados pelo juízo requisitante como de natureza não tributária serão atualizadas da data base
+do cálculo informada na requisição de pagamento até o efetivo pagamento pelo IPCA-E.
+2) Precatórios classificadas pelo juízo requisitante como de natureza tributária serão atualizadas da data base do
+cálculo informada na requisição de pagamento até o efetivo pagamento pela SELIC.

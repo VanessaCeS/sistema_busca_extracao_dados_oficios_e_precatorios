@@ -1,0 +1,74 @@
+Espelho de Valores Cadastrados. Data: 19/03/2022
+PROCESSO : 5002132-44.2022.4.02.9388
+ORIGINÁRIO : 5014235-82.2018.4.02.5101/RJ
+TIPO : Precatório
+REQUERENTE : UBIRAMA GOMES TEIXEIRA
+ADVOGADO : LUANA CAMPOS COUTINHO - RJ228838
+REQUERIDO : INSS -INSTITUTO NACIONAL DO SEGURO SOCIAL
+: 
+: DEPRECANTE Juízo Federal do 1º JEF de Nova Iguaçu
+ASSUNTO : 040104 - Aposentadoria Especial (Art. 57/8)
+Tipo de Despesa : 12 - NATUREZA ALIMENTÍCIA - Benefícios previdenciários e
+indenizações por morte ou invalidez (12)
+Trans. Requisição : 18/03/2022 15:30:07
+Data de Entrada : 18/03/2022 15:30:07
+REQUISIÇÃO : 22510007869
+Data Ajuizamento : 26/07/2018
+Data TJ. Conhecim. : 11/09/2021
+Data TJ. Embargos : 22/02/2022
+Espécie Requisição : Original
+Superpreferencial : Não
+Precatório de natureza NÃO tributária
+Tipo Beneficiário
+Nome UBIRAMA GOMES TEIXEIRA
+CPF/CGC 808.146.207-44
+Valor Principal 112.619,97 Data Base 01/11/2021
+Valor Juros 6.062,14 Data Base 01/11/2021
+Juros de mora fixados na sentença: Poupança
+Renuncia Não Status Sem Bloqueio
+IR-RRA Sim
+Meses Exe. Anterior 54
+Meses Exe. Corrente - Valor Exe. Corrente -Valor Exe. Anterior -
+Ano Exe. Corrente - Status Servidor -
+Valor Inicial PSS - Data Base PSS -
+Valor total execução - Data base execução -
+Valor Requisitado 118.682,11Espelho de Valores Cadastrados. Data: 19/03/2022
+PROCESSO : 5002132-44.2022.4.02.9388
+ORIGINÁRIO : 5014235-82.2018.4.02.5101/RJ
+TIPO : Precatório
+REQUERENTE : UBIRAMA GOMES TEIXEIRA
+ADVOGADO : LUANA CAMPOS COUTINHO - RJ228838
+REQUERIDO : INSS -INSTITUTO NACIONAL DO SEGURO SOCIAL
+: 
+: DEPRECANTE Juízo Federal do 1º JEF de Nova Iguaçu
+ASSUNTO : 040104 - Aposentadoria Especial (Art. 57/8)
+Tipo de Despesa : 12 - NATUREZA ALIMENTÍCIA - Benefícios previdenciários e
+indenizações por morte ou invalidez (12)
+Trans. Requisição : 18/03/2022 15:30:07
+Data de Entrada : 18/03/2022 15:30:07
+REQUISIÇÃO : 22510007869
+Data Ajuizamento : 26/07/2018
+Data TJ. Conhecim. : 11/09/2021
+Data TJ. Embargos : 22/02/2022
+Espécie Requisição : Original
+Superpreferencial : Não
+Precatório de natureza NÃO tributária
+Tipo Beneficiário
+Nome UBIRAMA GOMES TEIXEIRA
+CPF/CGC 808.146.207-44
+Valor Principal 112.619,97 Data Base 01/11/2021
+Valor Juros 6.062,14 Data Base 01/11/2021
+Juros de mora fixados na sentença: Poupança
+Renuncia Não Status Sem Bloqueio
+IR-RRA Sim
+Meses Exe. Anterior 54
+Meses Exe. Corrente - Valor Exe. Corrente -Valor Exe. Anterior -
+Ano Exe. Corrente - Status Servidor -
+Valor Inicial PSS - Data Base PSS -
+Valor total execução - Data base execução -
+Valor Requisitado 118.682,11Valor Total da Requisição: 118.682,11
+Observações:
+1)	Precatórios classificados pelo juízo requisitante como de natureza não tributária serão atualizadas da data base
+do cálculo informada na requisição de pagamento até o efetivo pagamento pelo IPCA-E.
+2) Precatórios classificadas pelo juízo requisitante como de natureza tributária serão atualizadas da data base do
+cálculo informada na requisição de pagamento até o efetivo pagamento pela SELIC.

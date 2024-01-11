@@ -1,0 +1,74 @@
+Espelho de Valores Cadastrados. Data: 11/03/2022
+PROCESSO : 5001501-03.2022.4.02.9388
+ORIGINÁRIO : 5008623-81.2019.4.02.5117/RJ
+TIPO : Precatório
+REQUERENTE : RENATO SANTOS SOUZA
+ADVOGADO : PAULO CEZAR DA SILVA MOREIRA - RJ117723
+REQUERIDO : INSS -INSTITUTO NACIONAL DO SEGURO SOCIAL
+: 
+: DEPRECANTE Juízo Federal do 3º JEF de São Gonçalo
+ASSUNTO : 040119 - Aposentadoria por Tempo de Contribuição (Art. 55/6)
+Tipo de Despesa : 12 - NATUREZA ALIMENTÍCIA - Benefícios previdenciários e
+indenizações por morte ou invalidez (12)
+Trans. Requisição : 10/03/2022 09:55:18
+Data de Entrada : 10/03/2022 09:55:18
+REQUISIÇÃO : 22510002822
+Data Ajuizamento : 07/11/2019
+Data TJ. Conhecim. : 05/10/2021
+Data TJ. Embargos : 
+Espécie Requisição : Original
+Superpreferencial : Não
+Precatório de natureza NÃO tributária
+Tipo Beneficiário
+Nome RENATO SANTOS SOUZA
+CPF/CGC 919.082.647-72
+Valor Principal 89.700,63 Data Base 01/10/2021
+Valor Juros 3.300,50 Data Base 01/10/2021
+Juros de mora fixados na sentença: Poupança
+Renuncia Não Status Sem Bloqueio
+IR-RRA Sim
+Meses Exe. Anterior 27
+Meses Exe. Corrente - Valor Exe. Corrente -Valor Exe. Anterior -
+Ano Exe. Corrente - Status Servidor -
+Valor Inicial PSS - Data Base PSS -
+Valor total execução - Data base execução -
+Valor Requisitado 93.001,13Espelho de Valores Cadastrados. Data: 11/03/2022
+PROCESSO : 5001501-03.2022.4.02.9388
+ORIGINÁRIO : 5008623-81.2019.4.02.5117/RJ
+TIPO : Precatório
+REQUERENTE : RENATO SANTOS SOUZA
+ADVOGADO : PAULO CEZAR DA SILVA MOREIRA - RJ117723
+REQUERIDO : INSS -INSTITUTO NACIONAL DO SEGURO SOCIAL
+: 
+: DEPRECANTE Juízo Federal do 3º JEF de São Gonçalo
+ASSUNTO : 040119 - Aposentadoria por Tempo de Contribuição (Art. 55/6)
+Tipo de Despesa : 12 - NATUREZA ALIMENTÍCIA - Benefícios previdenciários e
+indenizações por morte ou invalidez (12)
+Trans. Requisição : 10/03/2022 09:55:18
+Data de Entrada : 10/03/2022 09:55:18
+REQUISIÇÃO : 22510002822
+Data Ajuizamento : 07/11/2019
+Data TJ. Conhecim. : 05/10/2021
+Data TJ. Embargos : 
+Espécie Requisição : Original
+Superpreferencial : Não
+Precatório de natureza NÃO tributária
+Tipo Beneficiário
+Nome RENATO SANTOS SOUZA
+CPF/CGC 919.082.647-72
+Valor Principal 89.700,63 Data Base 01/10/2021
+Valor Juros 3.300,50 Data Base 01/10/2021
+Juros de mora fixados na sentença: Poupança
+Renuncia Não Status Sem Bloqueio
+IR-RRA Sim
+Meses Exe. Anterior 27
+Meses Exe. Corrente - Valor Exe. Corrente -Valor Exe. Anterior -
+Ano Exe. Corrente - Status Servidor -
+Valor Inicial PSS - Data Base PSS -
+Valor total execução - Data base execução -
+Valor Requisitado 93.001,13Valor Total da Requisição: 93.001,13
+Observações:
+1)	Precatórios classificados pelo juízo requisitante como de natureza não tributária serão atualizadas da data base
+do cálculo informada na requisição de pagamento até o efetivo pagamento pelo IPCA-E.
+2) Precatórios classificadas pelo juízo requisitante como de natureza tributária serão atualizadas da data base do
+cálculo informada na requisição de pagamento até o efetivo pagamento pela SELIC.

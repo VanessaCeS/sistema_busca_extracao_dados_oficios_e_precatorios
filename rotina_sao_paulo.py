@@ -7,21 +7,17 @@ from dotenv import load_dotenv
 from funcoes_arteria import enviar_valores_oficio_arteria
 from auxiliares import  encontrar_indice_linha, ler_arquivo_pdf_transformar_em_txt, mandar_dados_regex
 from esaj_sao_paulo_precatorios import get_docs_oficio_precatorios_tjsp
-from auxiliares import encontrar_data_expedicao_e_cidade, limpar_dados, regex, tipo_precatorio,  verificar_tribunal
-from banco_de_dados import atualizar_ou_inserir_pessoa_no_banco_de_dados, atualizar_ou_inserir_pessoa_precatorio, atualizar_ou_inserir_precatorios_no_banco_de_dados, atualizar_ou_inserir_situacao_cadastro, consultar_processos
+from auxiliares import encontrar_data_expedicao_e_cidade, limpar_dados, regex, verificar_tribunal
+from banco_de_dados import atualizar_ou_inserir_pessoa_no_banco_de_dados, atualizar_ou_inserir_pessoa_precatorio, atualizar_ou_inserir_precatorios_no_banco_de_dados, atualizar_ou_inserir_situacao_cadastro, consultar_processos, precatorio_exitente_arteria
 
 load_dotenv('.env')
 
 def buscar_dados_tribunal_sao_paulo():     
   dados = consultar_processos('.8.26.0053')
   for d in dados:
-        dados_limpos = limpar_dados(d)
-        tipo = tipo_precatorio(d)
-        dado = dados_limpos | tipo
-        if verificar_tribunal(d['processo']):
-          ler_documentos(dado)
-        else:
-          continue
+        dado = limpar_dados(d)
+        ler_documentos(dado)
+  
 
 def verificar_tribunal(n_processo):
         padrao = r'\d{7}-\d{2}.\d{4}.8.26.\d{4}'
@@ -48,7 +44,7 @@ def ler_documentos(dado_xml):
                         arquivo.write(file_path)
                 arquivo_txt = ler_arquivo_pdf_transformar_em_txt(arquivo_pdf)
               
-                dados_complementares = {"processo_geral": processo_geral, "codigo_processo": codigo_processo, 'site': 'https://esaj.tjac.jus.br', 'id_documento': id_documento, 'estado': 'SÃO PAULO'} | dado_xml
+                dados_complementares = {"processo_geral": processo_geral, "codigo_processo": codigo_processo, 'site': 'https://esaj.tjac.jus.br', 'id_documento': id_documento, 'estado': 'SÃO PAULO', 'tipo': 'FEDERAL'} | dado_xml
                 extrair_dados_txt(arquivo_pdf, arquivo_txt, dados_complementares)
               except:
                 continue
@@ -65,40 +61,45 @@ def extrair_dados_txt(arquivo_pdf, arquivo_txt, dados_xml):
     oficio_requisitorio = 'OFÍCIO REQUISITÓRIO' in linhas[indice_oficio_requisitorio].upper().replace('  ', ' ').strip()
     if oficio_requisitorio == False:
       oficio_requisitorio = 'OFÍCIO REQUISITÓRIO' in linhas[indice_oficio_requisitorio + 1].upper().replace('  ', ' ').strip()
+       
 
     if oficio_requisitorio: 
-      indice_estado = 0
-      indice_vara = 3 
-      indice_precatorio = encontrar_indice_linha(linhas, "processo nº: ")
-      indice_conhecimento = encontrar_indice_linha(linhas, "processo principal/conhecimento:")
-      indice_executado = encontrar_indice_linha(linhas, "executado(s):")
       indice_devedor = encontrar_indice_linha(linhas, "devedor:")
-      indice_advogado = encontrar_indice_linha(linhas, "advogad")
-      indice_documento_advogado = encontrar_indice_linha(linhas, "dados do advogado") 
-      indice_natureza = encontrar_indice_linha(linhas, "natureza")
-      indice_valor_global = encontrar_indice_linha(linhas, "valor global da requisição:")
-      indice_valor_principal = encontrar_indice_linha(linhas, "principal/indenização:")
-      indice_valor_juros = encontrar_indice_linha(linhas, "juros moratórios:")
-      indice_qtd_credores  = encontrar_indice_linha(linhas, "quantidade de credores")
-      
-      indices = {'indice_estado': indice_estado,'indice_precatorio': indice_precatorio, 'indice_conhecimento': indice_conhecimento,'indice_devedor': indice_devedor,'indice_executado': indice_executado,'indice_natureza': indice_natureza, 'indice_global': indice_valor_global, 'indice_valor_juros': indice_valor_juros,  'indice_valor_principal': indice_valor_principal, 'indice_qtd_credores': indice_qtd_credores}
-      
-      dados = mandar_dados_regex(indices, linhas)
-      dados_xml['vara'] = linhas[indice_vara].replace('\n', ' ')
-      if dados['natureza'] == '':
-        dados['natureza'] = 'ALIMENTAR'
-      dados_xml['processo'] = dados['processo']
-      cidada_e_data_precatorio = encontrar_data_expedicao_e_cidade(arquivo_txt)
-      dados_advogado =  extrair_dados_advogado(linhas[indice_advogado], indice_documento_advogado, linhas, dados['processo'])
-      dados = dados | cidada_e_data_precatorio | dados_advogado | dados_xml
-      extrair_informacoes_credores_e_mandar_para_banco_dados(arquivo_pdf, dados)
+      indice_executado = encontrar_indice_linha(linhas, "executado(s):")
+      if indice_devedor or indice_executado:
+        indice_estado = 0
+        indice_vara = 3 
+        indice_precatorio = encontrar_indice_linha(linhas, "processo nº: ")
+        indice_conhecimento = encontrar_indice_linha(linhas, "processo principal/conhecimento:")
+        indice_advogado = encontrar_indice_linha(linhas, "advogad")
+        indice_documento_advogado = encontrar_indice_linha(linhas, "dados do advogado") 
+        indice_natureza = encontrar_indice_linha(linhas, "natureza")
+        indice_valor_global = encontrar_indice_linha(linhas, "valor global da requisição:")
+        indice_valor_principal = encontrar_indice_linha(linhas, "principal/indenização:")
+        indice_valor_juros = encontrar_indice_linha(linhas, "juros moratórios:")
+        indice_qtd_credores  = encontrar_indice_linha(linhas, "quantidade de credores")
+        
+        indices = {'indice_estado': indice_estado,'indice_precatorio': indice_precatorio, 'indice_conhecimento': indice_conhecimento,'indice_devedor': indice_devedor,'indice_executado': indice_executado,'indice_natureza': indice_natureza, 'indice_global': indice_valor_global, 'indice_valor_juros': indice_valor_juros,  'indice_valor_principal': indice_valor_principal, 'indice_qtd_credores': indice_qtd_credores}
+        
+        dados = mandar_dados_regex(indices, linhas)
+        dados_xml['vara'] = linhas[indice_vara].replace('\n', ' ')
+        if dados['natureza'] == '':
+          dados['natureza'] = 'ALIMENTAR'
+        dados_xml['processo'] = dados['processo']
+        cidada_e_data_precatorio = encontrar_data_expedicao_e_cidade(arquivo_txt)
+
+        dados_advogado =  extrair_dados_advogado(linhas[indice_advogado], indice_documento_advogado, linhas, dados['processo'])
+        dados = dados | cidada_e_data_precatorio | dados_advogado | dados_xml
+        extrair_informacoes_credores_e_mandar_para_banco_dados(arquivo_pdf, dados)
 
 def extrair_dados_advogado(texto_advogado, indice_documento_advogado, linhas, processo):
-
     oab =  re.search(r'\d+', texto_advogado)
     oab = oab.group().strip()
-    seccional =  re.search(r'/[A-Z]+', texto_advogado)
-    seccional = seccional.group().replace('/','')
+    seccional_match = re.search(r'/[A-Z]+', texto_advogado)
+    if seccional_match:
+        seccional = seccional_match.group().replace('/', '')
+    else:
+        seccional = texto_advogado.split('OAB:')[1].replace('\n', '').strip()[-3:-1] 
     documento_advogado = ''
     if indice_documento_advogado != None:
       documento_advogado = regex(linhas[indice_documento_advogado + 3])
@@ -121,8 +122,8 @@ def extrair_informacoes_credores_e_mandar_para_banco_dados(arquivo_pdf,dados_txt
       indice_documento = encontrar_indice_linha(linhas, 'cpf/cnpj')
       indice_data_nascimento = encontrar_indice_linha(linhas, 'data do nascimento')
       indice_valor_principal = encontrar_indice_linha(linhas, 'valor total da condenação')
+      indice_valor_juros_compensatorios = encontrar_indice_linha(linhas, "juros compensatórios")
       indices = {'indice_documento': indice_documento, 'indice_data_nascimento': indice_data_nascimento}
-      
       dados = mandar_dados_regex(indices, linhas)
       dados['nome'] = buscar_nome_credor(linhas[indice_nome])
       documento = dados['documento']
@@ -132,15 +133,27 @@ def extrair_informacoes_credores_e_mandar_para_banco_dados(arquivo_pdf,dados_txt
       if int(dados_txt['qtd_credores']) > 1:
               valor_principal_credor = regex(linhas[indice_valor_principal])
               dados['valor_principal_credor'] = valor_principal_credor['valor_principal']
-              
+      if 'ZERO' not in linhas[indice_valor_juros_compensatorios]:
+        juros_moratorio = float(dados_txt['valor_juros'])
+        juros_compensatorio = float(linhas[indice_valor_juros_compensatorios].split(':')[1].replace('R$', '').split('(',1)[0].strip())
+        juros = juros_moratorio + juros_compensatorio
+        dados_txt['valor_juros'] = juros    
+            
       dados = dados | dados_txt
-      dados['id_sistema_arteria']  = enviar_valores_oficio_arteria(arquivo_pdf, dados)
+      existe_id_sistema_arteria = precatorio_exitente_arteria(dados['processo'])
+      if existe_id_sistema_arteria:
+        dados['id_sistema_arteria'] = existe_id_sistema_arteria[0]
+        enviar_valores_oficio_arteria(arquivo_pdf, dados, existe_id_sistema_arteria[0])
+        mensagem = 'Precatório alterado com sucesso'
+      else:
+        dados['id_sistema_arteria']  = enviar_valores_oficio_arteria(arquivo_pdf, dados)
+        mensagem = 'Precatório registrado com sucesso'
       site = dados['site']
+
       atualizar_ou_inserir_precatorios_no_banco_de_dados(dados['codigo_processo'], dados)
       atualizar_ou_inserir_pessoa_precatorio(documento, dados['processo'])
-      
-      log( dados['processo'], 'Sucesso', site, 'Precatório registrado com sucesso',dados['estado'], dados['tribunal'])
-      atualizar_ou_inserir_situacao_cadastro(dados['processo'],{'status': 'Sucesso'})
+      log(dados['processo'], 'Sucesso', site, mensagem,dados['estado'], dados['tribunal'])
+      atualizar_ou_inserir_situacao_cadastro(dados['processo'].split('/')[0],{'status': 'Sucesso'})
 
 def buscar_nome_credor(string):
   if 'Nome:' in string or 'Nome(s):' in string or 'Nomes:' in string:
@@ -151,3 +164,4 @@ def buscar_nome_credor(string):
         return credor.strip()
       else:
         return  ''
+

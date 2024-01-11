@@ -1,0 +1,89 @@
+Espelho de Valores Cadastrados. Data: 17/03/2022
+PROCESSO : 5001928-97.2022.4.02.9388
+ORIGINÁRIO : 5052245-64.2019.4.02.5101/RJ
+TIPO : Precatório
+REQUERENTE : MAHATMA GANDHI ARAUJO LIMA
+ADVOGADO : JERONIMO MAGALHAES - RJ055572
+REQUERIDO : INSS -INSTITUTO NACIONAL DO SEGURO SOCIAL
+: 
+: DEPRECANTE Juízo Federal do 8º JEF do Rio de Janeiro
+ASSUNTO : 040119 - Aposentadoria por Tempo de Contribuição (Art. 55/6)
+Tipo de Despesa : 12 - NATUREZA ALIMENTÍCIA - Benefícios previdenciários e
+indenizações por morte ou invalidez (12)
+Trans. Requisição : 16/03/2022 08:27:37
+Data de Entrada : 16/03/2022 08:27:37
+REQUISIÇÃO : 22510008603
+Data Ajuizamento : 05/08/2019
+Data TJ. Conhecim. : 24/01/2022
+Data TJ. Embargos : 
+Espécie Requisição : Original
+Superpreferencial : Não
+Precatório de natureza NÃO tributária
+Tipo Beneficiário
+Nome MAHATMA GANDHI ARAUJO LIMA
+CPF/CGC 824.572.127-15
+Valor Principal 67.925,38 Data Base 01/02/2022
+Valor Juros 3.075,31 Data Base 01/02/2022
+Juros de mora fixados na sentença: Poupança
+Renuncia Não Status Sem Bloqueio
+IR-RRA Sim
+Meses Exe. Anterior 41
+Meses Exe. Corrente - Valor Exe. Corrente -Valor Exe. Anterior -
+Ano Exe. Corrente - Status Servidor -
+Valor Inicial PSS - Data Base PSS -
+Valor total execução - Data base execução -
+Valor Requisitado 71.000,69Espelho de Valores Cadastrados. Data: 17/03/2022
+PROCESSO : 5001928-97.2022.4.02.9388
+ORIGINÁRIO : 5052245-64.2019.4.02.5101/RJ
+TIPO : Precatório
+REQUERENTE : MAHATMA GANDHI ARAUJO LIMA
+ADVOGADO : JERONIMO MAGALHAES - RJ055572
+REQUERIDO : INSS -INSTITUTO NACIONAL DO SEGURO SOCIAL
+: 
+: DEPRECANTE Juízo Federal do 8º JEF do Rio de Janeiro
+ASSUNTO : 040119 - Aposentadoria por Tempo de Contribuição (Art. 55/6)
+Tipo de Despesa : 12 - NATUREZA ALIMENTÍCIA - Benefícios previdenciários e
+indenizações por morte ou invalidez (12)
+Trans. Requisição : 16/03/2022 08:27:37
+Data de Entrada : 16/03/2022 08:27:37
+REQUISIÇÃO : 22510008603
+Data Ajuizamento : 05/08/2019
+Data TJ. Conhecim. : 24/01/2022
+Data TJ. Embargos : 
+Espécie Requisição : Original
+Superpreferencial : Não
+Precatório de natureza NÃO tributária
+Tipo Beneficiário
+Nome MAHATMA GANDHI ARAUJO LIMA
+CPF/CGC 824.572.127-15
+Valor Principal 67.925,38 Data Base 01/02/2022
+Valor Juros 3.075,31 Data Base 01/02/2022
+Juros de mora fixados na sentença: Poupança
+Renuncia Não Status Sem Bloqueio
+IR-RRA Sim
+Meses Exe. Anterior 41
+Meses Exe. Corrente - Valor Exe. Corrente -Valor Exe. Anterior -
+Ano Exe. Corrente - Status Servidor -
+Valor Inicial PSS - Data Base PSS -
+Valor total execução - Data base execução -
+Valor Requisitado 71.000,69Tipo Honorário
+Nome JERONIMO MAGALHAES ADVOGADOS ASSOCIADOS
+CPF/CGC 42.416.942/0001-03
+Valor Principal 29.110,87 Data Base 01/02/2022
+Valor Juros 1.318,00 Data Base 01/02/2022
+Juros de mora fixados na sentença: Poupança
+Renuncia Não Status Sem Bloqueio
+IR-RRA Não
+Tipo Hon. Judicial Honorários Contratuais
+Meses Exe. Anterior -
+Meses Exe. Corrente - Valor Exe. Corrente -Valor Exe. Anterior -
+Ano Exe. Corrente - Status Servidor -
+Valor Inicial PSS - Data Base PSS -
+Valor total execução - Data base execução -
+Valor Requisitado 30.428,87
+Valor Total da Requisição: 101.429,56
+Observações:
+1)	Precatórios classificados pelo juízo requisitante como de natureza não tributária serão atualizadas da data base
+do cálculo informada na requisição de pagamento até o efetivo pagamento pelo IPCA-E.
+2) Precatórios classificadas pelo juízo requisitante como de natureza tributária serão atualizadas da data base do
+cálculo informada na requisição de pagamento até o efetivo pagamento pela SELIC.

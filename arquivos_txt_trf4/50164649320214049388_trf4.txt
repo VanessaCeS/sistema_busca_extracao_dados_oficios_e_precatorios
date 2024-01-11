@@ -1,0 +1,87 @@
+Espelho de Valores Cadastrados. Data: 12/06/2021
+PROCESSO : 5016464-93.2021.4.04.9388
+ORIGINÁRIO : 5002791-74.2016.4.04.7200/SC
+TIPO : Precatório
+REQUERENTE : AILTON BERNARDINI
+ADVOGADO : ALESSANDRO MEDEIROS - SC011200
+REQUERIDO : UNIÃO - ADVOCACIA GERAL DA UNIÃO
+: PROCURADOR MARIANA FILCHTINER FIGUEIREDO - P1311668 PRU4
+: DEPRECANTE Juízo Substituto da 3ª VF de Florianópolis
+ASSUNTO : 01120216 - Licença Prêmio
+Tipo de Despesa : 21 - NATUREZA NÃO ALIMENTÍCIA (21)
+Trans. Requisição : 11/06/2021 17:56:59
+Data de Entrada : 11/06/2021 17:56:59
+REQUISIÇÃO : 21720007152
+Data Ajuizamento : 20/08/2004
+Data TJ. Conhecim. : 11/04/2011
+Data TJ. Embargos : 25/11/2019
+Espécie Requisição : Suplementar
+Superpreferencial : Não
+Precatório de natureza NÃO tributária
+Tipo Beneficiário
+Nome AILTON BERNARDINI
+CPF/CGC 155.040.269-20
+Valor Principal 50.309,43 Data Base 01/12/2019
+Valor Juros 42.969,39 Data Base 01/12/2019
+Juros de mora fixados na sentença: Poupança
+Renuncia Não Status Sem Bloqueio
+IR-RRA Não
+Meses Exe. Anterior -
+Meses Exe. Corrente - Valor Exe. Corrente -Valor Exe. Anterior -
+Ano Exe. Corrente - Status Servidor A
+Valor Inicial PSS - Data Base PSS -
+Valor total execução 161.370,61 Data base execução 01/01/2016
+Valor Requisitado 93.278,82Espelho de Valores Cadastrados. Data: 12/06/2021
+PROCESSO : 5016464-93.2021.4.04.9388
+ORIGINÁRIO : 5002791-74.2016.4.04.7200/SC
+TIPO : Precatório
+REQUERENTE : AILTON BERNARDINI
+ADVOGADO : ALESSANDRO MEDEIROS - SC011200
+REQUERIDO : UNIÃO - ADVOCACIA GERAL DA UNIÃO
+: PROCURADOR MARIANA FILCHTINER FIGUEIREDO - P1311668 PRU4
+: DEPRECANTE Juízo Substituto da 3ª VF de Florianópolis
+ASSUNTO : 01120216 - Licença Prêmio
+Tipo de Despesa : 21 - NATUREZA NÃO ALIMENTÍCIA (21)
+Trans. Requisição : 11/06/2021 17:56:59
+Data de Entrada : 11/06/2021 17:56:59
+REQUISIÇÃO : 21720007152
+Data Ajuizamento : 20/08/2004
+Data TJ. Conhecim. : 11/04/2011
+Data TJ. Embargos : 25/11/2019
+Espécie Requisição : Suplementar
+Superpreferencial : Não
+Precatório de natureza NÃO tributária
+Tipo Beneficiário
+Nome AILTON BERNARDINI
+CPF/CGC 155.040.269-20
+Valor Principal 50.309,43 Data Base 01/12/2019
+Valor Juros 42.969,39 Data Base 01/12/2019
+Juros de mora fixados na sentença: Poupança
+Renuncia Não Status Sem Bloqueio
+IR-RRA Não
+Meses Exe. Anterior -
+Meses Exe. Corrente - Valor Exe. Corrente -Valor Exe. Anterior -
+Ano Exe. Corrente - Status Servidor A
+Valor Inicial PSS - Data Base PSS -
+Valor total execução 161.370,61 Data base execução 01/01/2016
+Valor Requisitado 93.278,82Tipo Honorário
+Nome MEDEIROS & MEREGALLI SOCIEDADE DE ADVOGADOS
+CPF/CGC 07.953.147/0001-45
+Valor Principal 8.878,13 Data Base 01/12/2019
+Valor Juros 7.582,84 Data Base 01/12/2019
+Juros de mora fixados na sentença: Poupança
+Renuncia Não Status Sem Bloqueio
+IR-RRA Não
+Tipo Hon. Judicial Honorários Contratuais
+Meses Exe. Anterior -
+Meses Exe. Corrente - Valor Exe. Corrente -Valor Exe. Anterior -
+Ano Exe. Corrente - Status Servidor -
+Valor Inicial PSS - Data Base PSS -
+Valor total execução - Data base execução -
+Valor Requisitado 16.460,97
+Valor Total da Requisição: 109.739,79
+Observações:
+1)	Precatórios classificados pelo juízo requisitante como de natureza não tributária serão atualizadas da data base
+do cálculo informada na requisição de pagamento até o efetivo pagamento pelo IPCA-E.
+2) Precatórios classificadas pelo juízo requisitante como de natureza tributária serão atualizadas da data base do
+cálculo informada na requisição de pagamento até o efetivo pagamento pela SELIC.

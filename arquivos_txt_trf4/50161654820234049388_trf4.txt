@@ -1,0 +1,91 @@
+Espelho de Valores Cadastrados. Data: 01/04/2023
+PROCESSO : 5016165-48.2023.4.04.9388
+ORIGINÁRIO : 03027672720178240024/SC
+TIPO : Precatório
+REQUERENTE : VALCIR SALVATTI
+ADVOGADO : JOSE EMILIO BOGONI - SC004151
+REQUERIDO : INSTITUTO NACIONAL DO SEGURO SOCIAL - INSS
+: PROCURADOR PROCURADORIA REGIONAL FEDERAL DA 4 REGIÃO - PRF4
+: DEPRECANTE JUÍZO DE DIREITO DA 2A VARA CÍVEL DA COMARCA DE
+FRAIBURGO/SC
+ASSUNTO : 040120 - Auxílio-Doença Acidentário
+Tipo de Despesa : 12 - NATUREZA ALIMENTÍCIA - Benefícios previdenciários,
+indenizações por morte ou invalidez e demais beneficiários sem vínculo
+com a administração pública (12)Trans. Requisição : 31/03/2023 12:56:40
+Data de Entrada : 31/03/2023 12:56:40
+REQUISIÇÃO : 23000006681
+Data Ajuizamento : 21/11/2017
+Data TJ. Conhecim. : 21/12/2022
+Data TJ. Embargos : 22/02/2023
+Espécie Requisição : Original
+Superpreferencial : Não
+Precatório de natureza NÃO tributária
+Tipo Beneficiário
+Nome VALCIR SALVATTI
+CPF/CGC 942.084.099-91
+Valor Principal 56.703,08 Data Base 01/01/2023
+Valor Juros 11.497,29 Data Base 01/01/2023
+Juros de mora fixados na sentença: Não incidem 
+Renuncia Não Status Sem Bloqueio
+IR-RRA Sim
+Meses Exe. Anterior 71
+Meses Exe. Corrente - Valor Exe. Corrente -Valor Exe. Anterior -
+Ano Exe. Corrente - Status Servidor -
+Valor Inicial PSS - Data Base PSS -
+Valor total execução - Data base execução -
+Valor Requisitado 68.200,37Espelho de Valores Cadastrados. Data: 01/04/2023
+PROCESSO : 5016165-48.2023.4.04.9388
+ORIGINÁRIO : 03027672720178240024/SC
+TIPO : Precatório
+REQUERENTE : VALCIR SALVATTI
+ADVOGADO : JOSE EMILIO BOGONI - SC004151
+REQUERIDO : INSTITUTO NACIONAL DO SEGURO SOCIAL - INSS
+: PROCURADOR PROCURADORIA REGIONAL FEDERAL DA 4 REGIÃO - PRF4
+: DEPRECANTE JUÍZO DE DIREITO DA 2A VARA CÍVEL DA COMARCA DE
+FRAIBURGO/SC
+ASSUNTO : 040120 - Auxílio-Doença Acidentário
+Tipo de Despesa : 12 - NATUREZA ALIMENTÍCIA - Benefícios previdenciários,
+indenizações por morte ou invalidez e demais beneficiários sem vínculo
+com a administração pública (12)Trans. Requisição : 31/03/2023 12:56:40
+Data de Entrada : 31/03/2023 12:56:40
+REQUISIÇÃO : 23000006681
+Data Ajuizamento : 21/11/2017
+Data TJ. Conhecim. : 21/12/2022
+Data TJ. Embargos : 22/02/2023
+Espécie Requisição : Original
+Superpreferencial : Não
+Precatório de natureza NÃO tributária
+Tipo Beneficiário
+Nome VALCIR SALVATTI
+CPF/CGC 942.084.099-91
+Valor Principal 56.703,08 Data Base 01/01/2023
+Valor Juros 11.497,29 Data Base 01/01/2023
+Juros de mora fixados na sentença: Não incidem 
+Renuncia Não Status Sem Bloqueio
+IR-RRA Sim
+Meses Exe. Anterior 71
+Meses Exe. Corrente - Valor Exe. Corrente -Valor Exe. Anterior -
+Ano Exe. Corrente - Status Servidor -
+Valor Inicial PSS - Data Base PSS -
+Valor total execução - Data base execução -
+Valor Requisitado 68.200,37Tipo Honorário
+Nome BOGONI, BROLEZE & ADVOGADOS ASSOCIADOS
+CPF/CGC 04.739.717/0001-00
+Valor Principal 24.301,32 Data Base 01/01/2023
+Valor Juros 4.927,41 Data Base 01/01/2023
+Juros de mora fixados na sentença: Não incidem 
+Renuncia Não Status Sem Bloqueio
+IR-RRA Não
+Tipo Hon. Judicial Honorários Contratuais
+Meses Exe. Anterior -
+Meses Exe. Corrente - Valor Exe. Corrente -Valor Exe. Anterior -
+Ano Exe. Corrente - Status Servidor -
+Valor Inicial PSS - Data Base PSS -
+Valor total execução - Data base execução -
+Valor Requisitado 29.228,73
+Valor Total da Requisição: 97.429,10
+Observações:
+1)	Precatórios classificados pelo juízo requisitante como de natureza não tributária serão atualizadas da data base
+do cálculo informada na requisição de pagamento até o efetivo pagamento pelo IPCA-E.
+2) Precatórios classificadas pelo juízo requisitante como de natureza tributária serão atualizadas da data base do
+cálculo informada na requisição de pagamento até o efetivo pagamento pela SELIC.

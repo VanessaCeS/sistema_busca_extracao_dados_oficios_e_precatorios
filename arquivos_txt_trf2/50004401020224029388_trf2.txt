@@ -1,0 +1,89 @@
+Espelho de Valores Cadastrados. Data: 02/02/2022
+PROCESSO : 5000440-10.2022.4.02.9388
+ORIGINÁRIO : 5017203-26.2020.4.02.5001/ES
+TIPO : Precatório
+REQUERENTE : ANA LUIZA ARMELINDA DA SILVA
+ADVOGADO : leonardo carvalho de salles - ES021179
+REQUERIDO : INSS -INSTITUTO NACIONAL DO SEGURO SOCIAL
+: 
+: DEPRECANTE Juízo Federal da 3º Juizado Especial de Vitória
+ASSUNTO : 040108 - Pensão por Morte (Art. 74/9)
+Tipo de Despesa : 12 - NATUREZA ALIMENTÍCIA - Benefícios previdenciários e
+indenizações por morte ou invalidez (12)
+Trans. Requisição : 02/02/2022 15:03:11
+Data de Entrada : 02/02/2022 15:03:11
+REQUISIÇÃO : 22500000328
+Data Ajuizamento : 28/07/2020
+Data TJ. Conhecim. : 11/11/2021
+Data TJ. Embargos : 
+Espécie Requisição : Original
+Superpreferencial : Não
+Precatório de natureza NÃO tributária
+Tipo Beneficiário
+Nome ANA LUIZA ARMELINDA DA SILVA
+CPF/CGC 938.970.577-00
+Valor Principal 54.504,62 Data Base 01/12/2021
+Valor Juros 1.593,29 Data Base 01/12/2021
+Juros de mora fixados na sentença: Poupança
+Renuncia Não Status Sem Bloqueio
+IR-RRA Sim
+Meses Exe. Anterior 43
+Meses Exe. Corrente - Valor Exe. Corrente -Valor Exe. Anterior -
+Ano Exe. Corrente - Status Servidor -
+Valor Inicial PSS - Data Base PSS -
+Valor total execução - Data base execução -
+Valor Requisitado 56.097,91Espelho de Valores Cadastrados. Data: 02/02/2022
+PROCESSO : 5000440-10.2022.4.02.9388
+ORIGINÁRIO : 5017203-26.2020.4.02.5001/ES
+TIPO : Precatório
+REQUERENTE : ANA LUIZA ARMELINDA DA SILVA
+ADVOGADO : leonardo carvalho de salles - ES021179
+REQUERIDO : INSS -INSTITUTO NACIONAL DO SEGURO SOCIAL
+: 
+: DEPRECANTE Juízo Federal da 3º Juizado Especial de Vitória
+ASSUNTO : 040108 - Pensão por Morte (Art. 74/9)
+Tipo de Despesa : 12 - NATUREZA ALIMENTÍCIA - Benefícios previdenciários e
+indenizações por morte ou invalidez (12)
+Trans. Requisição : 02/02/2022 15:03:11
+Data de Entrada : 02/02/2022 15:03:11
+REQUISIÇÃO : 22500000328
+Data Ajuizamento : 28/07/2020
+Data TJ. Conhecim. : 11/11/2021
+Data TJ. Embargos : 
+Espécie Requisição : Original
+Superpreferencial : Não
+Precatório de natureza NÃO tributária
+Tipo Beneficiário
+Nome ANA LUIZA ARMELINDA DA SILVA
+CPF/CGC 938.970.577-00
+Valor Principal 54.504,62 Data Base 01/12/2021
+Valor Juros 1.593,29 Data Base 01/12/2021
+Juros de mora fixados na sentença: Poupança
+Renuncia Não Status Sem Bloqueio
+IR-RRA Sim
+Meses Exe. Anterior 43
+Meses Exe. Corrente - Valor Exe. Corrente -Valor Exe. Anterior -
+Ano Exe. Corrente - Status Servidor -
+Valor Inicial PSS - Data Base PSS -
+Valor total execução - Data base execução -
+Valor Requisitado 56.097,91Tipo Honorário
+Nome leonardo carvalho de salles
+CPF/CGC 086.848.007-02
+Valor Principal 23.359,13 Data Base 01/12/2021
+Valor Juros 682,84 Data Base 01/12/2021
+Juros de mora fixados na sentença: Poupança
+Renuncia Não Status Sem Bloqueio
+IR-RRA Não
+Tipo Hon. Judicial Honorários Contratuais
+Meses Exe. Anterior -
+Meses Exe. Corrente - Valor Exe. Corrente -Valor Exe. Anterior -
+Ano Exe. Corrente - Status Servidor -
+Valor Inicial PSS - Data Base PSS -
+Valor total execução - Data base execução -
+Valor Requisitado 24.041,97
+Valor Total da Requisição: 80.139,88
+Observações:
+1)	Precatórios classificados pelo juízo requisitante como de natureza não tributária serão atualizadas da data base
+do cálculo informada na requisição de pagamento até o efetivo pagamento pelo IPCA-E.
+2) Precatórios classificadas pelo juízo requisitante como de natureza tributária serão atualizadas da data base do
+cálculo informada na requisição de pagamento até o efetivo pagamento pela SELIC.

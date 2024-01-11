@@ -1,0 +1,89 @@
+Espelho de Valores Cadastrados. Data: 02/07/2021
+PROCESSO : 5027923-92.2021.4.04.9388
+ORIGINÁRIO : 5063762-63.2018.4.04.7100/RS
+TIPO : Precatório
+REQUERENTE : ANTONIO LOIDE ALVES DOS SANTOS
+ADVOGADO : GABRIELA BARBOSA MORAES - RS089170
+REQUERIDO : INSTITUTO NACIONAL DO SEGURO SOCIAL - INSS
+: PROCURADOR PROCURADORIA REGIONAL FEDERAL DA 4 REGIÃO - PRF4
+: DEPRECANTE Juízo Substituto da 20ª VF de Porto Alegre
+ASSUNTO : 04020113 - IRSM de Fevereiro de 1994(39,67%)
+Tipo de Despesa : 12 - NATUREZA ALIMENTÍCIA - Benefícios previdenciários e
+indenizações por morte ou invalidez (12)
+Trans. Requisição : 01/07/2021 07:48:25
+Data de Entrada : 01/07/2021 07:48:25
+REQUISIÇÃO : 21710046188
+Data Ajuizamento : 20/11/2003
+Data TJ. Conhecim. : 18/02/2015
+Data TJ. Embargos : 24/06/2021
+Espécie Requisição : Original
+Superpreferencial : Não
+Precatório de natureza NÃO tributária
+Tipo Beneficiário
+Nome ANTONIO LOIDE ALVES DOS SANTOS
+CPF/CGC 614.552.290-91
+Valor Principal 23.224,06 Data Base 01/10/2018
+Valor Juros 34.206,18 Data Base 01/10/2018
+Juros de mora fixados na sentença: Poupança
+Renuncia Não Status Bloqueado
+IR-RRA Sim
+Meses Exe. Anterior 178
+Meses Exe. Corrente - Valor Exe. Corrente -Valor Exe. Anterior -
+Ano Exe. Corrente - Status Servidor -
+Valor Inicial PSS - Data Base PSS -
+Valor total execução - Data base execução -
+Valor Requisitado 57.430,24Espelho de Valores Cadastrados. Data: 02/07/2021
+PROCESSO : 5027923-92.2021.4.04.9388
+ORIGINÁRIO : 5063762-63.2018.4.04.7100/RS
+TIPO : Precatório
+REQUERENTE : ANTONIO LOIDE ALVES DOS SANTOS
+ADVOGADO : GABRIELA BARBOSA MORAES - RS089170
+REQUERIDO : INSTITUTO NACIONAL DO SEGURO SOCIAL - INSS
+: PROCURADOR PROCURADORIA REGIONAL FEDERAL DA 4 REGIÃO - PRF4
+: DEPRECANTE Juízo Substituto da 20ª VF de Porto Alegre
+ASSUNTO : 04020113 - IRSM de Fevereiro de 1994(39,67%)
+Tipo de Despesa : 12 - NATUREZA ALIMENTÍCIA - Benefícios previdenciários e
+indenizações por morte ou invalidez (12)
+Trans. Requisição : 01/07/2021 07:48:25
+Data de Entrada : 01/07/2021 07:48:25
+REQUISIÇÃO : 21710046188
+Data Ajuizamento : 20/11/2003
+Data TJ. Conhecim. : 18/02/2015
+Data TJ. Embargos : 24/06/2021
+Espécie Requisição : Original
+Superpreferencial : Não
+Precatório de natureza NÃO tributária
+Tipo Beneficiário
+Nome ANTONIO LOIDE ALVES DOS SANTOS
+CPF/CGC 614.552.290-91
+Valor Principal 23.224,06 Data Base 01/10/2018
+Valor Juros 34.206,18 Data Base 01/10/2018
+Juros de mora fixados na sentença: Poupança
+Renuncia Não Status Bloqueado
+IR-RRA Sim
+Meses Exe. Anterior 178
+Meses Exe. Corrente - Valor Exe. Corrente -Valor Exe. Anterior -
+Ano Exe. Corrente - Status Servidor -
+Valor Inicial PSS - Data Base PSS -
+Valor total execução - Data base execução -
+Valor Requisitado 57.430,24Tipo Honorário
+Nome GABRIELA BARBOSA ADVOGADOS
+CPF/CGC 29.473.563/0001-89
+Valor Principal 9.953,17 Data Base 01/10/2018
+Valor Juros 14.659,80 Data Base 01/10/2018
+Juros de mora fixados na sentença: Poupança
+Renuncia Não Status Bloqueado
+IR-RRA Não
+Tipo Hon. Judicial Honorários Contratuais
+Meses Exe. Anterior -
+Meses Exe. Corrente - Valor Exe. Corrente -Valor Exe. Anterior -
+Ano Exe. Corrente - Status Servidor -
+Valor Inicial PSS - Data Base PSS -
+Valor total execução - Data base execução -
+Valor Requisitado 24.612,97
+Valor Total da Requisição: 82.043,21
+Observações:
+1)	Precatórios classificados pelo juízo requisitante como de natureza não tributária serão atualizadas da data base
+do cálculo informada na requisição de pagamento até o efetivo pagamento pelo IPCA-E.
+2) Precatórios classificadas pelo juízo requisitante como de natureza tributária serão atualizadas da data base do
+cálculo informada na requisição de pagamento até o efetivo pagamento pela SELIC.

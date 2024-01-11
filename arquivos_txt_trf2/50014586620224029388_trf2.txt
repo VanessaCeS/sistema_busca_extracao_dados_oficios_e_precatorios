@@ -1,0 +1,74 @@
+Espelho de Valores Cadastrados. Data: 09/03/2022
+PROCESSO : 5001458-66.2022.4.02.9388
+ORIGINÁRIO : 00017523520168080038/ES
+TIPO : Precatório
+REQUERENTE : ANA SCHULTZ
+ADVOGADO : LUCIENE RIGHETTE - ES021006
+DEPRECANTE : VARA ÚNICA DA COMARCA DE NOVA VENÉCIA-ES
+: 
+: REQUERIDO INSS -INSTITUTO NACIONAL DO SEGURO SOCIAL
+ASSUNTO : 040105 - Auxílio-Doença Previdenciário
+Tipo de Despesa : 12 - NATUREZA ALIMENTÍCIA - Benefícios previdenciários e
+indenizações por morte ou invalidez (12)
+Trans. Requisição : 08/03/2022 13:35:11
+Data de Entrada : 08/03/2022 13:35:11
+REQUISIÇÃO : 22000000754
+Data Ajuizamento : 24/04/2016
+Data TJ. Conhecim. : 27/07/2021
+Data TJ. Embargos : 07/03/2022
+Espécie Requisição : Original
+Superpreferencial : Não
+Precatório de natureza NÃO tributária
+Tipo Beneficiário
+Nome ANA SCHULTZ
+CPF/CGC 104.229.927-71
+Valor Principal 118.912,85 Data Base 01/09/2021
+Valor Juros 16.447,92 Data Base 01/09/2021
+Juros de mora fixados na sentença: Poupança
+Renuncia Não Status Sem Bloqueio
+IR-RRA Sim
+Meses Exe. Anterior 108
+Meses Exe. Corrente - Valor Exe. Corrente -Valor Exe. Anterior -
+Ano Exe. Corrente - Status Servidor -
+Valor Inicial PSS - Data Base PSS -
+Valor total execução - Data base execução -
+Valor Requisitado 135.360,77Espelho de Valores Cadastrados. Data: 09/03/2022
+PROCESSO : 5001458-66.2022.4.02.9388
+ORIGINÁRIO : 00017523520168080038/ES
+TIPO : Precatório
+REQUERENTE : ANA SCHULTZ
+ADVOGADO : LUCIENE RIGHETTE - ES021006
+DEPRECANTE : VARA ÚNICA DA COMARCA DE NOVA VENÉCIA-ES
+: 
+: REQUERIDO INSS -INSTITUTO NACIONAL DO SEGURO SOCIAL
+ASSUNTO : 040105 - Auxílio-Doença Previdenciário
+Tipo de Despesa : 12 - NATUREZA ALIMENTÍCIA - Benefícios previdenciários e
+indenizações por morte ou invalidez (12)
+Trans. Requisição : 08/03/2022 13:35:11
+Data de Entrada : 08/03/2022 13:35:11
+REQUISIÇÃO : 22000000754
+Data Ajuizamento : 24/04/2016
+Data TJ. Conhecim. : 27/07/2021
+Data TJ. Embargos : 07/03/2022
+Espécie Requisição : Original
+Superpreferencial : Não
+Precatório de natureza NÃO tributária
+Tipo Beneficiário
+Nome ANA SCHULTZ
+CPF/CGC 104.229.927-71
+Valor Principal 118.912,85 Data Base 01/09/2021
+Valor Juros 16.447,92 Data Base 01/09/2021
+Juros de mora fixados na sentença: Poupança
+Renuncia Não Status Sem Bloqueio
+IR-RRA Sim
+Meses Exe. Anterior 108
+Meses Exe. Corrente - Valor Exe. Corrente -Valor Exe. Anterior -
+Ano Exe. Corrente - Status Servidor -
+Valor Inicial PSS - Data Base PSS -
+Valor total execução - Data base execução -
+Valor Requisitado 135.360,77Valor Total da Requisição: 135.360,77
+Observações:
+1)	Precatórios classificados pelo juízo requisitante como de natureza não tributária serão atualizadas da data base
+do cálculo informada na requisição de pagamento até o efetivo pagamento pelo IPCA-E.
+2) Precatórios classificadas pelo juízo requisitante como de natureza tributária serão atualizadas da data base do
+cálculo informada na requisição de pagamento até o efetivo pagamento pela SELIC.

@@ -1,0 +1,89 @@
+Espelho de Valores Cadastrados. Data: 26/05/2021
+PROCESSO : 5012584-93.2021.4.04.9388
+ORIGINÁRIO : 00047955620138160104/PR
+TIPO : Precatório
+REQUERENTE : SEBASTIAO FREIRE
+ADVOGADO : GISELE APARECIDA SPANCERSKI - PR048364
+REQUERIDO : INSTITUTO NACIONAL DO SEGURO SOCIAL - INSS
+: PROCURADOR PROCURADORIA REGIONAL FEDERAL DA 4 REGIÃO - PRF4
+: DEPRECANTE JUIZO DE DIREITO DA 1A VARA CIVEL DA COMARCA DE
+LARANJEIRAS DO SUL/PR
+ASSUNTO : 040119 - Aposentadoria por Tempo de Contribuição (Art. 55/6)
+Tipo de Despesa : 21 - NATUREZA NÃO ALIMENTÍCIA (21)
+Trans. Requisição : 25/05/2021 19:02:59
+Data de Entrada : 25/05/2021 19:02:59
+REQUISIÇÃO : 21000012982
+Data Ajuizamento : 18/12/2013
+Data TJ. Conhecim. : 23/07/2020
+Data TJ. Embargos : 06/05/2021
+Espécie Requisição : Original
+Superpreferencial : Não
+Precatório de natureza NÃO tributária
+Tipo Beneficiário
+Nome SEBASTIAO FREIRE
+CPF/CGC 374.039.909-00
+Valor Principal 150.815,17 Data Base 01/12/2020
+Valor Juros 25.888,07 Data Base 01/12/2020
+Juros de mora fixados na sentença: Poupança
+Renuncia Não Status Sem Bloqueio
+IR-RRA Não
+Meses Exe. Anterior -
+Meses Exe. Corrente - Valor Exe. Corrente -Valor Exe. Anterior -
+Ano Exe. Corrente - Status Servidor -
+Valor Inicial PSS - Data Base PSS -
+Valor total execução - Data base execução -
+Valor Requisitado 176.703,24Espelho de Valores Cadastrados. Data: 26/05/2021
+PROCESSO : 5012584-93.2021.4.04.9388
+ORIGINÁRIO : 00047955620138160104/PR
+TIPO : Precatório
+REQUERENTE : SEBASTIAO FREIRE
+ADVOGADO : GISELE APARECIDA SPANCERSKI - PR048364
+REQUERIDO : INSTITUTO NACIONAL DO SEGURO SOCIAL - INSS
+: PROCURADOR PROCURADORIA REGIONAL FEDERAL DA 4 REGIÃO - PRF4
+: DEPRECANTE JUIZO DE DIREITO DA 1A VARA CIVEL DA COMARCA DE
+LARANJEIRAS DO SUL/PR
+ASSUNTO : 040119 - Aposentadoria por Tempo de Contribuição (Art. 55/6)
+Tipo de Despesa : 21 - NATUREZA NÃO ALIMENTÍCIA (21)
+Trans. Requisição : 25/05/2021 19:02:59
+Data de Entrada : 25/05/2021 19:02:59
+REQUISIÇÃO : 21000012982
+Data Ajuizamento : 18/12/2013
+Data TJ. Conhecim. : 23/07/2020
+Data TJ. Embargos : 06/05/2021
+Espécie Requisição : Original
+Superpreferencial : Não
+Precatório de natureza NÃO tributária
+Tipo Beneficiário
+Nome SEBASTIAO FREIRE
+CPF/CGC 374.039.909-00
+Valor Principal 150.815,17 Data Base 01/12/2020
+Valor Juros 25.888,07 Data Base 01/12/2020
+Juros de mora fixados na sentença: Poupança
+Renuncia Não Status Sem Bloqueio
+IR-RRA Não
+Meses Exe. Anterior -
+Meses Exe. Corrente - Valor Exe. Corrente -Valor Exe. Anterior -
+Ano Exe. Corrente - Status Servidor -
+Valor Inicial PSS - Data Base PSS -
+Valor total execução - Data base execução -
+Valor Requisitado 176.703,24Tipo Honorário
+Nome SPANCERSKI & VALONE ADVOGADOS
+CPF/CGC 23.065.085/0001-91
+Valor Principal 64.635,08 Data Base 01/12/2020
+Valor Juros 11.094,88 Data Base 01/12/2020
+Juros de mora fixados na sentença: Poupança
+Renuncia Não Status Sem Bloqueio
+IR-RRA Não
+Tipo Hon. Judicial Honorários Contratuais
+Meses Exe. Anterior -
+Meses Exe. Corrente - Valor Exe. Corrente -Valor Exe. Anterior -
+Ano Exe. Corrente - Status Servidor -
+Valor Inicial PSS - Data Base PSS -
+Valor total execução - Data base execução -
+Valor Requisitado 75.729,96
+Valor Total da Requisição: 252.433,20
+Observações:
+1)	Precatórios classificados pelo juízo requisitante como de natureza não tributária serão atualizadas da data base
+do cálculo informada na requisição de pagamento até o efetivo pagamento pelo IPCA-E.
+2) Precatórios classificadas pelo juízo requisitante como de natureza tributária serão atualizadas da data base do
+cálculo informada na requisição de pagamento até o efetivo pagamento pela SELIC.

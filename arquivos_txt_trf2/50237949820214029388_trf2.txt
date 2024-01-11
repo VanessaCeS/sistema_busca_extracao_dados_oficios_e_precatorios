@@ -1,0 +1,72 @@
+Espelho de Valores Cadastrados. Data: 25/08/2021
+PROCESSO : 5023794-98.2021.4.02.9388
+ORIGINÁRIO : 0195290-81.2017.4.02.5167/RJ
+TIPO : Precatório
+REQUERENTE : GILSON GOMES PEREIRA
+ADVOGADO : PAULO CEZAR DA SILVA MOREIRA - RJ117723
+DEPRECANTE : Juízo Federal do 3º JEF de São Gonçalo
+: 
+: REQUERIDO INSTITUTO NACIONAL DO SEGURO SOCIAL - INSS
+ASSUNTO : 040401 - Data de Início de Benefício (DIB)
+Tipo de Despesa : 12 - NATUREZA ALIMENTÍCIA - Benefícios previdenciários e
+indenizações por morte ou invalidez (12)
+Trans. Requisição : 25/08/2021 12:16:16
+Data de Entrada : 25/08/2021 12:16:16
+REQUISIÇÃO : 21510027067
+Data Ajuizamento : 17/10/2017
+Data TJ. Conhecim. : 02/09/2020
+Data TJ. Embargos : 
+Espécie Requisição : Original
+Precatório de natureza NÃO tributária
+Tipo Beneficiário
+Nome GILSON GOMES PEREIRA
+CPF/CGC 819.922.977-20
+Valor Principal 108.405,47 Data Base 01/06/2020
+Valor Juros 7.149,10 Data Base 01/06/2020
+Juros de mora fixados na sentença: Poupança
+Renuncia Não Status Sem Bloqueio
+IR-RRA Sim
+Meses Exe. Anterior 46
+Meses Exe. Corrente - Valor Exe. Corrente -Valor Exe. Anterior -
+Ano Exe. Corrente - Status Servidor -
+Valor Inicial PSS - Data Base PSS -
+Valor total execução - Data base execução -
+Valor Requisitado 115.554,57Espelho de Valores Cadastrados. Data: 25/08/2021
+PROCESSO : 5023794-98.2021.4.02.9388
+ORIGINÁRIO : 0195290-81.2017.4.02.5167/RJ
+TIPO : Precatório
+REQUERENTE : GILSON GOMES PEREIRA
+ADVOGADO : PAULO CEZAR DA SILVA MOREIRA - RJ117723
+DEPRECANTE : Juízo Federal do 3º JEF de São Gonçalo
+: 
+: REQUERIDO INSTITUTO NACIONAL DO SEGURO SOCIAL - INSS
+ASSUNTO : 040401 - Data de Início de Benefício (DIB)
+Tipo de Despesa : 12 - NATUREZA ALIMENTÍCIA - Benefícios previdenciários e
+indenizações por morte ou invalidez (12)
+Trans. Requisição : 25/08/2021 12:16:16
+Data de Entrada : 25/08/2021 12:16:16
+REQUISIÇÃO : 21510027067
+Data Ajuizamento : 17/10/2017
+Data TJ. Conhecim. : 02/09/2020
+Data TJ. Embargos : 
+Espécie Requisição : Original
+Precatório de natureza NÃO tributária
+Tipo Beneficiário
+Nome GILSON GOMES PEREIRA
+CPF/CGC 819.922.977-20
+Valor Principal 108.405,47 Data Base 01/06/2020
+Valor Juros 7.149,10 Data Base 01/06/2020
+Juros de mora fixados na sentença: Poupança
+Renuncia Não Status Sem Bloqueio
+IR-RRA Sim
+Meses Exe. Anterior 46
+Meses Exe. Corrente - Valor Exe. Corrente -Valor Exe. Anterior -
+Ano Exe. Corrente - Status Servidor -
+Valor Inicial PSS - Data Base PSS -
+Valor total execução - Data base execução -
+Valor Requisitado 115.554,57Valor Total da Requisição: 115.554,57
+Observações:
+1)	Precatórios classificados pelo juízo requisitante como de natureza não tributária serão atualizadas da data base
+do cálculo informada na requisição de pagamento até o efetivo pagamento pelo IPCA-E.
+2) Precatórios classificadas pelo juízo requisitante como de natureza tributária serão atualizadas da data base do
+cálculo informada na requisição de pagamento até o efetivo pagamento pela SELIC.

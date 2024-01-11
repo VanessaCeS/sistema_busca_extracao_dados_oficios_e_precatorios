@@ -2,7 +2,7 @@ import traceback
 from logs import log
 from funcoes_arteria import enviar_valores_oficio_arteria
 from auxiliares import   mandar_documento_para_ocr, encontrar_indice_linha, mandar_dados_regex
-from banco_de_dados import atualizar_ou_inserir_pessoa_no_banco_de_dados, atualizar_ou_inserir_pessoa_precatorio, atualizar_ou_inserir_precatorios_no_banco_de_dados, atualizar_ou_inserir_situacao_cadastro
+from banco_de_dados import atualizar_ou_inserir_pessoa_no_banco_de_dados, atualizar_ou_inserir_pessoa_precatorio, atualizar_ou_inserir_precatorios_no_banco_de_dados, atualizar_ou_inserir_situacao_cadastro, precatorio_exitente_arteria
 
 def extrair_dados_texto_ocr(arquivo_pdf, dados):
     try:
@@ -38,9 +38,17 @@ def ler_texto_ocr(arquivo_pdf, dados_xml, arquivo_txt):
 def enviar_dados_banco_de_dados_e_arteria_alagoas(arquivo_pdf, dados):    
     documento = dados['documento']
     atualizar_ou_inserir_pessoa_no_banco_de_dados(documento, {'nome': dados['credor'], 'documento': dados['documento'], 'data_nascimento': dados['data_nascimento'], 'estado': 'Alagoas', 'tipo': 'credor'})
-    id_sistema_arteria = enviar_valores_oficio_arteria(arquivo_pdf, dados)
-    dados['id_sistema_arteria'] = id_sistema_arteria
+
+    existe_id_sistema_arteria = precatorio_exitente_arteria(dados['processo'])
+    if existe_id_sistema_arteria:
+      dados['id_sistema_arteria'] = existe_id_sistema_arteria[0]
+      enviar_valores_oficio_arteria(arquivo_pdf, dados, existe_id_sistema_arteria[0])
+      mensagem = 'Precatório alterado com sucesso'
+    else:
+      dados['id_sistema_arteria']  = enviar_valores_oficio_arteria(arquivo_pdf, dados)
+      mensagem = 'Precatório registrado com sucesso'
+      
     atualizar_ou_inserir_precatorios_no_banco_de_dados(dados['codigo_processo'], dados)
     atualizar_ou_inserir_pessoa_precatorio(documento, dados['processo'])
-    log( dados['processo'], 'Sucesso', dados['site'], 'Precatório registrado com sucesso','Alagoas', dados['tribunal'])
-    atualizar_ou_inserir_situacao_cadastro(dados['processo'],{'status': 'Sucesso'})
+    log( dados['processo'], 'Sucesso', dados['site'], mensagem,'Alagoas', dados['tribunal'])
+    atualizar_ou_inserir_situacao_cadastro(dados['processo_origem'],{'status': 'Sucesso'})

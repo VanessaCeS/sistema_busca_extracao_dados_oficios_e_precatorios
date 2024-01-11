@@ -1,0 +1,72 @@
+Espelho de Valores Cadastrados. Data: 18/11/2021
+PROCESSO : 5027448-93.2021.4.02.9388
+ORIGINÁRIO : 5001550-63.2020.4.02.5104/RJ
+TIPO : Precatório
+REQUERENTE : CARLOS ROBERTO PASSOS
+ADVOGADO : RICHARD NUNES - RJ212873
+REQUERIDO : INSS -INSTITUTO NACIONAL DO SEGURO SOCIAL
+: 
+: DEPRECANTE Juízo Federal do 2º JEF de Volta Redonda
+ASSUNTO : 040119 - Aposentadoria por Tempo de Contribuição (Art. 55/6)
+Tipo de Despesa : 12 - NATUREZA ALIMENTÍCIA - Benefícios previdenciários e
+indenizações por morte ou invalidez (12)
+Trans. Requisição : 18/11/2021 17:08:51
+Data de Entrada : 18/11/2021 17:08:51
+REQUISIÇÃO : 21510042664
+Data Ajuizamento : 14/03/2020
+Data TJ. Conhecim. : 02/08/2021
+Data TJ. Embargos : 
+Espécie Requisição : Original
+Precatório de natureza NÃO tributária
+Tipo Beneficiário
+Nome CARLOS ROBERTO PASSOS
+CPF/CGC 760.646.117-15
+Valor Principal 73.188,15 Data Base 01/09/2021
+Valor Juros 1.879,34 Data Base 01/09/2021
+Juros de mora fixados na sentença: Poupança
+Renuncia Não Status Sem Bloqueio
+IR-RRA Sim
+Meses Exe. Anterior 38
+Meses Exe. Corrente - Valor Exe. Corrente -Valor Exe. Anterior -
+Ano Exe. Corrente - Status Servidor -
+Valor Inicial PSS - Data Base PSS -
+Valor total execução - Data base execução -
+Valor Requisitado 75.067,49Espelho de Valores Cadastrados. Data: 18/11/2021
+PROCESSO : 5027448-93.2021.4.02.9388
+ORIGINÁRIO : 5001550-63.2020.4.02.5104/RJ
+TIPO : Precatório
+REQUERENTE : CARLOS ROBERTO PASSOS
+ADVOGADO : RICHARD NUNES - RJ212873
+REQUERIDO : INSS -INSTITUTO NACIONAL DO SEGURO SOCIAL
+: 
+: DEPRECANTE Juízo Federal do 2º JEF de Volta Redonda
+ASSUNTO : 040119 - Aposentadoria por Tempo de Contribuição (Art. 55/6)
+Tipo de Despesa : 12 - NATUREZA ALIMENTÍCIA - Benefícios previdenciários e
+indenizações por morte ou invalidez (12)
+Trans. Requisição : 18/11/2021 17:08:51
+Data de Entrada : 18/11/2021 17:08:51
+REQUISIÇÃO : 21510042664
+Data Ajuizamento : 14/03/2020
+Data TJ. Conhecim. : 02/08/2021
+Data TJ. Embargos : 
+Espécie Requisição : Original
+Precatório de natureza NÃO tributária
+Tipo Beneficiário
+Nome CARLOS ROBERTO PASSOS
+CPF/CGC 760.646.117-15
+Valor Principal 73.188,15 Data Base 01/09/2021
+Valor Juros 1.879,34 Data Base 01/09/2021
+Juros de mora fixados na sentença: Poupança
+Renuncia Não Status Sem Bloqueio
+IR-RRA Sim
+Meses Exe. Anterior 38
+Meses Exe. Corrente - Valor Exe. Corrente -Valor Exe. Anterior -
+Ano Exe. Corrente - Status Servidor -
+Valor Inicial PSS - Data Base PSS -
+Valor total execução - Data base execução -
+Valor Requisitado 75.067,49Valor Total da Requisição: 75.067,49
+Observações:
+1)	Precatórios classificados pelo juízo requisitante como de natureza não tributária serão atualizadas da data base
+do cálculo informada na requisição de pagamento até o efetivo pagamento pelo IPCA-E.
+2) Precatórios classificadas pelo juízo requisitante como de natureza tributária serão atualizadas da data base do
+cálculo informada na requisição de pagamento até o efetivo pagamento pela SELIC.

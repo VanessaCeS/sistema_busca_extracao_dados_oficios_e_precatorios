@@ -1,0 +1,1 @@
+Ocorreu um erro: cannot identify image file <_io.BytesIO object at 0x000002389977EA40>Ocorreu um erro: cannot identify image file <_io.BytesIO object at 0x000002389977E540>
