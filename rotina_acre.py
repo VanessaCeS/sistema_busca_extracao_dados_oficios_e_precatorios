@@ -5,7 +5,7 @@ from cna_oab import login_cna
 from funcoes_arteria import enviar_valores_oficio_arteria
 from esaj_acre_precatorios import get_docs_oficio_precatorios_tjac
 from banco_de_dados import atualizar_ou_inserir_pessoa_no_banco_de_dados, atualizar_ou_inserir_pessoa_precatorio, atualizar_ou_inserir_situacao_cadastro, consultar_processos, atualizar_ou_inserir_precatorios_no_banco_de_dados
-from auxiliares import  converter_string_mes, identificar_estados, limpar_dados, mandar_documento_para_ocr,  tipo_de_natureza, tipo_precatorio, verificar_tribunal
+from auxiliares import  converter_string_mes, limpar_dados, mandar_documento_para_ocr,  tipo_de_natureza, tipo_precatorio, verificar_tribunal
 
 def buscar_dados_tribunal_acre():
   dados = consultar_processos('.8.01')
@@ -56,7 +56,7 @@ def tratar_dados_ocr(arquivo_pdf,processo, dados):
   documento = pegar_documento(dados['requerente'])
   data = converter_string_mes(data_expedicao)
   natureza = tipo_de_natureza(natureza)
-  estado = identificar_estados(estado)
+  estado = 'Acre'
   oab, seccional = pegar_aob_e_seccional(dados['advogado'][0])
   documento_advogado = ''
   atualizar_ou_inserir_pessoa_no_banco_de_dados(documento, {'nome': credor, 'documento': documento, 'data_nascimento': '', 'estado': estado, 'tipo': 'credor'})

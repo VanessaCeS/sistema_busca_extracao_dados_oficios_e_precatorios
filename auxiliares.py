@@ -369,7 +369,8 @@ def limpar_string(string):
   string_limpa = re.sub(r'[^a-zA-ZÀ-ÿ\s]', '', string).replace(':', '')
   return string_limpa.strip()
 
-def identificar_estados(estado):
+def identificar_estados(sigla_estado):
+  estado = ''
   estados_brasileiros = {
     "AC": "Acre",
     "AL": "Alagoas",
@@ -400,10 +401,9 @@ def identificar_estados(estado):
     "TO": "Tocantins"
     }
   for e in dict.keys(estados_brasileiros):
-    if e == estado.strip():
-      return {'estado': f'{estados_brasileiros[e].upper()}'} 
-    else:
-      {'estado': ''}
+    if e == sigla_estado.strip():
+      estado =  f'{estados_brasileiros[e].upper()}'
+  return estado
 
 def encontrar_data_expedicao_e_cidade(arquivo_txt):
   with open(arquivo_txt, 'r', encoding='utf-8') as arquivo:
@@ -902,4 +902,7 @@ def pdf_to_png(pdf_path, output_pdf_path, processo):
     pdf_document.close()
     return f"{output_pdf_path}/{processo}_4.png"
 
-# mandar_documento_para_ocr('./teste/page_1.png', '1', '123', "teste")
+def formatar_data_padrao_arteria(data):
+  dia, mes, ano = data.strip().split('/')
+  data_padrao_arteria = f"{mes}/{dia}/{ano}"
+  return data_padrao_arteria

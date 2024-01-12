@@ -9,7 +9,7 @@ from rotina_acre import ler_documentos
 from banco_de_dados import atualizar_ou_inserir_situacao_cadastro, consultar_processos
 from funcoes_arteria import enviar_valores_oficio_arteria
 from banco_de_dados import atualizar_ou_inserir_pessoa_no_banco_de_dados, atualizar_ou_inserir_pessoa_precatorio, atualizar_ou_inserir_precatorios_no_banco_de_dados
-from auxiliares import  encontrar_indice_linha, identificar_estados, ler_arquivo_pdf_transformar_em_txt, mandar_dados_regex, limpar_dados, tipo_precatorio, verificar_tribunal_lista
+from auxiliares import  encontrar_indice_linha, formatar_data_padrao_arteria, identificar_estados, ler_arquivo_pdf_transformar_em_txt,  limpar_dados, mandar_dados_regex, tipo_precatorio, verificar_tribunal_lista
 
 load_dotenv('.env')
 
@@ -25,9 +25,7 @@ def buscar_dados_tribunal_regional_federal():
           dado['processo_origem'] = processo_origem
           if dado['processo_origem'] != []:
             ler_documentos(dado)
-          else:
-            pass
-
+          
 def ler_documentos(dados_xml):
     try:
       login_trf = 'DF018283'
@@ -48,62 +46,51 @@ def ler_documentos(dados_xml):
         arquivo_pdf, id_documento = login_eproc(login_trf,senha,site, processo_origem)
 
         if arquivo_pdf != '':
-            arquivo_txt = ler_arquivo_pdf_transformar_em_txt(arquivo_pdf)
             dados_complementares = { 'site': site, 'id_documento': id_documento, 'codigo_processo': id_documento, 'tipo': 'FEDERAL', 'cidade': '', 'tribunal': tribunal}  | dados_xml
             
-            extrair_dados_txt(arquivo_pdf, arquivo_txt, dados_complementares)            
+            extrair_dados_txt(arquivo_pdf, dados_complementares)            
     except Exception as e:
         print( f'Erro: {str(e)} |', 'Processo ->> ', f'{dados_xml["processo"]}'.replace('\n', ''))
         print(traceback.print_exc())
         pass
     
-def extrair_dados_txt(arquivo_pdf, arquivo_txt, dados_xml):
+def extrair_dados_txt(arquivo_pdf, dados_xml):
+    arquivo_txt = ler_arquivo_pdf_transformar_em_txt(arquivo_pdf)
     with open(arquivo_txt, 'r', encoding='utf-8') as arquivo:
         linhas = arquivo.readlines()    
-    indice_processo = encontrar_indice_linha(linhas, 'processo :')
-    indice_processo_origem = encontrar_indice_linha(linhas, 'originário')
-    indice_vara = encontrar_indice_linha(linhas, 'deprecante')
-    indice_credor = encontrar_indice_linha(linhas, 'requerente')
-    indice_devedor = encontrar_indice_linha(linhas, 'requerido')
-    indice_advogado = encontrar_indice_linha(linhas,'advogado')
-    indice_natureza = encontrar_indice_linha(linhas,'tipo de despesa')
-    indice_data_expedicao = encontrar_indice_linha(linhas,'data:')
-    indice_documento = encontrar_indice_linha(linhas, 'cpf/cgc')
-    indice_valor_principal = encontrar_indice_linha(linhas, 'valor principal')
-    indice_valor_atualizado = encontrar_indice_linha(linhas, 'valor atualizado')
-    indice_valor_juros = encontrar_indice_linha(linhas, 'valor juros')
-    indice_valor_global = encontrar_indice_linha(linhas, 'da requisição')
-    if indice_valor_principal == None:
-        indice_valor_principal = indice_valor_atualizado
-    indices = {'indice_credor': indice_credor,'indice_devedor': indice_devedor, 'indice_natureza': indice_natureza, 'indice_documento': indice_documento, 'indice_valor_juros': indice_valor_juros,  'indice_valor_principal': indice_valor_principal}
-    dados = mandar_dados_regex(indices, linhas)
-    
-    dados['data_nascimento'] = ''
-    dados['data_expedicao'] = extrair_data_expedicao(linhas[indice_data_expedicao])
-    dados_xml['vara'] = linhas[indice_vara].upper().replace(':', '').replace('DEPRECANTE', '').strip()
-    dados['valor_global'] = linhas[indice_valor_global].split(':')[1].strip().replace('.','').replace(',','.')
-    dados_xml['processo_origem'] = linhas[indice_processo_origem].split(':')[1].split('/')[0].strip()
-    dados_xml['processo'] = linhas[indice_processo].split(':')[1].split('/')[0].strip()
-    estado = identificar_estados(linhas[indice_processo_origem].split(':')[1].split('/')[1].strip())
-    if indice_advogado:
-      dados_advogado = extrair_dados_advogado(linhas[indice_advogado], dados_xml['processo'])
-    else:
-      dados_advogado = {'telefone': '', 'advogado': '', 'seccional': '', 'oab': ''}
 
-    dados = dados |  dados_advogado | dados_xml | estado
-    print(dados)
+    valor_principal = pegar_valor(linhas[encontrar_indice_linha(linhas, 'valor principal')]) if encontrar_indice_linha(linhas, 'valor principal') else pegar_valor(linhas[encontrar_indice_linha(linhas, 'valor atualizado')])
+    match = re.search(r'\b\d+(?:\.\d{1,3})?(?:,\d{1,2})?\b', linhas[encontrar_indice_linha(linhas, 'valor juros')])
+    valor_juros = match.group().replace('.','').replace(',','.') if match else ''
+    estado = identificar_estados(pegar_valor(linhas[encontrar_indice_linha(linhas, 'originário')]).split('/')[1].strip())
+    dict_natureza = mandar_dados_regex({'indice_natureza': encontrar_indice_linha(linhas,'tipo de despesa')}, linhas)
+    dados_advogado = extrair_dados_advogado(linhas[encontrar_indice_linha(linhas,'advogado')], dados_xml['processo']) if encontrar_indice_linha(linhas,'advogado') else {'telefone': '', 'advogado': '', 'seccional': '', 'oab': ''}
+    dados = {
+      'natureza': dict_natureza['natureza'],
+      'estado': estado,
+      'data_nascimento': '',
+      'vara': linhas[encontrar_indice_linha(linhas, 'deprecante')].replace(': DEPRECANTE', '').strip(),
+      'valor_principal': valor_principal.strip().replace('.','').replace(',','.'), 
+      'devedor': pegar_valor(linhas[encontrar_indice_linha(linhas, 'requerido')]),
+      'documento': pegar_valor(linhas[encontrar_indice_linha(linhas, 'cpf/cgc')]).replace('\n',''),
+      'credor': pegar_valor(linhas[encontrar_indice_linha(linhas, 'requerente')]),
+      'processo': pegar_valor(linhas[encontrar_indice_linha(linhas, 'processo :')]),
+      'processo_origem': pegar_valor(linhas[encontrar_indice_linha(linhas, 'originário')]).split('/')[0],
+      'data_expedicao': formatar_data_padrao_arteria(pegar_valor(linhas[encontrar_indice_linha(linhas,'data:')])),
+      'valor_juros': valor_juros,      
+      'valor_global': pegar_valor(linhas[encontrar_indice_linha(linhas, 'da requisição')]).replace('.','').replace(',','.')
+      } |  dados_advogado | dados_xml
+    
     enviar_dados(dados, arquivo_pdf)
 
-def extrair_data_expedicao(texto):
-  padrao = r'\d{2}/\d{2}/\d{4}'
-  resultado = re.findall(padrao, texto)
-  if resultado != []:
-    dia, mes, ano = resultado[0].strip().split('/')
-    data_padrao_arteria = f"{mes}/{dia}/{ano}"
-    return data_padrao_arteria
+def pegar_valor(string):
+  if ':' in string:
+    valor = string.split(':')[1].replace('\n', '').strip() 
   else:
-    return ''
-  
+    valores = string.split(' ', 3)
+    valor = valores[2] if len(valores) == 4 else valores[-1]
+  return valor
+
 def extrair_dados_advogado(texto, processo):
     texto_dividido = texto.replace('\n','').split('-')
     advogado = texto_dividido[0].upper().replace('ADVOGADO','').replace(':','').strip()
@@ -125,3 +112,5 @@ def enviar_dados(dados, arquivo_pdf):
   atualizar_ou_inserir_pessoa_precatorio(documento, dados['processo'])
   log(dados['processo'], 'Sucesso', site, 'Precatório registrado com sucesso',dados['estado'], dados['tribunal'])
   atualizar_ou_inserir_situacao_cadastro(dados['processo'],{'status': 'Sucesso'})
+
+extrair_dados_txt('arquivos_pdf_trf4/50261140420204049388_trf4.pdf', {'tribunal': 'trf2'})
