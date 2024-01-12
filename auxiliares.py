@@ -405,7 +405,9 @@ def identificar_estados(estado):
     else:
       {'estado': ''}
 
-def encontrar_data_expedicao_e_cidade(arquivo_txt):
+def encontrar_cidade_e_data_expedicao(arquivo_txt):
+  cidade = ''
+  data_expedicao = ''
   with open(arquivo_txt, 'r', encoding='utf-8') as arquivo:
         texto = arquivo.read()
   padrao = r'individualizado(.*)'
@@ -417,12 +419,7 @@ def encontrar_data_expedicao_e_cidade(arquivo_txt):
             cidade = partes[0].split('\n')[1].strip()
             data_expedicao = partes[1].strip()
             data_expedicao_tratada = converter_string_mes(data_expedicao)
-            dados = {'cidade': cidade, 'data_expedicao': data_expedicao_tratada}
-            return dados
-        else:
-          return {'cidade': '', 'data_expedicao': ''}
-  else:
-        return {'cidade': '', 'data_expedicao': ''}
+  return cidade, data_expedicao_tratada
 
 def converter_string_mes(string):
   try:
@@ -901,5 +898,10 @@ def pdf_to_png(pdf_path, output_pdf_path, processo):
         pil_image.save(f"{output_pdf_path}/{processo}_{page_number + 1}.png", "PNG")
     pdf_document.close()
     return f"{output_pdf_path}/{processo}_4.png"
+
+def formatar_data_padra_arteria(data):
+  dia, mes, ano = data.strip().split('/')
+  data_padrao_arteria = f"{mes}/{dia}/{ano}"
+  return data_padrao_arteria
 
 # mandar_documento_para_ocr('./teste/page_1.png', '1', '123', "teste")
