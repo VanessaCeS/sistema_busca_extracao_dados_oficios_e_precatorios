@@ -740,10 +740,10 @@ def processar_dado(dado):
     return dado_processado
 
 def tipo_natureza(natureza):
-  if 'Alimentar - ' in natureza:
-    return 'ALIMENTAR'
-  elif 'Outras  espécies  - Não alimentar' in natureza:
+  if 'Outras  espécies  - Não alimentar' in natureza:
     return 'COMUM - NÃO TRIBUTÁRIO'
+  elif 'Alimentar' in natureza:
+    return 'ALIMENTAR'
   else:
     natureza
 

@@ -5,7 +5,7 @@ from logs import log
 from cna_oab import login_cna
 from dotenv import load_dotenv
 from funcoes_arteria import enviar_valores_oficio_arteria
-from auxiliares import  encontrar_cidade_e_data_expedicao, encontrar_indice_linha, formatar_data_padra_arteria, ler_arquivo_pdf_transformar_em_txt,limpar_dados, tipo_precatorio
+from auxiliares import  encontrar_cidade_e_data_expedicao, encontrar_indice_linha, formatar_data_padra_arteria, ler_arquivo_pdf_transformar_em_txt,limpar_dados, tipo_natureza, tipo_precatorio
 from esaj_sao_paulo_precatorios import get_docs_oficio_precatorios_tjsp
 from banco_de_dados import atualizar_ou_inserir_pessoa_no_banco_de_dados, atualizar_ou_inserir_pessoa_precatorio, atualizar_ou_inserir_precatorios_no_banco_de_dados, atualizar_ou_inserir_situacao_cadastro, consultar_processos
 
@@ -70,7 +70,7 @@ def extrair_dados_txt(arquivo_pdf, dados_xml):
           'cidade': cidade,
           'vara': linhas[3].replace('\n',''),
           'devedor': devedor,
-          'natureza': pegar_valor(linhas[encontrar_indice_linha(linhas, "natureza")]).split('-')[0].upper().strip(), 
+          'natureza': tipo_natureza(pegar_valor(linhas[encontrar_indice_linha(linhas, "natureza")])), 
           'estado': 'São Paulo',
           'processo_origem': conhecimento,
           'data_expedicao': data_expedicao,
