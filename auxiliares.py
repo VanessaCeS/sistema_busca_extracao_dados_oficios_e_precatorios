@@ -902,4 +902,7 @@ def pdf_to_png(pdf_path, output_pdf_path, processo):
     pdf_document.close()
     return f"{output_pdf_path}/{processo}_4.png"
 
-# mandar_documento_para_ocr('./teste/page_1.png', '1', '123', "teste")
+def formatar_data_padrao_arteria(data):
+  dia, mes, ano = data.strip().split('/')
+  data_padrao_arteria = f"{mes}/{dia}/{ano}"
+  return data_padrao_arteria

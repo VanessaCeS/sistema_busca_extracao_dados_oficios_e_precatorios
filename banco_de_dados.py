@@ -261,4 +261,20 @@ def atualizar_ou_inserir_situacao_cadastro(n_processo, status):
       except Exception as e:
                 print("E ==>> ", e)
                 print("Exec ==>> ", traceback.print_exc())
+
+def precatorio_existente_arteria(processo_precatorio):
+  conn = mysql.connector.connect(
+        host=os.getenv('db_server_precatorio'),
+        user=os.getenv('db_username_precatorio'),
+        password=os.getenv('db_password_precatorio'),
+        database=os.getenv('db_database_precatorio'))
     
+  cursor = conn.cursor()
+  query = 'SELECT id_sistema_arteria FROM precatorios WHERE processo = %s'
+  cursor.execute(query, (processo_precatorio,))
+  pesquisa = cursor.fetchone()
+  if pesquisa:
+    print(pesquisa)
+    return pesquisa
+  else: 
+    return False
