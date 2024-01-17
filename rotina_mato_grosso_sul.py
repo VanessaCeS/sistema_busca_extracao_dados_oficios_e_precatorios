@@ -167,7 +167,7 @@ def extrair_dados_pdf(arquivo_pdf, arquivo_txt, dados_pdf):
     dados['data_nascimento'] = ''
     dados['cidade'] = ''
     natureza = pegar_valor(linhas[indice_natureza])
-    natureza = tipo_de_natureza(natureza.upper())
+    dados['natureza'] = tipo_de_natureza(natureza.upper())
     dados_advogado = {'telefone': '', 'advogado': '', 'seccional': '', 'oab': '', 'documento_advogado': ''}
     if indice_advogado != None:
       advogado = pegar_valor(linhas[indice_advogado]).split('(')[0]
@@ -180,7 +180,7 @@ def extrair_dados_pdf(arquivo_pdf, arquivo_txt, dados_pdf):
     indices = {'data_expedicao': indice_data_expedicao}
     data_expedicao = mandar_dados_regex(indices, linhas)
 
-    dados = dados | dados_pdf | dados_advogado | data_expedicao | natureza
+    dados = dados | dados_pdf | dados_advogado | data_expedicao
     enviar_dados_banco_de_dados_e_arteria(arquivo_pdf, dados)
   # else:
   #   with open('LOG_PRECATORIO_MS.txt', 'a+') as f:

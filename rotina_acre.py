@@ -46,7 +46,6 @@ def tratar_dados_ocr(arquivo_pdf,processo, dados):
   advogado = dados['advogado'][0]['nome'][0] 
   data_expedicao = dados['data-expedicao'][0] 
   cidade = dados['local'][0]['cidade'][0] 
-  estado = pegar_estado(dados['local'])
   natureza = pegar_natureza(dados['natureza-do-credito'])
   origem = dados['processo-origem'][0]
   credor = dados['requerente'][0]['nome'][0]
@@ -56,15 +55,14 @@ def tratar_dados_ocr(arquivo_pdf,processo, dados):
   documento = pegar_documento(dados['requerente'])
   data = converter_string_mes(data_expedicao)
   natureza = tipo_de_natureza(natureza)
-  estado = identificar_estados(estado)
   oab, seccional = pegar_aob_e_seccional(dados['advogado'][0])
   documento_advogado = ''
-  atualizar_ou_inserir_pessoa_no_banco_de_dados(documento, {'nome': credor, 'documento': documento, 'data_nascimento': '', 'estado': estado, 'tipo': 'credor'})
+  atualizar_ou_inserir_pessoa_no_banco_de_dados(documento, {'nome': credor, 'documento': documento, 'data_nascimento': '', 'estado': 'ACRE', 'tipo': 'credor'})
   
   dados_advogado = {}
   if advogado != '':
     dados_advogado = login_cna(oab,seccional,documento_advogado,advogado,processo)
-  dado = {'data_expedicao': data, 'cidade': cidade, 'processo_origem': origem, 'devedor': devedor, 'credor': credor, 'valor_global': valor, 'vara': vara, 'documento': documento} | natureza | estado | dados_advogado
+  dado = {'data_expedicao': data, 'cidade': cidade, 'processo_origem': origem, 'devedor': devedor, 'credor': credor, 'valor_global': valor, 'vara': vara, 'documento': documento, 'estado': 'ACRE', 'natureza': natureza}  | dados_advogado
   id_sistema_arteria = enviar_valores_oficio_arteria(arquivo_pdf, dado)
   dado['id_sistema_arteria'] = id_sistema_arteria
   atualizar_ou_inserir_precatorios_no_banco_de_dados(dados['codigo_processo'], dado)
@@ -72,12 +70,6 @@ def tratar_dados_ocr(arquivo_pdf,processo, dados):
   log(origem, 'Sucesso',dados['site'], 'Precatório registrado com sucesso',dados['estado'], dados['tribunal'])
   atualizar_ou_inserir_situacao_cadastro(dados['processo'],{'status': 'Sucesso'})
 
-def pegar_estado(local):
-  estado = ''
-  for l in local:
-    if 'estado' in dict.keys(l):
-      estado = l['estado'][0]
-      return estado
 
 def pegar_natureza(natureza):
   descricao = ''

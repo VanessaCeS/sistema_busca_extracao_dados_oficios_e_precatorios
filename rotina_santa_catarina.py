@@ -50,12 +50,12 @@ def extrair_dados(arquivo_pdf, arquivo_txt, dados_xml):
   dados['valor_principal'] = extrair_dados(linhas[indice_valor_principal])
   dados['valor_juros'] = extrair_dados(linhas[indice_valor_juros])
   dados['valor_global'] = extrair_dados(linhas[indice_valor_global])
-  natureza = tipo_de_natureza(extrair_dados(linhas[indice_natureza]).upper())
+  dados['natureza'] = tipo_de_natureza(extrair_dados(linhas[indice_natureza]).upper())
   dados_advogado = extrair_dados_advogado(linhas[indice_advogado], dados['processo'])
   documento = extrair_documento_e_email(linhas[indice_documento])
   dados['data_nascimento'] = extrair_dados(linhas[indice_data_nascimento]) if indice_data_nascimento is not None else ''
 
-  dados_gerais = dados | natureza | dados_advogado | documento | dados_xml
+  dados_gerais = dados |  dados_advogado | documento | dados_xml
   enviar_dados(dados_gerais, arquivo_pdf)
   
 def extrair_dados(texto):
@@ -99,5 +99,3 @@ def enviar_dados(arquivo_pdf, dados):
   atualizar_ou_inserir_pessoa_precatorio(documento, dados['processo'])
   log(dados['processo'], 'Sucesso', site, 'Precatório registrado com sucesso',dados['estado'], dados['tribunal'])
   atualizar_ou_inserir_situacao_cadastro(dados['processo'],{'status': 'Sucesso'})
-  
-ler_documento({}, './arquivos_pdf_santa_catarina/1_INIC1 (1).pdf')
