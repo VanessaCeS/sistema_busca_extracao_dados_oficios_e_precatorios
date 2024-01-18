@@ -1,9 +1,8 @@
 from logs import log
-from PyPDF2 import PdfReader
 from cna_oab import login_cna
 from eproc_ import login_eproc
 from funcoes_arteria import enviar_valores_oficio_arteria
-from auxiliares import  encontrar_indice_linha, limpar_dados, tipo_de_natureza, ler_arquivo_pdf_transformar_em_txt, tipo_precatorio
+from auxiliares import  encontrar_indice_linha, extrair_valor_txt, formatar_data_padra_arteria, limpar_dados, tipo_de_natureza, ler_arquivo_pdf_transformar_em_txt, tipo_precatorio, transformar_pdf_em_txt, transformar_valor_monetario_padrao_arteria
 from banco_de_dados import atualizar_ou_inserir_pessoa_no_banco_de_dados, atualizar_ou_inserir_pessoa_precatorio, atualizar_ou_inserir_precatorios_no_banco_de_dados, atualizar_ou_inserir_situacao_cadastro, consultar_processos
 
 def buscar_dados_tribunal_santa_catarina():     
@@ -23,46 +22,32 @@ def ler_documento(dados_xml):
   arquivo_txt = ler_arquivo_pdf_transformar_em_txt(arquivo_pdf)
   dados = dados_xml | {'site': site, 'tipo': 'ESTADUAL', 'id_documento': id_documento, 'codigo_processo': id_documento}
 
-  extrair_dados(arquivo_pdf, arquivo_txt, dados)
+  extrair_dados_pdf(arquivo_pdf,  dados)
 
-def extrair_dados(arquivo_pdf, arquivo_txt, dados_xml):
-  with open(arquivo_txt, 'r', encoding='utf-8') as f:
-    linhas = f.readlines()
-  dados = {}
-  indice_estado = 0
-  indice_processo = encontrar_indice_linha(linhas, 'número do processo')
-  indice_advogado = encontrar_indice_linha(linhas, "procurador do autor")
-  indice_credor = encontrar_indice_linha(linhas, 'beneficiário do crédito')
-  indice_devedor = encontrar_indice_linha(linhas, 'parte passiva')
-  indice_data_expedicao = encontrar_indice_linha(linhas, 'data de intimação das partes sobre valor e expedição desta requisição de precatório')
-  indice_data_nascimento = encontrar_indice_linha(linhas, 'data de nascimento')
-  indice_natureza = encontrar_indice_linha(linhas, 'natureza do crédito')
-  indice_documento = encontrar_indice_linha(linhas, 'cpf/cnpj')
-  indice_valor_principal = encontrar_indice_linha(linhas, 'valor corrigido')
-  indice_valor_juros = encontrar_indice_linha(linhas, 'valor dos juros moratórios')
-  indice_valor_global = encontrar_indice_linha(linhas, 'valor total da requisição')
+def extrair_dados_pdf(arquivo_pdf, dados_xml):
+  linhas = transformar_pdf_em_txt(arquivo_pdf)
 
-  dados['estado'] = linhas[indice_estado].replace('\n', '').replace('ESTADO DE','').strip()
-  dados['processo'] = extrair_dados(linhas[indice_processo])
-  dados['credor'] = extrair_dados(linhas[indice_credor])
-  dados['devedor'] = extrair_dados(linhas[indice_devedor])
-  dados['data_expedicao'] = extrair_dados(linhas[indice_data_expedicao])
-  dados['valor_principal'] = extrair_dados(linhas[indice_valor_principal])
-  dados['valor_juros'] = extrair_dados(linhas[indice_valor_juros])
-  dados['valor_global'] = extrair_dados(linhas[indice_valor_global])
-  natureza = tipo_de_natureza(extrair_dados(linhas[indice_natureza]).upper())
-  dados_advogado = extrair_dados_advogado(linhas[indice_advogado], dados['processo'])
-  documento = extrair_documento_e_email(linhas[indice_documento])
-  dados['data_nascimento'] = extrair_dados(linhas[indice_data_nascimento]) if indice_data_nascimento is not None else ''
+  documento, email = extrair_documento_e_email(linhas[encontrar_indice_linha(linhas, 'cpf/cnpj')])
+  natureza = tipo_de_natureza(extrair_valor_txt(linhas[encontrar_indice_linha(linhas, 'natureza do crédito')]))
+  processo = extrair_valor_txt(linhas[encontrar_indice_linha(linhas, 'número do processo')])
+  dados_advogado = extrair_dados_advogado(linhas[encontrar_indice_linha(linhas, "procurador do autor")], processo)
 
-  dados_gerais = dados | natureza | dados_advogado | documento | dados_xml
-  enviar_dados(dados_gerais, arquivo_pdf)
-  
-def extrair_dados(texto):
-  valor = texto.split(':')[1]
-  if 'R$' in valor:
-    valor = valor.replace('R$','').replace('.','').replace(',','.')
-  return  valor.replace('\n','').strip()
+  dados = {
+    'email': email,
+    'processo': processo,
+    'natureza': natureza,
+    'documento': documento,
+    'estado': 'SANTA CATARINA',
+    'credor': extrair_valor_txt(linhas[encontrar_indice_linha(linhas, 'beneficiário do crédito')]),
+    'devedor': extrair_valor_txt(linhas[encontrar_indice_linha(linhas, 'parte passiva')]),
+    'data_expedicao': formatar_data_padra_arteria(extrair_valor_txt(linhas[encontrar_indice_linha(linhas, 'data de intimação das partes sobre valor e expedição desta requisição de precatório')])),    
+    'valor_principal': transformar_valor_monetario_padrao_arteria(extrair_valor_txt(linhas[encontrar_indice_linha(linhas, 'valor corrigido')])),
+    'valor_juros': transformar_valor_monetario_padrao_arteria(extrair_valor_txt(linhas[encontrar_indice_linha(linhas, 'valor dos juros moratórios')])),
+    'valor_global': transformar_valor_monetario_padrao_arteria(extrair_valor_txt(linhas[encontrar_indice_linha(linhas, 'valor total da requisição')])),
+    'data_nascimento': formatar_data_padra_arteria(extrair_data_nascimento(linhas[encontrar_indice_linha(linhas, 'data de nascimento')])) if encontrar_indice_linha(linhas, 'data de nascimento') else ''
+  } | dados_advogado
+
+  enviar_dados(arquivo_pdf, dados)
 
 def extrair_dados_advogado(texto, processo):
   texto_dividido = texto.split('-')
@@ -76,16 +61,20 @@ def extrair_dados_advogado(texto, processo):
   return dados_advogado
 
 def extrair_documento_e_email(texto):
+  documento = ''
+  email = ''
   if 'Email' in texto:
     texto_dividido = texto.replace('\n','').split(':')
     documento = texto_dividido[1].replace('Email', '').strip()
     email = texto_dividido[2].strip()
-    dados = {'email': email, 'documento': documento}
   else:
     texto_dividido = texto.split(':')
     documento = texto_dividido[1].strip()
-    dados = {'documento': documento}
-  return dados
+
+  return documento, email
+
+def extrair_data_nascimento(string):
+  return string.split('nascimento:')[1].replace('\n','').strip()
 
 def enviar_dados(arquivo_pdf, dados):
   documento = dados['documento']
@@ -99,5 +88,5 @@ def enviar_dados(arquivo_pdf, dados):
   atualizar_ou_inserir_pessoa_precatorio(documento, dados['processo'])
   log(dados['processo'], 'Sucesso', site, 'Precatório registrado com sucesso',dados['estado'], dados['tribunal'])
   atualizar_ou_inserir_situacao_cadastro(dados['processo'],{'status': 'Sucesso'})
-  
-ler_documento({}, './arquivos_pdf_santa_catarina/1_INIC1 (1).pdf')
+
+extrair_dados_pdf('arquivos_pdf_santa_catarina/1_INIC1 (18).pdf', {'tribunal': 'tjsc'})

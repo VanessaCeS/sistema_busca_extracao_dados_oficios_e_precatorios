@@ -12,6 +12,12 @@ load_dotenv('.env')
 tipos_alimentar = os.getenv('tipos_alimentar')
 tipos_comum = os.getenv('tipos_comum')
 
+def transformar_pdf_em_txt(arquivo_pdf):
+  arquivo_txt = ler_arquivo_pdf_transformar_em_txt(arquivo_pdf)
+  with open(arquivo_txt, 'r', encoding='utf-8') as f:
+    linhas = f.readlines()
+  return linhas
+
 def regex(string):
     string = string.upper().replace('  ', ' ')
     if 'PARA CONFERIR O ORIGINAL' in string or 'LIBERADO NOS AUTOS' in string or 'LIBERADO NOS AUTOS DIGITAIS' in string or 'DATA:' in string:
@@ -356,14 +362,14 @@ def principal_e_juros_poupanca(string):
   return principal, juros
 
 def tipo_de_natureza(natureza):
-  natureza = limpar_string(natureza)
+  natureza = limpar_string(natureza).upper()
   print('natureza = ', natureza)
   if natureza in tipos_alimentar:
-    return {'natureza': 'ALIMENTAR'.upper()}
+    return 'ALIMENTAR'.upper()
   elif  natureza in tipos_comum:
-    return {'natureza': 'COMUM - NÃO TRIBUTÁRIO'.upper()}
+    return 'COMUM - NÃO TRIBUTÁRIO'.upper()
   else:
-    return {'natureza': ''}
+    return ''
 
 def limpar_string(string):
   string_limpa = re.sub(r'[^a-zA-ZÀ-ÿ\s]', '', string).replace(':', '')
@@ -902,4 +908,14 @@ def pdf_to_png(pdf_path, output_pdf_path, processo):
     pdf_document.close()
     return f"{output_pdf_path}/{processo}_4.png"
 
-# mandar_documento_para_ocr('./teste/page_1.png', '1', '123', "teste")
+def formatar_data_padra_arteria(data):
+  dia, mes, ano = data.strip().split('/')
+  data_padrao_arteria = f"{mes}/{dia}/{ano}"
+  return data_padrao_arteria
+
+def transformar_valor_monetario_padrao_arteria(string):
+  return string.replace('.', '').replace(',','.').strip()
+
+def extrair_valor_txt(string):
+  valor = string.split(':')[1].replace('\n', '').replace('R$','').strip()
+  return valor 
